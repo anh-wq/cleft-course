@@ -43,11 +43,11 @@ nav{position:fixed;top:6px;left:0;right:0;z-index:300;background:rgba(74,103,170
 .lang-btn.active{background:var(--teal);color:var(--dark)}
 
 /* PAGE HERO */
-.page-hero{background:var(--blue);padding:9rem 2.5rem 4rem;position:relative;overflow:hidden}
-.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 50%,rgba(0,180,188,.2) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 10% 70%,rgba(248,232,22,.08) 0%,transparent 50%);pointer-events:none}
-.page-hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent)}
+.page-hero{background:var(--dark);padding:9rem 2.5rem 4rem;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 70% 50%,rgba(0,180,188,.1) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 10% 70%,rgba(74,103,170,.08) 0%,transparent 50%);pointer-events:none}
+.page-hero::after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
 .ph-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2}
-.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:1rem}
+.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
 .ph-h1{font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:.75rem}
 .ph-h1 em{font-style:italic;color:var(--teal)}
 .ph-body{font-size:1rem;color:rgba(255,255,255,.75);max-width:560px;line-height:1.85;font-weight:300}
@@ -130,14 +130,14 @@ select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/
 .ps-includes ul{list-style:none;display:flex;flex-direction:column;gap:6px}
 .ps-includes li{font-size:12px;color:rgba(255,255,255,.6);padding-left:16px;position:relative;font-weight:300;line-height:1.5}
 .ps-includes li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-size:11px}
-.ps-deadline{background:rgba(248,232,22,.1);border:1px solid rgba(248,232,22,.25);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:1rem}
-.ps-deadline-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);margin-bottom:3px}
-.ps-deadline-val{font-family:var(--ff-serif);font-size:1.1rem;color:#fff;font-weight:400;font-style:italic}
-.ps-deadline-sub{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px;font-weight:300}
+.ps-deadline{background:var(--teal);border-radius:10px;padding:1.1rem 1.25rem;margin-bottom:1rem}
+.ps-deadline-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:3px}
+.ps-deadline-val{font-family:var(--ff-serif);font-size:1.2rem;color:#fff;font-weight:600;font-style:italic}
+.ps-deadline-sub{font-size:11px;color:rgba(255,255,255,.8);margin-top:2px;font-weight:400}
 .ps-secure{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.45);margin-top:1rem}
 .ps-secure svg{width:14px;height:14px;fill:var(--teal);flex-shrink:0}
-.ps-cancel{border-left:3px solid rgba(0,180,188,.4);padding-left:12px;font-size:12px;color:rgba(255,255,255,.35);line-height:1.65;font-weight:300;margin-top:1rem}
-.ps-cancel strong{color:rgba(255,255,255,.6);font-weight:500}
+.ps-cancel{border-left:3px solid rgba(0,180,188,.5);padding-left:12px;font-size:12px;color:rgba(255,255,255,.7);line-height:1.65;font-weight:300;margin-top:1rem}
+.ps-cancel strong{color:#fff;font-weight:600}
 
 footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
 .foot-wrap{max-width:1280px;margin:0 auto}
@@ -180,7 +180,7 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
     <h1 class="ph-h1 en">Register for the <em>Summit</em></h1>
     <h1 class="ph-h1 vi"><em>Đăng ký</em> tham dự Hội nghị</h1>
     <p class="ph-body en">Complete the form below. Your fee is automatically calculated based on your country's World Bank income classification. No waiting — your place is confirmed immediately upon payment.</p>
-    <p class="ph-body vi">Hoàn thành biểu mẫu dưới đây. Phí tham dự được tính tự động theo phân loại thu nhập của Ngân hàng Thế giới. Không cần chờ xác nhận — chỗ của bạn được xác nhận ngay khi thanh toán.</p>
+    <p class="ph-body vi">Hoàn thành form dưới đây. Phí tham dự được tính tự động theo phân loại thu nhập của Ngân hàng Thế giới. Không cần chờ xác nhận — chỗ của bạn được xác nhận ngay khi thanh toán.</p>
   </div>
 </div>
 
@@ -510,15 +510,26 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
         </div>
       </div>
       <div class="form-field">
-        <label class="en">Experience in Cleft Care</label>
-        <label class="vi">Kinh nghiệm trong điều trị khe hở</label>
+        <label class="en">Experience in Cleft Care <span style="font-weight:300;color:var(--tx3)">(select all that apply)</span></label>
+        <label class="vi">Kinh nghiệm trong điều trị khe hở <span style="font-weight:300;color:var(--tx3)">(chọn tất cả phù hợp)</span></label>
         <div class="check-group check-grid" style="margin-top:.4rem">
-          <label class="check-item"><input type="checkbox" name="exp" value="Primary cleft surgery"><span class="en">Primary cleft surgery</span><span class="vi">Phẫu thuật ban đầu</span></label>
-          <label class="check-item"><input type="checkbox" name="exp" value="Secondary / revision"><span class="en">Secondary / revision</span><span class="vi">Phẫu thuật chỉnh sửa</span></label>
-          <label class="check-item"><input type="checkbox" name="exp" value="Orthognathic surgery"><span class="en">Orthognathic surgery</span><span class="vi">Chỉnh hình xương hàm</span></label>
+          <label class="check-item"><input type="checkbox" name="exp" value="Primary cleft care (lip, palate)"><span class="en">Primary cleft care <span style="color:var(--tx3)">(lip, palate)</span></span><span class="vi">Điều trị ban đầu <span style="color:var(--tx3)">(môi, vòm)</span></span></label>
+          <label class="check-item"><input type="checkbox" name="exp" value="Secondary cleft — VPI"><span class="en">Secondary — VPI</span><span class="vi">Thứ cấp — VPI</span></label>
+          <label class="check-item"><input type="checkbox" name="exp" value="Secondary cleft — Alveolar bone graft"><span class="en">Secondary — Alveolar bone graft</span><span class="vi">Thứ cấp — Ghép xương ổ răng</span></label>
+          <label class="check-item"><input type="checkbox" name="exp" value="Secondary cleft — Rhinoplasty"><span class="en">Secondary — Rhinoplasty</span><span class="vi">Thứ cấp — Tạo hình mũi</span></label>
           <label class="check-item"><input type="checkbox" name="exp" value="Orthodontic cleft care"><span class="en">Orthodontic cleft care</span><span class="vi">Chỉnh nha khe hở</span></label>
-          <label class="check-item"><input type="checkbox" name="exp" value="Speech therapy / VPI"><span class="en">Speech therapy / VPI</span><span class="vi">Âm ngữ trị liệu / VPI</span></label>
           <label class="check-item"><input type="checkbox" name="exp" value="New to cleft care"><span class="en">New to cleft care</span><span class="vi">Mới bắt đầu</span></label>
+        </div>
+      </div>
+
+      <div class="form-field" style="margin-top:1.25rem">
+        <label class="en">Years of Experience in Cleft Care <span class="req">*</span></label>
+        <label class="vi">Số năm kinh nghiệm trong điều trị khe hở <span class="req">*</span></label>
+        <div class="check-group check-grid" style="margin-top:.4rem">
+          <label class="check-item"><input type="radio" name="years_exp" value="Less than 2 years"><span class="en">Less than 2 years</span><span class="vi">Dưới 2 năm</span></label>
+          <label class="check-item"><input type="radio" name="years_exp" value="2–5 years"><span class="en">2–5 years</span><span class="vi">2–5 năm</span></label>
+          <label class="check-item"><input type="radio" name="years_exp" value="5–10 years"><span class="en">5–10 years</span><span class="vi">5–10 năm</span></label>
+          <label class="check-item"><input type="radio" name="years_exp" value="10+ years"><span class="en">10+ years</span><span class="vi">Trên 10 năm</span></label>
         </div>
       </div>
     </div>
@@ -581,8 +592,8 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
         <span id="btn-label-vi">Chọn quốc gia để tiếp tục</span>
       </button>
-      <p class="submit-small en">🔒 Data saved to secure Google Sheet · Payment via Wix secure checkout · All prices USD</p>
-      <p class="submit-small vi">🔒 Dữ liệu lưu vào Google Sheet bảo mật · Thanh toán qua Wix · Tất cả phí USD</p>
+      <p class="submit-small en">No refunds or category changes after registration is completed.</p>
+      <p class="submit-small vi">Không hoàn tiền, không thay đổi loại đăng ký sau khi hoàn tất.</p>
     </div>
 
   </div>
@@ -606,25 +617,25 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
         <div class="ps-tier-name en">🟢 LMIC &amp; Vietnam</div>
         <div class="ps-tier-name vi">🟢 Việt Nam &amp; LMIC</div>
         <div class="ps-tier-prices">
-          <div class="ps-price" id="sp-lmic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Sớm</div><div class="ps-price-amt">250</div></div>
-          <div class="ps-price" id="sp-lmic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">TT</div><div class="ps-price-amt">300</div></div>
-          <div class="ps-price" id="sp-lmic-on"><div class="ps-price-lbl">Onsite</div><div class="ps-price-amt">350</div></div>
+          <div class="ps-price" id="sp-lmic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Sớm</div><div class="ps-price-amt">$250</div></div>
+          <div class="ps-price" id="sp-lmic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">TT</div><div class="ps-price-amt">$300</div></div>
+          <div class="ps-price" id="sp-lmic-on"><div class="ps-price-lbl">Onsite</div><div class="ps-price-amt">$350</div></div>
         </div>
       </div>
       <div class="ps-tier">
         <div class="ps-tier-name">🟡 UMIC</div>
         <div class="ps-tier-prices">
-          <div class="ps-price" id="sp-umic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Sớm</div><div class="ps-price-amt">400</div></div>
-          <div class="ps-price" id="sp-umic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">TT</div><div class="ps-price-amt">450</div></div>
-          <div class="ps-price" id="sp-umic-on"><div class="ps-price-lbl">Onsite</div><div class="ps-price-amt">500</div></div>
+          <div class="ps-price" id="sp-umic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Sớm</div><div class="ps-price-amt">$400</div></div>
+          <div class="ps-price" id="sp-umic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">TT</div><div class="ps-price-amt">$450</div></div>
+          <div class="ps-price" id="sp-umic-on"><div class="ps-price-lbl">Onsite</div><div class="ps-price-amt">$500</div></div>
         </div>
       </div>
       <div class="ps-tier">
         <div class="ps-tier-name">🔴 HIC</div>
         <div class="ps-tier-prices">
-          <div class="ps-price" id="sp-hic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Sớm</div><div class="ps-price-amt">600</div></div>
-          <div class="ps-price" id="sp-hic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">TT</div><div class="ps-price-amt">650</div></div>
-          <div class="ps-price" id="sp-hic-on"><div class="ps-price-lbl">Onsite</div><div class="ps-price-amt">700</div></div>
+          <div class="ps-price" id="sp-hic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Sớm</div><div class="ps-price-amt">$600</div></div>
+          <div class="ps-price" id="sp-hic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">TT</div><div class="ps-price-amt">$700</div></div>
+          <div class="ps-price" id="sp-hic-on"><div class="ps-price-lbl">Onsite</div><div class="ps-price-amt">$750</div></div>
         </div>
       </div>
       <div class="ps-includes">
@@ -639,16 +650,7 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
         </ul>
       </div>
     </div>
-    <div class="ps-secure en">
-      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-      Data saved securely to Google Sheets. Payment via Wix secure checkout.
-    </div>
-    <div class="ps-secure vi">
-      <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
-      Dữ liệu lưu bảo mật vào Google Sheets. Thanh toán qua Wix.
-    </div>
-    <div class="ps-cancel en"><strong>Cancellation:</strong> No refunds or category changes after registration.</div>
-    <div class="ps-cancel vi"><strong>Huỷ đăng ký:</strong> Không hoàn tiền, không thay đổi loại sau khi đăng ký.</div>
+
   </div>
 </div>
 
@@ -690,9 +692,9 @@ const PAYMENT_LINKS = {
 };
 
 const PRICES = {
-  lmic: { eb:"50", reg:"00", onsite:"50", label:"LMIC / Vietnam — Low & Lower-middle income" },
-  umic: { eb:"00", reg:"50", onsite:"00", label:"UMIC — Upper-middle income" },
-  hic:  { eb:"00", reg:"00", onsite:"50", label:"HIC — High income country" }
+  lmic: { eb:"$250", reg:"$300", onsite:"$350", label:"LMIC / Vietnam — Low & Lower-middle income" },
+  umic: { eb:"$400", reg:"$450", onsite:"$500", label:"UMIC — Upper-middle income" },
+  hic:  { eb:"$600", reg:"$700", onsite:"$750", label:"HIC — High income country" }
 };
 
 /* ── PERIOD LOGIC ── */
@@ -790,6 +792,7 @@ function validate() {
   });
   if (!document.getElementById('f-country').value) ok = false;
   if (!document.querySelector('input[name="jobtitle"]:checked')) ok = false;
+  if (!document.querySelector('input[name="years_exp"]:checked')) ok = false;
   if (!document.querySelector('input[name="reception"]:checked')) ok = false;
   return ok;
 }
@@ -811,6 +814,7 @@ async function submitForm() {
   const jobtitle = document.querySelector('input[name="jobtitle"]:checked')?.value || '';
   const otherJob = document.getElementById('f-otherjob')?.value || '';
   const exp = [...document.querySelectorAll('input[name="exp"]:checked')].map(e=>e.value).join(', ');
+  const years_exp = document.querySelector('input[name="years_exp"]:checked')?.value || '';
   const diet = [...document.querySelectorAll('input[name="diet"]:checked')].map(e=>e.value).join(', ');
   const allergy = document.getElementById('f-allergy')?.value || 'None';
   const reception = document.querySelector('input[name="reception"]:checked')?.value || '';
@@ -826,6 +830,7 @@ async function submitForm() {
     amount:      amount,
     jobtitle:    jobtitle === 'Other' ? otherJob : jobtitle,
     experience:  exp,
+    years_exp:   years_exp,
     allergy:     allergy,
     dietary:     diet,
     reception:   reception,
@@ -864,25 +869,6 @@ async function submitForm() {
 document.querySelectorAll('input, select').forEach(el => {
   el.addEventListener('input', () => el.classList.remove('field-error'));
 });
-</script>
-  <script>
-function sendHeight() {
-  const height = document.documentElement.scrollHeight;
-
-  if (window.parent) {
-    window.parent.postMessage({
-      type: "resize",
-      height: height
-    }, "*");
-  }
-}
-
-window.addEventListener("load", sendHeight);
-window.addEventListener("resize", sendHeight);
-
-setTimeout(sendHeight, 500);
-setTimeout(sendHeight, 1000);
-setTimeout(sendHeight, 2000);
 </script>
 </body>
 </html>
