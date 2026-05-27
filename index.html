@@ -45,8 +45,8 @@
   --ease-out:cubic-bezier(0,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);overflow-x:hidden;font-weight:300;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth; overflow: hidden !important;}
+body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);overflow: hidden !important; font-weight:300;-webkit-font-smoothing:antialiased}
 
 /* LANG */
 body[data-lang="vi"] .en{display:none!important}
