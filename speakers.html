@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty & Speakers | ICMS Hanoi 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;--sky:#1295D8;--green:#97D88A;--dark:#0E1A2E;--dark2:#142840;--off:#F5F4F0;--tx:#0E1A2E;--tx2:#414042;--tx3:#636466;--border:rgba(14,26,46,.1);--ff-sans:'DM Sans',system-ui,sans-serif;--ff-serif:'Literata',Georgia,serif;--ease:cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-sans);color:var(--tx);background:var(--white,#fff);overflow-x:hidden;font-weight:300}
+body[data-lang="vi"] .en{display:none!important}
+body[data-lang="en"] .vi{display:none!important}
+.brand-stripe{height:5px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%);position:fixed;top:0;left:0;right:0;z-index:300}
+nav{position:fixed;top:5px;left:0;right:0;z-index:200;background:rgba(14,26,46,.96);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(0,180,188,.15)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-mark{width:36px;height:36px;background:var(--teal);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:16px;font-weight:600;color:var(--dark);font-style:italic}
+.nav-info{display:flex;flex-direction:column;line-height:1.2}
+.nav-info strong{font-size:12px;font-weight:600;color:#fff;letter-spacing:.06em;text-transform:uppercase}
+.nav-info span{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:2px}
+.nav-links a{display:block;padding:6px 14px;color:rgba(255,255,255,.65);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;transition:.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.08)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.12)}
+.lang-btn{padding:4px 12px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.5);font-size:11px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.06em;cursor:pointer;transition:.2s}
+.lang-btn.active{background:var(--teal);color:var(--dark)}
+.btn-nav{padding:8px 20px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+.btn-nav:hover{background:var(--teal);color:#fff}
+
+/* PAGE HEADER */
+.page-header{background:var(--dark);padding:9rem 2rem 5rem;position:relative;overflow:hidden}
+.page-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.ph-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2}
+.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.ph-h1{font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:1rem}
+.ph-h1 em{font-style:italic;color:var(--teal)}
+.ph-body{font-size:1rem;color:rgba(255,255,255,.5);max-width:580px;line-height:1.8;font-weight:300}
+
+/* FILTER */
+.filter-bar{background:#fff;border-bottom:1px solid var(--border);padding:1rem 2rem;position:sticky;top:69px;z-index:100}
+.filter-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+.filter-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--tx3);margin-right:.5rem}
+.filter-btn{padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:#fff;font-size:12px;font-weight:500;color:var(--tx3);cursor:pointer;transition:.2s;font-family:var(--ff-sans);letter-spacing:.02em}
+.filter-btn:hover,.filter-btn.active{background:var(--teal);color:var(--dark);border-color:var(--teal)}
+
+/* ORGANIZING COMMITTEE */
+.org-section{padding:4rem 2rem 2rem;background:var(--off)}
+.si{max-width:1280px;margin:0 auto}
+.sec-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.sec-eyebrow::before{content:'';width:20px;height:2px;background:var(--teal);border-radius:2px}
+h2.sec-h2{font-family:var(--ff-serif);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;line-height:1.2;color:var(--tx);margin-bottom:2rem}
+h2.sec-h2 em{font-style:italic;color:var(--teal)}
+.org-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.org-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px;transition:.2s}
+.org-card:hover{border-color:var(--teal)}
+.org-initial{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--sky));display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:16px;font-weight:600;color:var(--dark);flex-shrink:0;font-style:italic}
+.org-info strong{display:block;font-size:13px;font-weight:600;color:var(--tx);line-height:1.3}
+.org-info span{font-size:11px;color:var(--tx3)}
+
+/* FACULTY GRID */
+.faculty-section{padding:3rem 2rem 5rem}
+.faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:2rem}
+.fcard{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.3s var(--ease);cursor:pointer}
+.fcard:hover{border-color:var(--teal);box-shadow:0 12px 32px rgba(14,26,46,.08);transform:translateY(-3px)}
+.fcard-head{padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;border-bottom:1px solid var(--border)}
+.fcard-avatar{width:64px;height:64px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:22px;font-weight:600;font-style:italic}
+.av-teal{background:rgba(0,180,188,.12);color:var(--teal)}
+.av-blue{background:rgba(74,103,170,.12);color:var(--blue)}
+.av-sky{background:rgba(18,149,216,.12);color:var(--sky)}
+.av-green{background:rgba(151,216,138,.18);color:#3a8c2f}
+.fcard-info{flex:1}
+.fcard-name{font-size:15px;font-weight:600;color:var(--tx);line-height:1.3;margin-bottom:3px}
+.fcard-title{font-size:12px;color:var(--tx3);line-height:1.5;font-weight:300}
+.fcard-flag{font-size:18px;flex-shrink:0}
+.fcard-tags{padding:10px 1.5rem;display:flex;flex-wrap:wrap;gap:6px;border-bottom:1px solid var(--border)}
+.tag{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.tag-teal{background:rgba(0,180,188,.1);color:var(--teal)}
+.tag-blue{background:rgba(74,103,170,.1);color:var(--blue)}
+.tag-yellow{background:rgba(248,232,22,.2);color:#8a7400}
+.fcard-body{padding:1.25rem 1.5rem}
+.fcard-excerpt{font-size:13px;color:var(--tx3);line-height:1.7;font-weight:300}
+.fcard-expand{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:13px;color:var(--tx3);line-height:1.75;font-weight:300}
+.fcard-expand.show{display:block}
+.fcard-toggle{width:100%;padding:10px 1.5rem;background:none;border:none;border-top:1px solid var(--border);font-family:var(--ff-sans);font-size:12px;font-weight:500;color:var(--teal);cursor:pointer;text-align:left;letter-spacing:.04em;transition:.2s;display:flex;align-items:center;justify-content:space-between}
+.fcard-toggle:hover{background:rgba(0,180,188,.05)}
+.fcard-toggle .arrow{transition:transform .25s}
+.fcard-toggle.open .arrow{transform:rotate(180deg)}
+
+/* FOOTER */
+footer{background:#060E1B;padding:2.5rem 2rem}
+.foot-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%);margin-bottom:2rem;border-radius:2px}
+.foot-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.2);flex-wrap:wrap;gap:.5rem}
+.foot-bottom a{color:rgba(255,255,255,.2);text-decoration:none}
+.foot-bottom a:hover{color:rgba(255,255,255,.5)}
+
+@media(max-width:960px){.nav-links{display:none}.faculty-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-lang="en">
+<div class="brand-stripe"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-mark">N</div><div class="nav-info"><strong>ICMS Hanoi 2026</strong><span>Sept 21–23 · Vietnam</span></div></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="en">About</a><a href="about.html" class="vi">Về hội nghị</a></li>
+      <li><a href="programme.html" class="en">Programme</a><a href="programme.html" class="vi">Chương trình</a></li>
+      <li><a href="speakers.html" class="active en">Speakers</a><a href="speakers.html" class="active vi">Diễn giả</a></li>
+      <li><a href="register.html" class="en">Register</a><a href="register.html" class="vi">Đăng ký</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-pill"><button class="lang-btn active" onclick="setLang('en')">EN</button><button class="lang-btn" onclick="setLang('vi')">VI</button></div>
+      <a href="register.html" class="btn-nav en">Register</a><a href="register.html" class="btn-nav vi">Đăng ký</a>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header">
+  <div class="ph-inner">
+    <div class="ph-eyebrow en">International Faculty · Diễn giả quốc tế</div>
+    <h1 class="ph-h1 en">Faculty &amp; <em>Speakers</em></h1>
+    <h1 class="ph-h1 vi">Ban Giảng huấn &amp; <em>Diễn giả</em></h1>
+    <p class="ph-body en">17 world-class specialists from 9 countries — bringing together the leading voices in cleft and craniofacial surgery, orthodontics, and speech therapy for three days of peer-to-peer exchange in Hanoi.</p>
+    <p class="ph-body vi">17 chuyên gia hàng đầu thế giới từ 9 quốc gia — tập hợp những tiếng nói dẫn đầu trong phẫu thuật khe hở, sọ mặt, chỉnh nha và âm ngữ trị liệu cho ba ngày trao đổi ngang hàng tại Hà Nội.</p>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filter-inner">
+    <span class="filter-label en">Filter:</span>
+    <span class="filter-label vi">Lọc:</span>
+    <button class="filter-btn active" onclick="filterFaculty('all')"><span class="en">All Faculty</span><span class="vi">Tất cả</span></button>
+    <button class="filter-btn" onclick="filterFaculty('surgery')"><span class="en">Surgery</span><span class="vi">Phẫu thuật</span></button>
+    <button class="filter-btn" onclick="filterFaculty('ortho')"><span class="en">Orthodontics</span><span class="vi">Chỉnh nha</span></button>
+    <button class="filter-btn" onclick="filterFaculty('vietnam')"><span class="en">Vietnam</span><span class="vi">Việt Nam</span></button>
+    <button class="filter-btn" onclick="filterFaculty('international')"><span class="en">International</span><span class="vi">Quốc tế</span></button>
+  </div>
+</div>
+
+<!-- ORGANIZING COMMITTEE -->
+<section class="org-section">
+  <div class="si">
+    <div class="sec-eyebrow en">Organizing Committee</div>
+    <div class="sec-eyebrow vi">Ban tổ chức</div>
+    <h2 class="sec-h2 en">The Team Behind <em>the Summit</em></h2>
+    <h2 class="sec-h2 vi">Đội ngũ tổ chức <em>hội nghị</em></h2>
+    <div class="org-grid">
+      <div class="org-card"><div class="org-initial">DC</div><div class="org-info"><strong>David Chong, MD</strong><span>Chair · Melbourne, Australia</span></div></div>
+      <div class="org-card"><div class="org-initial">JP</div><div class="org-info"><strong>John Phillips, MD</strong><span>Co-Chair · Toronto, Canada</span></div></div>
+      <div class="org-card"><div class="org-initial">CR</div><div class="org-info"><strong>Christopher Runyan, MD PhD</strong><span>Co-Chair · Wake Forest, USA</span></div></div>
+      <div class="org-card"><div class="org-initial">PN</div><div class="org-info"><strong>Phuong D. Nguyen, MD</strong><span>Co-Founder · Colorado, USA</span></div></div>
+      <div class="org-card"><div class="org-initial">MA</div><div class="org-info"><strong>Dinh Minh Anh</strong><span>Director of Operations · Hanoi, Vietnam</span></div></div>
+      <div class="org-card"><div class="org-initial">JK</div><div class="org-info"><strong>Julien Klaudt-Moreau</strong><span>CEO · Nuoy International</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section class="faculty-section">
+  <div class="si">
+    <div class="sec-eyebrow en">International Faculty</div>
+    <div class="sec-eyebrow vi">Ban giảng huấn quốc tế</div>
+    <h2 class="sec-h2 en">17 Faculty. 9 Countries. <em>One Summit.</em></h2>
+    <h2 class="sec-h2 vi">17 chuyên gia. 9 quốc gia. <em>Một hội nghị.</em></h2>
+    <div class="faculty-grid" id="faculty-grid">
+
+      <!-- 1. CORSTIAAN BREUGEM -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-blue">CB</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Corstiaan Breugem, MD, PhD</div>
+            <div class="fcard-title en">Professor, Plastic &amp; Reconstructive Surgery<br>University of Amsterdam · Emma Children's Hospital, Netherlands</div>
+            <div class="fcard-title vi">Giáo sư Phẫu thuật Tạo hình &amp; Tái tạo<br>Đại học Amsterdam · BV Nhi Emma, Hà Lan</div>
+          </div>
+          <div class="fcard-flag">🇳🇱</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Cleft Palate</span><span class="tag tag-teal vi">Vòm miệng</span>
+          <span class="tag tag-blue en">Robin Sequence</span><span class="tag tag-blue vi">Hội chứng Robin</span>
+          <span class="tag tag-teal en">Global Health</span><span class="tag tag-teal vi">Y tế toàn cầu</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Pediatric plastic surgeon and Director of Interplast Holland. Published over 140 peer-reviewed articles; performed over 1,000 cleft surgeries. President of the Dutch and Vice-President of the European Cleft Palate Craniofacial Association.</div>
+          <div class="fcard-excerpt vi">Bác sĩ phẫu thuật tạo hình nhi khoa và Giám đốc Interplast Holland. Hơn 140 bài báo khoa học, hơn 1.000 ca phẫu thuật khe hở. Chủ tịch Hiệp hội Khe hở – Sọ mặt Hà Lan và Phó Chủ tịch Hiệp hội châu Âu.</div>
+          <div class="fcard-expand" id="exp-breugem">
+            <p class="en">He completed his plastic surgery training in Amsterdam followed by a pediatric fellowship in Vancouver, Canada. He received his PhD in 2003 on vascular malformations and returned to Amsterdam in 2019 after more than a decade in Utrecht. His research focuses on surgical simulation, global health, and cleft embryology, with particular interest in Robin sequence. He initiated the International Cleft Palate Dissection Course and co-led international Robin sequence consensus meetings.</p>
+            <p class="vi">Ông hoàn thành đào tạo tạo hình tại Amsterdam và fellowship nhi khoa tại Vancouver, Canada. Nhận bằng Tiến sĩ năm 2003 về dị dạng mạch máu. Hướng nghiên cứu tập trung vào mô phỏng phẫu thuật, y tế toàn cầu và phôi học khe hở, đặc biệt là hội chứng Robin. Khởi xướng Khóa học Phẫu tích Vòm miệng Quốc tế và đồng điều phối các hội nghị đồng thuận quốc tế về hội chứng Robin.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('breugem',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 2. JONG-WOO CHOI -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">JC</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Jong-Woo Choi, MD, PhD, MMM</div>
+            <div class="fcard-title en">Professor &amp; Chief, Plastic &amp; Reconstructive Surgery<br>Asan Medical Center, Ulsan University · Seoul, South Korea</div>
+            <div class="fcard-title vi">Giáo sư Trưởng khoa Phẫu thuật Tạo hình &amp; Tái tạo<br>Trung tâm Y khoa Asan, Đại học Ulsan · Seoul, Hàn Quốc</div>
+          </div>
+          <div class="fcard-flag">🇰🇷</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Microsurgery</span><span class="tag tag-teal vi">Vi phẫu</span>
+          <span class="tag tag-blue en">Orthognathic</span><span class="tag tag-blue vi">Chỉnh hình xương hàm</span>
+          <span class="tag tag-yellow en">3D Planning</span><span class="tag tag-yellow vi">Lập kế hoạch 3D</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Internationally recognised microsurgeon and craniomaxillofacial surgeon. Performed over 1,700 microsurgical head and neck reconstructions. Pioneer of surgery-first orthognathic approaches and single-piece cranioplasty. 2024 world-first sarcoma organoid model.</div>
+          <div class="fcard-excerpt vi">Chuyên gia vi phẫu và sọ hàm mặt được công nhận quốc tế. Hơn 1.700 ca vi phẫu tái tạo đầu cổ. Tiên phong kỹ thuật "surgery-first" và tạo hình sọ một mảnh. Năm 2024 phát triển mô hình organoid sarcoma đầu tiên trên thế giới.</div>
+          <div class="fcard-expand" id="exp-choi">
+            <p class="en">Dr. Choi earned his MD from Yonsei University, completed his residency at Severance Hospital, and obtained his PhD from the University of Ulsan, along with an MMM from the University of Southern California. He is actively engaged in research on bone regeneration, stem cells, and 3D-printed scaffolds, as well as surgical simulation and digital planning.</p>
+            <p class="vi">Ông tốt nghiệp Y khoa tại Đại học Yonsei, nội trú tại Bệnh viện Severance, nhận Tiến sĩ tại Đại học Ulsan và MMM tại Đại học Nam California. Tích cực nghiên cứu về tái tạo xương, tế bào gốc, scaffold in 3D và mô phỏng phẫu thuật.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('choi',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 3. DAVID CHONG -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-sky">DC</div>
+          <div class="fcard-info">
+            <div class="fcard-name">David K. Chong, MD</div>
+            <div class="fcard-title en">Associate Professor, University of Melbourne<br>Royal Children's Hospital · Melbourne, Australia</div>
+            <div class="fcard-title vi">Phó Giáo sư, Đại học Melbourne<br>Bệnh viện Nhi Hoàng gia · Melbourne, Úc</div>
+          </div>
+          <div class="fcard-flag">🇦🇺</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Craniofacial Surgery</span><span class="tag tag-teal vi">Phẫu thuật sọ mặt</span>
+          <span class="tag tag-blue en">Cleft Lip &amp; Palate</span><span class="tag tag-blue vi">Khe hở môi – vòm</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">President of the Australasian Cleft Lip and Palate Association (ACLAPA). Consultant to Operation Smile International in surgical outcomes, strategy, and education. Advanced fellowships at International Craniofacial Institute (Dallas) and Hospital for Sick Children (Toronto).</div>
+          <div class="fcard-excerpt vi">Chủ tịch Hiệp hội Khe hở môi – vòm miệng Châu Úc (ACLAPA). Chuyên gia tư vấn cho Operation Smile International. Fellowship tại Viện Sọ mặt Quốc tế (Dallas) và SickKids (Toronto).</div>
+          <div class="fcard-expand" id="exp-dchong">
+            <p class="en">Dr. Chong completed his plastic surgery training in Western Australia before pursuing advanced fellowships in cleft lip and palate and craniofacial surgery in Dallas and Toronto. His clinical practice focuses on craniofacial surgery and cleft care across both paediatric and adult facial reconstruction. He received a travelling fellowship from the American Society of Maxillofacial Surgeons and has visited leading craniofacial units worldwide. He contributes to global surgery with multiple yearly volunteer missions in developing countries.</p>
+            <p class="vi">Ông hoàn thành đào tạo tạo hình tại Tây Úc, sau đó fellowship chuyên sâu tại Dallas và Toronto. Thực hành lâm sàng tập trung vào phẫu thuật sọ mặt và khe hở ở cả bệnh nhi và người trưởng thành. Nhận học bổng từ ASMS và thường xuyên tham gia phẫu thuật tình nguyện tại các quốc gia đang phát triển.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('dchong',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 4. DAVID FISHER -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-blue">DF</div>
+          <div class="fcard-info">
+            <div class="fcard-name">David Fisher, MD</div>
+            <div class="fcard-title en">Medical Director, Cleft Lip &amp; Palate Program<br>Hospital for Sick Children (SickKids), University of Toronto · Canada</div>
+            <div class="fcard-title vi">Giám đốc Y khoa, Chương trình Khe hở môi – vòm miệng<br>Bệnh viện Nhi SickKids, Đại học Toronto · Canada</div>
+          </div>
+          <div class="fcard-flag">🇨🇦</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Cleft Program</span><span class="tag tag-teal vi">Chương trình khe hở</span>
+          <span class="tag tag-blue en">Auricular Reconstruction</span><span class="tag tag-blue vi">Tái tạo vành tai</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Leads one of the world's premier cleft care programs at SickKids. Leadership roles in the International Society for Auricular Reconstruction (ISAR). Fellowship training in Paris, Taiwan, and Toronto. Holds both Bachelor and Master of Fine Arts degrees — bringing a unique surgical-artistic perspective.</div>
+          <div class="fcard-excerpt vi">Lãnh đạo một trong những chương trình khe hở hàng đầu thế giới tại SickKids. Giữ vị trí lãnh đạo trong ISAR. Fellowship tại Paris, Đài Loan và Toronto. Có bằng Cử nhân và Thạc sĩ Mỹ thuật, mang góc nhìn độc đáo giữa y học và nghệ thuật.</div>
+          <div class="fcard-expand" id="exp-fisher">
+            <p class="en">Dr. Fisher received his medical degree from the Royal College of Surgeons in Ireland and completed residency in both General Surgery and Plastic Surgery in the United States. He is board-certified in both specialties and is a Fellow of the Royal College of Surgeons of Canada. His practice spans a wide range of complex paediatric craniofacial conditions, with particular expertise in cleft reconstruction and ear reconstruction.</p>
+            <p class="vi">Ông nhận bằng Y khoa tại Trường Cao đẳng Phẫu thuật Hoàng gia Ireland và hoàn thành nội trú cả Ngoại tổng quát và Phẫu thuật tạo hình tại Mỹ. Được chứng nhận hành nghề ở cả hai chuyên ngành và là thành viên của Trường Cao đẳng Phẫu thuật Hoàng gia Canada.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('fisher',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 5. LUN-JOU LO -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">LL</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Lun-Jou Lo, MD</div>
+            <div class="fcard-title en">Professor, Plastic &amp; Reconstructive Surgery<br>Chang Gung University &amp; Chang Gung Memorial Hospital · Taipei, Taiwan</div>
+            <div class="fcard-title vi">Giáo sư Phẫu thuật Tạo hình &amp; Tái tạo<br>Đại học &amp; BV Tưởng niệm Trường Canh · Đài Bắc, Đài Loan</div>
+          </div>
+          <div class="fcard-flag">🇹🇼</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Orthognathic Surgery</span><span class="tag tag-teal vi">Chỉnh hình xương hàm</span>
+          <span class="tag tag-blue en">3D Imaging &amp; VSP</span><span class="tag tag-blue vi">Hình ảnh 3D &amp; VSP</span>
+          <span class="tag tag-yellow en">Top 2% Scientists</span><span class="tag tag-yellow vi">Top 2% khoa học</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Over 350 peer-reviewed publications. Recognised among the world's top 2% of scientists by Stanford University for five consecutive years. Past President of APCA and APCLPC. Editor-in-Chief of Biomedical Journal; Associate Editor of Plastic &amp; Reconstructive Surgery.</div>
+          <div class="fcard-excerpt vi">Hơn 350 bài báo khoa học. Được Đại học Stanford xếp hạng trong nhóm 2% nhà khoa học hàng đầu 5 năm liên tiếp. Cựu Chủ tịch APCA và APCLPC. Tổng Biên tập Biomedical Journal, Phó Tổng Biên tập Plastic &amp; Reconstructive Surgery.</div>
+          <div class="fcard-expand" id="exp-lo">
+            <p class="en">Dr. Lo is internationally recognised for his expertise in cleft lip and palate, craniomaxillofacial surgery, and orthognathic surgery, as well as advanced applications of 3D imaging, virtual surgical planning, and 3D printing. He completed fellowship training at Washington University in St. Louis. He serves as a frequent invited speaker and visiting professor worldwide, contributing extensively to research, education, and the advancement of cleft and craniofacial care.</p>
+            <p class="vi">Ông được công nhận quốc tế về khe hở, phẫu thuật sọ hàm mặt, chỉnh hình xương hàm và ứng dụng hình ảnh 3D, VSP, in 3D. Fellowship tại Đại học Washington ở St. Louis. Thường xuyên được mời giảng tại các hội nghị quốc tế và đại học hàng đầu trên thế giới.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('lo',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 6. PHUONG NGUYEN -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">PN</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Phuong D. Nguyen, MD, FACS, FAAP</div>
+            <div class="fcard-title en">Professor, Plastic &amp; Reconstructive Surgery<br>University of Colorado · Children's Hospital Colorado, USA</div>
+            <div class="fcard-title vi">Giáo sư Phẫu thuật Tạo hình &amp; Tái tạo<br>Đại học Colorado · BV Nhi Colorado, Hoa Kỳ</div>
+          </div>
+          <div class="fcard-flag">🇺🇸🇻🇳</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Craniofacial Surgery</span><span class="tag tag-teal vi">Phẫu thuật sọ mặt</span>
+          <span class="tag tag-blue en">Global Surgery</span><span class="tag tag-blue vi">Phẫu thuật toàn cầu</span>
+          <span class="tag tag-yellow en">Nuoy Co-Founder</span><span class="tag tag-yellow vi">Đồng sáng lập Nuoy</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Chief of Pediatric Plastic Surgery, University of Colorado. Associate Vice Chair for Global Surgery. Co-founder of Nuoy Reconstructive International. Over 20 years of global surgery experience across 14+ countries. Fellowship in pediatric craniofacial surgery at SickKids Toronto.</div>
+          <div class="fcard-excerpt vi">Trưởng khoa Phẫu thuật Tạo hình Nhi tại Đại học Colorado. Phó Chủ nhiệm phụ trách Phẫu thuật Toàn cầu. Đồng sáng lập Nuoy Reconstructive International. Hơn 20 năm kinh nghiệm phẫu thuật quốc tế tại hơn 14 quốc gia.</div>
+          <div class="fcard-expand" id="exp-pnguyen">
+            <p class="en">Dr. Nguyen completed his general surgery training at New York University and plastic surgery training at UCLA, followed by a paediatric craniofacial fellowship at SickKids (Toronto) and a two-year postdoctoral research fellowship in tissue engineering at NYU. He held academic positions at the University of Pennsylvania and the University of Texas Health Science Center at Houston, serving as Associate Program Director for plastic surgery training and receiving multiple teaching awards.</p>
+            <p class="vi">Ông hoàn thành đào tạo Ngoại tổng quát tại NYU và Phẫu thuật tạo hình tại UCLA, sau đó fellowship sọ mặt nhi tại SickKids Toronto và 2 năm nghiên cứu sau tiến sĩ về kỹ thuật mô tại NYU. Từng giảng dạy tại Đại học Pennsylvania và Trung tâm Khoa học Y tế UT Houston, nhận nhiều giải thưởng giảng dạy.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('pnguyen',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 7. CHRISTOPHER RUNYAN -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-blue">CR</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Christopher M. Runyan, MD, PhD</div>
+            <div class="fcard-title en">Associate Professor &amp; Vice Chair, Plastic &amp; Reconstructive Surgery<br>Wake Forest School of Medicine · North Carolina, USA</div>
+            <div class="fcard-title vi">Phó Giáo sư Phó Trưởng khoa Phẫu thuật Tạo hình &amp; Tái tạo<br>Trường Y Wake Forest · Bắc Carolina, Hoa Kỳ</div>
+          </div>
+          <div class="fcard-flag">🇺🇸</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Craniosynostosis</span><span class="tag tag-teal vi">Dính khớp sọ</span>
+          <span class="tag tag-blue en">Pierre Robin</span>
+          <span class="tag tag-yellow en">100+ Publications</span><span class="tag tag-yellow vi">100+ bài báo</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Program Director for Integrated Plastic Surgery residency at Wake Forest. Over 100 peer-reviewed publications. Medical Scientist Training Program (MD-PhD) at Cincinnati. Research focus: tissue engineering, distraction osteogenesis, and craniofacial developmental biology. Long-term surgical collaborator in Vietnam.</div>
+          <div class="fcard-excerpt vi">Giám đốc Chương trình nội trú Phẫu thuật tạo hình tích hợp tại Wake Forest. Hơn 100 bài báo khoa học. Hướng nghiên cứu: kỹ thuật mô, kéo giãn xương và sinh học phát triển sọ mặt. Đối tác phẫu thuật lâu dài tại Việt Nam.</div>
+          <div class="fcard-expand" id="exp-runyan">
+            <p class="en">Dr. Runyan completed the Medical Scientist Training Program at the University of Cincinnati and Cincinnati Children's Hospital, earning a PhD in Molecular and Developmental Biology. He then completed his plastic surgery residency and advanced craniofacial fellowship training at New York University, specialising in complex craniofacial reconstruction. His clinical expertise focuses on cleft and craniofacial anomalies, with particular interest in craniosynostosis and Pierre Robin sequence.</p>
+            <p class="vi">Ông hoàn thành Chương trình Bác sĩ – Nhà khoa học tại Đại học Cincinnati, nhận Tiến sĩ về Sinh học Phân tử và Phát triển. Sau đó hoàn thành nội trú và fellowship sọ mặt tại NYU, chuyên về tái tạo sọ mặt phức tạp. Chuyên môn lâm sàng: dị tật khe hở, dính khớp sọ và hội chứng Pierre Robin.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('runyan',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 8. TAE-SUK OH -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-sky">TO</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Tae-Suk Oh, MD, PhD</div>
+            <div class="fcard-title en">Professor &amp; Chair, Plastic Surgery<br>Asan Medical Center, Ulsan University · Seoul, South Korea</div>
+            <div class="fcard-title vi">Giáo sư Trưởng khoa Phẫu thuật Tạo hình<br>Trung tâm Y khoa Asan, Đại học Ulsan · Seoul, Hàn Quốc</div>
+          </div>
+          <div class="fcard-flag">🇰🇷</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Head &amp; Neck Reconstruction</span><span class="tag tag-teal vi">Tái tạo đầu cổ</span>
+          <span class="tag tag-blue en">Facial Nerve</span><span class="tag tag-blue vi">Thần kinh mặt</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Leading reconstructive surgeon at Asan Medical Center with expertise in head and neck reconstruction, facial nerve surgery, cleft care, and complex facial trauma. Known for integrating functional restoration with aesthetic outcomes in complex microsurgical cases.</div>
+          <div class="fcard-excerpt vi">Phẫu thuật viên tái tạo hàng đầu tại Asan. Chuyên gia tái tạo đầu cổ, phẫu thuật thần kinh mặt, khe hở và chấn thương phức tạp. Nổi tiếng với việc kết hợp phục hồi chức năng và thẩm mỹ trong các ca vi phẫu phức tạp.</div>
+          <div class="fcard-expand" id="exp-oh">
+            <p class="en">Dr. Oh completed his medical training at Seoul National University and the University of Ulsan College of Medicine, developing his entire career at Asan Medical Center, progressing from residency and fellowship to senior academic and clinical leadership. He is actively engaged in academic research and surgical education, contributing to the advancement of reconstructive surgery across Asia and internationally.</p>
+            <p class="vi">Ông hoàn thành đào tạo y khoa tại Đại học Quốc gia Seoul và Đại học Ulsan, phát triển toàn bộ sự nghiệp tại Asan từ nội trú đến lãnh đạo học thuật và lâm sàng cấp cao. Tích cực tham gia nghiên cứu và đào tạo phẫu thuật, thúc đẩy phẫu thuật tái tạo tại châu Á và quốc tế.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('oh',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 9. JOHN PHILLIPS -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-blue">JP</div>
+          <div class="fcard-info">
+            <div class="fcard-name">John H. Phillips, MD</div>
+            <div class="fcard-title en">Associate Professor, Surgery · Chief, Division of Plastic Surgery<br>Hospital for Sick Children (SickKids), University of Toronto · Canada</div>
+            <div class="fcard-title vi">Phó Giáo sư Ngoại khoa · Trưởng đơn vị Phẫu thuật Tạo hình<br>Bệnh viện Nhi SickKids, Đại học Toronto · Canada</div>
+          </div>
+          <div class="fcard-flag">🇨🇦</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Craniosynostosis</span><span class="tag tag-teal vi">Dính khớp sọ</span>
+          <span class="tag tag-blue en">Orthognathic Surgery</span><span class="tag tag-blue vi">Chỉnh hình xương hàm</span>
+          <span class="tag tag-yellow en">3D &amp; Machine Learning</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Chief of Plastic Surgery and Director of CanMEDS at SickKids. Pioneer of prefabricated surgical templates and application of 3D imaging and machine learning to surgical planning. Fellowships at Mayo Clinic and SickKids. Active international educator across leading institutions worldwide.</div>
+          <div class="fcard-excerpt vi">Trưởng khoa Phẫu thuật Tạo hình và Giám đốc CanMEDS tại SickKids. Tiên phong phát triển mẫu phẫu thuật định hình sẵn và ứng dụng 3D cùng machine learning. Fellowship tại Mayo Clinic và SickKids. Giảng dạy quốc tế tích cực.</div>
+          <div class="fcard-expand" id="exp-jphillips">
+            <p class="en">Dr. Phillips completed his plastic surgery training at the University of Toronto, followed by advanced fellowships in craniofacial surgery at leading institutions including the Mayo Clinic and SickKids. His clinical practice focuses on paediatric craniofacial surgery, with expertise in craniosynostosis, cleft-related orthognathic surgery, and complex facial reconstruction. He has authored and co-authored numerous peer-reviewed publications and is frequently invited to teach and lecture at leading institutions worldwide.</p>
+            <p class="vi">Ông hoàn thành đào tạo tạo hình tại Đại học Toronto, sau đó fellowship tại Mayo Clinic và SickKids. Chuyên môn: dính khớp sọ, phẫu thuật chỉnh hàm liên quan khe hở và tái tạo khuôn mặt phức tạp. Là tác giả của nhiều công trình khoa học và thường xuyên được mời giảng dạy quốc tế.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('jphillips',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 10. DANIELA TANIKAWA -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">DT</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Daniela Tanikawa, MD, PhD</div>
+            <div class="fcard-title en">Coordinator, Cleft Lip &amp; Palate Center<br>Sabará Children's Hospital &amp; Menino Jesus Municipal Hospital · São Paulo, Brazil</div>
+            <div class="fcard-title vi">Điều phối viên Trung tâm Khe hở môi – vòm miệng<br>BV Nhi Sabará &amp; BV Menino Jesus · São Paulo, Brazil</div>
+          </div>
+          <div class="fcard-flag">🇧🇷</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Primary Cleft Surgery</span><span class="tag tag-teal vi">Phẫu thuật khe hở ban đầu</span>
+          <span class="tag tag-blue en">PSIO / NAM / PLANA</span>
+          <span class="tag tag-yellow en">ASPS International Scholar</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">PhD in Medical Sciences from University of São Paulo. Active with Smile Train since 2014, serving on Latin America Medical Advisory Council. Recognised as International Scholar by ASPS and ASMS. Clinical focus: presurgical infant orthopaedics, primary cleft surgery, and multidisciplinary long-term care.</div>
+          <div class="fcard-excerpt vi">Tiến sĩ Khoa học Y sinh tại USP. Cộng tác với Smile Train từ 2014, thành viên Hội đồng Cố vấn Y khoa Mỹ Latinh. Được ASPS và ASMS vinh danh là Học giả Quốc tế. Chuyên môn: chỉnh hình tiền phẫu, phẫu thuật ban đầu và chăm sóc đa chuyên ngành dài hạn.</div>
+          <div class="fcard-expand" id="exp-tanikawa">
+            <p class="en">Dr. Tanikawa earned her PhD in Medical Sciences from the University of São Paulo, where she also served as Assistant Professor. Her training and academic work have been closely aligned with advancing comprehensive cleft care and multidisciplinary treatment models. Her clinical and research interests include presurgical infant orthopaedics, primary cleft surgery, and the development of innovative surgical strategies to improve patient outcomes, with a strong focus on multidisciplinary and long-term care.</p>
+            <p class="vi">Bà nhận Tiến sĩ Y sinh tại USP, nơi bà cũng từng giảng dạy. Quá trình đào tạo và nghiên cứu tập trung vào phát triển mô hình chăm sóc khe hở toàn diện và điều trị đa chuyên khoa. Nghiên cứu về chỉnh hình tiền phẫu, phẫu thuật khe hở nguyên phát và các chiến lược phẫu thuật mới.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('tanikawa',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 11. BUDDHATHIDA WANGSRIMONGKOL -->
+      <div class="fcard" data-tags="ortho international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-green">BW</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Buddhathida Wangsrimongkol, DDS, DMSc</div>
+            <div class="fcard-title en">Assistant Professor, Orthodontics · Khon Kaen University<br>Tawanchai Center · Thailand</div>
+            <div class="fcard-title vi">Giảng viên Chỉnh nha · Đại học Khon Kaen<br>Trung tâm Tawanchai · Thái Lan</div>
+          </div>
+          <div class="fcard-flag">🇹🇭</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Cleft Orthodontics</span><span class="tag tag-teal vi">Chỉnh nha khe hở</span>
+          <span class="tag tag-blue en">Harvard DMSc</span>
+          <span class="tag tag-yellow en">ABO Certified</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">DMSc in Oral Biology and Certificate in Orthodontics from Harvard School of Dental Medicine. Further training at University of Michigan and NYU Langone Health. American Board of Orthodontics certified. Developed a patent-pending device for cleft care. Member, Tawanchai Center cleft team.</div>
+          <div class="fcard-excerpt vi">Tiến sĩ Y sinh Răng Hàm Mặt và Chứng chỉ Chỉnh nha tại Harvard. Đào tạo thêm tại Đại học Michigan và NYU Langone. Chứng nhận ABO. Phát triển thiết bị đang chờ cấp bằng sáng chế cho điều trị khe hở. Thành viên nhóm khe hở Tawanchai.</div>
+          <div class="fcard-expand" id="exp-wangs">
+            <p class="en">Dr. Wangsrimongkol earned her dental degree with first-class honours from Chulalongkorn University and pursued advanced orthodontic training in the United States. She completed specialised training in craniofacial and special care orthodontics at the University of Michigan, followed by a research fellowship at NYU Langone Health. Her research interests include presurgical orthopaedics, craniofacial anomalies, and the application of digital technologies to improve treatment planning and patient outcomes.</p>
+            <p class="vi">Tốt nghiệp xuất sắc tại Đại học Chulalongkorn và đào tạo chỉnh nha nâng cao tại Mỹ. Hoàn thành chỉnh nha sọ mặt tại Đại học Michigan và fellowship nghiên cứu tại NYU Langone. Hướng nghiên cứu: chỉnh hình tiền phẫu, dị tật sọ mặt và ứng dụng công nghệ số trong lập kế hoạch điều trị.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('wangs',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 12. ROBIN YANG -->
+      <div class="fcard" data-tags="surgery international">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-sky">RY</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Robin Yang, MD, DDS</div>
+            <div class="fcard-title en">Assistant Professor · Director, Pediatric Plastic Surgery<br>Johns Hopkins School of Medicine · Maryland, USA</div>
+            <div class="fcard-title vi">Giảng viên · Giám đốc Phẫu thuật Tạo hình Nhi<br>Trường Y Johns Hopkins · Maryland, Hoa Kỳ</div>
+          </div>
+          <div class="fcard-flag">🇺🇸</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Virtual Surgical Planning</span><span class="tag tag-teal vi">Lập kế hoạch phẫu thuật ảo</span>
+          <span class="tag tag-blue en">Orthognathic Surgery</span><span class="tag tag-blue vi">Chỉnh hình xương hàm</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Director of Pediatric Plastic Surgery and Division Chief of Oral and Maxillofacial Surgery at Johns Hopkins. Dual-trained in plastic surgery and oral &amp; maxillofacial surgery. Fellowship in paediatric craniofacial surgery at Children's Hospital of Philadelphia. Expertise in orthognathic surgery and VSP for complex cleft cases.</div>
+          <div class="fcard-excerpt vi">Giám đốc Phẫu thuật Tạo hình Nhi và Trưởng đơn vị Phẫu thuật Hàm mặt tại Johns Hopkins. Đào tạo kép phẫu thuật tạo hình và hàm mặt. Fellowship sọ mặt nhi tại BV Nhi Philadelphia. Chuyên môn: phẫu thuật chỉnh hàm và VSP cho ca khe hở phức tạp.</div>
+          <div class="fcard-expand" id="exp-yang">
+            <p class="en">Dr. Yang completed his undergraduate training at Emory University, followed by dual degrees in dentistry and medicine from Columbia University and the University of Maryland. He subsequently completed residencies in oral and maxillofacial surgery and plastic and reconstructive surgery, along with advanced fellowship training in paediatric craniofacial surgery at the Children's Hospital of Philadelphia. His work bridges plastic surgery and maxillofacial surgery, bringing a multidisciplinary approach to complex craniofacial conditions.</p>
+            <p class="vi">Ông hoàn thành đại học tại Đại học Emory, sau đó nhận đồng thời bằng Nha và Y khoa tại Columbia và Đại học Maryland. Hoàn thành nội trú Phẫu thuật hàm mặt và Tạo hình, cùng fellowship sọ mặt nhi tại BV Nhi Philadelphia. Công việc kết nối phẫu thuật tạo hình và hàm mặt theo hướng đa chuyên khoa.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('yang',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 13. DINH THI NHU THAO -->
+      <div class="fcard" data-tags="surgery vietnam">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">DT</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Đinh Thị Như Thảo, BSCK II</div>
+            <div class="fcard-title en">Maxillofacial Surgeon<br>Children's Hospital 1 · Ho Chi Minh City, Vietnam</div>
+            <div class="fcard-title vi">Bác sĩ Phẫu thuật Răng Hàm Mặt<br>Bệnh viện Nhi Đồng 1 · TP. Hồ Chí Minh, Việt Nam</div>
+          </div>
+          <div class="fcard-flag">🇻🇳</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Paediatric Maxillofacial</span><span class="tag tag-teal vi">Hàm mặt nhi khoa</span>
+          <span class="tag tag-blue en">Early Intervention</span><span class="tag tag-blue vi">Can thiệp sớm</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Maxillofacial surgeon at one of Vietnam's leading paediatric hospitals. Specialises in paediatric oral and maxillofacial conditions, facial trauma, TMJ disorders, and congenital craniofacial anomalies. Committed to early intervention and multidisciplinary collaboration to optimise paediatric outcomes.</div>
+          <div class="fcard-excerpt vi">Bác sĩ hàm mặt tại một trong những bệnh viện nhi hàng đầu Việt Nam. Chuyên về các bệnh lý hàm mặt nhi khoa, chấn thương vùng mặt, rối loạn khớp TDH và dị tật sọ mặt bẩm sinh. Tập trung vào can thiệp sớm và phối hợp đa chuyên khoa.</div>
+          <div class="fcard-expand" id="exp-thao">
+            <p class="en">Dr. Thao is part of the Odonto-Stomatology Department at Children's Hospital 1, where she is involved in the diagnosis and management of a wide range of craniofacial and dental conditions in children. Her clinical practice includes maxillofacial trauma, temporomandibular joint disorders, and paediatric dental and skeletal abnormalities. She has participated in surgical management of complex facial injuries and foreign body removal, contributing to both acute care and functional rehabilitation.</p>
+            <p class="vi">Bác sĩ Thảo công tác tại Khoa Răng Hàm Mặt, BV Nhi Đồng 1, tham gia chẩn đoán và điều trị đa dạng bệnh lý sọ mặt và răng miệng nhi khoa. Hoạt động lâm sàng bao gồm chấn thương hàm mặt, rối loạn khớp thái dương hàm và xử trí các ca phức tạp về phục hồi chức năng.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('thao',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 14. DO TIEN HAI -->
+      <div class="fcard" data-tags="surgery vietnam">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-blue">DH</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Đỗ Tiến Hải, ThS. BSCK II</div>
+            <div class="fcard-title en">Head, Plastic &amp; Reconstructive Surgery<br>National Odonto-Stomatology Hospital · Ho Chi Minh City, Vietnam</div>
+            <div class="fcard-title vi">Trưởng khoa Vi phẫu – Tạo hình Hàm mặt<br>BV Răng Hàm Mặt Trung ương TP.HCM · Việt Nam</div>
+          </div>
+          <div class="fcard-flag">🇻🇳</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Orthognathic Surgery</span><span class="tag tag-teal vi">Chỉnh hình xương hàm</span>
+          <span class="tag tag-blue en">Facial Trauma</span><span class="tag tag-blue vi">Chấn thương mặt</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Head of Plastic and Reconstructive Surgery at National Hospital of Odonto-Stomatology (NHOS) in Ho Chi Minh City. Nearly two decades of clinical experience. Advanced training at Seoul National University. Active in humanitarian missions with Operation Smile in Vietnam and Laos.</div>
+          <div class="fcard-excerpt vi">Trưởng khoa Phẫu thuật Tạo hình – Vi phẫu tại BV Răng Hàm Mặt Trung ương TP.HCM. Gần 20 năm kinh nghiệm lâm sàng. Đào tạo nâng cao tại Đại học Quốc gia Seoul. Tích cực tham gia nhân đạo cùng Operation Smile tại Việt Nam và Lào.</div>
+          <div class="fcard-expand" id="exp-hai">
+            <p class="en">Dr. Hai received his DDS from the University of Medicine and Pharmacy in Ho Chi Minh City and later obtained a Master's degree and Specialist Level II certification. His clinical expertise focuses on facial trauma, tumours, orthognathic surgery, and congenital craniofacial deformities. He is actively engaged in surgical training, providing on-the-job education for young doctors across southern Vietnam.</p>
+            <p class="vi">Ông tốt nghiệp Bác sĩ Răng Hàm Mặt tại Đại học Y Dược TP.HCM, hoàn thành Thạc sĩ và Bác sĩ Chuyên khoa II. Chuyên môn: chấn thương mặt, khối u, phẫu thuật chỉnh hàm và dị tật sọ mặt bẩm sinh. Tích cực đào tạo chuyển giao kỹ thuật cho bác sĩ trẻ khu vực phía Nam.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('hai',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 15. LE THUA TRUNG HAU -->
+      <div class="fcard" data-tags="surgery vietnam">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">LH</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Lê Thừa Trung Hậu, TS.BS</div>
+            <div class="fcard-title en">Head, Plastic, Aesthetic &amp; Maxillofacial Surgery<br>Hue Odonto-Stomatology Hospital · Hue, Vietnam</div>
+            <div class="fcard-title vi">Trưởng khoa Phẫu thuật Tạo hình &amp; Thẩm mỹ<br>Bệnh viện Răng Hàm Mặt Huế · Huế, Việt Nam</div>
+          </div>
+          <div class="fcard-flag">🇻🇳</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Reconstructive Surgery</span><span class="tag tag-teal vi">Phẫu thuật tái tạo</span>
+          <span class="tag tag-blue en">PhD Brussels</span>
+          <span class="tag tag-yellow en">Stanford · Cleveland Clinic</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Pioneer of reconstructive surgery in Central Vietnam. PhD from Université libre de Bruxelles. Fellowship and observerships at Stanford, Mount Sinai, Cleveland Clinic, and Washington University in St. Louis. Over 25 years clinical experience. Collaborates with ReSurge International and Operation Smile.</div>
+          <div class="fcard-excerpt vi">Tiên phong phẫu thuật tái tạo tại miền Trung Việt Nam. Tiến sĩ tại Université libre de Bruxelles. Fellowship và observership tại Stanford, Mount Sinai, Cleveland Clinic và Washington University. Hơn 25 năm kinh nghiệm. Hợp tác với ReSurge International và Operation Smile.</div>
+          <div class="fcard-expand" id="exp-hau">
+            <p class="en">Dr. Hau currently serves as Head of Plastic, Aesthetic and Maxillofacial Surgery at Hue Odonto-Stomatology Hospital and Professional Director of Bleu de Hué Aesthetic Institute. He is recognised as a pioneer in reconstructive surgery in Central Vietnam, including developing access to advanced procedures such as breast reconstruction and microsurgical techniques. He also holds positions as a lecturer at Hue University of Medicine and Pharmacy.</p>
+            <p class="vi">Bác sĩ Hậu hiện là Trưởng khoa Phẫu thuật Tạo hình, Thẩm mỹ và Hàm mặt tại BV Răng Hàm Mặt Huế và Giám đốc chuyên môn Viện Thẩm mỹ Bleu de Hué. Được ghi nhận là tiên phong phẫu thuật tái tạo miền Trung, bao gồm tái tạo vú và vi phẫu. Giảng viên tại Đại học Y Dược Huế.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('hau',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 16. LE VAN SON -->
+      <div class="fcard" data-tags="surgery vietnam">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-sky">LS</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Lê Văn Sơn, PGS.TS.BS</div>
+            <div class="fcard-title en">Head, Faculty of Odonto-Stomatology<br>Phenikaa University · Hanoi, Vietnam</div>
+            <div class="fcard-title vi">Trưởng khoa Răng Hàm Mặt<br>Đại học Phenikaa · Hà Nội, Việt Nam</div>
+          </div>
+          <div class="fcard-flag">🇻🇳</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Maxillofacial Reconstruction</span><span class="tag tag-teal vi">Tái tạo hàm mặt</span>
+          <span class="tag tag-blue en">Medical Education</span><span class="tag tag-blue vi">Đào tạo y khoa</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Former Head of Oral Pathology &amp; Maxillofacial Surgery at Hanoi Medical University. Former Head of Maxillofacial &amp; Plastic Surgery at National Hospital of Odonto-Stomatology. Extensive experience in maxillofacial reconstruction, complex oral pathologies, and advanced implantology across decades of clinical practice.</div>
+          <div class="fcard-excerpt vi">Cựu Trưởng Bộ môn Bệnh lý Miệng và Phẫu thuật Hàm mặt tại ĐHYHN. Cựu Trưởng khoa tại BV Răng Hàm Mặt Trung ương. Kinh nghiệm phong phú về tái tạo hàm mặt, bệnh lý miệng phức tạp và cấy ghép implant nâng cao qua nhiều thập kỷ.</div>
+          <div class="fcard-expand" id="exp-son">
+            <p class="en">Dr. Son has held multiple senior leadership positions at major institutions, including Head of the Department of Oral Pathology and Maxillofacial Surgery at Hanoi Medical University, Head of Maxillofacial and Plastic Surgery at the National Hospital of Odonto-Stomatology, and Head of Odonto-Stomatology at Friendship Hospital. He is particularly recognised for his contributions to the development and application of modern surgical techniques in Vietnam, and has played a significant role in training generations of specialists.</p>
+            <p class="vi">Ông đã đảm nhiệm nhiều vị trí lãnh đạo cấp cao tại các cơ sở y tế lớn, trong đó có Trưởng Bộ môn Bệnh lý Miệng và Phẫu thuật Hàm mặt tại ĐHYHN, Trưởng khoa BV Răng Hàm Mặt Trung ương và Trưởng khoa BV Hữu Nghị. Có đóng góp đặc biệt trong phát triển kỹ thuật phẫu thuật hiện đại tại Việt Nam và đào tạo nhiều thế hệ bác sĩ chuyên khoa.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('son',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+      <!-- 17. NGUYEN THI NGOC LAN -->
+      <div class="fcard" data-tags="surgery vietnam">
+        <div class="fcard-head">
+          <div class="fcard-avatar av-teal">NL</div>
+          <div class="fcard-info">
+            <div class="fcard-name">Nguyễn Thị Ngọc Lan, ThS. BSCK II</div>
+            <div class="fcard-title en">Chief, Maxillofacial Surgery · Comprehensive Cleft Care Center<br>Hanoi Children's Hospital · Hanoi, Vietnam</div>
+            <div class="fcard-title vi">Trưởng khoa Phẫu thuật Hàm mặt · Trung tâm Chăm sóc Khe hở Toàn diện<br>Bệnh viện Nhi Hà Nội · Hà Nội, Việt Nam</div>
+          </div>
+          <div class="fcard-flag">🇻🇳</div>
+        </div>
+        <div class="fcard-tags">
+          <span class="tag tag-teal en">Comprehensive Cleft Care</span><span class="tag tag-teal vi">Chăm sóc khe hở toàn diện</span>
+          <span class="tag tag-blue en">Nuoy Scholar</span>
+          <span class="tag tag-yellow en">Chang Gung · CHOP</span>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-excerpt en">Leads the Maxillofacial Surgery Unit and is developing a comprehensive cleft care model at Hanoi Children's Hospital spanning from early intervention through adult follow-up. Advanced training at Chang Gung Memorial Hospital (Taiwan), Asan Medical Center (Korea), and Children's Hospital of Philadelphia. Nuoy Scholar and ASCP Fellow.</div>
+          <div class="fcard-excerpt vi">Lãnh đạo Đơn vị Phẫu thuật Hàm mặt và xây dựng mô hình chăm sóc khe hở toàn diện tại BV Nhi Hà Nội, từ can thiệp sớm đến theo dõi tuổi trưởng thành. Đào tạo nâng cao tại Chang Gung (Đài Loan), Asan (Hàn Quốc) và CHOP. Học bổng Nuoy Scholar và ASCP Fellow.</div>
+          <div class="fcard-expand" id="exp-lan">
+            <p class="en">Dr. Ngoc Lan trained at Hanoi Medical University and completed her residency in Odonto-Stomatology before beginning her career in paediatric maxillofacial surgery in 2012. With over 15 years of experience, including nearly a decade in a senior leadership role at Vietnam National Children's Hospital, she has played a key role in advancing surgical techniques and expanding access to specialised care. Her clinical work focuses on complex reconstructive procedures and multidisciplinary cleft care, integrating surgery with orthodontics, speech therapy, and long-term rehabilitation.</p>
+            <p class="vi">Bác sĩ Ngọc Lan học tại ĐHYHN và hoàn thành nội trú Răng Hàm Mặt trước khi bắt đầu sự nghiệp hàm mặt nhi khoa từ năm 2012. Hơn 15 năm kinh nghiệm, gần một thập kỷ lãnh đạo cấp cao tại Bệnh viện Nhi Trung ương. Hoạt động lâm sàng tập trung vào tái tạo phức tạp và chăm sóc khe hở đa chuyên khoa, kết hợp phẫu thuật với chỉnh nha, trị liệu ngôn ngữ và phục hồi chức năng dài hạn.</p>
+          </div>
+        </div>
+        <button class="fcard-toggle" onclick="toggleBio('lan',this)"><span class="en">Read full biography</span><span class="vi">Xem tiểu sử đầy đủ</span><span class="arrow">↓</span></button>
+      </div>
+
+    </div><!-- /faculty-grid -->
+  </div>
+</section>
+
+<footer>
+  <div style="max-width:1280px;margin:0 auto">
+    <div class="foot-stripe"></div>
+    <div class="foot-bottom">
+      <span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
+      <div style="display:flex;gap:1.5rem"><a href="index.html" class="en">Home</a><a href="index.html" class="vi">Trang chủ</a><a href="register.html" class="en">Register</a><a href="register.html" class="vi">Đăng ký</a><a href="https://www.nuoy.org" target="_blank">nuoy.org</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('icms-lang',l)}
+setLang(localStorage.getItem('icms-lang')||'en');
+
+function toggleBio(id,btn){
+  const el=document.getElementById('exp-'+id);
+  const open=el.classList.toggle('show');
+  btn.classList.toggle('open',open);
+  btn.querySelector('.en').textContent=open?'Collapse biography':'Read full biography';
+  btn.querySelector('.vi').textContent=open?'Thu gọn':'Xem tiểu sử đầy đủ';
+}
+
+function filterFaculty(tag){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.fcard').forEach(c=>{
+    c.style.display=(tag==='all'||c.dataset.tags.includes(tag))?'':'none';
+  });
+}
+</script>
+</body>
+</html>

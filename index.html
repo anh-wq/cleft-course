@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>International Cleft Mastery Summit | Hanoi 2026</title>
+<meta name="description" content="International Cleft Mastery Summit Ha Noi 2026 — September 21–23. Hong Ngoc Phuc Truong Minh Hospital. Advancing Surgical Precision and Longitudinal Outcomes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════
+   NUOY BRAND SYSTEM — Official Colors & Typography
+   Primary:   Teal #00B4BC · Blue #4A67AA · Yellow #F8E816
+   Secondary: Sky  #1295D8 · Green #97D88A
+   Dark bg:   #0E1A2E   Body text: #414042 / #636466
+   Typography: DM Sans (Averta web substitute) + Literata
+═══════════════════════════════════════════════════ */
+:root{
+  --teal:#00B4BC; --blue:#4A67AA; --yellow:#F8E816;
+  --sky:#1295D8;  --green:#97D88A;
+  --dark:#0E1A2E; --dark2:#142840; --dark3:#1A3050;
+  --white:#FFFFFF; --off:#F5F4F0; --cream:#EDE9E0;
+  --tx:#414042; --tx2:#636466; --tx3:#808285;
+  --lgrey:#BCBEC0; --llgrey:#E6E7E8;
+  --border:rgba(65,64,66,.12);
+  --ff-sans:'DM Sans',system-ui,sans-serif;
+  --ff-serif:'Literata',Georgia,serif;
+  --ease:cubic-bezier(.4,0,.2,1);
+  --ease-out:cubic-bezier(0,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);overflow-x:hidden;font-weight:300;-webkit-font-smoothing:antialiased}
+
+/* LANG */
+body[data-lang="vi"] .en{display:none!important}
+body[data-lang="en"] .vi{display:none!important}
+
+/* ═══ NUOY 5-COLOR BRAND STRIPE (signature element) ═══ */
+.brand-stripe{
+  height:6px;
+  background:linear-gradient(90deg,
+    var(--blue)  0%   20%,
+    var(--sky)   20%  40%,
+    var(--teal)  40%  60%,
+    var(--green) 60%  80%,
+    var(--yellow)80%  100%);
+  position:fixed;top:0;left:0;right:0;z-index:400;
+}
+
+/* ═══ NAV ═══ */
+nav{
+  position:fixed;top:6px;left:0;right:0;z-index:300;
+  transition:background .35s var(--ease),backdrop-filter .35s;
+}
+nav.scrolled{
+  background:rgba(14,26,46,.97);
+  backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(0,180,188,.18),0 4px 24px rgba(0,0,0,.3);
+}
+.nav-inner{
+  max-width:1280px;margin:0 auto;padding:0 2.5rem;
+  height:66px;display:flex;align-items:center;
+  justify-content:space-between;gap:1.5rem;
+}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.nav-logomark{
+  width:38px;height:38px;background:var(--teal);border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-serif);font-size:18px;font-weight:600;
+  color:var(--dark);font-style:italic;letter-spacing:-.02em;
+}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
+.nav-wordmark strong{
+  font-size:12px;font-weight:600;color:var(--white);
+  letter-spacing:.08em;text-transform:uppercase;
+}
+.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.07em;text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:0;align-items:center}
+.nav-links a{
+  display:block;padding:7px 15px;
+  color:rgba(255,255,255,.6);text-decoration:none;
+  font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:5px;transition:color .2s,background .2s;
+}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.09)}
+.nav-links a.active{color:var(--teal)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.lang-pill{
+  display:flex;background:rgba(255,255,255,.1);
+  border-radius:22px;padding:2px;
+  border:1px solid rgba(255,255,255,.13);
+}
+.lang-btn{
+  padding:4px 13px;border-radius:20px;border:none;
+  background:transparent;color:rgba(255,255,255,.5);
+  font-size:11px;font-family:var(--ff-sans);font-weight:600;
+  letter-spacing:.07em;cursor:pointer;transition:.2s;
+}
+.lang-btn.active{background:var(--teal);color:var(--dark)}
+.btn-cta-nav{
+  padding:9px 22px;background:var(--yellow);color:var(--dark);
+  border-radius:5px;text-decoration:none;font-size:11px;
+  font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  transition:.2s;white-space:nowrap;
+}
+.btn-cta-nav:hover{background:var(--teal);color:var(--white);transform:translateY(-1px)}
+
+/* ═══ HERO ═══ */
+.hero{
+  min-height:100vh;background:var(--dark);
+  padding-top:72px;display:flex;flex-direction:column;
+  justify-content:center;position:relative;overflow:hidden;
+}
+/* Radial light bleeds */
+.hero-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 65% 55% at 65% 40%,rgba(0,180,188,.14) 0%,transparent 55%),
+    radial-gradient(ellipse 40% 60% at 5%  75%,rgba(74,103,170,.12) 0%,transparent 50%);
+}
+/* Geometric ring — Nuoy icon language */
+.hero-ring{
+  position:absolute;right:-60px;top:50%;
+  transform:translateY(-50%);
+  width:520px;height:520px;border-radius:50%;
+  border:1px solid rgba(0,180,188,.07);
+  pointer-events:none;
+}
+.hero-ring::before{
+  content:'';position:absolute;inset:50px;border-radius:50%;
+  border:1px solid rgba(0,180,188,.05);
+}
+.hero-ring::after{
+  content:'';position:absolute;inset:100px;border-radius:50%;
+  border:1px solid rgba(0,180,188,.03);
+}
+.hero-inner{
+  max-width:1280px;margin:0 auto;width:100%;
+  padding:5rem 2.5rem 5rem;
+  display:grid;grid-template-columns:1fr 370px;gap:5rem;
+  align-items:center;position:relative;z-index:2;
+}
+
+/* eyebrow */
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:1.75rem}
+.eyebrow-dot{
+  width:9px;height:9px;background:var(--teal);border-radius:50%;
+  animation:dotpulse 2.5s ease-in-out infinite;
+}
+@keyframes dotpulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}
+.eyebrow-text{
+  font-size:11px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal);
+}
+
+/* main heading */
+.hero-h1{
+  font-family:var(--ff-serif);
+  font-size:clamp(2.5rem,4.5vw,4rem);
+  font-weight:400;line-height:1.08;
+  color:var(--white);margin-bottom:.75rem;
+  letter-spacing:-.01em;
+}
+.hero-h1 em{font-style:italic;color:var(--teal)}
+
+/* subtitle — Literata italic like Nuoy secondary type */
+.hero-sub{
+  font-family:var(--ff-serif);
+  font-size:clamp(.95rem,1.5vw,1.15rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.5);
+  margin-bottom:.5rem;line-height:1.6;
+}
+
+/* slogan — ALL CAPS Literata style */
+.hero-slogan{
+  font-size:11px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:rgba(255,255,255,.3);
+  margin-bottom:2.75rem;
+  padding-left:14px;border-left:2px solid var(--teal);
+}
+
+/* meta items */
+.hero-meta{display:flex;flex-direction:column;gap:13px;margin-bottom:2.75rem}
+.hm{display:flex;align-items:flex-start;gap:13px}
+.hm-icon{
+  width:34px;height:34px;border-radius:8px;
+  background:rgba(0,180,188,.13);border:1px solid rgba(0,180,188,.22);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;margin-top:1px;
+}
+.hm-icon svg{width:16px;height:16px;fill:var(--teal)}
+.hm-txt strong{display:block;color:var(--white);font-size:13px;font-weight:500;line-height:1.3}
+.hm-txt span{color:rgba(255,255,255,.38);font-size:11px;font-weight:300}
+
+/* buttons */
+.hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  padding:14px 32px;background:var(--yellow);color:var(--dark);
+  border-radius:5px;text-decoration:none;font-size:12px;
+  font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  transition:.25s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--teal);color:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,180,188,.25)}
+.btn-ghost{
+  padding:14px 28px;background:transparent;
+  color:rgba(255,255,255,.65);
+  border:1px solid rgba(255,255,255,.18);border-radius:5px;
+  text-decoration:none;font-size:12px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;transition:.25s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:var(--white)}
+
+/* countdown card */
+.hero-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(0,180,188,.2);
+  border-radius:16px;padding:1.75rem;
+}
+.hc-label{
+  font-size:10px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:1.25rem;
+}
+.countdown{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:8px;margin-bottom:1.5rem;
+}
+.cd{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;padding:1rem .5rem;text-align:center;
+}
+.cd-n{
+  font-family:var(--ff-serif);font-size:2.1rem;
+  font-weight:400;color:var(--white);line-height:1;
+  display:block;margin-bottom:4px;
+}
+.cd-l{font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase}
+.hc-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:1.25rem}
+.hc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.hcs{text-align:center;padding:.65rem 0}
+.hcs strong{
+  display:block;font-family:var(--ff-serif);font-size:1.65rem;
+  font-weight:400;color:var(--teal);line-height:1;
+}
+.hcs span{
+  font-size:10px;color:rgba(255,255,255,.35);
+  line-height:1.4;display:block;margin-top:4px;
+}
+
+/* ═══ SCROLLING BANNER ═══ */
+.banner{
+  background:var(--dark2);padding:10px 0;overflow:hidden;
+  border-top:1px solid rgba(0,180,188,.18);
+  border-bottom:1px solid rgba(0,180,188,.18);
+}
+.banner-track{
+  display:flex;gap:2.5rem;
+  animation:marquee 35s linear infinite;white-space:nowrap;
+}
+.banner-track:hover{animation-play-state:paused}
+.bi{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12px;font-weight:400;letter-spacing:.04em;
+  color:rgba(255,255,255,.65);flex-shrink:0;
+}
+.bi-sep{color:var(--teal);font-size:9px}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ═══ SECTION BASE ═══ */
+section{padding:6rem 2.5rem}
+.si{max-width:1280px;margin:0 auto}
+
+/* eyebrow label */
+.sec-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:10px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:1rem;
+}
+.sec-eyebrow::before{content:'';width:20px;height:2px;background:var(--teal);border-radius:2px}
+
+/* heading — Literata serif for display (rule 1 of Nuoy typography) */
+h2.sec-h2{
+  font-family:var(--ff-serif);
+  font-size:clamp(1.8rem,3vw,2.7rem);
+  font-weight:400;line-height:1.15;
+  color:var(--dark);margin-bottom:1.1rem;letter-spacing:-.01em;
+}
+h2.sec-h2 em{font-style:italic;color:var(--teal)}
+
+/* body — DM Sans Light weight 300 (rule 3 of Nuoy typography) */
+.sec-body{
+  font-size:1rem;color:var(--tx2);
+  line-height:1.85;max-width:650px;font-weight:300;
+}
+
+/* ═══ ABOUT ═══ */
+.about{background:var(--off)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center}
+
+/* Image block with Nuoy geometric frame */
+.about-visual{position:relative}
+.about-imgbox{
+  width:100%;aspect-ratio:4/3;
+  background:linear-gradient(135deg,var(--dark2) 0%,var(--dark3) 100%);
+  border-radius:14px;overflow:hidden;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+/* Nuoy icon as duotone watermark (icon usage guideline) */
+.about-icon-wm{
+  position:absolute;inset:0;display:flex;
+  align-items:center;justify-content:center;opacity:.07;
+}
+.about-icon-wm svg{width:140px;fill:var(--teal)}
+/* gradient overlay */
+.about-imgbox::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 35%,rgba(14,26,46,.75) 100%);
+}
+.about-caption{
+  position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;
+  z-index:2;color:var(--white);
+}
+.about-caption strong{
+  font-family:var(--ff-serif);font-size:1.1rem;
+  font-weight:400;font-style:italic;display:block;
+  line-height:1.3;margin-bottom:3px;
+}
+.about-caption span{font-size:11px;opacity:.6;letter-spacing:.04em}
+
+/* "1st in Vietnam" badge */
+.about-badge{
+  position:absolute;top:-16px;right:-16px;
+  width:84px;height:84px;background:var(--yellow);
+  border-radius:50%;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  box-shadow:0 8px 28px rgba(248,232,22,.35);
+}
+.about-badge strong{
+  font-family:var(--ff-serif);font-size:24px;
+  font-weight:600;color:var(--dark);line-height:1;
+}
+.about-badge span{font-size:9px;font-weight:600;color:var(--dark);letter-spacing:.04em;text-align:center;line-height:1.35}
+
+/* features */
+.about-features{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.af{display:flex;gap:14px;align-items:flex-start}
+.af-mark{
+  width:10px;height:10px;background:var(--teal);
+  border-radius:50%;flex-shrink:0;margin-top:5px;
+}
+.af h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px;letter-spacing:.01em}
+.af p{font-size:13px;color:var(--tx2);line-height:1.7;font-weight:300}
+
+.btn-teal{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:2.25rem;padding:13px 28px;
+  background:var(--teal);color:var(--dark);border-radius:5px;
+  text-decoration:none;font-size:12px;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;transition:.25s;
+}
+.btn-teal:hover{background:var(--sky);color:var(--white);transform:translateY(-1px)}
+
+/* ═══ CONTEXT ═══ */
+.context{background:var(--dark)}
+.context .sec-eyebrow{color:var(--yellow)}
+.context .sec-eyebrow::before{background:var(--yellow)}
+.context h2.sec-h2{color:var(--white)}
+.context h2.sec-h2 em{color:var(--teal)}
+.context .sec-body{color:rgba(255,255,255,.5)}
+.ctx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
+.ctx-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;padding:2rem;
+  transition:.3s var(--ease);
+}
+.ctx-card:hover{background:rgba(0,180,188,.07);border-color:rgba(0,180,188,.28)}
+/* Large stat number — Literata display use */
+.ctx-n{
+  font-family:var(--ff-serif);font-size:2.9rem;
+  font-weight:400;font-style:italic;color:var(--teal);
+  line-height:1;margin-bottom:.6rem;
+}
+.ctx-card h4{
+  font-size:12px;font-weight:600;color:var(--white);
+  margin-bottom:.5rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.ctx-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300}
+
+/* ═══ GOALS ═══ */
+.goals{background:var(--white)}
+.goals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3.5rem}
+.goal{
+  display:flex;gap:1.25rem;align-items:flex-start;
+  padding:1.75rem 1.75rem;
+  border:1px solid var(--border);border-radius:12px;
+  transition:.25s var(--ease);
+}
+.goal:hover{border-color:var(--teal);background:rgba(0,180,188,.03)}
+/* Numbered display — Literata italic ghost number */
+.goal-n{
+  font-family:var(--ff-serif);font-size:2.4rem;
+  font-weight:400;font-style:italic;
+  color:rgba(14,26,46,.07);line-height:1;
+  flex-shrink:0;width:48px;
+}
+.goal h4{
+  font-size:12px;font-weight:600;color:var(--dark);
+  margin-bottom:6px;letter-spacing:.07em;text-transform:uppercase;
+}
+.goal p{font-size:13px;color:var(--tx2);line-height:1.7;font-weight:300}
+
+/* ═══ AUDIENCE ═══ */
+.audience{background:var(--off)}
+.aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3.5rem}
+.aud{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:11px;padding:1.75rem;text-align:center;
+  transition:.25s var(--ease);
+}
+.aud:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 12px 28px rgba(14,26,46,.08)}
+/* Icon container — Nuoy icon usage guideline */
+.aud-icon{
+  width:50px;height:50px;background:rgba(0,180,188,.1);
+  border-radius:11px;display:flex;align-items:center;
+  justify-content:center;margin:0 auto 1.1rem;
+}
+.aud-icon svg{width:22px;height:22px;fill:var(--teal)}
+.aud h4{font-size:13px;font-weight:600;color:var(--dark);line-height:1.45;letter-spacing:.01em}
+
+/* ═══ PRICING ═══ */
+.pricing{background:var(--dark)}
+.pricing .sec-eyebrow{color:var(--yellow)}
+.pricing .sec-eyebrow::before{background:var(--yellow)}
+.pricing h2.sec-h2{color:var(--white)}
+.pricing h2.sec-h2 em{color:var(--teal)}
+.pricing .sec-body{color:rgba(255,255,255,.5)}
+
+.ptab-wrap{margin-top:3rem;overflow-x:auto}
+.ptab{width:100%;border-collapse:collapse;min-width:700px}
+.ptab thead tr{border-bottom:1px solid rgba(255,255,255,.1)}
+.ptab th{
+  padding:13px 20px;font-size:10px;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.ptab th:first-child{text-align:left;color:rgba(255,255,255,.35)}
+.ptab th:not(:first-child){text-align:center;color:var(--yellow)}
+.ptab td{
+  padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.05);
+  font-size:13px;vertical-align:top;
+}
+.ptab td:first-child{color:rgba(255,255,255,.75);line-height:1.55;font-weight:300}
+.ptab td:first-child small{display:block;font-size:11px;color:rgba(255,255,255,.3);margin-top:3px;font-weight:300}
+.ptab td:not(:first-child){
+  text-align:center;font-family:var(--ff-serif);
+  font-size:1.25rem;font-weight:400;color:var(--teal);
+}
+.ptab tr.hilite td{background:rgba(0,180,188,.07)}
+.ptab tr:last-child td{border-bottom:none}
+
+.price-note{
+  margin-top:1.75rem;padding:1.5rem 1.75rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:10px;font-size:13px;
+  color:rgba(255,255,255,.45);line-height:1.85;font-weight:300;
+}
+.price-note strong{color:rgba(255,255,255,.75);font-weight:500}
+.cancel-note{
+  margin-top:1rem;padding-left:16px;
+  border-left:3px solid rgba(0,180,188,.4);
+  font-size:13px;color:rgba(255,255,255,.35);
+  line-height:1.75;font-weight:300;
+}
+.cancel-note strong{color:rgba(255,255,255,.6);font-weight:500}
+
+/* ═══ SUPPORTERS ═══ */
+.supporters{background:var(--cream);padding:4.5rem 2.5rem;text-align:center}
+.sup-flex{
+  display:flex;flex-wrap:wrap;gap:1rem;
+  justify-content:center;margin-top:2.75rem;
+}
+.sup-chip{
+  padding:10px 24px;background:var(--white);
+  border:1px solid var(--border);border-radius:5px;
+  font-size:12px;font-weight:500;color:var(--tx2);
+  letter-spacing:.03em;transition:.2s;
+}
+.sup-chip:hover{border-color:var(--teal);color:var(--dark)}
+
+/* ═══ CTA STRIP ═══ */
+.cta-strip{
+  background:var(--dark2);padding:6.5rem 2.5rem;
+  text-align:center;position:relative;overflow:hidden;
+}
+.cta-strip::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(0,180,188,.08) 0%,transparent 60%);
+  pointer-events:none;
+}
+.cta-strip .sec-eyebrow{justify-content:center;color:var(--yellow)}
+.cta-strip .sec-eyebrow::before{background:var(--yellow)}
+.cta-strip h2.sec-h2{color:var(--white);max-width:480px;margin:0 auto 1rem}
+.cta-strip h2.sec-h2 em{color:var(--teal)}
+.cta-body{
+  font-size:1rem;color:rgba(255,255,255,.45);
+  max-width:500px;margin:0 auto 2.75rem;
+  line-height:1.85;font-weight:300;
+}
+.cta-btns{
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;flex-wrap:wrap;margin-bottom:1.75rem;
+}
+.cta-contact{font-size:13px;color:rgba(255,255,255,.3)}
+.cta-contact a{color:var(--teal);text-decoration:none;transition:.2s}
+.cta-contact a:hover{color:var(--yellow)}
+
+/* ═══ FOOTER ═══ */
+footer{background:#060E1B;padding:4rem 2.5rem 2.25rem}
+.foot-wrap{max-width:1280px;margin:0 auto}
+/* Nuoy 5-color stripe inside footer (brand signature) */
+.foot-stripe{
+  height:4px;
+  background:linear-gradient(90deg,
+    var(--blue)  0%   20%,
+    var(--sky)   20%  40%,
+    var(--teal)  40%  60%,
+    var(--green) 60%  80%,
+    var(--yellow)80%  100%);
+  border-radius:2px;margin-bottom:3rem;
+}
+.foot-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:3.5rem;
+  padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);
+  margin-bottom:1.75rem;
+}
+.foot-brand p{
+  font-size:13px;line-height:1.8;
+  color:rgba(255,255,255,.32);margin-top:1rem;
+  font-weight:300;max-width:330px;
+}
+.foot-col h5{
+  font-size:10px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem;
+}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.foot-col a{
+  font-size:13px;color:rgba(255,255,255,.32);
+  text-decoration:none;transition:.2s;font-weight:300;
+}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:11px;color:rgba(255,255,255,.18);
+  flex-wrap:wrap;gap:.5rem;
+}
+.foot-bottom a{color:rgba(255,255,255,.18);text-decoration:none;transition:.2s}
+.foot-bottom a:hover{color:rgba(255,255,255,.5)}
+
+/* ═══ SCROLL REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:0}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .ctx-grid{grid-template-columns:1fr}
+  .goals-grid{grid-template-columns:1fr}
+  .aud-grid{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr;gap:2.5rem}
+  .nav-links{display:none}
+}
+@media(max-width:640px){
+  section{padding:4.5rem 1.25rem}
+  .aud-grid{grid-template-columns:1fr}
+  .hero-inner{padding:4rem 1.25rem}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<!-- NUOY BRAND STRIPE -->
+<div class="brand-stripe" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logomark">N</div>
+      <div class="nav-wordmark">
+        <strong>ICMS Hanoi 2026</strong>
+        <span>Sept 21–23 · Vietnam</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="en">About</a><a href="about.html" class="vi">Về hội nghị</a></li>
+      <li><a href="programme.html" class="en">Programme</a><a href="programme.html" class="vi">Chương trình</a></li>
+      <li><a href="speakers.html" class="en">Speakers</a><a href="speakers.html" class="vi">Diễn giả</a></li>
+      <li><a href="register.html" class="en">Register</a><a href="register.html" class="vi">Đăng ký</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-pill">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('vi')">VI</button>
+      </div>
+      <a href="register.html" class="btn-cta-nav en">Register Now</a>
+      <a href="register.html" class="btn-cta-nav vi">Đăng ký ngay</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-ring"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <div class="eyebrow-dot"></div>
+        <span class="eyebrow-text en">Vietnam's First International Cleft Mastery Summit</span>
+        <span class="eyebrow-text vi">Hội nghị Quốc tế Làm chủ Kỹ thuật Điều trị Khe hở đầu tiên tại Việt Nam</span>
+      </div>
+
+      <h1 class="hero-h1 en">International Cleft<br><em>Mastery Summit</em><br>Ha Noi, 2026</h1>
+      <h1 class="hero-h1 vi">Hội nghị Quốc tế<br>Làm chủ Kỹ thuật Điều trị<br><em>Khe hở môi – vòm miệng</em><br>Hà Nội, 2026</h1>
+
+      <p class="hero-sub en">Advancing Surgical Precision and Longitudinal Outcomes</p>
+      <p class="hero-sub vi">Nâng cao chất lượng phẫu thuật và cải thiện kết quả điều trị lâu dài</p>
+
+      <p class="hero-slogan en">Beyond the Mission: Peer-to-Peer Partnership for Global Excellence</p>
+      <p class="hero-slogan vi">Vượt trên sứ mệnh: Kết nối đồng nghiệp, vươn tầm quốc tế</p>
+
+      <div class="hero-meta">
+        <div class="hm">
+          <div class="hm-icon">
+            <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+          </div>
+          <div class="hm-txt">
+            <strong>September 21–23, 2026</strong>
+            <span class="en">3 days · 17 international faculty · 9+ countries</span>
+            <span class="vi">3 ngày · 17 chuyên gia quốc tế · 9+ quốc gia</span>
+          </div>
+        </div>
+        <div class="hm">
+          <div class="hm-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <div class="hm-txt">
+            <strong class="en">Hong Ngoc Phuc Truong Minh Hospital</strong>
+            <strong class="vi">Bệnh viện Hồng Ngọc Phúc Trường Minh</strong>
+            <span>8 Châu Văn Liêm, Hà Nội, Việt Nam</span>
+          </div>
+        </div>
+        <div class="hm">
+          <div class="hm-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <div class="hm-txt">
+            <strong>cleftcourse@nuoy.org</strong>
+            <span class="en">Conference enquiries &amp; registration support</span>
+            <span class="vi">Hỗ trợ đăng ký và thông tin hội nghị</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-btns">
+        <a href="register.html" class="btn-primary en">Register Now →</a>
+        <a href="register.html" class="btn-primary vi">Đăng ký ngay →</a>
+        <a href="about.html" class="btn-ghost en">About the Summit</a>
+        <a href="about.html" class="btn-ghost vi">Về hội nghị</a>
+      </div>
+    </div>
+
+    <!-- Countdown Card -->
+    <div class="hero-card">
+      <div class="hc-label en">Countdown to the summit</div>
+      <div class="hc-label vi">Đếm ngược đến hội nghị</div>
+      <div class="countdown">
+        <div class="cd"><span class="cd-n" id="cd-d">--</span><span class="cd-l en">days</span><span class="cd-l vi">ngày</span></div>
+        <div class="cd"><span class="cd-n" id="cd-h">--</span><span class="cd-l en">hrs</span><span class="cd-l vi">giờ</span></div>
+        <div class="cd"><span class="cd-n" id="cd-m">--</span><span class="cd-l en">min</span><span class="cd-l vi">phút</span></div>
+        <div class="cd"><span class="cd-n" id="cd-s">--</span><span class="cd-l en">sec</span><span class="cd-l vi">giây</span></div>
+      </div>
+      <div class="hc-divider"></div>
+      <div class="hc-stats">
+        <div class="hcs"><strong>17</strong><span class="en">Faculty</span><span class="vi">Chuyên gia</span></div>
+        <div class="hcs"><strong>9+</strong><span class="en">Countries</span><span class="vi">Quốc gia</span></div>
+        <div class="hcs"><strong>3</strong><span class="en">Days</span><span class="vi">Ngày</span></div>
+      </div>
+      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.07)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem" class="en">Early Bird Closes</div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem" class="vi">Early Bird kết thúc</div>
+        <div style="font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:var(--yellow);font-style:italic">July 15, 2026</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:3px" class="en">From $250 · 3 pricing tiers</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:3px" class="vi">Từ $250 · 3 mức phí</div>
+        <a href="register.html" style="display:block;margin-top:1rem;padding:10px;background:var(--yellow);color:var(--dark);border-radius:5px;text-align:center;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:.2s" class="en" onmouseover="this.style.background='var(--teal)';this.style.color='white'" onmouseout="this.style.background='var(--yellow)';this.style.color='var(--dark)'">Register Now →</a>
+        <a href="register.html" style="display:block;margin-top:1rem;padding:10px;background:var(--yellow);color:var(--dark);border-radius:5px;text-align:center;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:.2s" class="vi">Đăng ký ngay →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCROLLING BANNER -->
+<div class="banner">
+  <div class="banner-track">
+    <span class="bi en">Advanced Interdisciplinary Symposium</span><span class="bi-sep">◆</span>
+    <span class="bi en">17 International Faculty · 9+ Countries</span><span class="bi-sep">◆</span>
+    <span class="bi en">Bilateral Knowledge Exchange</span><span class="bi-sep">◆</span>
+    <span class="bi en">CME Credits Available</span><span class="bi-sep">◆</span>
+    <span class="bi en">Hong Ngoc Hospital · Hanoi · Sept 21–23, 2026</span><span class="bi-sep">◆</span>
+    <span class="bi en">Early Bird Until July 15 · From $250</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Hội nghị liên ngành chuyên sâu</span><span class="bi-sep">◆</span>
+    <span class="bi vi">17 chuyên gia quốc tế · 9+ quốc gia</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Trao đổi chuyên môn hai chiều</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Cấp chứng chỉ CME</span><span class="bi-sep">◆</span>
+    <span class="bi vi">BV Hồng Ngọc · Hà Nội · 21–23/09/2026</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Early Bird đến 15/07 · Từ $250</span><span class="bi-sep">◆</span>
+    <!-- duplicate for seamless loop -->
+    <span class="bi en">Advanced Interdisciplinary Symposium</span><span class="bi-sep">◆</span>
+    <span class="bi en">17 International Faculty · 9+ Countries</span><span class="bi-sep">◆</span>
+    <span class="bi en">Bilateral Knowledge Exchange</span><span class="bi-sep">◆</span>
+    <span class="bi en">CME Credits Available</span><span class="bi-sep">◆</span>
+    <span class="bi en">Hong Ngoc Hospital · Hanoi · Sept 21–23, 2026</span><span class="bi-sep">◆</span>
+    <span class="bi en">Early Bird Until July 15 · From $250</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Hội nghị liên ngành chuyên sâu</span><span class="bi-sep">◆</span>
+    <span class="bi vi">17 chuyên gia quốc tế · 9+ quốc gia</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Trao đổi chuyên môn hai chiều</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Cấp chứng chỉ CME</span><span class="bi-sep">◆</span>
+    <span class="bi vi">BV Hồng Ngọc · Hà Nội · 21–23/09/2026</span><span class="bi-sep">◆</span>
+    <span class="bi vi">Early Bird đến 15/07 · Từ $250</span><span class="bi-sep">◆</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="si">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-imgbox">
+          <div class="about-icon-wm">
+            <svg viewBox="0 0 100 100"><circle cx="50" cy="32" r="22"/><path d="M10 82c0-22.1 17.9-40 40-40s40 17.9 40 40"/></svg>
+          </div>
+          <div class="about-caption">
+            <strong class="en">Hong Ngoc Phuc Truong Minh Hospital, Hanoi</strong>
+            <strong class="vi">Bệnh viện Hồng Ngọc Phúc Trường Minh, Hà Nội</strong>
+            <span>8 Châu Văn Liêm · September 21–23, 2026</span>
+          </div>
+        </div>
+        <div class="about-badge">
+          <strong class="en">1st</strong><strong class="vi">Lần đầu</strong>
+          <span class="en">in Vietnam</span><span class="vi">tại VN</span>
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <div class="sec-eyebrow en">About the conference</div>
+        <div class="sec-eyebrow vi">Về hội nghị</div>
+        <h2 class="sec-h2 en">Longitudinal Master in <em>Cleft Reconstruction</em></h2>
+        <h2 class="sec-h2 vi">Chương trình đào tạo chuyên sâu về <em>Phẫu thuật Khe hở</em></h2>
+        <p class="sec-body en">The Nuoy Hanoi 2026 International Cleft Mastery Summit is an advanced, interdisciplinary symposium dedicated to the comprehensive management of the cleft patient — from neonatal intervention through skeletal maturity. It serves as a high-level site for bilateral knowledge exchange, where international innovation integrates with the technical precision and high-volume expertise of the Vietnamese surgical model.</p>
+        <p class="sec-body vi">Hội nghị là chương trình đào tạo chuyên sâu, liên ngành, tập trung vào quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt — nơi các tiến bộ quốc tế kết nối với kinh nghiệm thực tiễn từ mô hình phẫu thuật số lượng lớn của Việt Nam.</p>
+        <div class="about-features">
+          <div class="af">
+            <div class="af-mark"></div>
+            <div>
+              <h4 class="en">Advanced Case-Based Discussion — No Hands-On</h4>
+              <h4 class="vi">Thảo luận ca lâm sàng chuyên sâu — Không thực hành tay</h4>
+              <p class="en">From the Mann Doctrine of tension-free palatoplasty to Virtual Surgical Planning — a rigorous examination of the 2020s Standard of Care across all disciplines.</p>
+              <p class="vi">Từ học thuyết Mann Doctrine đến lập kế hoạch phẫu thuật ảo (VSP) — cái nhìn toàn diện về Tiêu chuẩn điều trị thập niên 2020 trên tất cả chuyên ngành.</p>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-mark"></div>
+            <div>
+              <h4 class="en">Multidisciplinary Longitudinal Focus</h4>
+              <h4 class="vi">Tiếp cận đa chuyên ngành theo suốt hành trình điều trị</h4>
+              <p class="en">Participants engage in specialised troubleshooting for the field's most complex challenges — fistulae, asymmetric Class III malocclusions, VPI, and definitive nasal restoration.</p>
+              <p class="vi">Học viên tham gia giải quyết các tình huống phức tạp nhất: rò vòm miệng tái phát, sai khớp cắn Hạng III, VPI và tạo hình mũi hoàn thiện.</p>
+            </div>
+          </div>
+          <div class="af">
+            <div class="af-mark"></div>
+            <div>
+              <h4 class="en">17 World-Class Faculty from 9+ Countries</h4>
+              <h4 class="vi">17 chuyên gia hàng đầu từ 9+ quốc gia</h4>
+              <p class="en">Taiwan, Korea, Netherlands, USA, Canada, Australia, Brazil, Thailand, and Vietnam — all in Hanoi for three days of peer-to-peer exchange at the highest level.</p>
+              <p class="vi">Đài Loan, Hàn Quốc, Hà Lan, Mỹ, Canada, Úc, Brazil, Thái Lan và Việt Nam — cùng hội tụ tại Hà Nội trong ba ngày trao đổi ngang hàng ở cấp độ cao nhất.</p>
+            </div>
+          </div>
+        </div>
+        <a href="about.html" class="btn-teal en">Explore the conference →</a>
+        <a href="about.html" class="btn-teal vi">Tìm hiểu thêm về hội nghị →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEXT -->
+<section class="context">
+  <div class="si">
+    <div class="sec-eyebrow en">Regional context</div>
+    <div class="sec-eyebrow vi">Bối cảnh khu vực</div>
+    <h2 class="sec-h2 en">A Catalyst for National <em>Clinical Integration</em></h2>
+    <h2 class="sec-h2 vi">Động lực thúc đẩy <em>Kết nối Lâm sàng Toàn quốc</em></h2>
+    <p class="sec-body en">Vietnam is a global leader in cleft care — characterised by a surgical volume and clinical efficiency that is virtually unmatched. With an incidence rate nearly double the global average, Vietnamese centres have developed a high-velocity expertise that defines mastery at scale. This summit is designed to be the definitive catalyst for the formalisation of a National Vietnamese Reconstructive Community, bridging the "Longitudinal Gap" between primary repair and definitive functional success in adulthood.</p>
+    <p class="sec-body vi">Việt Nam hiện là quốc gia dẫn đầu thế giới về điều trị khe hở với số lượng ca phẫu thuật và hiệu suất lâm sàng gần như không có đối thủ. Tỉ lệ mắc gần gấp đôi mức trung bình toàn cầu đã giúp các trung tâm trong nước tích luỹ chuyên môn lớn. Hội nghị này được thiết kế để trở thành chất xúc tác hình thành Cộng đồng Phẫu thuật Tái tạo Quốc gia.</p>
+    <div class="ctx-grid">
+      <div class="ctx-card reveal">
+        <div class="ctx-n">1/550</div>
+        <h4 class="en">Cleft incidence in Vietnam</h4>
+        <h4 class="vi">Tỉ lệ mắc khe hở tại Việt Nam</h4>
+        <p class="en">Nearly double the global average of 1 in 700 — generating a scale of surgical expertise unmatched in Southeast Asia and positioning Vietnam as a primary training hub for the region.</p>
+        <p class="vi">Gần gấp đôi mức trung bình toàn cầu (1/700), tạo nên chuyên môn phẫu thuật ở quy mô không có đối thủ trong khu vực và định vị Việt Nam là trung tâm đào tạo hàng đầu Đông Nam Á.</p>
+      </div>
+      <div class="ctx-card reveal d1">
+        <div class="ctx-n">100M+</div>
+        <h4 class="en">People in Vietnam</h4>
+        <h4 class="vi">Người dân Việt Nam</h4>
+        <p class="en">A rapidly developing healthcare system transitioning toward a permanent Hub and Spoke model — connecting centres of excellence across Northern, Central, and Southern Vietnam.</p>
+        <p class="vi">Hệ thống y tế đang phát triển nhanh, chuyển hướng sang mô hình "trung tâm – vệ tinh" kết nối các trung tâm xuất sắc khắp ba miền Bắc, Trung, Nam.</p>
+      </div>
+      <div class="ctx-card reveal d2">
+        <div class="ctx-n">20+</div>
+        <h4 class="en">Years of Nuoy in Vietnam</h4>
+        <h4 class="vi">Năm Nuoy hoạt động tại Việt Nam</h4>
+        <p class="en">Long-standing partnerships with major academic institutions in Hanoi, building trust, continuity, and deep local surgical knowledge across multiple hospital networks.</p>
+        <p class="vi">Quan hệ đối tác lâu dài với các cơ sở học thuật lớn tại Hà Nội, xây dựng sự tin cậy và kiến thức phẫu thuật sâu sắc trên nhiều mạng lưới bệnh viện.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section class="goals">
+  <div class="si">
+    <div class="sec-eyebrow en">Conference goals</div>
+    <div class="sec-eyebrow vi">Mục tiêu hội nghị</div>
+    <h2 class="sec-h2 en">Four Goals. <em>One Strategic Vision.</em></h2>
+    <h2 class="sec-h2 vi">Bốn mục tiêu. <em>Một tầm nhìn chiến lược.</em></h2>
+    <div class="goals-grid">
+      <div class="goal reveal">
+        <div class="goal-n">01</div>
+        <div>
+          <h4 class="en">Unify the National Reconstructive Community</h4>
+          <h4 class="vi">Kết nối cộng đồng phẫu thuật tạo hình toàn quốc</h4>
+          <p class="en">Formalise a collaborative, inter-centre network of cleft professionals across Northern, Central, and Southern Vietnam.</p>
+          <p class="vi">Xây dựng mạng lưới hợp tác giữa các trung tâm điều trị khe hở tại ba miền Bắc, Trung và Nam Việt Nam.</p>
+        </div>
+      </div>
+      <div class="goal reveal d1">
+        <div class="goal-n">02</div>
+        <div>
+          <h4 class="en">Bilateral Knowledge Exchange</h4>
+          <h4 class="vi">Trao đổi chuyên môn hai chiều</h4>
+          <p class="en">Facilitate a high-level peer-to-peer forum where international surgical standards and local Vietnamese mastery are shared with equal authority.</p>
+          <p class="vi">Tạo diễn đàn trao đổi ngang hàng, nơi tiêu chuẩn quốc tế và năng lực làm chủ kỹ thuật của Việt Nam được chia sẻ với vị thế bình đẳng.</p>
+        </div>
+      </div>
+      <div class="goal reveal">
+        <div class="goal-n">03</div>
+        <div>
+          <h4 class="en">Bridge the Longitudinal Gap</h4>
+          <h4 class="vi">Thu hẹp khoảng trống điều trị dài hạn</h4>
+          <p class="en">Shift clinical focus from isolated primary repairs to the comprehensive, long-term functional and aesthetic needs of the maturing patient.</p>
+          <p class="vi">Chuyển tư duy từ điều trị từng giai đoạn sang quản lý toàn diện theo suốt quá trình phát triển của bệnh nhân.</p>
+        </div>
+      </div>
+      <div class="goal reveal d1">
+        <div class="goal-n">04</div>
+        <div>
+          <h4 class="en">Institutionalise Data-Driven Care</h4>
+          <h4 class="vi">Chuẩn hoá điều trị dựa trên dữ liệu</h4>
+          <p class="en">Promote implementation of national research registries (AcquireNET) to standardise outcomes and lead global cleft research.</p>
+          <p class="vi">Thúc đẩy triển khai hệ thống dữ liệu nghiên cứu quốc gia (AcquireNET) nhằm chuẩn hoá kết quả và đóng góp vào nghiên cứu khe hở toàn cầu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience">
+  <div class="si">
+    <div class="sec-eyebrow en">Who should attend</div>
+    <div class="sec-eyebrow vi">Đối tượng tham dự</div>
+    <h2 class="sec-h2 en">Built for Every Member of <em>the Cleft Team</em></h2>
+    <h2 class="sec-h2 vi">Dành cho tất cả thành viên <em>trong đội ngũ điều trị</em></h2>
+    <p class="sec-body en">This advanced symposium welcomes specialists at every stage of the cleft reconstructive continuum — from primary surgery to long-term multidisciplinary follow-up.</p>
+    <p class="sec-body vi">Hội nghị chuyên sâu này chào đón các chuyên gia ở mọi giai đoạn trong hành trình điều trị khe hở toàn diện, từ phẫu thuật ban đầu đến theo dõi đa chuyên ngành dài hạn.</p>
+    <div class="aud-grid">
+      <div class="aud reveal">
+        <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
+        <h4 class="en">Plastic &amp; Craniofacial Surgeons</h4>
+        <h4 class="vi">Bác sĩ Phẫu thuật Tạo hình và Sọ mặt</h4>
+      </div>
+      <div class="aud reveal d1">
+        <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
+        <h4 class="en">Oral &amp; Maxillofacial Surgeons</h4>
+        <h4 class="vi">Bác sĩ Phẫu thuật Răng Hàm Mặt</h4>
+      </div>
+      <div class="aud reveal d2">
+        <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/></svg></div>
+        <h4 class="en">Orthodontists</h4>
+        <h4 class="vi">Bác sĩ Chỉnh nha</h4>
+      </div>
+      <div class="aud reveal">
+        <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm-1 14H9V8h2v9zm4 0h-2V8h2v9z"/></svg></div>
+        <h4 class="en">Speech &amp; Language Therapists</h4>
+        <h4 class="vi">Chuyên gia Âm ngữ trị liệu</h4>
+      </div>
+      <div class="aud reveal d1">
+        <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div>
+        <h4 class="en">Residents &amp; Fellows</h4>
+        <h4 class="vi">Bác sĩ Nội trú và Nghiên cứu sinh</h4>
+      </div>
+      <div class="aud reveal d2">
+        <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        <h4 class="en">Allied Health Professionals</h4>
+        <h4 class="vi">Nhân sự y tế liên quan</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="si">
+    <div class="sec-eyebrow en">Registration fees</div>
+    <div class="sec-eyebrow vi">Phí tham dự</div>
+    <h2 class="sec-h2 en">Equitable Access, <em>Global Participation</em></h2>
+    <h2 class="sec-h2 vi">Tiếp cận công bằng, <em>Tham gia toàn cầu</em></h2>
+    <p class="sec-body en">Fees are structured according to World Bank Country Income Classifications. Contributions from high-income country participants directly support colleagues from lower-income regions — strengthening the global network of cleft care. Early Bird closes July 15, 2026.</p>
+    <p class="sec-body vi">Phí được phân loại theo Phân nhóm Thu nhập Quốc gia của Ngân hàng Thế giới. Đóng góp từ người tham dự quốc gia thu nhập cao trực tiếp hỗ trợ đồng nghiệp từ khu vực thu nhập thấp hơn. Early Bird kết thúc ngày 15/07/2026.</p>
+    <div class="ptab-wrap">
+      <table class="ptab">
+        <thead>
+          <tr>
+            <th class="en">Category</th><th class="vi">Đối tượng</th>
+            <th class="en">Early Bird<br><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">Until Jul 15, 2026</small></th>
+            <th class="vi">Đăng ký sớm<br><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">Đến 15/07/2026</small></th>
+            <th class="en">Regular<br><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">Jul 16 – Sep 20</small></th>
+            <th class="vi">Tiêu chuẩn<br><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">16/07 – 20/09</small></th>
+            <th class="en">Onsite</th>
+            <th class="vi">Tại chỗ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hilite">
+            <td class="en">LMIC &amp; Vietnam<small>Vietnam and low / lower-middle income countries</small></td>
+            <td class="vi">Việt Nam &amp; LMIC<small>Việt Nam và quốc gia thu nhập thấp / trung bình thấp</small></td>
+            <td class="en">$250</td><td class="vi">$250</td>
+            <td class="en">$300</td><td class="vi">$300</td>
+            <td class="en">$350</td><td class="vi">$350</td>
+          </tr>
+          <tr>
+            <td class="en">Upper middle-income<small>UMIC countries</small></td>
+            <td class="vi">Thu nhập trung bình cao<small>Quốc gia UMIC</small></td>
+            <td class="en">$400</td><td class="vi">$400</td>
+            <td class="en">$450</td><td class="vi">$450</td>
+            <td class="en">$500</td><td class="vi">$500</td>
+          </tr>
+          <tr>
+            <td class="en">High-income country<small>HIC — USA, Canada, Australia, W. Europe, Korea, Japan, Taiwan</small></td>
+            <td class="vi">Thu nhập cao<small>HIC — Mỹ, Canada, Úc, Tây Âu, Hàn Quốc, Nhật, Đài Loan</small></td>
+            <td class="en">$600</td><td class="vi">$600</td>
+            <td class="en">$700</td><td class="vi">$700</td>
+            <td class="en">$750</td><td class="vi">$750</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="price-note en"><strong>Included in all registrations:</strong> All scientific sessions · Conference materials · Lunch and tea breaks on all three days · Welcome Reception (Sept 21, 17:00–18:00) · All prices in USD · CME credits available (fee TBD) · Organisation does not issue invoices or VAT receipts</div>
+    <div class="price-note vi"><strong>Phí đăng ký bao gồm:</strong> Toàn bộ phiên khoa học · Tài liệu hội nghị · Bữa trưa và tea break cả ba ngày · Sự kiện Kết nối Đồng nghiệp (21/09, 17:00–18:00) · Tất cả phí tính bằng USD · Cấp chứng chỉ CME (phí thông báo sau) · Tổ chức không xuất hoá đơn</div>
+    <div class="cancel-note en"><strong>Cancellation policy:</strong> Cancellations and changes in registration category after registration are not accepted. The registration fee paid will not be refunded for any reason.</div>
+    <div class="cancel-note vi"><strong>Chính sách huỷ:</strong> Không hỗ trợ huỷ hoặc thay đổi loại đăng ký sau khi hoàn tất. Phí đã thanh toán sẽ không được hoàn lại.</div>
+  </div>
+</section>
+
+<!-- SUPPORTERS -->
+<section class="supporters">
+  <div class="si">
+    <div class="sec-eyebrow en" style="justify-content:center">Supporters &amp; Exhibitors</div>
+    <div class="sec-eyebrow vi" style="justify-content:center">Đối tác hỗ trợ &amp; Triển lãm</div>
+    <h2 class="sec-h2 en" style="max-width:480px;margin:0 auto 0">Made Possible With <em>Our Partners</em></h2>
+    <h2 class="sec-h2 vi" style="max-width:480px;margin:0 auto 0">Thực hiện cùng <em>các đối tác</em></h2>
+    <div class="sup-flex">
+      <div class="sup-chip">Hong Ngoc Hospital</div>
+      <div class="sup-chip">KLS Martin Group</div>
+      <div class="sup-chip">Vietnam Airlines</div>
+      <div class="sup-chip">Smile Train</div>
+      <div class="sup-chip">Noordhoff Craniofacial Foundation</div>
+      <div class="sup-chip">ReSurge International</div>
+      <div class="sup-chip">Operation Smile</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="si">
+    <div class="sec-eyebrow en">Early Bird open · Closes July 15, 2026</div>
+    <div class="sec-eyebrow vi">Early Bird đang mở · Kết thúc 15/07/2026</div>
+    <h2 class="sec-h2 en">Ready to Join <em>the Summit?</em></h2>
+    <h2 class="sec-h2 vi">Bạn đã sẵn sàng <em>tham gia</em> chưa?</h2>
+    <p class="cta-body en">Secure your place at Vietnam's first international cleft mastery summit. Spots are limited to ensure a genuinely immersive peer-to-peer experience. Vietnamese participants from $250 Early Bird.</p>
+    <p class="cta-body vi">Đăng ký chỗ của bạn tại hội nghị quốc tế đầu tiên về làm chủ kỹ thuật điều trị khe hở tại Việt Nam. Số chỗ có giới hạn. Người tham dự Việt Nam từ $250 Early Bird.</p>
+    <div class="cta-btns">
+      <a href="register.html" class="btn-primary en">Register Now →</a>
+      <a href="register.html" class="btn-primary vi">Đăng ký ngay →</a>
+      <a href="programme.html" class="btn-ghost en">View Programme</a>
+      <a href="programme.html" class="btn-ghost vi">Xem chương trình</a>
+      <a href="speakers.html" class="btn-ghost en">Meet the Faculty</a>
+      <a href="speakers.html" class="btn-ghost vi">Gặp gỡ Ban giảng huấn</a>
+    </div>
+    <p class="cta-contact en">Questions? <a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></p>
+    <p class="cta-contact vi">Cần hỗ trợ? <a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-stripe"></div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="nav-logo" style="margin-bottom:0">
+          <div class="nav-logomark">N</div>
+          <div class="nav-wordmark">
+            <strong>International Cleft Mastery Summit</strong>
+            <span>Ha Noi 2026</span>
+          </div>
+        </div>
+        <p class="en">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable capacity building in Vietnam and Southeast Asia.</p>
+        <p class="vi">Được tổ chức bởi Nuoy Reconstructive International — tổ chức phi lợi nhuận toàn cầu thúc đẩy chăm sóc phẫu thuật tái tạo thông qua đào tạo, hợp tác và phát triển năng lực bền vững tại Việt Nam và Đông Nam Á.</p>
+      </div>
+      <div class="foot-col">
+        <h5 class="en">Pages</h5>
+        <h5 class="vi">Điều hướng</h5>
+        <ul>
+          <li><a href="index.html" class="en">Home</a><a href="index.html" class="vi">Trang chủ</a></li>
+          <li><a href="about.html" class="en">About the Conference</a><a href="about.html" class="vi">Về hội nghị</a></li>
+          <li><a href="programme.html" class="en">Programme</a><a href="programme.html" class="vi">Chương trình</a></li>
+          <li><a href="speakers.html" class="en">Speakers</a><a href="speakers.html" class="vi">Diễn giả</a></li>
+          <li><a href="register.html" class="en">Register</a><a href="register.html" class="vi">Đăng ký</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></li>
+          <li><a href="https://www.nuoy.org" target="_blank">nuoy.org</a></li>
+        </ul>
+        <h5 style="margin-top:1.5rem" class="en">Venue</h5>
+        <h5 style="margin-top:1.5rem" class="vi">Địa điểm</h5>
+        <ul>
+          <li><a href="about.html" class="en">Hong Ngoc Phuc Truong Minh Hospital</a><a href="about.html" class="vi">Bệnh viện Hồng Ngọc Phúc Trường Minh</a></li>
+          <li><a href="about.html" style="font-size:12px;opacity:.7">8 Châu Văn Liêm, Hà Nội</a></li>
+        </ul>
+        <h5 style="margin-top:1.5rem" class="en">Organised by</h5>
+        <h5 style="margin-top:1.5rem" class="vi">Đơn vị tổ chức</h5>
+        <ul>
+          <li><a href="https://www.nuoy.org" target="_blank">Nuoy Reconstructive International</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
+      <a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Language */
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  localStorage.setItem('icms-lang',l);
+}
+setLang(localStorage.getItem('icms-lang')||'en');
+
+/* Nav scroll */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+/* Countdown */
+(function tick(){
+  const diff=new Date('2026-09-21T08:00:00+07:00')-new Date();
+  if(diff>0){
+    const d=Math.floor(diff/86400000),
+          h=Math.floor((diff%86400000)/3600000),
+          m=Math.floor((diff%3600000)/60000),
+          s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-d').textContent=String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  }
+  setTimeout(tick,1000);
+})();
+
+/* Scroll reveal */
+const io=new IntersectionObserver(
+  es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),
+  {threshold:.1}
+);
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

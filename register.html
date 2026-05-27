@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register | ICMS Hanoi 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;--sky:#1295D8;--green:#97D88A;--dark:#0E1A2E;--dark2:#142840;--off:#F5F4F0;--tx:#414042;--tx2:#636466;--tx3:#808285;--border:rgba(65,64,66,.12);--ff-sans:'DM Sans',system-ui,sans-serif;--ff-serif:'Literata',Georgia,serif;--ease:cubic-bezier(.4,0,.2,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-sans);color:var(--tx);background:#fff;overflow-x:hidden;font-weight:300;-webkit-font-smoothing:antialiased}
+body[data-lang="vi"] .en{display:none!important}
+body[data-lang="en"] .vi{display:none!important}
+.brand-stripe{height:6px;background:linear-gradient(90deg,var(--blue) 0% 20%,var(--sky) 20% 40%,var(--teal) 40% 60%,var(--green) 60% 80%,var(--yellow) 80% 100%);position:fixed;top:0;left:0;right:0;z-index:400}
+nav{position:fixed;top:6px;left:0;right:0;z-index:300;background:rgba(14,26,46,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,180,188,.18)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
+.nav-logomark{width:38px;height:38px;background:var(--teal);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:18px;font-weight:600;color:var(--dark);font-style:italic}
+.nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
+.nav-wordmark strong{font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase}
+.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.07em;text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:0}
+.nav-links a{display:block;padding:7px 15px;color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;transition:.2s}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.09)}
+.nav-links a.active{color:var(--teal)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:22px;padding:2px;border:1px solid rgba(255,255,255,.13)}
+.lang-btn{padding:4px 13px;border-radius:20px;border:none;background:transparent;color:rgba(255,255,255,.5);font-size:11px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.07em;cursor:pointer;transition:.2s}
+.lang-btn.active{background:var(--teal);color:var(--dark)}
+
+/* PAGE HERO */
+.page-hero{background:var(--dark);padding:9rem 2.5rem 5rem;position:relative;overflow:hidden}
+.page-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 70% 50%,rgba(0,180,188,.1) 0%,transparent 55%);pointer-events:none}
+.ph-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2}
+.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
+.ph-h1{font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;color:#fff;line-height:1.12;margin-bottom:.75rem;letter-spacing:-.01em}
+.ph-h1 em{font-style:italic;color:var(--teal)}
+.ph-body{font-size:1rem;color:rgba(255,255,255,.5);max-width:560px;line-height:1.85;font-weight:300}
+
+/* MAIN LAYOUT */
+.reg-layout{max-width:1280px;margin:0 auto;padding:4rem 2.5rem 6rem;display:grid;grid-template-columns:1fr 360px;gap:4rem;align-items:start}
+
+/* PRICING SIDEBAR */
+.price-sidebar{position:sticky;top:90px;background:var(--dark);border-radius:14px;padding:2rem;color:#fff}
+.ps-title{font-family:var(--ff-serif);font-size:1.2rem;font-weight:400;font-style:italic;color:var(--teal);margin-bottom:1.5rem}
+.ps-tier{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.ps-tier:last-of-type{border-bottom:none}
+.ps-tier-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.ps-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:.35rem}
+.ps-price-col{text-align:center}
+.ps-price-head{font-size:9px;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+.ps-price-num{font-family:var(--ff-serif);font-size:1.15rem;color:var(--teal);font-weight:400}
+.ps-price-col.highlight .ps-price-num{color:var(--yellow)}
+.ps-tier-note{font-size:11px;color:rgba(255,255,255,.35);line-height:1.5;font-weight:300}
+.ps-includes{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+.ps-includes h5{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.75rem}
+.ps-includes ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+.ps-includes li{font-size:12px;color:rgba(255,255,255,.55);padding-left:14px;position:relative;font-weight:300;line-height:1.45}
+.ps-includes li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-size:11px}
+.ps-deadline{margin-top:1.25rem;padding:1rem;background:rgba(248,232,22,.08);border:1px solid rgba(248,232,22,.2);border-radius:8px;font-size:12px;color:rgba(255,255,255,.6)}
+.ps-deadline strong{display:block;color:var(--yellow);font-size:13px;font-weight:500;margin-bottom:3px}
+.ps-cancel{margin-top:1rem;padding:.75rem 1rem;border-left:3px solid rgba(0,180,188,.3);font-size:11px;color:rgba(255,255,255,.35);line-height:1.6;font-weight:300}
+
+/* FORM */
+.form-wrap{}
+.form-section{margin-bottom:2.5rem}
+.form-section-title{font-family:var(--ff-serif);font-size:1.3rem;font-weight:400;font-style:italic;color:var(--dark);margin-bottom:.3rem}
+.form-section-sub{font-size:13px;color:var(--tx2);margin-bottom:1.5rem;font-weight:300}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-row.full{grid-template-columns:1fr}
+.form-field{display:flex;flex-direction:column;gap:6px}
+label{font-size:12px;font-weight:600;color:var(--dark);letter-spacing:.03em}
+label .req{color:var(--teal);margin-left:2px}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  width:100%;padding:12px 14px;
+  border:1.5px solid var(--border);border-radius:7px;
+  font-family:var(--ff-sans);font-size:14px;font-weight:300;color:var(--tx);
+  background:#fff;transition:.2s;
+  -webkit-appearance:none;
+}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,180,188,.1)}
+input::placeholder,textarea::placeholder{color:var(--tx3)}
+textarea{resize:vertical;min-height:80px}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23808285' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;cursor:pointer}
+
+/* Checkbox / radio groups */
+.check-group{display:flex;flex-direction:column;gap:8px}
+.check-item{display:flex;align-items:flex-start;gap:10px;cursor:pointer}
+.check-item input[type=checkbox],.check-item input[type=radio]{width:18px;height:18px;border:1.5px solid var(--border);border-radius:4px;accent-color:var(--teal);flex-shrink:0;margin-top:1px;cursor:pointer}
+.check-item input[type=radio]{border-radius:50%}
+.check-item span{font-size:13px;color:var(--tx);line-height:1.4;font-weight:300}
+.check-item span small{display:block;font-size:11px;color:var(--tx3);margin-top:2px}
+
+/* Job title grid */
+.job-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+
+/* Experience multi-select */
+.exp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+
+/* Sub-field (conditional) */
+.sub-field{margin-top:.75rem;padding-left:28px}
+.sub-field input{font-size:13px;padding:10px 12px}
+
+/* Divider */
+.form-divider{height:1px;background:var(--border);margin:2rem 0}
+
+/* Submit */
+.submit-area{background:var(--off);border-radius:12px;padding:2rem;margin-top:2rem}
+.submit-area p{font-size:13px;color:var(--tx2);line-height:1.7;margin-bottom:1.25rem;font-weight:300}
+.submit-area p strong{color:var(--dark);font-weight:600}
+.btn-submit{width:100%;padding:16px;background:var(--yellow);color:var(--dark);border:none;border-radius:7px;font-family:var(--ff-sans);font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:.25s;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-submit:hover{background:var(--teal);color:#fff;transform:translateY(-1px);box-shadow:0 8px 20px rgba(0,180,188,.25)}
+.btn-submit svg{width:18px;height:18px}
+.form-note{margin-top:1rem;font-size:11px;color:var(--tx3);text-align:center;line-height:1.6;font-weight:300}
+
+/* Contact box */
+.contact-box{background:var(--dark);border-radius:12px;padding:1.75rem;margin-top:1.5rem;color:#fff}
+.contact-box h4{font-size:13px;font-weight:600;margin-bottom:.5rem;color:var(--teal)}
+.contact-box p{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-weight:300}
+.contact-box a{color:var(--teal);text-decoration:none}
+
+/* FOOTER */
+footer{background:#060E1B;padding:2.5rem 2.5rem 2rem}
+.foot-wrap{max-width:1280px;margin:0 auto}
+.foot-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 0% 20%,var(--sky) 20% 40%,var(--teal) 40% 60%,var(--green) 60% 80%,var(--yellow) 80% 100%);border-radius:2px;margin-bottom:1.75rem}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.18);flex-wrap:wrap;gap:.5rem}
+.foot-bottom a{color:rgba(255,255,255,.18);text-decoration:none;transition:.2s}
+.foot-bottom a:hover{color:rgba(255,255,255,.5)}
+
+/* Price highlight row */
+.hilite-row{background:rgba(0,180,188,.08);border-radius:6px}
+
+@media(max-width:1024px){.nav-links{display:none}.reg-layout{grid-template-columns:1fr}.price-sidebar{position:static;margin-bottom:2rem}.job-grid,.exp-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.form-row{grid-template-columns:1fr}.reg-layout{padding:3rem 1.25rem 5rem}}
+</style>
+</head>
+<body data-lang="en">
+<div class="brand-stripe"></div>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="nav-logomark">N</div><div class="nav-wordmark"><strong>ICMS Hanoi 2026</strong><span>Sept 21–23</span></div></a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="en">About</a><a href="about.html" class="vi">Về hội nghị</a></li>
+      <li><a href="programme.html" class="en">Programme</a><a href="programme.html" class="vi">Chương trình</a></li>
+      <li><a href="speakers.html" class="en">Speakers</a><a href="speakers.html" class="vi">Diễn giả</a></li>
+      <li><a href="register.html" class="active en">Register</a><a href="register.html" class="active vi">Đăng ký</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-pill"><button class="lang-btn active" onclick="setLang('en')">EN</button><button class="lang-btn" onclick="setLang('vi')">VI</button></div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-inner">
+    <div class="ph-eyebrow en">Registration · Early Bird until July 15, 2026</div>
+    <div class="ph-eyebrow vi">Đăng ký · Early Bird đến 15/07/2026</div>
+    <h1 class="ph-h1 en">Register for the <em>Summit</em></h1>
+    <h1 class="ph-h1 vi"><em>Đăng ký</em> tham dự Hội nghị</h1>
+    <p class="ph-body en">Complete the form below to secure your place. Fees are tiered by World Bank Country Income Classification. After submission, you will receive a confirmation email with payment instructions.</p>
+    <p class="ph-body vi">Hoàn thành form dưới đây để đặt chỗ. Phí được phân loại theo Phân nhóm Thu nhập Quốc gia của Ngân hàng Thế giới. Sau khi nộp, bạn sẽ nhận email xác nhận kèm hướng dẫn thanh toán.</p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="reg-layout">
+
+  <!-- FORM (left) -->
+  <div class="form-wrap">
+
+    <!-- SECTION 1: Personal Info -->
+    <div class="form-section">
+      <div class="form-section-title en">1. Personal Information</div>
+      <div class="form-section-title vi">1. Thông tin cá nhân</div>
+      <div class="form-section-sub en">Please complete all required fields marked with *</div>
+      <div class="form-section-sub vi">Vui lòng điền đầy đủ các trường bắt buộc đánh dấu *</div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label class="en">Full Name <span class="req">*</span></label>
+          <label class="vi">Họ và tên <span class="req">*</span></label>
+          <input type="text" placeholder="Dr. Nguyen Van A" required>
+        </div>
+        <div class="form-field">
+          <label class="en">Phone Number <span class="req">*</span></label>
+          <label class="vi">Số điện thoại <span class="req">*</span></label>
+          <input type="tel" placeholder="+84 90 000 0000" required>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-field">
+          <label class="en">Email Address <span class="req">*</span></label>
+          <label class="vi">Địa chỉ email <span class="req">*</span></label>
+          <input type="email" placeholder="yourname@hospital.org" required>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div class="form-field">
+          <label class="en">Organisation / Institution <span class="req">*</span></label>
+          <label class="vi">Cơ quan / Đơn vị công tác <span class="req">*</span></label>
+          <input type="text" placeholder="Hospital or University name" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <!-- SECTION 2: Country -->
+    <div class="form-section">
+      <div class="form-section-title en">2. Your Country</div>
+      <div class="form-section-title vi">2. Quốc gia</div>
+      <div class="form-section-sub en">Your registration fee is automatically calculated based on World Bank income classification.</div>
+      <div class="form-section-sub vi">Phí tham dự của bạn sẽ được tự động tính toán dựa trên phân loại thu nhập của Ngân hàng Thế giới.</div>
+      <div class="form-field">
+        <label class="en">Country <span class="req">*</span></label>
+        <label class="vi">Quốc gia <span class="req">*</span></label>
+        <select id="country-select" onchange="updateFee(this.value)" required>
+          <option value="" class="en">Select your country...</option>
+          <option value="" class="vi">Chọn quốc gia của bạn...</option>
+          <!-- LMIC -->
+          <optgroup label="LMIC — Low &amp; Middle Income (Early Bird $250)">
+            <option value="lmic">Vietnam 🇻🇳</option>
+            <option value="lmic">Cambodia 🇰🇭</option>
+            <option value="lmic">Laos 🇱🇦</option>
+            <option value="lmic">Myanmar 🇲🇲</option>
+            <option value="lmic">Philippines 🇵🇭</option>
+            <option value="lmic">Indonesia 🇮🇩</option>
+            <option value="lmic">India 🇮🇳</option>
+            <option value="lmic">Nepal 🇳🇵</option>
+            <option value="lmic">Bangladesh 🇧🇩</option>
+            <option value="lmic">Pakistan 🇵🇰</option>
+            <option value="lmic">Other LMIC country</option>
+          </optgroup>
+          <!-- UMIC -->
+          <optgroup label="UMIC — Upper Middle Income (Early Bird $400)">
+            <option value="umic">China 🇨🇳</option>
+            <option value="umic">Thailand 🇹🇭</option>
+            <option value="umic">Malaysia 🇲🇾</option>
+            <option value="umic">Brazil 🇧🇷</option>
+            <option value="umic">Mexico 🇲🇽</option>
+            <option value="umic">Turkey 🇹🇷</option>
+            <option value="umic">South Africa 🇿🇦</option>
+            <option value="umic">Other UMIC country</option>
+          </optgroup>
+          <!-- HIC -->
+          <optgroup label="HIC — High Income (Early Bird $600)">
+            <option value="hic">United States 🇺🇸</option>
+            <option value="hic">Canada 🇨🇦</option>
+            <option value="hic">Australia 🇦🇺</option>
+            <option value="hic">Netherlands 🇳🇱</option>
+            <option value="hic">South Korea 🇰🇷</option>
+            <option value="hic">Taiwan 🇹🇼</option>
+            <option value="hic">Japan 🇯🇵</option>
+            <option value="hic">Germany 🇩🇪</option>
+            <option value="hic">France 🇫🇷</option>
+            <option value="hic">United Kingdom 🇬🇧</option>
+            <option value="hic">Singapore 🇸🇬</option>
+            <option value="hic">Other HIC country</option>
+          </optgroup>
+        </select>
+      </div>
+      <!-- Fee indicator -->
+      <div id="fee-indicator" style="display:none;margin-top:1rem;padding:1rem 1.25rem;border-radius:8px;background:rgba(0,180,188,.08);border:1px solid rgba(0,180,188,.2)">
+        <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px" class="en">Your registration category</div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px" class="vi">Mức phí của bạn</div>
+        <div id="fee-text" style="font-family:var(--ff-serif);font-size:1.3rem;color:var(--dark);font-weight:400"></div>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <!-- SECTION 3: Professional Info -->
+    <div class="form-section">
+      <div class="form-section-title en">3. Professional Information</div>
+      <div class="form-section-title vi">3. Thông tin nghề nghiệp</div>
+      <div class="form-section-sub en">Help us understand your background so we can better tailor the experience.</div>
+      <div class="form-section-sub vi">Giúp chúng tôi hiểu về bạn để mang lại trải nghiệm tốt nhất tại hội nghị.</div>
+
+      <div class="form-field" style="margin-bottom:1.25rem">
+        <label class="en">Job Title / Position <span class="req">*</span></label>
+        <label class="vi">Vị trí làm việc <span class="req">*</span></label>
+        <div class="check-group job-grid">
+          <label class="check-item"><input type="radio" name="jobtitle" value="plastic"><span class="en">Plastic Surgeon</span><span class="vi">Bác sĩ Phẫu thuật Tạo hình</span></label>
+          <label class="check-item"><input type="radio" name="jobtitle" value="cranio"><span class="en">Craniofacial Surgeon</span><span class="vi">Bác sĩ Phẫu thuật Sọ mặt</span></label>
+          <label class="check-item"><input type="radio" name="jobtitle" value="omfs"><span class="en">Oral &amp; Maxillofacial Surgeon</span><span class="vi">Bác sĩ Phẫu thuật Hàm mặt</span></label>
+          <label class="check-item"><input type="radio" name="jobtitle" value="ortho"><span class="en">Orthodontist</span><span class="vi">Bác sĩ Chỉnh nha</span></label>
+          <label class="check-item"><input type="radio" name="jobtitle" value="slt"><span class="en">Speech &amp; Language Therapist</span><span class="vi">Chuyên gia Âm ngữ trị liệu</span></label>
+          <label class="check-item"><input type="radio" name="jobtitle" value="resident"><span class="en">Resident / Fellow</span><span class="vi">Bác sĩ Nội trú / Nghiên cứu sinh</span></label>
+          <label class="check-item"><input type="radio" name="jobtitle" value="other" onclick="document.getElementById('other-job').style.display='block'"><span class="en">Other</span><span class="vi">Khác</span></label>
+        </div>
+        <div class="sub-field" id="other-job" style="display:none">
+          <input type="text" placeholder="Please specify your role..." class="en">
+          <input type="text" placeholder="Vui lòng ghi rõ vị trí..." class="vi">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="en">Experience in Cleft Care <span class="req">*</span></label>
+        <label class="vi">Kinh nghiệm trong điều trị khe hở <span class="req">*</span></label>
+        <div style="font-size:11px;color:var(--tx3);margin-bottom:.65rem" class="en">Select all that apply</div>
+        <div style="font-size:11px;color:var(--tx3);margin-bottom:.65rem" class="vi">Chọn tất cả các mục phù hợp</div>
+        <div class="check-group exp-grid">
+          <label class="check-item"><input type="checkbox"><span class="en">Primary cleft surgery</span><span class="vi">Phẫu thuật khe hở giai đoạn đầu</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">Secondary / revision surgery</span><span class="vi">Phẫu thuật chỉnh sửa thứ cấp</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">Orthognathic surgery</span><span class="vi">Phẫu thuật chỉnh hình xương hàm</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">Orthodontic cleft care</span><span class="vi">Chỉnh nha trong điều trị khe hở</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">Speech therapy / VPI</span><span class="vi">Âm ngữ trị liệu / VPI</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">New to cleft care</span><span class="vi">Mới bắt đầu trong lĩnh vực khe hở</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <!-- SECTION 4: Dietary -->
+    <div class="form-section">
+      <div class="form-section-title en">4. Lunch &amp; Dietary Preferences</div>
+      <div class="form-section-title vi">4. Chế độ ăn và Dị ứng thực phẩm</div>
+      <div class="form-section-sub en">Lunch and tea breaks are included in all registration fees for all three days.</div>
+      <div class="form-section-sub vi">Bữa trưa và tea break đã được bao gồm trong phí đăng ký cho cả ba ngày.</div>
+
+      <div class="form-field" style="margin-bottom:1.25rem">
+        <label class="en">Do you have any food allergies?</label>
+        <label class="vi">Bạn có dị ứng thực phẩm không?</label>
+        <div class="check-group" style="flex-direction:row;gap:1rem;margin-top:.25rem">
+          <label class="check-item"><input type="radio" name="allergy" onclick="document.getElementById('allergy-text').style.display='block'"><span class="en">Yes — Please specify</span><span class="vi">Có — Vui lòng ghi rõ</span></label>
+          <label class="check-item"><input type="radio" name="allergy" onclick="document.getElementById('allergy-text').style.display='none'"><span class="en">No</span><span class="vi">Không</span></label>
+        </div>
+        <div class="sub-field" id="allergy-text" style="display:none">
+          <input type="text" placeholder="Describe your food allergies..." class="en">
+          <input type="text" placeholder="Mô tả các loại dị ứng thực phẩm..." class="vi">
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="en">Dietary requirements</label>
+        <label class="vi">Chế độ ăn đặc biệt</label>
+        <div class="check-group" style="flex-direction:row;gap:1.5rem;margin-top:.25rem;flex-wrap:wrap">
+          <label class="check-item"><input type="checkbox"><span class="en">Vegetarian</span><span class="vi">Ăn chay (có trứng sữa)</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">Vegan</span><span class="vi">Thuần chay</span></label>
+          <label class="check-item"><input type="checkbox"><span class="en">Halal</span><span class="vi">Halal</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <!-- SECTION 5: Welcome Reception -->
+    <div class="form-section">
+      <div class="form-section-title en">5. Welcome Reception</div>
+      <div class="form-section-title vi">5. Sự kiện Kết nối Đồng nghiệp</div>
+      <div class="form-section-sub en">Monday September 21, 2026 · 17:00–18:00 · Included in all registrations</div>
+      <div class="form-section-sub vi">Thứ Hai 21/09/2026 · 17:00–18:00 · Đã bao gồm trong tất cả đăng ký</div>
+
+      <div class="form-field">
+        <label class="en">Will you attend the Welcome Reception? <span class="req">*</span></label>
+        <label class="vi">Bạn có tham gia sự kiện Kết nối Đồng nghiệp không? <span class="req">*</span></label>
+        <div class="check-group" style="flex-direction:row;gap:1.5rem;margin-top:.25rem">
+          <label class="check-item"><input type="radio" name="reception"><span class="en">Yes, I will attend</span><span class="vi">Có, tôi sẽ tham gia</span></label>
+          <label class="check-item"><input type="radio" name="reception"><span class="en">No, I cannot attend</span><span class="vi">Không, tôi không thể tham gia</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <!-- SUBMIT -->
+    <div class="submit-area">
+      <p class="en"><strong>After submitting this form,</strong> you will receive a confirmation email within 1–2 business days with your registration category and payment instructions. Payment can be made by credit card via Stripe. Your place is confirmed only upon receipt of payment.</p>
+      <p class="vi"><strong>Sau khi nộp form này,</strong> bạn sẽ nhận được email xác nhận trong vòng 1–2 ngày làm việc, kèm theo mức phí và hướng dẫn thanh toán. Thanh toán bằng thẻ tín dụng qua Stripe. Chỗ của bạn chỉ được xác nhận sau khi nhận được thanh toán.</p>
+      <button type="submit" class="btn-submit en">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Submit Registration
+      </button>
+      <button type="submit" class="btn-submit vi">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        Gửi đăng ký
+      </button>
+      <p class="form-note en">By submitting this form you agree to our cancellation policy: no refunds, no category changes after registration.</p>
+      <p class="form-note vi">Khi nộp form này, bạn đồng ý với chính sách của chúng tôi: không hoàn tiền, không thay đổi loại đăng ký sau khi hoàn tất.</p>
+    </div>
+
+    <div class="contact-box">
+      <h4 class="en">Need help with registration?</h4>
+      <h4 class="vi">Cần hỗ trợ về đăng ký?</h4>
+      <p class="en">For enquiries about online registration, group registrations, or country income classification questions, please contact us at <a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></p>
+      <p class="vi">Để được hỗ trợ về đăng ký, đăng ký nhóm hoặc câu hỏi về phân loại thu nhập quốc gia, vui lòng liên hệ: <a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></p>
+    </div>
+  </div>
+
+  <!-- PRICING SIDEBAR (right) -->
+  <div class="price-sidebar">
+    <div class="ps-title en">Registration Fees</div>
+    <div class="ps-title vi">Phí tham dự</div>
+
+    <div class="ps-tier hilite-row" style="padding:1rem;border-radius:8px;margin-bottom:4px">
+      <div class="ps-tier-label en">LMIC &amp; Vietnam</div>
+      <div class="ps-tier-label vi">Việt Nam &amp; LMIC</div>
+      <div class="ps-prices">
+        <div class="ps-price-col highlight">
+          <div class="ps-price-head en">Early Bird</div><div class="ps-price-head vi">Sớm</div>
+          <div class="ps-price-num" style="color:var(--yellow)">$250</div>
+        </div>
+        <div class="ps-price-col">
+          <div class="ps-price-head en">Regular</div><div class="ps-price-head vi">Tiêu chuẩn</div>
+          <div class="ps-price-num">$300</div>
+        </div>
+        <div class="ps-price-col">
+          <div class="ps-price-head">Onsite</div>
+          <div class="ps-price-num">$350</div>
+        </div>
+      </div>
+      <div class="ps-tier-note en">Vietnam and low / lower-middle income countries</div>
+      <div class="ps-tier-note vi">Việt Nam và quốc gia thu nhập thấp / trung bình thấp</div>
+    </div>
+
+    <div class="ps-tier">
+      <div class="ps-tier-label">UMIC</div>
+      <div class="ps-prices">
+        <div class="ps-price-col highlight"><div class="ps-price-head en">Early Bird</div><div class="ps-price-head vi">Sớm</div><div class="ps-price-num" style="color:var(--yellow)">$400</div></div>
+        <div class="ps-price-col"><div class="ps-price-head en">Regular</div><div class="ps-price-head vi">Tiêu chuẩn</div><div class="ps-price-num">$450</div></div>
+        <div class="ps-price-col"><div class="ps-price-head>">Onsite</div><div class="ps-price-num">$500</div></div>
+      </div>
+      <div class="ps-tier-note en">Upper-middle income countries</div>
+      <div class="ps-tier-note vi">Quốc gia thu nhập trung bình cao</div>
+    </div>
+
+    <div class="ps-tier">
+      <div class="ps-tier-label">HIC</div>
+      <div class="ps-prices">
+        <div class="ps-price-col highlight"><div class="ps-price-head en">Early Bird</div><div class="ps-price-head vi">Sớm</div><div class="ps-price-num" style="color:var(--yellow)">$600</div></div>
+        <div class="ps-price-col"><div class="ps-price-head en">Regular</div><div class="ps-price-head vi">Tiêu chuẩn</div><div class="ps-price-num">$700</div></div>
+        <div class="ps-price-col"><div class="ps-price-head>">Onsite</div><div class="ps-price-num">$750</div></div>
+      </div>
+      <div class="ps-tier-note en">High-income countries · USA, Canada, Australia, Europe, Korea, Japan, Taiwan</div>
+      <div class="ps-tier-note vi">Quốc gia thu nhập cao · Mỹ, Canada, Úc, Châu Âu, Hàn Quốc, Nhật, Đài Loan</div>
+    </div>
+
+    <div class="ps-includes">
+      <h5 class="en">All registrations include:</h5>
+      <h5 class="vi">Phí bao gồm:</h5>
+      <ul>
+        <li class="en">All scientific sessions (3 days)</li><li class="vi">Toàn bộ phiên khoa học (3 ngày)</li>
+        <li class="en">Conference materials</li><li class="vi">Tài liệu hội nghị</li>
+        <li class="en">Lunch &amp; tea breaks daily</li><li class="vi">Bữa trưa và tea break mỗi ngày</li>
+        <li class="en">Welcome Reception (Sept 21)</li><li class="vi">Sự kiện Kết nối (21/09)</li>
+        <li class="en">CME credits (fee TBD)</li><li class="vi">Chứng chỉ CME (phí TBD)</li>
+      </ul>
+    </div>
+
+    <div class="ps-deadline">
+      <strong class="en">🟡 Early Bird Deadline</strong>
+      <strong class="vi">🟡 Hạn Early Bird</strong>
+      <span class="en">July 15, 2026 · Register now to save up to $100</span>
+      <span class="vi">15/07/2026 · Đăng ký ngay để tiết kiệm đến $100</span>
+    </div>
+
+    <div class="ps-cancel en">
+      <strong>Cancellation policy:</strong> No cancellations, no category changes, no refunds after registration.
+    </div>
+    <div class="ps-cancel vi">
+      <strong>Chính sách huỷ:</strong> Không hoàn tiền, không thay đổi loại đăng ký sau khi hoàn tất.
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.07)">
+      <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.5rem">Payment</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6" class="en">Credit card via Stripe. Payment link sent after registration confirmation. All prices in USD.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6" class="vi">Thẻ tín dụng qua Stripe. Link thanh toán gửi sau khi xác nhận đăng ký. Tất cả phí tính bằng USD.</div>
+      <div style="margin-top:.75rem;font-size:11px;color:rgba(255,255,255,.3);font-weight:300" class="en">Organisation does not issue invoices or VAT receipts.</div>
+      <div style="margin-top:.75rem;font-size:11px;color:rgba(255,255,255,.3);font-weight:300" class="vi">Tổ chức không xuất hoá đơn.</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-stripe"></div>
+    <div class="foot-bottom">
+      <span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
+      <div style="display:flex;gap:1.5rem">
+        <a href="index.html" class="en">Home</a><a href="index.html" class="vi">Trang chủ</a>
+        <a href="about.html" class="en">About</a><a href="about.html" class="vi">Về hội nghị</a>
+        <a href="speakers.html" class="en">Speakers</a><a href="speakers.html" class="vi">Diễn giả</a>
+        <a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('icms-lang',l)}
+setLang(localStorage.getItem('icms-lang')||'en');
+
+const fees={
+  lmic:{eb:'$250',reg:'$300',onsite:'$350',label:'LMIC / Vietnam'},
+  umic:{eb:'$400',reg:'$450',onsite:'$500',label:'Upper Middle Income'},
+  hic:{eb:'$600',reg:'$700',onsite:'$750',label:'High Income Country'}
+};
+
+function updateFee(tier){
+  const ind=document.getElementById('fee-indicator');
+  const txt=document.getElementById('fee-text');
+  if(!tier||!fees[tier]){ind.style.display='none';return}
+  const f=fees[tier];
+  const lang=document.body.getAttribute('data-lang');
+  if(lang==='vi'){
+    txt.textContent=`${f.label} · Early Bird: ${f.eb} · Tiêu chuẩn: ${f.reg} · Tại chỗ: ${f.onsite}`;
+  } else {
+    txt.textContent=`${f.label} · Early Bird: ${f.eb} · Regular: ${f.reg} · Onsite: ${f.onsite}`;
+  }
+  ind.style.display='block';
+}
+</script>
+</body>
+</html>
