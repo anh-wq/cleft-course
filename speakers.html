@@ -653,23 +653,5 @@ function filterFaculty(tag){
   });
 }
 </script>
-  <script>
-  // Tự động đo và gửi chiều cao sang cho Wix
-  function sendHeightToWix() {
-    const height = document.documentElement.scrollHeight || document.body.scrollHeight;
-    window.parent.postMessage({
-      type: 'iframeHeight',
-      height: height
-    }, '*');
-  }
-
-  // Chạy khi trang tải xong và khi thay đổi kích thước màn hình
-  window.addEventListener('load', sendHeightToWix);
-  window.addEventListener('resize', sendHeightToWix);
-
-  // Đo lại nếu người dùng bấm "Xem tiểu sử đầy đủ" (làm giãn trang)
-  const observer = new MutationObserver(sendHeightToWix);
-  observer.observe(document.body, { attributes: true, childList: true, subtree: true });
-</script>
 </body>
 </html>
