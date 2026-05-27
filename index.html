@@ -624,7 +624,7 @@ footer{background:#2d4a8a;padding:4rem 2.5rem 2.25rem}
         <span class="eyebrow-text vi">Hội nghị Quốc tế Làm chủ Kỹ thuật Điều trị Khe hở đầu tiên tại Việt Nam</span>
       </div>
 
-      <h1 class="hero-h1 en"><span style="white-space: nowrap;">International Cleft <em>Mastery Summit</em></span><br>Ha Noi, 2026</h1>
+      <h1 class="hero-h1 en">International Cleft<br><em>Mastery Summit</em><br>Ha Noi, 2026</h1>
       <h1 class="hero-h1 vi">Hội nghị Quốc tế<br>Làm chủ Kỹ thuật Điều trị<br><em>Khe hở môi – vòm miệng</em><br>Hà Nội, 2026</h1>
 
       <p class="hero-sub en">Advancing Surgical Precision and Longitudinal Outcomes</p>
@@ -674,7 +674,34 @@ footer{background:#2d4a8a;padding:4rem 2.5rem 2.25rem}
       </div>
     </div>
 
-  
+    <!-- Countdown Card -->
+    <div class="hero-card">
+      <div class="hc-label en">Countdown to the summit</div>
+      <div class="hc-label vi">Đếm ngược đến hội nghị</div>
+      <div class="countdown">
+        <div class="cd"><span class="cd-n" id="cd-d">--</span><span class="cd-l en">days</span><span class="cd-l vi">ngày</span></div>
+        <div class="cd"><span class="cd-n" id="cd-h">--</span><span class="cd-l en">hrs</span><span class="cd-l vi">giờ</span></div>
+        <div class="cd"><span class="cd-n" id="cd-m">--</span><span class="cd-l en">min</span><span class="cd-l vi">phút</span></div>
+        <div class="cd"><span class="cd-n" id="cd-s">--</span><span class="cd-l en">sec</span><span class="cd-l vi">giây</span></div>
+      </div>
+      <div class="hc-divider"></div>
+      <div class="hc-stats">
+        <div class="hcs"><strong>17</strong><span class="en">Faculty</span><span class="vi">Chuyên gia</span></div>
+        <div class="hcs"><strong>9+</strong><span class="en">Countries</span><span class="vi">Quốc gia</span></div>
+        <div class="hcs"><strong>3</strong><span class="en">Days</span><span class="vi">Ngày</span></div>
+      </div>
+      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.07)">
+        <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem" class="en">Early Bird Closes</div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.75rem" class="vi">Early Bird kết thúc</div>
+        <div style="font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:var(--yellow);font-style:italic">July 15, 2026</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:3px" class="en">From $250 · 3 pricing tiers</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:3px" class="vi">Từ $250 · 3 mức phí</div>
+        <a href="register.html" style="display:block;margin-top:1rem;padding:10px;background:var(--yellow);color:var(--dark);border-radius:5px;text-align:center;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:.2s" class="en" onmouseover="this.style.background='var(--teal)';this.style.color='white'" onmouseout="this.style.background='var(--yellow)';this.style.color='var(--dark)'">Register Now →</a>
+        <a href="register.html" style="display:block;margin-top:1rem;padding:10px;background:var(--yellow);color:var(--dark);border-radius:5px;text-align:center;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:.2s" class="vi">Đăng ký ngay →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- SCROLLING BANNER -->
 <div class="banner">
@@ -1059,6 +1086,22 @@ setLang(localStorage.getItem('icms-lang')||'en');
 /* Nav scroll */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
+
+/* Countdown */
+(function tick(){
+  const diff=new Date('2026-09-21T08:00:00+07:00')-new Date();
+  if(diff>0){
+    const d=Math.floor(diff/86400000),
+          h=Math.floor((diff%86400000)/3600000),
+          m=Math.floor((diff%3600000)/60000),
+          s=Math.floor((diff%60000)/1000);
+    document.getElementById('cd-d').textContent=String(d).padStart(2,'0');
+    document.getElementById('cd-h').textContent=String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent=String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent=String(s).padStart(2,'0');
+  }
+  setTimeout(tick,1000);
+})();
 
 /* Scroll reveal */
 const io=new IntersectionObserver(
