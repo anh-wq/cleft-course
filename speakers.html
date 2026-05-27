@@ -10,8 +10,10 @@
 <style>
 :root{--teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;--sky:#1295D8;--green:#97D88A;--dark:#0E1A2E;--dark2:#142840;--off:#F5F4F0;--tx:#0E1A2E;--tx2:#414042;--tx3:#636466;--border:rgba(14,26,46,.1);--ff-sans:'DM Sans',system-ui,sans-serif;--ff-serif:'Literata',Georgia,serif;--ease:cubic-bezier(.4,0,.2,1)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;}
 body{font-family:var(--ff-sans);color:var(--tx);background:var(--white,#fff);overflow-x:hidden;font-weight:300}
+body::-webkit-scrollbar{display:none;}
+html::-webkit-scrollbar{display:none;}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe{height:5px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%);position:fixed;top:0;left:0;right:0;z-index:300}
