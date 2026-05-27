@@ -193,7 +193,7 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
   <div class="ph-inner">
     <div>
       <div class="ph-eyebrow en">About the Conference </div>
-      <h1 class="ph-h1 en">International Cleft<br><em>Mastery Summit</em><br>Ha Noi, 2026</h1>
+      <h1 class="ph-h1 en">International Cleft Mastery Summit <br>Ha Noi, 2026</h1>
       <div class="ph-eyebrow vi">Về Hội nghị</div>
       <h1 class="ph-h1 vi">Hội nghị Quốc tế<br>Làm chủ Kỹ thuật Điều trị<br><em>Khe hở môi – vòm miệng</em><br>Hà Nội, 2026</h1>
       <p class="ph-body en">An advanced, interdisciplinary symposium dedicated to the comprehensive management of the cleft patient — from neonatal intervention through skeletal maturity. Organised by Nuoy Reconstructive International.</p>
@@ -494,35 +494,6 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
 <script>
 function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('icms-lang',l)}
 setLang(localStorage.getItem('icms-lang')||'en');
-</script>
- <script>
-function sendHeight() {
-
-  const body = document.body;
-  const html = document.documentElement;
-
-  const height = Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
-    html.clientHeight,
-    html.scrollHeight,
-    html.offsetHeight
-  );
-
-  window.parent.postMessage({
-    type: "resize",
-    height: height
-  }, "*");
-}
-
-window.addEventListener("load", sendHeight);
-window.addEventListener("resize", sendHeight);
-
-new ResizeObserver(sendHeight).observe(document.body);
-
-setTimeout(sendHeight, 300);
-setTimeout(sendHeight, 1000);
-setTimeout(sendHeight, 2000);
 </script>
 </body>
 </html>
