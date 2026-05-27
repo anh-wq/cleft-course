@@ -50,6 +50,9 @@ html{
   margin:0;
   padding:0;
   overflow-x:hidden;
+  overflow-y:hidden;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
 
 body{
@@ -58,12 +61,18 @@ body{
   background:var(--white);
   margin:0;
   padding:0;
-  overflow-x:clip;
-  
+  overflow-x:hidden;
+  overflow-y:hidden;
   font-weight:300;
   -webkit-font-smoothing:antialiased;
-  min-height:auto !important;
+  /* Ẩn scrollbar - chống scroll kép khi nhúng trong Wix iframe */
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
+/* Ẩn scrollbar WebKit */
+body::-webkit-scrollbar{display:none;}
+html::-webkit-scrollbar{display:none;}
+html{scrollbar-width:none;-ms-overflow-style:none;}
 
 /* LANG */
 body[data-lang="vi"] .en{display:none!important}
