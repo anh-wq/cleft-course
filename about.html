@@ -15,20 +15,22 @@ body{font-family:var(--ff-sans);color:var(--tx);background:#fff;overflow-x:hidde
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe{height:6px;background:linear-gradient(90deg,var(--blue) 0% 20%,var(--sky) 20% 40%,var(--teal) 40% 60%,var(--green) 60% 80%,var(--yellow) 80% 100%);position:fixed;top:0;left:0;right:0;z-index:400}
-nav{position:fixed;top:6px;left:0;right:0;z-index:300;background:rgba(14,26,46,.97);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,180,188,.18)}
+nav{position:fixed;top:6px;left:0;right:0;z-index:300;background:rgba(74,103,170,.98);backdrop-filter:blur(20px);box-shadow:0 1px 0 rgba(0,180,188,.18)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
-.nav-logomark{width:38px;height:38px;background:var(--teal);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:18px;font-weight:600;color:var(--dark);font-style:italic}
+.nav-logomark{
+  height:48px;display:flex;align-items:center;flex-shrink:0;
+}
 .nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
 .nav-wordmark strong{font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase}
-.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.07em;text-transform:uppercase}
+.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.8);letter-spacing:.07em;text-transform:uppercase}
 .nav-links{display:flex;list-style:none;gap:0}
-.nav-links a{display:block;padding:7px 15px;color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;transition:.2s}
+.nav-links a{display:block;padding:7px 15px;color:rgba(255,255,255,.92);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;transition:.2s}
 .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.09)}
 .nav-links a.active{color:var(--teal);background:none}
 .nav-right{display:flex;align-items:center;gap:10px}
-.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:22px;padding:2px;border:1px solid rgba(255,255,255,.13)}
-.lang-btn{padding:4px 13px;border-radius:20px;border:none;background:transparent;color:rgba(255,255,255,.5);font-size:11px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.07em;cursor:pointer;transition:.2s}
+.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:22px;padding:2px;border:1px solid rgba(255,255,255,.35)}
+.lang-btn{padding:4px 13px;border-radius:20px;border:none;background:transparent;color:rgba(255,255,255,.8);font-size:11px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.07em;cursor:pointer;transition:.2s}
 .lang-btn.active{background:var(--teal);color:var(--dark)}
 .btn-cta-nav{padding:9px 22px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
 .btn-cta-nav:hover{background:var(--teal);color:#fff}
@@ -145,7 +147,7 @@ p+p{margin-top:1em}
 .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:#fff}
 
 /* FOOTER */
-footer{background:#060E1B;padding:3rem 2.5rem 2rem}
+footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
 .foot-wrap{max-width:1280px;margin:0 auto}
 .foot-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 0% 20%,var(--sky) 20% 40%,var(--teal) 40% 60%,var(--green) 60% 80%,var(--yellow) 80% 100%);border-radius:2px;margin-bottom:2.5rem}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.18);flex-wrap:wrap;gap:.5rem}
@@ -161,7 +163,7 @@ footer{background:#060E1B;padding:3rem 2.5rem 2rem}
 <div class="brand-stripe"></div>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo"><div class="nav-logomark">N</div><div class="nav-wordmark"><strong>ICMS Hanoi 2026</strong><span>Sept 21–23</span></div></a>
+    <a href="index.html" class="nav-logo"><img src="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png" alt="Nuoy" class="nav-logomark" style="height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1)"><div class="nav-wordmark"><strong>ICMS Hanoi 2026</strong><span>Sept 21–23</span></div></a>
     <ul class="nav-links">
       <li><a href="about.html" class="active en">About</a><a href="about.html" class="active vi">Về hội nghị</a></li>
       <li><a href="programme.html" class="en">Programme</a><a href="programme.html" class="vi">Chương trình</a></li>

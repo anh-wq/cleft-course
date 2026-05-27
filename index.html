@@ -55,9 +55,9 @@ nav{
   transition:background .35s var(--ease),backdrop-filter .35s;
 }
 nav.scrolled{
-  background:rgba(14,26,46,.97);
+  background:rgba(74,103,170,.98);
   backdrop-filter:blur(20px);
-  box-shadow:0 1px 0 rgba(0,180,188,.18),0 4px 24px rgba(0,0,0,.3);
+  box-shadow:0 1px 0 rgba(255,255,255,.15),0 4px 24px rgba(74,103,170,.4);
 }
 .nav-inner{
   max-width:1280px;margin:0 auto;padding:0 2.5rem;
@@ -66,21 +66,18 @@ nav.scrolled{
 }
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
 .nav-logomark{
-  width:38px;height:38px;background:var(--teal);border-radius:7px;
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--ff-serif);font-size:18px;font-weight:600;
-  color:var(--dark);font-style:italic;letter-spacing:-.02em;
+  height:48px;display:flex;align-items:center;flex-shrink:0;
 }
 .nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
 .nav-wordmark strong{
   font-size:12px;font-weight:600;color:var(--white);
   letter-spacing:.08em;text-transform:uppercase;
 }
-.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.4);letter-spacing:.07em;text-transform:uppercase}
+.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.8);letter-spacing:.07em;text-transform:uppercase}
 .nav-links{display:flex;list-style:none;gap:0;align-items:center}
 .nav-links a{
   display:block;padding:7px 15px;
-  color:rgba(255,255,255,.6);text-decoration:none;
+  color:rgba(255,255,255,.92);text-decoration:none;
   font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
   border-radius:5px;transition:color .2s,background .2s;
 }
@@ -519,7 +516,7 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 .cta-contact a:hover{color:var(--yellow)}
 
 /* ═══ FOOTER ═══ */
-footer{background:#060E1B;padding:4rem 2.5rem 2.25rem}
+footer{background:#2d4a8a;padding:4rem 2.5rem 2.25rem}
 .foot-wrap{max-width:1280px;margin:0 auto}
 /* Nuoy 5-color stripe inside footer (brand signature) */
 .foot-stripe{
@@ -592,7 +589,7 @@ footer{background:#060E1B;padding:4rem 2.5rem 2.25rem}
 <nav id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
-      <div class="nav-logomark">N</div>
+      <img src="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png" alt="Nuoy" class="nav-logomark" style="height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
       <div class="nav-wordmark">
         <strong>ICMS Hanoi 2026</strong>
         <span>Sept 21–23 · Vietnam</span>
@@ -1030,7 +1027,7 @@ footer{background:#060E1B;padding:4rem 2.5rem 2.25rem}
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="nav-logo" style="margin-bottom:0">
-          <div class="nav-logomark">N</div>
+          <img src="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png" alt="Nuoy" class="nav-logomark" style="height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
           <div class="nav-wordmark">
             <strong>International Cleft Mastery Summit</strong>
             <span>Ha Noi 2026</span>
