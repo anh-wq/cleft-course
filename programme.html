@@ -20,8 +20,8 @@
   --ease:cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{height:100%;margin:0;padding:0;}
-body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);font-weight:300;height:100%;margin:0;padding:0;overflow:hidden;-webkit-font-smoothing:antialiased;}
+html{scroll-behavior:smooth;margin:0;padding:0;overflow-x:hidden;}
+body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);font-weight:300;margin:0;padding:0;overflow-x:hidden;overflow-y:scroll;scrollbar-width:none;-ms-overflow-style:none;-webkit-font-smoothing:antialiased;}body::-webkit-scrollbar{display:none;}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 
@@ -36,8 +36,6 @@ nav{position:fixed;top:6px;left:0;right:0;z-index:300;background:rgba(74,103,170
   height:48px;display:flex;align-items:center;flex-shrink:0;
 }
 /* Ẩn scrollbar WebKit */
-#page-wrapper{height:100%;overflow-y:scroll;overflow-x:hidden;scrollbar-width:none;-ms-overflow-style:none;scroll-behavior:smooth;}
-#page-wrapper::-webkit-scrollbar{display:none;}
 .nav-wordmark strong{font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.25}
 .nav-wordmark span{font-size:10px;color:rgba(255,255,255,.8);letter-spacing:.07em;text-transform:uppercase}
 .nav-links{display:flex;list-style:none;gap:0}
@@ -254,7 +252,6 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
 </style>
 </head>
 <body data-lang="en">
-<div id="page-wrapper">
 
 <div class="brand-stripe"></div>
 <nav>
@@ -1045,6 +1042,15 @@ function toggleSession(el){
 }
 </script>
  
-</div><!-- #page-wrapper -->
+<script>
+function sendHeight(){
+  const h=document.documentElement.scrollHeight;
+  if(window.parent)window.parent.postMessage({type:'resize',height:h},'*');
+}
+window.addEventListener('load',sendHeight);
+window.addEventListener('resize',sendHeight);
+setTimeout(sendHeight,300);
+setTimeout(sendHeight,1000);
+</script>
 </body>
 </html>
