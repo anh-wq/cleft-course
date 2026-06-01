@@ -20,8 +20,8 @@
   --ease:cubic-bezier(.4,0,.2,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{height:100%;margin:0;padding:0;}
-body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);font-weight:300;height:100%;margin:0;padding:0;overflow:hidden;-webkit-font-smoothing:antialiased;}
+html{scroll-behavior:smooth;margin:0;padding:0;overflow-x:hidden;}
+body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);font-weight:300;margin:0;padding:0;overflow-x:hidden;overflow-y:scroll;scrollbar-width:none;-ms-overflow-style:none;-webkit-font-smoothing:antialiased;}body::-webkit-scrollbar{display:none;}
 body::-webkit-scrollbar{display:none;}
 html::-webkit-scrollbar{display:none;}
 body[data-lang="vi"] .en{display:none!important}
@@ -153,7 +153,6 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
 </style>
 </head>
 <body data-lang="en">
-<div id="page-wrapper">
 <div class="brand-stripe"></div>
 <nav>
   <div class="nav-inner">
@@ -874,6 +873,15 @@ document.querySelectorAll('input, select').forEach(el => {
 });
 </script>
  
-</div><!-- #page-wrapper -->
+<script>
+function sendHeight(){
+  const h=document.documentElement.scrollHeight;
+  if(window.parent)window.parent.postMessage({type:'resize',height:h},'*');
+}
+window.addEventListener('load',sendHeight);
+window.addEventListener('resize',sendHeight);
+setTimeout(sendHeight,300);
+setTimeout(sendHeight,1000);
+</script>
 </body>
 </html>
