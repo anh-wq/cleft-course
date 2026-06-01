@@ -46,33 +46,34 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{
-  scroll-behavior:smooth;
+  height:100%;
   margin:0;
   padding:0;
-  overflow-x:hidden;
-  overflow-y:auto;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
 }
 
 body{
   font-family:var(--ff-sans);
   color:var(--tx);
   background:var(--white);
+  font-weight:300;
+  height:100%;
   margin:0;
   padding:0;
-  overflow-x:hidden;
-  overflow-y:auto;
-  font-weight:300;
+  overflow:hidden;
   -webkit-font-smoothing:antialiased;
-  /* Ẩn scrollbar - chống scroll kép khi nhúng trong Wix iframe */
+}
+
+
+/* Wrapper scroll ẩn scrollbar, menu fixed hoạt động */
+#page-wrapper{
+  height:100%;
+  overflow-y:scroll;
+  overflow-x:hidden;
   scrollbar-width:none;
   -ms-overflow-style:none;
+  scroll-behavior:smooth;
 }
-/* Ẩn scrollbar WebKit */
-body::-webkit-scrollbar{display:none;}
-html::-webkit-scrollbar{display:none;}
-html{scrollbar-width:none;-ms-overflow-style:none;}
+#page-wrapper::-webkit-scrollbar{display:none;}
 
 /* LANG */
 body[data-lang="vi"] .en{display:none!important}
@@ -637,6 +638,8 @@ img{
 </style>
 </head>
 <body data-lang="en">
+<div id="page-wrapper">
+<div id="page-wrapper">
 
 <!-- NUOY BRAND STRIPE -->
 <div class="brand-stripe" aria-hidden="true"></div>
@@ -1127,7 +1130,7 @@ setLang(localStorage.getItem('icms-lang')||'en');
 
 /* Nav scroll */
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
+document.getElementById('page-wrapper').addEventListener('scroll',function(){nav.classList.toggle('scrolled',this.scrollTop>10);},{passive:true});
 
 /* Countdown */
 (function tick(){
@@ -1152,24 +1155,8 @@ const io=new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script> 
-  <script>
-function sendHeight() {
-  const height = document.documentElement.scrollHeight;
-
-  if (window.parent) {
-    window.parent.postMessage({
-      type: "resize",
-      height: height
-    }, "*");
-  }
-}
-
-window.addEventListener("load", sendHeight);
-window.addEventListener("resize", sendHeight);
-
-setTimeout(sendHeight, 500);
-setTimeout(sendHeight, 1000);
-setTimeout(sendHeight, 2000);
-</script>
+ 
+</div><!-- #page-wrapper -->
+</div><!-- #page-wrapper -->
 </body>
 </html>
