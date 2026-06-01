@@ -45,13 +45,16 @@ body[data-lang="en"] .vi{display:none!important}
 
 nav {
   position: fixed;
-  top: 5px;
+  top: 5px; /* Khít hoàn toàn với chiều cao 5px của stripe */
   left: 0;
   right: 0;
   z-index: 300;
   background: rgba(74, 103, 170, .98);
   backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(0, 180, 188, .15);
+  /* Xóa bỏ border cũ và đổ bóng mịn để triệt tiêu vạch đen */
+  border: none;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
