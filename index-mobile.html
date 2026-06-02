@@ -6,8 +6,9 @@
 <title>ICMS Ha Noi 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
 <style>
+
 :root{
   --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
   --sky:#1295D8;--green:#97D88A;
@@ -20,18 +21,14 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
-body{font-family:var(--ff-sans);color:var(--tx);background:var(--dark);font-weight:300;-webkit-font-smoothing:antialiased}
+body{font-family:var(--ff-sans);color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
-
-/* BRAND STRIPE */
 .brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
-
-/* NAV */
-nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-logo img{height:36px;width:auto;filter:brightness(0) invert(1)}
-.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
+.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;line-height:1.2}
 .nav-wordmark span{color:rgba(255,255,255,.6);font-size:9px;letter-spacing:.05em}
 .nav-right{display:flex;align-items:center;gap:8px}
 .lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
@@ -42,67 +39,114 @@ nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:60px;display:flex;a
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* DROPDOWN MENU */
-.mobile-menu{display:none;background:rgba(14,26,46,.98);border-bottom:1px solid rgba(0,180,188,.2)}
+.mobile-menu{display:none;background:rgba(14,26,64,.98);border-bottom:1px solid rgba(0,180,188,.2);position:sticky;top:58px;z-index:99}
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:.85rem 1.5rem;color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06)}
-.mobile-menu a.active{color:var(--teal)}
+.mobile-menu a.active-link{color:var(--teal)}
 .menu-bottom{padding:1rem 1.5rem;display:flex;align-items:center;gap:10px}
 .m-lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2)}
 .m-lang-btn{padding:5px 12px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.6);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
 .m-lang-btn.active{background:var(--teal);color:var(--dark)}
-.menu-reg-btn{padding:8px 16px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.menu-reg{padding:8px 16px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.sec-eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:2px;flex-shrink:0}
+.sec-h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
+.sec-h2 em{font-style:italic;color:var(--teal)}
+.sec-body{font-size:.875rem;color:var(--tx2);line-height:1.85;font-weight:300}
+.btn-primary{display:block;background:var(--yellow);color:var(--dark);padding:13px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.btn-ghost{display:block;border:1px solid rgba(14,26,46,.2);color:var(--tx2);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+.btn-ghost-dark{display:block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+.btn-teal{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--teal);color:var(--teal);padding:10px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;margin-top:1.25rem}
 
-/* HERO */
-.hero{background:var(--dark);padding:2.5rem 1.25rem 2.5rem;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-40%;right:-30%;width:500px;height:500px;border-radius:50%;border:1px solid rgba(0,180,188,.08);pointer-events:none}
+
+.hero{background:var(--dark);padding:2rem 1.25rem 2.5rem;position:relative;overflow:hidden}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
-.eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
-.eyebrow::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--ff-serif);font-size:2rem;font-weight:400;color:#fff;line-height:1.15;margin-bottom:.5rem}
-.hero h1 em{font-style:normal;color:var(--white);opacity:.85}
-.venue-date{font-family:var(--ff-serif);font-size:1.1rem;color:rgba(255,255,255,.5);margin-bottom:.75rem;font-style:italic}
-.hero-sub{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:.6rem;font-style:italic}
-.hero-slogan{font-size:.78rem;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;border-left:2px solid rgba(0,180,188,.4);padding-left:.75rem;margin-bottom:1.75rem;line-height:1.6}
-.hero-meta{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+.hero-inner{display:block!important;grid-template-columns:unset!important}
+.hero-card{display:none!important}
+.hero-h1{font-family:var(--ff-serif);font-size:2rem;font-weight:400;color:#fff;line-height:1.15;margin-bottom:.4rem;white-space:normal!important}
+.hero-venue-date{font-family:var(--ff-serif);font-size:1rem;color:rgba(255,255,255,.45);margin-bottom:.6rem;font-style:italic}
+.hero-sub{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:.5rem;font-style:italic}
+.hero-slogan{font-size:.75rem;color:rgba(255,255,255,.28);letter-spacing:.06em;text-transform:uppercase;border-left:2px solid rgba(0,180,188,.35);padding-left:.75rem;margin-bottom:1.75rem;line-height:1.6}
+.hero-meta{display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.75rem}
 .hm{display:flex;align-items:flex-start;gap:.75rem}
-.hm-icon{width:32px;height:32px;border-radius:8px;background:rgba(0,180,188,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hm-icon svg{width:16px;height:16px;fill:rgba(0,180,188,.85)}
-.hm-txt strong{display:block;font-size:13px;color:rgba(255,255,255,.9);font-weight:600;line-height:1.3;margin-bottom:2px}
-.hm-txt span{font-size:11px;color:rgba(255,255,255,.4);line-height:1.4}
+.hm-icon{width:30px;height:30px;border-radius:7px;background:rgba(0,180,188,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hm-icon svg{width:15px;height:15px;fill:rgba(0,180,188,.85)}
+.hm-txt strong{display:block;font-size:13px;color:rgba(255,255,255,.88);font-weight:600;line-height:1.3;margin-bottom:2px}
+.hm-txt span{font-size:11px;color:rgba(255,255,255,.38);line-height:1.4}
 .hero-btns{display:flex;flex-direction:column;gap:10px}
 .btn-primary{display:block;background:var(--yellow);color:var(--dark);padding:13px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center}
 .btn-ghost{display:block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
-
-/* STATS BANNER */
-.stats{background:var(--dark2);padding:1.5rem 1.25rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-top:1px solid rgba(0,180,188,.15);border-bottom:1px solid rgba(0,180,188,.15)}
-.stat{text-align:center}
-.stat strong{display:block;font-family:var(--ff-serif);font-size:1.75rem;font-weight:400;color:var(--teal);line-height:1}
-.stat span{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase;margin-top:4px;display:block;line-height:1.4}
-
-/* ABOUT SECTION */
-.section{background:var(--off);padding:2.5rem 1.25rem}
+.btn-teal{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--teal);color:var(--teal);padding:10px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;margin-top:1.25rem}
+.si{padding:2.5rem 1.25rem}
 .sec-eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
-.sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:2px}
-.sec-h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1rem}
+.sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:2px;flex-shrink:0}
+.sec-h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
 .sec-h2 em{font-style:italic;color:var(--teal)}
-.sec-body{font-size:.88rem;color:var(--tx2);line-height:1.8;font-weight:300}
+.sec-body{font-size:.875rem;color:var(--tx2);line-height:1.85;font-weight:300}
+.faculty-grid{display:grid;grid-template-columns:repeat(2,1fr)!important;gap:.75rem;margin-top:1.25rem}
+.faculty-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;text-align:center;padding:.875rem .5rem}
+.faculty-photo{width:72px;height:96px;object-fit:cover;object-position:center top;border-radius:6px;display:block;margin:0 auto .5rem}
+.faculty-name{font-size:11px;font-weight:600;color:var(--dark);line-height:1.3}
+.faculty-inst{font-size:10px;color:var(--teal);line-height:1.4;margin-top:2px}
+.about-grid{display:block!important}
+.about-imgbox{border-radius:10px;overflow:hidden;margin-bottom:1.25rem;height:200px;background:#eee;position:relative}
+.about-icon-wm{width:100%;height:100%;object-fit:cover}
+.about-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(14,26,46,.85));padding:.75rem;color:#fff}
+.about-caption strong{display:block;font-size:12px;font-weight:600}
+.about-caption span{font-size:11px;opacity:.7}
+.about-features{margin-top:1.25rem;display:flex;flex-direction:column;gap:1rem}
+.af{display:flex;gap:.75rem}
+.af-mark{width:3px;border-radius:2px;background:var(--teal);flex-shrink:0;margin-top:4px}
+.af h4{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.3rem}
+.af p{font-size:.82rem;color:var(--tx3);line-height:1.7;font-weight:300}
+.ctx-grid{display:grid;grid-template-columns:1fr!important;gap:.75rem;margin-top:1.25rem}
+.ctx-card{border:1px solid var(--border);border-radius:10px;padding:1.25rem}
+.ctx-n{font-family:var(--ff-serif);font-size:2rem;font-weight:400;color:var(--teal);line-height:1;margin-bottom:.35rem}
+.ctx-card h4{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.35rem}
+.ctx-card p{font-size:.82rem;color:var(--tx3);line-height:1.7;font-weight:300}
+.goals-grid{display:grid;grid-template-columns:1fr!important;gap:0;margin-top:1.25rem}
+.goal{display:flex;gap:1rem;padding:1.25rem 0;border-bottom:1px solid var(--border)}
+.goal:last-child{border-bottom:none}
+.goal-n{font-family:var(--ff-serif);font-size:1.75rem;font-weight:400;color:rgba(0,180,188,.2);line-height:1;flex-shrink:0;width:40px}
+.goal h4{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:.3rem}
+.goal p{font-size:.82rem;color:var(--tx3);line-height:1.7;font-weight:300}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr!important;gap:.75rem;margin-top:1.25rem}
+.aud{border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center}
+.aud-icon{width:36px;height:36px;border-radius:8px;background:rgba(0,180,188,.08);margin:0 auto .6rem;display:flex;align-items:center;justify-content:center}
+.aud-icon svg{width:18px;height:18px;fill:var(--teal)}
+.aud h4{font-size:12px;font-weight:600;color:var(--dark);line-height:1.4}
+.ptab-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:1.25rem}
+.ptab{width:100%;border-collapse:collapse;font-size:11px;min-width:280px}
+.ptab th,.ptab td{padding:.5rem .4rem;text-align:center;border-bottom:1px solid var(--border)}
+.ptab th{font-size:9px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.5);background:var(--dark2);text-transform:uppercase;white-space:nowrap}
+.ptab td:first-child{text-align:left;font-size:10px;line-height:1.4}
+.ptab tr.hilite td{background:rgba(0,180,188,.07);font-weight:500}
+.price-note,.cancel-note{font-size:.78rem;color:var(--tx3);line-height:1.7;margin-top:.75rem;padding:1rem;background:var(--off);border-radius:8px}
+.cancel-note{background:#fff;border:1px solid var(--border)}
+.sup-flex{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-top:1.25rem;justify-content:center}
+.sup-chip{background:var(--off);border:1px solid var(--border);border-radius:8px;padding:.6rem .875rem;display:flex;align-items:center;justify-content:center}
+.sup-chip img{height:32px;width:auto;object-fit:contain;max-width:90px}
+.logo-lg img{height:40px!important;max-width:110px!important}
+.cta-btns{display:flex;flex-direction:column;gap:.75rem;margin-top:1.5rem}
+.cta-body{font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300;margin:.75rem 0}
+.cta-contact{font-size:.85rem;color:rgba(255,255,255,.35);margin-top:1rem}
+.cta-contact a{color:var(--teal)}
+footer{background:var(--dark2);padding:2rem 1.25rem 3rem}
+.foot-wrap{max-width:100%}
+.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--yellow));border-radius:2px;margin-bottom:1.5rem}
+.foot-grid{display:block}
+.foot-brand{margin-bottom:1.5rem}
+.foot-brand p{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.75;margin-top:.75rem;font-weight:300}
+.foot-col{margin-bottom:1.25rem}
+.foot-col h5{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem}
+.foot-col ul{list-style:none;padding:0}
+.foot-col li{margin-bottom:.35rem}
+.foot-col a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px}
 
-/* CTA */
-.cta{background:var(--dark);padding:3rem 1.25rem;text-align:center}
-.cta h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:#fff;line-height:1.2;margin-bottom:.75rem}
-.cta h2 em{font-style:italic;color:var(--teal)}
-.cta p{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:1.75rem}
-.cta .btn-primary{display:inline-block;margin-bottom:.75rem}
-.cta .btn-ghost{display:inline-block;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)}
 </style>
 </head>
 <body data-lang="en">
-
 <div class="brand-stripe"></div>
-
 <nav>
   <a href="https://www.nuoy.org/cleft-conference" class="nav-logo" target="_top">
     <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy">
@@ -118,7 +162,6 @@ nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:60px;display:flex;a
     </button>
   </div>
 </nav>
-
 <div class="mobile-menu" id="mobile-menu">
   <a href="https://www.nuoy.org/cleft-conference/about" class="en" target="_top">About</a>
   <a href="https://www.nuoy.org/cleft-conference/about" class="vi" target="_top">Về hội nghị</a>
@@ -133,87 +176,518 @@ nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:60px;display:flex;a
       <button class="m-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
       <button class="m-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
     </div>
-    <a href="https://www.nuoy.org/cleft-conference/registration" class="menu-reg-btn" target="_top">
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="menu-reg" target="_top">
       <span class="en">Register Now</span><span class="vi">Đăng ký ngay</span>
     </a>
   </div>
 </div>
-
-<!-- HERO -->
 <section class="hero">
-  <div class="eyebrow"><span class="en">ICMS Ha Noi 2026</span><span class="vi">ICMS Hà Nội 2026</span></div>
-  <h1 class="en">International Cleft<br><em>Mastery Summit</em></h1>
-  <h1 class="vi">Hội nghị Quốc tế<br>Làm chủ Kỹ thuật<br><em>Điều trị Khe hở</em></h1>
-  <div class="venue-date en">Ha Noi, 2026</div>
-  <div class="venue-date vi">Hà Nội, 2026</div>
-  <p class="hero-sub en">Advancing Surgical Precision and Longitudinal Outcomes</p>
-  <p class="hero-sub vi">Nâng cao chất lượng phẫu thuật và cải thiện kết quả điều trị lâu dài</p>
-  <p class="hero-slogan en">Beyond the Mission: Peer-to-Peer Partnership for Global Excellence</p>
-  <p class="hero-slogan vi">Vượt trên sứ mệnh: Kết nối đồng nghiệp, vươn tầm quốc tế</p>
 
-  <div class="hero-meta">
-    <div class="hm">
-      <div class="hm-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg></div>
-      <div class="hm-txt">
-        <strong>September 21–23, 2026</strong>
-        <span class="en">3 days · 16 international faculty · 9+ countries</span>
-        <span class="vi">3 ngày · 16 chuyên gia quốc tế · 9+ quốc gia</span>
-      </div>
-    </div>
-    <div class="hm">
-      <div class="hm-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
-      <div class="hm-txt">
-        <strong class="en">Hong Ngoc Phuc Truong Minh Hospital</strong>
-        <strong class="vi">BV Hồng Ngọc Phúc Trường Minh</strong>
-        <span>8 Châu Văn Liêm, Hà Nội</span>
-      </div>
-    </div>
-    <div class="hm">
-      <div class="hm-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-      <div class="hm-txt">
-        <strong>cleftcourse@nuoy.org</strong>
-        <span class="en">Conference enquiries & registration support</span>
-        <span class="vi">Hỗ trợ đăng ký và thông tin hội nghị</span>
-      </div>
-    </div>
-  </div>
 
-  <div class="hero-btns">
-    <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary en" target="_top">Register Now →</a>
-    <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary vi" target="_top">Đăng ký ngay →</a>
-    <a href="https://www.nuoy.org/cleft-conference/about" class="btn-ghost en" target="_top">About the Summit</a>
-    <a href="https://www.nuoy.org/cleft-conference/about" class="btn-ghost vi" target="_top">Về hội nghị</a>
-  </div>
+<div class="hero-inner">
+<div>
+<h1 class="hero-h1 en"><span style="white-space: nowrap;">International Cleft <em>Mastery Summit</em></span></h1>
+<div class="hero-venue-date en">Ha Noi, 2026</div>
+<h1 class="hero-h1 vi">Hội nghị Quốc tế<br/><span style="white-space: nowrap;">Làm chủ Kỹ thuật Điều trị</span><br/><em>Khe hở môi – vòm miệng</em></h1>
+<div class="hero-venue-date vi">Hà Nội, 2026</div>
+<p class="hero-sub en">Advancing Surgical Precision and Longitudinal Outcomes</p>
+<p class="hero-sub vi">Nâng cao chất lượng phẫu thuật và cải thiện kết quả điều trị lâu dài</p>
+<p class="hero-slogan en">Beyond the Mission: Peer-to-Peer Partnership for Global Excellence</p>
+<p class="hero-slogan vi">Vượt trên sứ mệnh: Kết nối đồng nghiệp, vươn tầm quốc tế</p>
+<div class="hero-meta">
+<div class="hm">
+<div class="hm-icon">
+<svg viewbox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"></path></svg>
+</div>
+<div class="hm-txt">
+<strong>September 21–23, 2026</strong>
+<span class="en">3 days · 16 international faculty · 9+ countries</span>
+<span class="vi">3 ngày · 16 chuyên gia quốc tế · 9+ quốc gia</span>
+</div>
+</div>
+<div class="hm">
+<div class="hm-icon">
+<svg viewbox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<div class="hm-txt">
+<strong class="en">Hong Ngoc Phuc Truong Minh Hospital</strong>
+<strong class="vi">Bệnh viện Hồng Ngọc Phúc Trường Minh</strong>
+<span>8 Châu Văn Liêm, Hà Nội, Việt Nam</span>
+</div>
+</div>
+<div class="hm">
+<div class="hm-icon">
+<svg viewbox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+</div>
+<div class="hm-txt">
+<strong>cleftcourse@nuoy.org</strong>
+<span class="en">Conference enquiries &amp; registration support</span>
+<span class="vi">Hỗ trợ đăng ký và thông tin hội nghị</span>
+</div>
+</div>
+</div>
+<div class="hero-btns">
+<a class="btn-primary en" href="https://www.nuoy.org/cleft-conference/registration" target="_top">Register Now →</a>
+<a class="btn-primary vi" href="https://www.nuoy.org/cleft-conference/registration" target="_top">Đăng ký ngay →</a>
+<a class="btn-ghost en" href="https://www.nuoy.org/cleft-conference/about" target="_top">About the Summit</a>
+<a class="btn-ghost vi" href="https://www.nuoy.org/cleft-conference/about" target="_top">Về hội nghị</a>
+</div>
+</div>
+<!-- Countdown Card -->
+</div></section>
+<section class="faculty-section">
+<div class="si">
+<div class="sec-eyebrow en" style="justify-content:center">International Faculty</div>
+<div class="sec-eyebrow vi" style="justify-content:center">Chuyên gia quốc tế</div>
+<h2 class="sec-h2 en" style="text-align:center;margin:0 auto 0">Meet the <em>Faculty</em></h2>
+<h2 class="sec-h2 vi" style="text-align:center;margin:0 auto 0">Gặp gỡ <em>Báo cáo viên</em></h2>
+<div class="faculty-grid">
+<!-- Breugem, Corstiaan -->
+<div class="faculty-card">
+<img alt="Corstiaan Breugem" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/breugem1.png"/>
+<div class="faculty-name en">Corstiaan Breugem, MD, PhD</div>
+<div class="faculty-name vi">GS.TS.BS. Corstiaan Breugem</div>
+<div class="faculty-inst en">University of Amsterdam · Netherlands</div>
+<div class="faculty-inst vi">Đại học Amsterdam · Hà Lan</div>
+</div>
+<!-- Choi, Jong-Woo -->
+<div class="faculty-card">
+<img alt="Jong-Woo Choi" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/choi1.png"/>
+<div class="faculty-name en">Jong-Woo Choi, MD, PhD, MMM</div>
+<div class="faculty-name vi">GS.TS.BS. Jong-Woo Choi</div>
+<div class="faculty-inst en">Asan Medical Center · South Korea</div>
+<div class="faculty-inst vi">Trung tâm Y khoa Asan · Hàn Quốc</div>
+</div>
+<!-- Chong, David K. -->
+<div class="faculty-card">
+<img alt="David K. Chong" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/chong1.png"/>
+<div class="faculty-name en">David K. Chong, MD</div>
+<div class="faculty-name vi">PGS.BS. David K. Chong</div>
+<div class="faculty-inst en">Royal Children's Hospital · Australia</div>
+<div class="faculty-inst vi">Bệnh viện Nhi Hoàng gia · Úc</div>
+</div>
+<!-- Fisher, David -->
+<div class="faculty-card">
+<img alt="David Fisher" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/fisher1.png"/>
+<div class="faculty-name en">David Fisher, MD</div>
+<div class="faculty-name vi">GS.BS. David Fisher</div>
+<div class="faculty-inst en">Hospital for Sick Children · Canada</div>
+<div class="faculty-inst vi">Bệnh viện Nhi SickKids · Canada</div>
+</div>
+<!-- Hai, Do Tien -->
+<div class="faculty-card">
+<img alt="Do Tien Hai" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/hai1.png"/>
+<div class="faculty-name en">Do Tien Hai, MD, MSc.</div>
+<div class="faculty-name vi">ThS.BSCKII. Đỗ Tiến Hải</div>
+<div class="faculty-inst en">National Hospital of Odonto-Stomatology · Viet Nam</div>
+<div class="faculty-inst vi">BV Răng Hàm Mặt TW TP.HCM · Việt Nam</div>
+</div>
+<!-- Hau, Le Thua Trung -->
+<div class="faculty-card">
+<img alt="Le Thua Trung Hau" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/hau1.png"/>
+<div class="faculty-name en">Le Thua Trung Hau, MD, PhD</div>
+<div class="faculty-name vi">TS.BS. Lê Thừa Trung Hậu</div>
+<div class="faculty-inst en">Hue Odonto-Stomatology Hospital · Viet Nam</div>
+<div class="faculty-inst vi">Bệnh viện Răng Hàm Mặt Huế · Việt Nam</div>
+</div>
+<!-- Lan, Nguyen Thi Ngoc -->
+<div class="faculty-card">
+<img alt="Nguyen Thi Ngoc Lan" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/lan1.png"/>
+<div class="faculty-name en">Nguyen Thi Ngoc Lan, MD, MSc.</div>
+<div class="faculty-name vi">ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
+<div class="faculty-inst en">Ha Noi Children's Hospital · Viet Nam</div>
+<div class="faculty-inst vi">Bệnh viện Nhi Hà Nội · Việt Nam</div>
+</div>
+<!-- Lo, Lun-Jou -->
+<div class="faculty-card">
+<img alt="Lun-Jou Lo" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/lo1.png"/>
+<div class="faculty-name en">Lun-Jou Lo, MD, PhD</div>
+<div class="faculty-name vi">GS.TS.BS. Lun-Jou Lo</div>
+<div class="faculty-inst en">Chang Gung Memorial Hospital · Taiwan</div>
+<div class="faculty-inst vi">BV Tưởng niệm Trường Canh · Đài Loan</div>
+</div>
+<!-- Nguyen, Phuong D. -->
+<div class="faculty-card">
+<img alt="Phuong D. Nguyen" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/nguyen1.png"/>
+<div class="faculty-name en">Phuong D. Nguyen, MD</div>
+<div class="faculty-name vi">GS.BS. Phuong D. Nguyen</div>
+<div class="faculty-inst en">University of Colorado · USA</div>
+<div class="faculty-inst vi">Đại học Colorado · Hoa Kỳ</div>
+</div>
+<!-- Oh, Tae-Suk -->
+<div class="faculty-card">
+<img alt="Tae-Suk Oh" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/oh1.png"/>
+<div class="faculty-name en">Tae-Suk Oh, MD, PhD</div>
+<div class="faculty-name vi">GS.TS.BS. Tae-Suk Oh</div>
+<div class="faculty-inst en">Asan Medical Center · South Korea</div>
+<div class="faculty-inst vi">Trung tâm Y khoa Asan · Hàn Quốc</div>
+</div>
+<!-- Phillips, John H. -->
+<div class="faculty-card">
+<img alt="John H. Phillips" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/phillips1.png"/>
+<div class="faculty-name en">John H. Phillips, MD</div>
+<div class="faculty-name vi">PGS.BS. John H. Phillips</div>
+<div class="faculty-inst en">Hospital for Sick Children · Canada</div>
+<div class="faculty-inst vi">Bệnh viện Nhi SickKids · Canada</div>
+</div>
+<!-- Runyan, Christopher M. -->
+<div class="faculty-card">
+<img alt="Christopher M. Runyan" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/runyan1.png"/>
+<div class="faculty-name en">Christopher M. Runyan, MD, PhD</div>
+<div class="faculty-name vi">PGS.TS.BS. Christopher M. Runyan</div>
+<div class="faculty-inst en">Wake Forest School of Medicine · USA</div>
+<div class="faculty-inst vi">Trường Y Wake Forest · Hoa Kỳ</div>
+</div>
+<!-- Son, Le Van -->
+<div class="faculty-card">
+<img alt="Le Van Son" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/son1.png"/>
+<div class="faculty-name en">Le Van Son, MD, PhD</div>
+<div class="faculty-name vi">PGS.TS.BS. Lê Văn Sơn</div>
+<div class="faculty-inst en">Phenikaa University · Viet Nam</div>
+<div class="faculty-inst vi">Đại học Phenikaa · Việt Nam</div>
+</div>
+<!-- Tanikawa, Daniela -->
+<div class="faculty-card">
+<img alt="Daniela Tanikawa" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/tanikawa1.png"/>
+<div class="faculty-name en">Daniela Tanikawa, MD, PhD</div>
+<div class="faculty-name vi">TS.BS. Daniela Tanikawa</div>
+<div class="faculty-inst en">Sabará Children's Hospital · Brazil</div>
+<div class="faculty-inst vi">Bệnh viện Nhi Sabará · Brazil</div>
+</div>
+<!-- Wangsrimongkol, Buddhathida -->
+<div class="faculty-card">
+<img alt="Buddhathida Wangsrimongkol" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/cartoon1.png"/>
+<div class="faculty-name en">Buddhathida Wangsrimongkol, MD</div>
+<div class="faculty-name vi">PGS.BS. Buddhathida Wangsrimongkol</div>
+<div class="faculty-inst en">Khon Kaen University · Thailand</div>
+<div class="faculty-inst vi">Đại học Khon Kaen · Thái Lan</div>
+</div>
+<!-- Yang, Robin -->
+<div class="faculty-card">
+<img alt="Robin Yang" class="faculty-photo" src="https://anh-wq.github.io/cleft-course/yang1.png"/>
+<div class="faculty-name en">Robin Yang, MD, DDS</div>
+<div class="faculty-name vi">PGS.BS. Robin Yang</div>
+<div class="faculty-inst en">Johns Hopkins School of Medicine · USA</div>
+<div class="faculty-inst vi">Trường Y Johns Hopkins · Hoa Kỳ</div>
+</div>
+</div>
+</div>
 </section>
-
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><strong>16</strong><span class="en">Faculty</span><span class="vi">Chuyên gia</span></div>
-  <div class="stat"><strong>9+</strong><span class="en">Countries</span><span class="vi">Quốc gia</span></div>
-  <div class="stat"><strong>3</strong><span class="en">Days</span><span class="vi">Ngày</span></div>
+<section class="about" id="about" style="padding: 80px 0;">
+<div class="si">
+<div class="about-grid">
+<div class="about-visual">
+<div class="about-imgbox" style="background: none;">
+<img alt="Bệnh viện Hồng Ngọc" class="about-icon-wm" src="hongngoc.jpg" style="opacity: 1; object-fit: cover; width: 100%; height: 100%;"/>
+<div class="about-caption">
+<strong class="en">Hong Ngoc Phuc Truong Minh Hospital, Ha Noi</strong>
+<strong class="vi">Bệnh viện Hồng Ngọc Phúc Trường Minh, Hà Nội</strong>
+<span>8 Châu Văn Liêm · September 21–23, 2026</span>
 </div>
-
-<!-- ABOUT -->
-<div class="section">
-  <div class="sec-eyebrow en">About the Summit</div>
-  <div class="sec-eyebrow vi">Về Hội nghị</div>
-  <h2 class="sec-h2 en">A Longitudinal Approach to <em>Cleft Reconstruction</em></h2>
-  <h2 class="sec-h2 vi">Chương trình chuyên sâu về <em>Phẫu thuật Khe hở</em></h2>
-  <p class="sec-body en">The Nuoy International Cleft Mastery Summit is an advanced, interdisciplinary summit dedicated to the comprehensive management of the cleft patient — from neonatal intervention through skeletal maturity. A high-level site for bilateral knowledge exchange, where international innovation integrates with the technical precision of the Vietnamese surgical model.</p>
-  <p class="sec-body vi">Hội nghị ICMS là chương trình đào tạo chuyên sâu, liên ngành về quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt. Nơi trao đổi kiến thức hai chiều giữa chuyên gia quốc tế và mô hình phẫu thuật Việt Nam.</p>
 </div>
-
-<!-- CTA -->
-<div class="cta">
-  <h2 class="en">Secure Your Place at <em>the Summit</em></h2>
-  <h2 class="vi">Đặt chỗ của bạn tại <em>hội nghị</em></h2>
-  <p class="en">Join 16 international specialists for three days of advanced surgical education in Ha Noi. Early Bird pricing available until 15 July 2026.</p>
-  <p class="vi">Tham gia cùng 16 chuyên gia quốc tế trong 3 ngày đào tạo phẫu thuật chuyên sâu tại Hà Nội. Early Bird đến hết 15/07/2026.</p>
-  <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary en" target="_top" style="margin-bottom:10px">Register Now →</a>
-  <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary vi" target="_top" style="margin-bottom:10px">Đăng ký ngay →</a>
-  <a href="https://www.nuoy.org/cleft-conference/program" class="btn-ghost en" target="_top">View Programme</a>
-  <a href="https://www.nuoy.org/cleft-conference/program" class="btn-ghost vi" target="_top">Xem chương trình</a>
 </div>
+<div class="">
+<div class="sec-eyebrow en">About the conference</div>
+<div class="sec-eyebrow vi">Về hội nghị</div>
+<h2 class="sec-h2 en"> A Longitudinal Approach to <br/><em>Cleft Reconstruction</em></h2>
+<h2 class="sec-h2 vi">Chương trình đào tạo chuyên sâu về <em>Phẫu thuật Khe hở</em></h2>
+<p class="sec-body en">The Nuoy International Cleft Mastery Summit is an advanced, interdisciplinary symposium dedicated to the comprehensive management of the cleft patient — from neonatal intervention through skeletal maturity. It serves as a high-level site for bilateral knowledge exchange, where international innovation integrates with the technical precision and high-volume expertise of the Vietnamese surgical model.</p>
+<p class="sec-body vi">Hội nghị là chương trình đào tạo chuyên sâu, liên ngành, tập trung vào quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt — nơi các tiến bộ quốc tế kết nối với kinh nghiệm thực tiễn từ mô hình phẫu thuật số lượng lớn của Việt Nam.</p>
+<div class="about-features">
+<div class="af">
+<div class="af-mark"></div>
+<div>
+<h4 class="en">Advanced Case-Based Discussion</h4>
+<h4 class="vi">Thảo luận ca lâm sàng chuyên sâu</h4>
+<p class="en">From advanced technical refinements in primary cleft repair to Virtual Surgical Planning — a rigorous examination of the 2020s Standard of Care across all disciplines.</p>
+<p class="vi">Từ những cải tiến kỹ thuật tiên tiến trong phẫu thuật sửa chữa khe hở môi-vòm miệng nguyên phát đến lập kế hoạch phẫu thuật ảo (VSP) — cái nhìn toàn diện về Tiêu chuẩn điều trị thập niên 2020 trên tất cả chuyên ngành.</p>
+</div>
+</div>
+<div class="af">
+<div class="af-mark"></div>
+<div>
+<h4 class="en">Multidisciplinary Longitudinal Focus</h4>
+<h4 class="vi">Tiếp cận đa chuyên ngành theo suốt hành trình điều trị</h4>
+<p class="en">Participants engage in specialised troubleshooting for the field's most complex challenges — fistulae, asymmetric Class III malocclusions, VPI, and definitive nasal restoration.</p>
+<p class="vi">Học viên tham gia giải quyết các tình huống phức tạp nhất: rò vòm miệng tái phát, sai khớp cắn Hạng III, VPI và tạo hình mũi hoàn thiện.</p>
+</div>
+</div>
+<div class="af">
+<div class="af-mark"></div>
+<div>
+<h4 class="en">16 World-Class Faculty from 9+ Countries</h4>
+<h4 class="vi">16 chuyên gia hàng đầu từ 9+ quốc gia</h4>
+<p class="en">Taiwan, Korea, Netherlands, USA, Canada, Australia, Brazil, Thailand, and Viet Nam — all in Ha Noi for three days of peer-to-peer exchange at the highest level.</p>
+<p class="vi">Đài Loan, Hàn Quốc, Hà Lan, Mỹ, Canada, Úc, Brazil, Thái Lan và Việt Nam — cùng hội tụ tại Hà Nội trong ba ngày trao đổi ngang hàng ở cấp độ cao nhất.</p>
+</div>
+</div>
+</div>
+<a class="btn-teal en" href="https://www.nuoy.org/cleft-conference/about" target="_top">Explore the conference →</a>
+<a class="btn-teal vi" href="https://www.nuoy.org/cleft-conference/about" target="_top">Tìm hiểu thêm về hội nghị →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="context">
+<div class="si">
+<div class="sec-eyebrow en">Regional context</div>
+<div class="sec-eyebrow vi">Bối cảnh khu vực</div>
+<h2 class="sec-h2 en">A Catalyst for National <em>Clinical Integration</em></h2>
+<h2 class="sec-h2 vi">Động lực thúc đẩy <em>Kết nối Lâm sàng Toàn quốc</em></h2>
+<p class="sec-body en">Viet Nam is a global leader in cleft care — characterised by a surgical volume and clinical efficiency that is virtually unmatched. With an incidence rate nearly double the global average, Vietnamese centres have developed a high-velocity expertise that defines mastery at scale. This summit is designed to be the definitive catalyst for the formalisation of a National Vietnamese Reconstructive Community, bridging the Longitudinal Gap between primary repair and definitive functional success in adulthood.</p>
+<p class="sec-body vi">Việt Nam hiện là quốc gia dẫn đầu thế giới về điều trị khe hở với số lượng ca phẫu thuật và hiệu suất lâm sàng gần như không có đối thủ. Tỉ lệ mắc gần gấp đôi mức trung bình toàn cầu đã giúp các trung tâm trong nước tích luỹ chuyên môn lớn. Hội nghị này được thiết kế để trở thành chất xúc tác hình thành Cộng đồng Phẫu thuật Tái tạo Quốc gia.</p>
+<div class="ctx-grid">
+<div class="ctx-card">
+<div class="ctx-n">1/550</div>
+<h4 class="en">Cleft incidence in Viet Nam</h4>
+<h4 class="vi">Tỉ lệ mắc khe hở tại Việt Nam</h4>
+<p class="en">Nearly double the global average of 1 in 700 — generating a scale of surgical expertise unmatched in Southeast Asia and positioning Viet Nam as a primary training hub for the region.</p>
+<p class="vi">Gần gấp đôi mức trung bình toàn cầu (1/700), tạo nên chuyên môn phẫu thuật ở quy mô lớn trong khu vực và định vị Việt Nam là trung tâm đào tạo hàng đầu Đông Nam Á.</p>
+</div>
+<div class="ctx-card">
+<div class="ctx-n">100M+</div>
+<h4 class="en">People in Viet Nam</h4>
+<h4 class="vi">Người dân Việt Nam</h4>
+<p class="en">A rapidly developing healthcare system transitioning toward a permanent Hub and Spoke model — connecting centres of excellence across Northern, Central, and Southern Viet Nam.</p>
+<p class="vi">Hệ thống y tế đang phát triển nhanh, chuyển hướng sang mô hình "trung tâm – vệ tinh" kết nối các trung tâm xuất sắc khắp ba miền Bắc, Trung, Nam.</p>
+</div>
+<div class="ctx-card">
+<div class="ctx-n">25+</div>
+<h4 class="en">Years of Nuoy in Viet Nam</h4>
+<h4 class="vi">Năm Nuoy hoạt động tại Việt Nam</h4>
+<p class="en">Long-standing partnerships with major academic institutions in Viet Nam, building trust, continuity, and deep local surgical knowledge across multiple hospital networks.</p>
+<p class="vi">Quan hệ đối tác lâu dài với các cơ sở học thuật lớn tại Hà Nội, xây dựng sự tin cậy và kiến thức phẫu thuật sâu sắc trên nhiều mạng lưới bệnh viện.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="goals">
+<div class="si">
+<div class="sec-eyebrow en">Conference goals</div>
+<div class="sec-eyebrow vi">Mục tiêu hội nghị</div>
+<h2 class="sec-h2 en">Four Goals. <em>One Strategic Vision.</em></h2>
+<h2 class="sec-h2 vi">Bốn mục tiêu. <em>Một tầm nhìn chiến lược.</em></h2>
+<div class="goals-grid">
+<div class="goal">
+<div class="goal-n">01</div>
+<div>
+<h4 class="en">Unify the National Reconstructive Community</h4>
+<h4 class="vi">Kết nối cộng đồng phẫu thuật tạo hình toàn quốc</h4>
+<p class="en">Formalise a collaborative, inter-centre network of cleft professionals across Northern, Central, and Southern Viet Nam.</p>
+<p class="vi">Xây dựng mạng lưới hợp tác giữa các trung tâm điều trị khe hở tại ba miền Bắc, Trung và Nam Việt Nam.</p>
+</div>
+</div>
+<div class="goal">
+<div class="goal-n">02</div>
+<div>
+<h4 class="en">Bilateral Knowledge Exchange</h4>
+<h4 class="vi">Trao đổi chuyên môn hai chiều</h4>
+<p class="en">Facilitate a high-level peer-to-peer forum where international surgical standards and local Vietnamese mastery are shared with equal authority.</p>
+<p class="vi">Tạo diễn đàn trao đổi ngang hàng, nơi tiêu chuẩn quốc tế và năng lực làm chủ kỹ thuật của Việt Nam được chia sẻ với vị thế bình đẳng.</p>
+</div>
+</div>
+<div class="goal">
+<div class="goal-n">03</div>
+<div>
+<h4 class="en">Bridge the Longitudinal Gap</h4>
+<h4 class="vi">Thu hẹp khoảng trống điều trị dài hạn</h4>
+<p class="en">Shift clinical focus from isolated primary repairs to the comprehensive, long-term functional and aesthetic needs of the maturing patient.</p>
+<p class="vi">Chuyển tư duy từ điều trị từng giai đoạn sang quản lý toàn diện theo suốt quá trình phát triển của bệnh nhân.</p>
+</div>
+</div>
+<div class="goal">
+<div class="goal-n">04</div>
+<div>
+<h4 class="en">Institutionalise Data-Driven Care</h4>
+<h4 class="vi">Chuẩn hoá điều trị dựa trên dữ liệu</h4>
+<p class="en">Promote implementation of national research registries to standardise outcomes and lead global cleft research.</p>
+<p class="vi">Thúc đẩy triển khai hệ thống dữ liệu nghiên cứu quốc gia nhằm chuẩn hoá kết quả và đóng góp vào nghiên cứu khe hở toàn cầu.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="audience">
+<div class="si">
+<div class="sec-eyebrow en">Who should attend</div>
+<div class="sec-eyebrow vi">Đối tượng tham dự</div>
+<h2 class="sec-h2 en">Built for Every Member of <em>the Cleft Team</em></h2>
+<h2 class="sec-h2 vi">Dành cho tất cả thành viên <em>trong đội ngũ điều trị</em></h2>
+<p class="sec-body en">This advanced symposium welcomes specialists at every stage of the cleft reconstructive continuum — from primary surgery to long-term multidisciplinary follow-up.</p>
+<p class="sec-body vi">Hội nghị chuyên sâu này chào đón các chuyên gia ở mọi giai đoạn trong hành trình điều trị khe hở toàn diện, từ phẫu thuật ban đầu đến theo dõi đa chuyên ngành dài hạn.</p>
+<div class="aud-grid">
+<div class="aud">
+<div class="aud-icon"><svg viewbox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"></path></svg></div>
+<h4 class="en">Plastic &amp; Craniofacial Surgeons</h4>
+<h4 class="vi">Bác sĩ Phẫu thuật Tạo hình và Sọ mặt</h4>
+</div>
+<div class="aud">
+<div class="aud-icon"><svg viewbox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg></div>
+<h4 class="en">Oral &amp; Maxillofacial Surgeons</h4>
+<h4 class="vi">Bác sĩ Phẫu thuật Răng Hàm Mặt</h4>
+</div>
+<div class="aud">
+<div class="aud-icon"><svg viewbox="0 0 24 24"><path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"></path></svg></div>
+<h4 class="en">Orthodontists</h4>
+<h4 class="vi">Bác sĩ Chỉnh nha</h4>
+</div>
+<div class="aud">
+<div class="aud-icon"><svg viewbox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm-1 14H9V8h2v9zm4 0h-2V8h2v9z"></path></svg></div>
+<h4 class="en">Speech &amp; Language Therapists</h4>
+<h4 class="vi">Chuyên gia Âm ngữ trị liệu</h4>
+</div>
+<div class="aud">
+<div class="aud-icon"><svg viewbox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"></path></svg></div>
+<h4 class="en">Residents &amp; Fellows</h4>
+<h4 class="vi">Bác sĩ Nội trú và Nghiên cứu sinh</h4>
+</div>
+<div class="aud">
+<div class="aud-icon"><svg viewbox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"></path></svg></div>
+<h4 class="en">Allied Health Professionals</h4>
+<h4 class="vi">Nhân sự y tế liên quan</h4>
+</div>
+</div>
+</div>
+</section>
+<section class="pricing">
+<div class="si">
+<div class="sec-eyebrow en">Registration fees</div>
+<div class="sec-eyebrow vi">Phí tham dự</div>
+<h2 class="sec-h2 en">Equitable Access, <em>Global Participation</em></h2>
+<h2 class="sec-h2 vi">Tiếp cận công bằng, <em>Tham gia toàn cầu</em></h2>
+<p class="sec-body en">Fees are structured according to World Bank Country Income Classifications. Contributions from high-income country participants directly support colleagues from lower-income regions — strengthening the global network of cleft care. Early Bird closes July 15, 2026.</p>
+<p class="sec-body vi">Phí tham dự được phân loại theo Phân nhóm Thu nhập Quốc gia của Ngân hàng Thế giới. Đóng góp từ người tham dự quốc gia thu nhập cao trực tiếp hỗ trợ đồng nghiệp từ khu vực thu nhập thấp hơn. Đăng ký sớm sẽ kết thúc vào ngày 15/07/2026.</p>
+<div class="ptab-wrap">
+<table class="ptab">
+<thead>
+<tr>
+<th class="en">Category</th><th class="vi">Đối tượng</th>
+<th class="en">Early Bird<br/><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">Until Jul 15, 2026</small></th>
+<th class="vi">Đăng ký sớm<br/><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">Đến 15/07/2026</small></th>
+<th class="en">Regular<br/><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">Jul 16 – Sep 20</small></th>
+<th class="vi">Tiêu chuẩn<br/><small style="font-weight:300;color:rgba(248,232,22,.45);font-size:10px">16/07 – 20/09</small></th>
+<th class="en">Onsite</th>
+<th class="vi">Tại chỗ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="hilite">
+<td class="en">LMIC &amp; Viet Nam participant</td>
+<td class="vi">Việt Nam và quốc gia thu nhập thấp / trung bình thấp</td>
+<td class="en">$250</td><td class="vi">$250</td>
+<td class="en">$300</td><td class="vi">$300</td>
+<td class="en">$350</td><td class="vi">$350</td>
+</tr>
+<tr>
+<td class="en">Upper middle-income participant<small></small></td>
+<td class="vi">Người tham dự từ quốc gia có thu nhập trung bình cao<small></small></td>
+<td class="en">$400</td><td class="vi">$400</td>
+<td class="en">$450</td><td class="vi">$450</td>
+<td class="en">$500</td><td class="vi">$500</td>
+</tr>
+<tr>
+<td class="en">High-income country participant<small></small></td>
+<td class="vi">Người tham dự từ quốc gia có thu nhập cao</td>
+<td class="en">$600</td><td class="vi">$600</td>
+<td class="en">$700</td><td class="vi">$700</td>
+<td class="en">$750</td><td class="vi">$750</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="price-note en"><strong>Included in all registrations:</strong> All scientific sessions · Conference materials · Lunch and tea breaks on all three days · Welcome Reception (Sept 21, 17:00–18:30) · All prices in USD · CME credits available (fee TBD) · Organisation does not issue invoices or VAT receipts</div>
+<div class="price-note vi"><strong>Phí đăng ký bao gồm:</strong> Toàn bộ phiên khoa học · Tài liệu hội nghị · Bữa trưa và tea break cả ba ngày · Sự kiện Kết nối Đồng nghiệp (21/09, 17:00–18:30) · Tất cả phí tính bằng USD · Cấp chứng chỉ CME (phí thông báo sau) · Tổ chức không xuất hoá đơn</div>
+<div class="cancel-note en"><strong>Cancellation policy:</strong> Cancellations and changes in registration category after registration are not accepted. The registration fee paid will not be refunded for any reason.</div>
+<div class="cancel-note vi"><strong>Chính sách huỷ:</strong> Không hỗ trợ huỷ hoặc thay đổi loại đăng ký sau khi hoàn tất. Phí đã thanh toán sẽ không được hoàn lại.</div>
+</div>
+</section>
+<section class="supporters">
+<div class="si">
+<div class="sec-eyebrow en" style="justify-content:center">Supporters &amp; Exhibitors</div>
+<div class="sec-eyebrow vi" style="justify-content:center">Đối tác hỗ trợ &amp; Triển lãm</div>
+<h2 class="sec-h2 en" style="max-width:480px;margin:0 auto 0">Made Possible With <br/><em>Our Partners</em></h2>
+<h2 class="sec-h2 vi" style="max-width:480px;margin:0 auto 0">Thực hiện cùng <br/><em>các đối tác</em></h2>
+<div class="sup-flex">
+<div class="sup-chip"><img alt="Hong Ngoc Hospital" src="https://anh-wq.github.io/cleft-course/hongngoclogo.png"/></div>
+<div class="sup-chip"><img alt="KLS Martin Group" src="https://anh-wq.github.io/cleft-course/kls.png"/></div>
+<div class="sup-chip"><img alt="Vietnam Airlines" src="https://anh-wq.github.io/cleft-course/vna.png"/></div>
+<div class="sup-chip logo-lg"><img alt="Smile Train" src="https://anh-wq.github.io/cleft-course/st.png" style="height:128px;max-width:288px"/></div>
+<div class="sup-chip logo-lg"><img alt="Noordhoff Craniofacial Foundation" src="https://anh-wq.github.io/cleft-course/ncf.png" style="height:256px;max-width:576px"/></div>
+</div>
+</div>
+</section>
+<section class="cta-strip">
+<div class="si">
+<div class="sec-eyebrow en">Early Bird open · Closes July 15, 2026</div>
+<div class="sec-eyebrow vi">Early Bird đang mở · Kết thúc 15/07/2026</div>
+<h2 class="sec-h2 en">Ready to Join <br/><em>the Summit?</em></h2>
+<h2 class="sec-h2 vi">Bạn đã sẵn sàng <br/><em>tham gia</em> chưa?</h2>
+<p class="cta-body en">Secure your place at the International cleft mastery summit. Spots are limited to ensure a genuinely immersive peer-to-peer experience.</p>
+<p class="cta-body vi">Đăng ký chỗ của bạn tại Hội nghị quốc tế về làm chủ kỹ thuật điều trị khe hở tại Việt Nam. Số chỗ có giới hạn.</p>
+<div class="cta-btns">
+<a class="btn-primary en" href="https://www.nuoy.org/cleft-conference/registration" target="_top">Register Now →</a>
+<a class="btn-primary vi" href="https://www.nuoy.org/cleft-conference/registration" target="_top">Đăng ký ngay →</a>
+<a class="btn-ghost en" href="https://www.nuoy.org/cleft-conference/program" target="_top">View Programme</a>
+<a class="btn-ghost vi" href="https://www.nuoy.org/cleft-conference/program" target="_top">Xem chương trình</a>
+<a class="btn-ghost en" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Meet the Faculty</a>
+<a class="btn-ghost vi" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Gặp gỡ Báo cáo viên</a>
+</div>
+<p class="cta-contact en">Questions? <a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></p>
+<p class="cta-contact vi">Bạn cần hỗ trợ? <a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></p>
+</div>
+</section>
+<footer>
+<div class="foot-wrap">
+<div class="foot-stripe"></div>
+<div class="foot-grid">
+<div class="foot-brand">
+<div class="nav-logo" style="margin-bottom:0">
+<img alt="Nuoy" class="nav-logomark" src="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png" style="height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1)"/>
+<div class="nav-wordmark">
+<strong>International Cleft Mastery Summit</strong>
+<span>Ha Noi 2026</span>
+</div>
+</div>
+<p class="en">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable medical capacity building in Viet Nam and Southeast Asia. Co-hosted by Hong Ngoc Hospital - The hospital serves as the summit's premier venue, pairing modern medical facilities with a shared mission to elevate local surgical standards.</p>
+<p class="vi">Được tổ chức bởi Nuoy Reconstructive International — tổ chức phi lợi nhuận thúc đẩy chăm sóc phẫu thuật tạo hình thông qua đào tạo, hợp tác và phát triển năng lực y tế bền vững tại Việt Nam và Đông Nam Á. Đồng tổ chức bởi Bệnh viện Hồng Ngọc - Bệnh viện đóng vai trò là địa điểm tổ chức của hội nghị, kết hợp cơ sở vật chất y tế hiện đại với sứ mệnh chung nhằm nâng cao tiêu chuẩn phẫu thuật tại địa phương.</p>
+</div>
+<div class="foot-col">
+<h5 class="en">Pages</h5>
+<h5 class="vi">Điều hướng</h5>
+<ul>
+<li><a class="en" href="https://www.nuoy.org/cleft-conference" target="_top">Home</a><a class="vi" href="https://www.nuoy.org/cleft-conference" target="_top">Trang chủ</a></li>
+<li><a class="en" href="https://www.nuoy.org/cleft-conference/about" target="_top">About the Conference</a><a class="vi" href="https://www.nuoy.org/cleft-conference/about" target="_top">Về hội nghị</a></li>
+<li><a class="en" href="https://www.nuoy.org/cleft-conference/program" target="_top">Programme</a><a class="vi" href="https://www.nuoy.org/cleft-conference/program" target="_top">Chương trình</a></li>
+<li><a class="en" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Speakers</a><a class="vi" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Diễn giả</a></li>
+<li><a class="en" href="https://www.nuoy.org/cleft-conference/registration" target="_top">Register</a><a class="vi" href="https://www.nuoy.org/cleft-conference/registration" target="_top">Đăng ký</a></li>
+</ul>
+</div>
+<div class="foot-col">
+<h5>Contact</h5>
+<ul>
+<li><a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></li>
+<li><a href="https://www.nuoy.org" target="_blank">nuoy.org</a></li>
+</ul>
+<h5 class="en" style="margin-top:1.5rem">Venue</h5>
+<h5 class="vi" style="margin-top:1.5rem">Địa điểm</h5>
+<ul>
+<li><a class="en" href="https://www.nuoy.org/cleft-conference/about" target="_top">Hong Ngoc Phuc Truong Minh Hospital</a><a class="vi" href="https://www.nuoy.org/cleft-conference/about" target="_top">Bệnh viện Hồng Ngọc Phúc Trường Minh</a></li>
+<li><a href="https://www.nuoy.org/cleft-conference/about" style="font-size:12px;opacity:.7" target="_top">8 Châu Văn Liêm, Hà Nội</a></li>
+</ul>
+<h5 class="en" style="margin-top:1.5rem">Organised by</h5>
+<h5 class="vi" style="margin-top:1.5rem">Đơn vị tổ chức</h5>
+<ul>
+<li><a href="https://www.nuoy.org" target="_blank">Nuoy Reconstructive International</a></li>
+<li><a href="https://www.hongngochospital.vn" target="_blank">Hong Ngoc Hospital</a></li>
+</ul>
+</div>
+</div>
+<div class="foot-bottom">
+<span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
+<a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
+</div>
+</div>
+</footer>
 
 <script>
 function setLang(l){
@@ -236,8 +710,7 @@ document.addEventListener('click',function(e){
   var btn=document.getElementById('hamburger');
   if(menu&&btn&&menu.classList.contains('open')){
     if(!menu.contains(e.target)&&!btn.contains(e.target)){
-      menu.classList.remove('open');
-      btn.classList.remove('open');
+      menu.classList.remove('open');btn.classList.remove('open');
     }
   }
 });
@@ -247,15 +720,12 @@ document.addEventListener('click',function(e){
   if(!urlLang&&window.location.pathname.indexOf('/vi/')!==-1){localStorage.setItem('icms-lang','vi');}
 })();
 setLang(localStorage.getItem('icms-lang')||'en');
-
 function sendHeight(){
   var h=document.documentElement.scrollHeight;
-  if(window.parent&&window.parent!==window){
-    window.parent.postMessage({type:'resize',height:h},'*');
-  }
+  if(window.parent&&window.parent!==window){window.parent.postMessage({type:'resize',height:h},'*');}
 }
-window.addEventListener('load',sendHeight);
-setTimeout(sendHeight,500);
+document.fonts.ready.then(function(){sendHeight();setTimeout(sendHeight,400);});
+window.addEventListener('resize',function(){clearTimeout(window._rt);window._rt=setTimeout(sendHeight,150);});
 </script>
 </body>
 </html>

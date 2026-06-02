@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ICMS Ha Noi 2026 · Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
+  --sky:#1295D8;--green:#97D88A;
+  --dark:#0E1A2E;--dark2:#142840;
+  --off:#F5F4F0;--white:#fff;
+  --tx:#0E1A2E;--tx2:#414042;--tx3:#636466;
+  --border:rgba(14,26,46,.1);
+  --ff-serif:'Literata',Georgia,serif;
+  --ff-sans:system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
+body{font-family:var(--ff-sans);color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
+body[data-lang="vi"] .en{display:none!important}
+body[data-lang="en"] .vi{display:none!important}
+.brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
+nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
+.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;line-height:1.2}
+.nav-wordmark span{color:rgba(255,255,255,.6);font-size:9px;letter-spacing:.05em}
+.nav-right{display:flex;align-items:center;gap:8px}
+.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
+.lang-btn{padding:4px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
+.lang-btn.active{background:var(--teal);color:var(--dark)}
+.hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;border-radius:6px}
+.hamburger span{display:block;width:20px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;background:rgba(14,26,64,.98);border-bottom:1px solid rgba(0,180,188,.2);position:sticky;top:58px;z-index:99}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:.85rem 1.5rem;color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06)}
+.mobile-menu a.active-link{color:var(--teal)}
+.menu-bottom{padding:1rem 1.5rem;display:flex;align-items:center;gap:10px}
+.m-lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2)}
+.m-lang-btn{padding:5px 12px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.6);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
+.m-lang-btn.active{background:var(--teal);color:var(--dark)}
+.menu-reg{padding:8px 16px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.sec-eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:2px;flex-shrink:0}
+.sec-h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
+.sec-h2 em{font-style:italic;color:var(--teal)}
+.sec-body{font-size:.875rem;color:var(--tx2);line-height:1.85;font-weight:300}
+.btn-primary{display:block;background:var(--yellow);color:var(--dark);padding:13px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.btn-ghost{display:block;border:1px solid rgba(14,26,46,.2);color:var(--tx2);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+.btn-ghost-dark{display:block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+.btn-teal{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--teal);color:var(--teal);padding:10px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;margin-top:1.25rem}
+
+
+.page-header{background:var(--dark);padding:2rem 1.25rem 2.5rem}
+.ph-inner{display:block!important}
+.ph-card{display:none!important}
+.ph-h1{font-family:var(--ff-serif);font-size:1.85rem;font-weight:400;color:#fff;line-height:1.15;margin-bottom:.5rem;white-space:normal!important}
+.ph-h1 em{font-style:italic}
+.ph-body{font-size:.875rem;color:rgba(255,255,255,.45);line-height:1.75;margin:.5rem 0;max-width:100%!important}
+.ph-eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem}
+.reg-layout{display:block!important;padding:1.5rem 1.25rem 3rem!important;gap:0!important}
+.price-sidebar{margin-top:2rem;position:static!important}
+.form-block{margin-bottom:2rem}
+.form-section-title{font-family:var(--ff-serif);font-size:1.15rem;font-weight:400;font-style:italic;color:var(--dark);margin-bottom:.25rem}
+.form-section-sub{font-size:12px;color:var(--tx3);margin-bottom:1.25rem;font-weight:300}
+.form-divider{height:1px;background:var(--border);margin:1.5rem 0}
+.form-row{display:grid;grid-template-columns:1fr!important;gap:0}
+.form-field{display:flex;flex-direction:column;gap:5px;margin-bottom:.875rem}
+.form-field label{font-size:12px;font-weight:500;color:var(--tx2)}
+input[type=text],input[type=email],input[type=tel],select,textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:6px;font-family:var(--ff-sans);font-size:13px;color:var(--tx);background:#fff;-webkit-appearance:none;box-sizing:border-box}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,180,188,.1)}
+.check-grid{display:grid;grid-template-columns:1fr!important;gap:0}
+.check-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:.75rem;cursor:pointer}
+.check-item input{width:16px;height:16px;accent-color:var(--teal);flex-shrink:0;margin-top:2px}
+.check-item span{font-size:13px;color:var(--tx);line-height:1.45;font-weight:300}
+.fee-ind-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.fee-ind-prices{display:grid;grid-template-columns:repeat(3,1fr)!important;gap:6px}
+.fee-price-col{text-align:center;padding:.6rem .4rem;border-radius:7px;background:rgba(255,255,255,.7);border:1px solid var(--border)}
+.fee-price-col.active-period{background:var(--teal);border-color:var(--teal)}
+.fee-price-col.active-period .fpc-label,.fee-price-col.active-period .fpc-amount{color:#fff}
+.fee-price-col.active-period .fpc-badge{display:block}
+.fpc-label{font-size:9px;color:var(--tx3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px;font-weight:500}
+.fpc-amount{font-family:var(--ff-serif);font-size:1.1rem;font-weight:400;color:var(--dark)}
+.fpc-badge{display:none;font-size:9px;font-weight:700;color:rgba(255,255,255,.9);margin-top:3px;text-transform:uppercase;letter-spacing:.04em}
+.btn-submit{width:100%;padding:15px;background:var(--yellow);color:var(--dark);border:none;border-radius:7px;font-family:var(--ff-sans);font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;margin-top:.5rem}
+.price-card{border:1px solid var(--border);border-radius:12px;padding:1.25rem;margin-bottom:1rem;background:#fff;position:relative;overflow:hidden}
+.price-card.featured{border-color:var(--teal);border-width:2px}
+.price-tabs{display:flex;flex-direction:column!important;gap:4px}
+.price-tab{width:100%;text-align:center;padding:.75rem;border-radius:6px;border:1px solid var(--border);background:#fff;font-family:var(--ff-sans);font-size:12px;font-weight:500;color:var(--tx2);cursor:pointer}
+.price-tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+footer{background:var(--dark2);padding:2rem 1.25rem 3rem}
+.foot-grid{display:block}
+.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--yellow));margin-bottom:1.5rem;border-radius:2px}
+.foot-brand p{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.75;margin-top:.75rem}
+.foot-col{margin-bottom:1.25rem}
+.foot-col h5{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem}
+.foot-col ul{list-style:none;padding:0}
+.foot-col li{margin-bottom:.35rem}
+.foot-col a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px}
+
+</style>
+</head>
+<body data-lang="en">
+<div class="brand-stripe"></div>
+<nav>
+  <a href="https://www.nuoy.org/cleft-conference" class="nav-logo" target="_top">
+    <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy">
+    <div class="nav-wordmark"><strong>ICMS Ha Noi 2026</strong><span>Sept 21–23 · Viet Nam</span></div>
+  </a>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('vi')">VI</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://www.nuoy.org/cleft-conference/about" class="en" target="_top">About</a>
+  <a href="https://www.nuoy.org/cleft-conference/about" class="vi" target="_top">Về hội nghị</a>
+  <a href="https://www.nuoy.org/cleft-conference/program" class="en" target="_top">Programme</a>
+  <a href="https://www.nuoy.org/cleft-conference/program" class="vi" target="_top">Chương trình</a>
+  <a href="https://www.nuoy.org/cleft-conference/speakers" class="en" target="_top">Speakers</a>
+  <a href="https://www.nuoy.org/cleft-conference/speakers" class="vi" target="_top">Diễn giả</a>
+  <a href="https://www.nuoy.org/cleft-conference/registration" class="en active-link" target="_top">Register</a>
+  <a href="https://www.nuoy.org/cleft-conference/registration" class="vi active-link" target="_top">Đăng ký</a>
+  <div class="menu-bottom">
+    <div class="m-lang-pill">
+      <button class="m-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
+      <button class="m-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
+    </div>
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="menu-reg" target="_top">
+      <span class="en">Register Now</span><span class="vi">Đăng ký ngay</span>
+    </a>
+  </div>
+</div>
+
+<div class="reg-layout" style="display:block">
+<div>
+<!-- 1. Personal Info -->
+<div class="form-block">
+<div class="form-section-title en">1. Personal Information</div>
+<div class="form-section-title vi">1. Thông tin cá nhân</div>
+<div class="form-section-sub en">All fields marked * are required</div>
+<div class="form-section-sub vi">Các trường đánh dấu * là bắt buộc</div>
+<div class="form-row">
+<div class="form-field">
+<label class="en">Full Name <span class="req">*</span></label>
+<label class="vi">Họ và tên <span class="req">*</span></label>
+<input id="f-name" placeholder="Dr. Nguyen Van A" type="text"/>
+</div>
+<div class="form-field">
+<label class="en">Phone <span class="req">*</span></label>
+<label class="vi">Số điện thoại <span class="req">*</span></label>
+<input id="f-phone" placeholder="+84 90 000 0000" type="tel"/>
+</div>
+</div>
+<div class="form-row full">
+<div class="form-field">
+<label class="en">Email Address <span class="req">*</span></label>
+<label class="vi">Email <span class="req">*</span></label>
+<input id="f-email" placeholder="yourname@hospital.org" type="email"/>
+</div>
+</div>
+<div class="form-row full">
+<div class="form-field">
+<label class="en">Organisation / Institution <span class="req">*</span></label>
+<label class="vi">Cơ quan / Đơn vị công tác <span class="req">*</span></label>
+<input id="f-org" placeholder="Hospital or University name" type="text"/>
+</div>
+</div>
+</div>
+<div class="form-divider"></div>
+<!-- 2. Country -->
+<div class="form-block">
+<div class="form-section-title en">2. Your Country</div>
+<div class="form-section-title vi">2. Quốc gia</div>
+<div class="form-section-sub en">Select your country — fee is calculated automatically based on World Bank income group.</div>
+<div class="form-section-sub vi">Chọn quốc gia — phí sẽ được tính tự động theo phân loại thu nhập của Ngân hàng Thế giới.</div>
+<div class="form-field">
+<label class="en">Country <span class="req">*</span></label>
+<label class="vi">Quốc gia <span class="req">*</span></label>
+<select id="f-country" onchange="onCountryChange()">
+<option value="">— Select your country / Chọn quốc gia —</option>
+<optgroup label="🟢 LMIC — Early Bird $250">
+<option value="lmic">Vietnam 🇻🇳</option>
+<option value="lmic">Afghanistan</option>
+<option value="lmic">Algeria</option>
+<option value="lmic">Angola</option>
+<option value="lmic">Bangladesh</option>
+<option value="lmic">Benin</option>
+<option value="lmic">Bhutan</option>
+<option value="lmic">Bolivia</option>
+<option value="lmic">Burkina Faso</option>
+<option value="lmic">Burundi</option>
+<option value="lmic">Cabo Verde</option>
+<option value="lmic">Cambodia</option>
+<option value="lmic">Cameroon</option>
+<option value="lmic">Central African Republic</option>
+<option value="lmic">Chad</option>
+<option value="lmic">Comoros</option>
+<option value="lmic">Congo Dem. Rep.</option>
+<option value="lmic">Congo Rep.</option>
+<option value="lmic">Cote d'Ivoire</option>
+<option value="lmic">Djibouti</option>
+<option value="lmic">Egypt</option>
+<option value="lmic">El Salvador</option>
+<option value="lmic">Eritrea</option>
+<option value="lmic">Eswatini</option>
+<option value="lmic">Ethiopia</option>
+<option value="lmic">Gambia</option>
+<option value="lmic">Ghana</option>
+<option value="lmic">Guinea</option>
+<option value="lmic">Guinea-Bissau</option>
+<option value="lmic">Haiti</option>
+<option value="lmic">Honduras</option>
+<option value="lmic">India</option>
+<option value="lmic">Indonesia</option>
+<option value="lmic">Iran</option>
+<option value="lmic">Jordan</option>
+<option value="lmic">Kenya</option>
+<option value="lmic">Kiribati</option>
+<option value="lmic">Kyrgyz Republic</option>
+<option value="lmic">Lao PDR</option>
+<option value="lmic">Lesotho</option>
+<option value="lmic">Liberia</option>
+<option value="lmic">Madagascar</option>
+<option value="lmic">Malawi</option>
+<option value="lmic">Mali</option>
+<option value="lmic">Mauritania</option>
+<option value="lmic">Micronesia</option>
+<option value="lmic">Moldova</option>
+<option value="lmic">Mongolia</option>
+<option value="lmic">Morocco</option>
+<option value="lmic">Mozambique</option>
+<option value="lmic">Myanmar</option>
+<option value="lmic">Nepal</option>
+<option value="lmic">Nicaragua</option>
+<option value="lmic">Niger</option>
+<option value="lmic">Nigeria</option>
+<option value="lmic">Pakistan</option>
+<option value="lmic">Papua New Guinea</option>
+<option value="lmic">Philippines</option>
+<option value="lmic">Rwanda</option>
+<option value="lmic">Sao Tome and Principe</option>
+<option value="lmic">Senegal</option>
+<option value="lmic">Sierra Leone</option>
+<option value="lmic">Solomon Islands</option>
+<option value="lmic">Somalia</option>
+<option value="lmic">South Sudan</option>
+<option value="lmic">Sri Lanka</option>
+<option value="lmic">Sudan</option>
+<option value="lmic">Syrian Arab Republic</option>
+<option value="lmic">Tajikistan</option>
+<option value="lmic">Tanzania</option>
+<option value="lmic">Timor-Leste</option>
+<option value="lmic">Togo</option>
+<option value="lmic">Tunisia</option>
+<option value="lmic">Uganda</option>
+<option value="lmic">Ukraine</option>
+<option value="lmic">Uzbekistan</option>
+<option value="lmic">Vanuatu</option>
+<option value="lmic">West Bank and Gaza</option>
+<option value="lmic">Yemen</option>
+<option value="lmic">Zambia</option>
+<option value="lmic">Zimbabwe</option>
+</optgroup>
+<optgroup label="🟡 UMIC — Early Bird $400">
+<option value="umic">Albania</option>
+<option value="umic">American Samoa</option>
+<option value="umic">Argentina</option>
+<option value="umic">Armenia</option>
+<option value="umic">Azerbaijan</option>
+<option value="umic">Belarus</option>
+<option value="umic">Belize</option>
+<option value="umic">Bosnia and Herzegovina</option>
+<option value="umic">Botswana</option>
+<option value="umic">Brazil</option>
+<option value="umic">Bulgaria</option>
+<option value="umic">China</option>
+<option value="umic">Colombia</option>
+<option value="umic">Costa Rica</option>
+<option value="umic">Cuba</option>
+<option value="umic">Dominica</option>
+<option value="umic">Dominican Republic</option>
+<option value="umic">Ecuador</option>
+<option value="umic">Equatorial Guinea</option>
+<option value="umic">Fiji</option>
+<option value="umic">Gabon</option>
+<option value="umic">Georgia</option>
+<option value="umic">Grenada</option>
+<option value="umic">Guatemala</option>
+<option value="umic">Guyana</option>
+<option value="umic">Iraq</option>
+<option value="umic">Jamaica</option>
+<option value="umic">Kazakhstan</option>
+<option value="umic">Kosovo</option>
+<option value="umic">Lebanon</option>
+<option value="umic">Libya</option>
+<option value="umic">Malaysia</option>
+<option value="umic">Maldives</option>
+<option value="umic">Marshall Islands</option>
+<option value="umic">Mauritius</option>
+<option value="umic">Mexico</option>
+<option value="umic">Montenegro</option>
+<option value="umic">Namibia</option>
+<option value="umic">North Macedonia</option>
+<option value="umic">Paraguay</option>
+<option value="umic">Peru</option>
+<option value="umic">Russian Federation</option>
+<option value="umic">Samoa</option>
+<option value="umic">Serbia</option>
+<option value="umic">South Africa</option>
+<option value="umic">St. Lucia</option>
+<option value="umic">St. Vincent and the Grenadines</option>
+<option value="umic">Suriname</option>
+<option value="umic">Thailand</option>
+<option value="umic">Tonga</option>
+<option value="umic">Turkey</option>
+<option value="umic">Turkmenistan</option>
+<option value="umic">Tuvalu</option>
+<option value="umic">Venezuela</option>
+</optgroup>
+<optgroup label="🔴 HIC — Early Bird $600">
+<option value="hic">Andorra</option>
+<option value="hic">Antigua and Barbuda</option>
+<option value="hic">Aruba</option>
+<option value="hic">Australia</option>
+<option value="hic">Austria</option>
+<option value="hic">Bahamas, The</option>
+<option value="hic">Bahrain</option>
+<option value="hic">Barbados</option>
+<option value="hic">Belgium</option>
+<option value="hic">Bermuda</option>
+<option value="hic">British Virgin Islands</option>
+<option value="hic">Brunei Darussalam</option>
+<option value="hic">Canada</option>
+<option value="hic">Cayman Islands</option>
+<option value="hic">Chile</option>
+<option value="hic">Croatia</option>
+<option value="hic">Curacao</option>
+<option value="hic">Cyprus</option>
+<option value="hic">Czechia</option>
+<option value="hic">Denmark</option>
+<option value="hic">Estonia</option>
+<option value="hic">Finland</option>
+<option value="hic">France</option>
+<option value="hic">Germany</option>
+<option value="hic">Gibraltar</option>
+<option value="hic">Greece</option>
+<option value="hic">Greenland</option>
+<option value="hic">Guam</option>
+<option value="hic">Hong Kong SAR China</option>
+<option value="hic">Hungary</option>
+<option value="hic">Iceland</option>
+<option value="hic">Ireland</option>
+<option value="hic">Isle of Man</option>
+<option value="hic">Israel</option>
+<option value="hic">Italy</option>
+<option value="hic">Japan</option>
+<option value="hic">Korea Rep.</option>
+<option value="hic">Kuwait</option>
+<option value="hic">Latvia</option>
+<option value="hic">Liechtenstein</option>
+<option value="hic">Lithuania</option>
+<option value="hic">Luxembourg</option>
+<option value="hic">Macao SAR China</option>
+<option value="hic">Malta</option>
+<option value="hic">Monaco</option>
+<option value="hic">Nauru</option>
+<option value="hic">Netherlands</option>
+<option value="hic">New Caledonia</option>
+<option value="hic">New Zealand</option>
+<option value="hic">Northern Mariana Islands</option>
+<option value="hic">Norway</option>
+<option value="hic">Oman</option>
+<option value="hic">Palau</option>
+<option value="hic">Panama</option>
+<option value="hic">Poland</option>
+<option value="hic">Portugal</option>
+<option value="hic">Puerto Rico</option>
+<option value="hic">Qatar</option>
+<option value="hic">Romania</option>
+<option value="hic">San Marino</option>
+<option value="hic">Saudi Arabia</option>
+<option value="hic">Seychelles</option>
+<option value="hic">Singapore</option>
+<option value="hic">Sint Maarten</option>
+<option value="hic">Slovak Republic</option>
+<option value="hic">Slovenia</option>
+<option value="hic">Spain</option>
+<option value="hic">St. Kitts and Nevis</option>
+<option value="hic">St. Martin</option>
+<option value="hic">Sweden</option>
+<option value="hic">Switzerland</option>
+<option value="hic">Taiwan</option>
+<option value="hic">Trinidad and Tobago</option>
+<option value="hic">Turks and Caicos Islands</option>
+<option value="hic">United Arab Emirates</option>
+<option value="hic">United Kingdom</option>
+<option value="hic">United States</option>
+<option value="hic">Uruguay</option>
+<option value="hic">Virgin Islands US</option>
+</optgroup>
+</select>
+</div>
+<div class="fee-indicator" id="fee-indicator">
+<div class="fee-ind-label en">Your registration fee</div>
+<div class="fee-ind-label vi">Phí đăng ký của bạn</div>
+<div class="fee-ind-tier" id="fee-tier-name"></div>
+<div class="fee-ind-prices">
+<div class="fee-price-col" id="fpc-eb">
+<div class="fpc-label en">Early Bird</div>
+<div class="fpc-label vi">Đăng ký sớm</div>
+<div class="fpc-amount" id="fpc-eb-amt"></div>
+<div class="fpc-badge en">✓ Active now</div>
+<div class="fpc-badge vi">✓ Hiện tại</div>
+</div>
+<div class="fee-price-col" id="fpc-reg">
+<div class="fpc-label en">Regular</div>
+<div class="fpc-label vi">Tiêu chuẩn</div>
+<div class="fpc-amount" id="fpc-reg-amt"></div>
+<div class="fpc-badge en">✓ Active now</div>
+<div class="fpc-badge vi">✓ Hiện tại</div>
+</div>
+<div class="fee-price-col" id="fpc-on">
+<div class="fpc-label">Onsite</div>
+<div class="fpc-amount" id="fpc-on-amt"></div>
+<div class="fpc-badge en">✓ Active now</div>
+<div class="fpc-badge vi">✓ Hiện tại</div>
+</div>
+</div>
+</div>
+</div>
+<div class="form-divider"></div>
+<!-- 3. Professional -->
+<div class="form-block">
+<div class="form-section-title en">3. Professional Information</div>
+<div class="form-section-title vi">3. Thông tin nghề nghiệp</div>
+<div class="form-section-sub en">Helps us tailor the experience for your discipline.</div>
+<div class="form-section-sub vi">Giúp chúng tôi điều chỉnh chương trình phù hợp với chuyên môn của bạn.</div>
+<div class="form-field" style="margin-bottom:1.25rem">
+<label class="en">Job Title <span class="req">*</span></label>
+<label class="vi">Vị trí làm việc <span class="req">*</span></label>
+<div class="check-group check-grid">
+<label class="check-item"><input name="jobtitle" type="radio" value="Plastic Surgeon"/><span class="en">Plastic Surgeon</span><span class="vi">BS Phẫu thuật Tạo hình</span></label>
+<label class="check-item"><input name="jobtitle" type="radio" value="Craniofacial Surgeon"/><span class="en">Craniofacial Surgeon</span><span class="vi">BS Phẫu thuật Sọ mặt</span></label>
+<label class="check-item"><input name="jobtitle" type="radio" value="Oral &amp; Maxillofacial Surgeon"/><span class="en">Oral &amp; Maxillofacial Surgeon</span><span class="vi">BS Phẫu thuật Hàm mặt</span></label>
+<label class="check-item"><input name="jobtitle" type="radio" value="Orthodontist"/><span class="en">Orthodontist</span><span class="vi">BS Chỉnh nha</span></label>
+<label class="check-item"><input name="jobtitle" type="radio" value="Speech &amp; Language Therapist"/><span class="en">Speech &amp; Language Therapist</span><span class="vi">Chuyên gia Âm ngữ trị liệu</span></label>
+<label class="check-item"><input name="jobtitle" type="radio" value="Resident / Fellow"/><span class="en">Resident / Fellow</span><span class="vi">Bác sĩ Nội trú</span></label>
+<label class="check-item"><input name="jobtitle" onclick="document.getElementById('other-job').style.display='block'" type="radio" value="Other"/><span class="en">Other</span><span class="vi">Khác</span></label>
+</div>
+<div class="sub-field" id="other-job" style="display:none">
+<input id="f-otherjob" placeholder="Please specify your role..." type="text"/>
+</div>
+</div>
+<div class="form-field">
+<label class="en">Experience in Cleft Care <span style="font-weight:300;color:var(--tx3)">(select all that apply)</span></label>
+<label class="vi">Kinh nghiệm trong điều trị khe hở <span style="font-weight:300;color:var(--tx3)">(chọn tất cả phù hợp)</span></label>
+<div class="check-group check-grid" style="margin-top:.4rem">
+<label class="check-item"><input name="exp" type="checkbox" value="Primary cleft care (lip, palate)"/><span class="en">Primary cleft care <span style="color:var(--tx3)">(lip, palate)</span></span><span class="vi">Điều trị ban đầu <span style="color:var(--tx3)">(môi, vòm)</span></span></label>
+<label class="check-item"><input name="exp" type="checkbox" value="Secondary cleft — VPI"/><span class="en">Secondary — VPI</span><span class="vi">Thứ cấp — VPI</span></label>
+<label class="check-item"><input name="exp" type="checkbox" value="Secondary cleft — Alveolar bone graft"/><span class="en">Secondary — Alveolar bone graft</span><span class="vi">Thứ cấp — Ghép xương ổ răng</span></label>
+<label class="check-item"><input name="exp" type="checkbox" value="Secondary cleft — Rhinoplasty"/><span class="en">Secondary — Rhinoplasty</span><span class="vi">Thứ cấp — Tạo hình mũi</span></label>
+<label class="check-item"><input name="exp" type="checkbox" value="Orthodontic cleft care"/><span class="en">Orthodontic cleft care</span><span class="vi">Chỉnh nha khe hở</span></label>
+<label class="check-item"><input name="exp" type="checkbox" value="New to cleft care"/><span class="en">New to cleft care</span><span class="vi">Mới bắt đầu</span></label>
+</div>
+</div>
+<div class="form-field" style="margin-top:1.25rem">
+<label class="en">Years of Experience in Cleft Care <span class="req">*</span></label>
+<label class="vi">Số năm kinh nghiệm trong điều trị khe hở <span class="req">*</span></label>
+<div class="check-group check-grid" style="margin-top:.4rem">
+<label class="check-item"><input name="years_exp" type="radio" value="Less than 2 years"/><span class="en">Less than 2 years</span><span class="vi">Dưới 2 năm</span></label>
+<label class="check-item"><input name="years_exp" type="radio" value="2–5 years"/><span class="en">2–5 years</span><span class="vi">2–5 năm</span></label>
+<label class="check-item"><input name="years_exp" type="radio" value="5–10 years"/><span class="en">5–10 years</span><span class="vi">5–10 năm</span></label>
+<label class="check-item"><input name="years_exp" type="radio" value="10+ years"/><span class="en">10+ years</span><span class="vi">Trên 10 năm</span></label>
+</div>
+</div>
+</div>
+<div class="form-divider"></div>
+<!-- 4. Dietary -->
+<div class="form-block">
+<div class="form-section-title en">4. Dietary Preferences</div>
+<div class="form-section-title vi">4. Chế độ ăn</div>
+<div class="form-section-sub en">Lunch and tea breaks included all three days.</div>
+<div class="form-section-sub vi">Bữa trưa và tea break đã bao gồm trong cả ba ngày.</div>
+<div class="form-field" style="margin-bottom:1rem">
+<label class="en">Food allergies?</label>
+<label class="vi">Dị ứng thực phẩm?</label>
+<div class="check-group" style="flex-direction:row;gap:1.5rem;margin-top:.4rem">
+<label class="check-item"><input name="allergy" onclick="document.getElementById('allergy-txt').style.display='block'" type="radio"/><span class="en">Yes — specify below</span><span class="vi">Có — ghi rõ bên dưới</span></label>
+<label class="check-item"><input checked="" name="allergy" onclick="document.getElementById('allergy-txt').style.display='none'" type="radio"/><span class="en">No</span><span class="vi">Không</span></label>
+</div>
+<div class="sub-field" id="allergy-txt" style="display:none"><input id="f-allergy" placeholder="Describe allergies..." type="text"/></div>
+</div>
+<div class="form-field">
+<label class="en">Dietary requirements</label>
+<label class="vi">Chế độ ăn đặc biệt</label>
+<div class="check-group" style="flex-direction:row;gap:1.5rem;flex-wrap:wrap;margin-top:.4rem">
+<label class="check-item"><input name="diet" type="checkbox" value="Vegetarian"/><span class="en">Vegetarian</span><span class="vi">Ăn chay (có trứng sữa)</span></label>
+<label class="check-item"><input name="diet" type="checkbox" value="Vegan"/><span class="en">Vegan</span><span class="vi">Thuần chay</span></label>
+<label class="check-item"><input name="diet" type="checkbox" value="Halal"/><span>Halal</span></label>
+</div>
+</div>
+</div>
+<div class="form-divider"></div>
+<!-- 5. Reception -->
+<div class="form-block">
+<div class="form-section-title en">5. Welcome Reception</div>
+<div class="form-section-title vi">5. Sự kiện Kết nối Đồng nghiệp</div>
+<div class="form-section-sub en">Monday Sept 21 · 17:00–18:00 · Included in all registrations</div>
+<div class="form-section-sub vi">Thứ Hai 21/09 · 17:00–18:00 · Đã bao gồm trong phí đăng ký</div>
+<div class="form-field">
+<label class="en">Will you attend? <span class="req">*</span></label>
+<label class="vi">Bạn có tham gia không? <span class="req">*</span></label>
+<div class="check-group" style="flex-direction:row;gap:1.5rem;margin-top:.4rem">
+<label class="check-item"><input name="reception" type="radio" value="Yes"/><span class="en">Yes, I will attend</span><span class="vi">Có, tôi sẽ tham gia</span></label>
+<label class="check-item"><input name="reception" type="radio" value="No"/><span class="en">No, I cannot attend</span><span class="vi">Không, tôi không tham gia được</span></label>
+</div>
+</div>
+</div>
+<!-- SUBMIT -->
+<div class="submit-area">
+<p class="submit-note en"><strong>No waiting for confirmation.</strong> Clicking the button below will save your registration details to our system, then redirect you to a secure payment page. Your place is confirmed immediately upon successful payment.</p>
+<p class="submit-note vi"><strong>Không cần chờ xác nhận.</strong> Nhấn nút bên dưới sẽ lưu thông tin đăng ký vào hệ thống, sau đó chuyển bạn đến trang thanh toán bảo mật. Chỗ của bạn được xác nhận ngay khi thanh toán thành công.</p>
+<button class="btn-submit en" disabled="" id="btn-submit-en" onclick="submitForm()">
+<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg>
+<span id="btn-label-en">Select your country to continue</span>
+</button>
+<button class="btn-submit vi" disabled="" id="btn-submit-vi" onclick="submitForm()">
+<svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"></path></svg>
+<span id="btn-label-vi">Chọn quốc gia để tiếp tục</span>
+</button>
+<p class="submit-small en">No refunds or category changes after registration is completed.</p>
+<p class="submit-small vi">Không hoàn tiền, không thay đổi loại đăng ký sau khi hoàn tất.</p>
+</div>
+</div>
+<!-- SIDEBAR -->
+<div class="price-sidebar" style="margin-top:2rem">
+<div class="ps-deadline">
+<div class="ps-deadline-label en">⏰ Early Bird closes</div>
+<div class="ps-deadline-label vi">⏰ Đăng ký sớm kết thúc</div>
+<div class="ps-deadline-val">July 15, 2026</div>
+<div class="ps-deadline-sub" id="eb-days"></div>
+</div>
+<div class="ps-card">
+<div class="ps-title en">Registration Fees</div>
+<div class="ps-title vi">Phí tham dự</div>
+<div class="ps-period-badge">
+<span class="ps-period-dot"></span>
+<span id="period-label">Early Bird Active</span>
+</div>
+<div class="ps-tier">
+<div class="ps-tier-name en">🟢 LMIC &amp; Vietnam</div>
+<div class="ps-tier-name vi">🟢 Việt Nam &amp; LMIC</div>
+<div class="ps-tier-prices">
+<div class="ps-price" id="sp-lmic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Đăng ký sớm</div><div class="ps-price-amt">$250</div></div>
+<div class="ps-price" id="sp-lmic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">Tiêu chuẩn</div><div class="ps-price-amt">$300</div></div>
+<div class="ps-price" id="sp-lmic-on"><div class="ps-price-lbl en">Onsite</div><div class="ps-price-lbl vi">Tại sự kiện</div><div class="ps-price-amt">$350</div></div>
+</div>
+</div>
+<div class="ps-tier">
+<div class="ps-tier-name">🟡 UMIC</div>
+<div class="ps-tier-prices">
+<div class="ps-price" id="sp-umic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Đăng ký sớm</div><div class="ps-price-amt">$400</div></div>
+<div class="ps-price" id="sp-umic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">Tiêu chuẩn</div><div class="ps-price-amt">$450</div></div>
+<div class="ps-price" id="sp-umic-on"><div class="ps-price-lbl en">Onsite</div><div class="ps-price-lbl vi">Tại sự kiện</div><div class="ps-price-amt">$500</div></div>
+</div>
+</div>
+<div class="ps-tier">
+<div class="ps-tier-name">🔴 HIC</div>
+<div class="ps-tier-prices">
+<div class="ps-price" id="sp-hic-eb"><div class="ps-price-lbl en">Early Bird</div><div class="ps-price-lbl vi">Đăng ký sớm</div><div class="ps-price-amt">$600</div></div>
+<div class="ps-price" id="sp-hic-reg"><div class="ps-price-lbl en">Regular</div><div class="ps-price-lbl vi">Tiêu chuẩn</div><div class="ps-price-amt">$700</div></div>
+<div class="ps-price" id="sp-hic-on"><div class="ps-price-lbl en">Onsite</div><div class="ps-price-lbl vi">Tại sự kiện</div><div class="ps-price-amt">$750</div></div>
+</div>
+</div>
+<div class="ps-includes">
+<h5 class="en">All registrations include</h5>
+<h5 class="vi">Phí bao gồm</h5>
+<ul>
+<li class="en">All scientific sessions (3 days)</li><li class="vi">Toàn bộ phiên khoa học (3 ngày)</li>
+<li class="en">Conference materials</li><li class="vi">Tài liệu hội nghị</li>
+<li class="en">Lunch &amp; tea breaks daily</li><li class="vi">Bữa trưa và tea break mỗi ngày</li>
+<li class="en">Welcome Reception (Sept 21)</li><li class="vi">Sự kiện Kết nối (21/09)</li>
+<li class="en">CME credits (fee TBD)</li><li class="vi">Chứng chỉ CME (phí sẽ được thông báo sau)</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="foot-wrap">
+<div class="foot-stripe"></div>
+<div class="foot-bottom">
+<span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
+<div style="display:flex;gap:1.5rem">
+<a class="en" href="https://www.nuoy.org/cleft-conference" target="_top">Home</a><a class="vi" href="https://www.nuoy.org/cleft-conference" target="_top">Trang chủ</a>
+<a class="en" href="https://www.nuoy.org/cleft-conference/program" target="_top">Programme</a><a class="vi" href="https://www.nuoy.org/cleft-conference/program" target="_top">Chương trình</a>
+<a class="en" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Speakers</a><a class="vi" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Diễn giả</a>
+<a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  setMobileLang(l);
+  localStorage.setItem('icms-lang',l);
+  sendHeight();
+}
+function setMobileLang(l){
+  document.getElementById('mlang-en').classList.toggle('active',l==='en');
+  document.getElementById('mlang-vi').classList.toggle('active',l==='vi');
+}
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  var menu=document.getElementById('mobile-menu');
+  var btn=document.getElementById('hamburger');
+  if(menu&&btn&&menu.classList.contains('open')){
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('open');btn.classList.remove('open');
+    }
+  }
+});
+(function(){
+  var urlLang=new URLSearchParams(window.location.search).get('lang');
+  if(urlLang==='en'||urlLang==='vi'){localStorage.setItem('icms-lang',urlLang);}
+  if(!urlLang&&window.location.pathname.indexOf('/vi/')!==-1){localStorage.setItem('icms-lang','vi');}
+})();
+setLang(localStorage.getItem('icms-lang')||'en');
+function sendHeight(){
+  var h=document.documentElement.scrollHeight;
+  if(window.parent&&window.parent!==window){window.parent.postMessage({type:'resize',height:h},'*');}
+}
+document.fonts.ready.then(function(){sendHeight();setTimeout(sendHeight,400);});
+window.addEventListener('resize',function(){clearTimeout(window._rt);window._rt=setTimeout(sendHeight,150);});
+</script>
+</body>
+</html>
