@@ -1052,7 +1052,9 @@ function showDay(id,btn){
     const sum=s.querySelector('.session-summary');
     if(sum) sum.classList.remove('open');
   });
-}
+
+  sendHeight();
+  setTimeout(sendHeight, 150);}
 
 /* Session accordion */
 function toggleSession(el){
