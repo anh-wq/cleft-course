@@ -274,23 +274,23 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
 <div class="brand-stripe"></div>
 <nav>
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
+    <a href="https://www.nuoy.org/cleft-conference" class="nav-logo">
       <img src="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png" alt="Nuoy" class="nav-logomark" style="height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
       <div class="nav-wordmark"><strong>ICMS Ha Noi 2026</strong><span>Sept 21–23</span></div>
     </a>
     <ul class="nav-links">
-      <li><a href="about.html" class="en">About</a><a href="about.html" class="vi">Về hội nghị</a></li>
-      <li><a href="programme.html" class="active en">Programme</a><a href="programme.html" class="active vi">Chương trình</a></li>
-      <li><a href="speakers.html" class="en">Speakers</a><a href="speakers.html" class="vi">Diễn giả</a></li>
-      <li><a href="register.html" class="en">Register</a><a href="register.html" class="vi">Đăng ký</a></li>
+      <li><a href="https://www.nuoy.org/cleft-conference-about" class="en">About</a><a href="https://www.nuoy.org/cleft-conference-about" class="vi">Về hội nghị</a></li>
+      <li><a href="https://www.nuoy.org/cleft-conference-program" class="active en">Programme</a><a href="https://www.nuoy.org/cleft-conference-program" class="active vi">Chương trình</a></li>
+      <li><a href="https://www.nuoy.org/cleft-conference-speakers" class="en">Speakers</a><a href="https://www.nuoy.org/cleft-conference-speakers" class="vi">Diễn giả</a></li>
+      <li><a href="https://www.nuoy.org/cleft-conference-registration" class="en">Register</a><a href="https://www.nuoy.org/cleft-conference-registration" class="vi">Đăng ký</a></li>
     </ul>
     <div class="nav-right">
       <div class="lang-pill">
         <button class="lang-btn active" onclick="setLang('en')">EN</button>
         <button class="lang-btn" onclick="setLang('vi')">VI</button>
       </div>
-      <a href="register.html" class="btn-cta-nav en">Register</a>
-      <a href="register.html" class="btn-cta-nav vi">Đăng ký</a>
+      <a href="https://www.nuoy.org/cleft-conference-registration" class="btn-cta-nav en">Register</a>
+      <a href="https://www.nuoy.org/cleft-conference-registration" class="btn-cta-nav vi">Đăng ký</a>
     </div>
   </div>
 </nav>
@@ -1008,9 +1008,9 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
     <div class="foot-bottom">
       <span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
       <div style="display:flex;gap:1.5rem">
-        <a href="index.html" class="en">Home</a><a href="index.html" class="vi">Trang chủ</a>
-        <a href="speakers.html" class="en">Speakers</a><a href="speakers.html" class="vi">Diễn giả</a>
-        <a href="register.html" class="en">Register</a><a href="register.html" class="vi">Đăng ký</a>
+        <a href="https://www.nuoy.org/cleft-conference" class="en">Home</a><a href="https://www.nuoy.org/cleft-conference" class="vi">Trang chủ</a>
+        <a href="https://www.nuoy.org/cleft-conference-speakers" class="en">Speakers</a><a href="https://www.nuoy.org/cleft-conference-speakers" class="vi">Diễn giả</a>
+        <a href="https://www.nuoy.org/cleft-conference-registration" class="en">Register</a><a href="https://www.nuoy.org/cleft-conference-registration" class="vi">Đăng ký</a>
         <a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
       </div>
     </div>
@@ -1070,5 +1070,26 @@ window.addEventListener('resize',sendHeight);
 setTimeout(sendHeight,300);
 setTimeout(sendHeight,1000);
 </script>
+<script>
+/* Lang persistence across pages via URL param */
+(function(){
+  var PAGES=["https://www.nuoy.org/cleft-conference","https://www.nuoy.org/cleft-conference-about","https://www.nuoy.org/cleft-conference-program","https://www.nuoy.org/cleft-conference-registration","https://www.nuoy.org/cleft-conference-speakers"];
+  var urlLang=new URLSearchParams(window.location.search).get("lang");
+  if(urlLang==="en"||urlLang==="vi"){localStorage.setItem("icms-lang",urlLang);}
+  document.addEventListener("click",function(e){
+    var a=e.target.closest("a");
+    if(!a)return;
+    var href=a.getAttribute("href");
+    if(!href)return;
+    var isInternal=PAGES.some(function(p){return href===p||href.startsWith(p+"?");});
+    if(!isInternal)return;
+    var lang=localStorage.getItem("icms-lang")||"en";
+    var url=new URL(href,window.location.href);
+    url.searchParams.set("lang",lang);
+    a.setAttribute("href",url.toString());
+  });
+})();
+</script>
+
 </body>
 </html>
