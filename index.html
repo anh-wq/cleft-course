@@ -175,8 +175,8 @@ nav {
 }
 .hero-inner{
   max-width:1280px;margin:0 auto;width:100%;
-  padding:2.5rem 3.5rem 1rem 2.5rem;
-  display:grid;grid-template-columns:1fr 350px;gap:3rem;
+  padding:2.5rem 2.5rem 1rem 2.5rem;
+  display:grid;grid-template-columns:1fr 320px;gap:2rem;
   align-items:center;position:relative;z-index:2;
 }
 
@@ -263,7 +263,7 @@ nav {
 .hero-card{
   background:rgba(255,255,255,.04);
   border:1px solid rgba(0,180,188,.2);
-  border-radius:16px;padding:1.75rem;
+  border-radius:16px;padding:1.5rem;
 }
 .hc-label{
   font-size:10px;font-weight:600;letter-spacing:.14em;
@@ -271,15 +271,15 @@ nav {
 }
 .countdown{
   display:grid;grid-template-columns:repeat(4,1fr);
-  gap:8px;margin-bottom:1.5rem;
+  gap:6px;margin-bottom:1.5rem;
 }
 .cd{
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.07);
-  border-radius:10px;padding:1rem .5rem;text-align:center;
+  border-radius:10px;padding:.85rem .4rem;text-align:center;
 }
 .cd-n{
-  font-family:var(--ff-serif);font-size:2.1rem;
+  font-family:var(--ff-serif);font-size:1.8rem;
   font-weight:400;color:var(--white);line-height:1;
   display:block;margin-bottom:4px;
 }
@@ -288,7 +288,7 @@ nav {
 .hc-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .hcs{text-align:center;padding:.65rem 0}
 .hcs strong{
-  display:block;font-family:var(--ff-serif);font-size:1.65rem;
+  display:block;font-family:var(--ff-serif);font-size:1.5rem;
   font-weight:400;color:var(--teal);line-height:1;
 }
 .hcs span{
@@ -616,9 +616,77 @@ img{
   .nav-links{display:none}
 }
 @media(max-width:640px){
-  section{padding:4.5rem 1.25rem}
+  section{padding:3.5rem 1.25rem}
   .aud-grid{grid-template-columns:1fr}
-  .hero-inner{padding:4rem 1.25rem}
+  .hero-inner{padding:5rem 1.25rem 2rem}
+  .hero-h1{font-size:clamp(1.6rem,7vw,2.4rem)!important;white-space:normal!important}
+  .hero-sub,.hero-slogan{font-size:.9rem}
+  .hero-btns{flex-direction:column;align-items:flex-start;gap:8px}
+  .btn-primary,.btn-ghost{width:100%;text-align:center;justify-content:center}
+  .hero-meta{gap:10px}
+  .banner{display:none}
+}
+
+/* ── MOBILE NAV ── */
+.hamburger{
+  display:none;flex-direction:column;justify-content:center;gap:5px;
+  width:36px;height:36px;background:none;border:none;cursor:pointer;
+  padding:4px;border-radius:6px;transition:.2s;flex-shrink:0;
+}
+.hamburger:hover{background:rgba(255,255,255,.1)}
+.hamburger span{
+  display:block;width:22px;height:2px;
+  background:rgba(255,255,255,.85);border-radius:2px;
+  transition:transform .25s,opacity .25s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mobile-menu{
+  display:none;position:fixed;top:69px;left:0;right:0;z-index:190;
+  background:rgba(20,40,64,.98);backdrop-filter:blur(20px);
+  padding:1rem 0 1.5rem;
+  border-bottom:1px solid rgba(0,180,188,.2);
+  transform:translateY(-8px);opacity:0;
+  transition:transform .25s var(--ease),opacity .25s var(--ease);
+  pointer-events:none;
+}
+.mobile-menu.open{
+  display:block;transform:translateY(0);opacity:1;pointer-events:auto;
+}
+.mobile-menu ul{list-style:none;padding:0;margin:0}
+.mobile-menu ul li a{
+  display:block;padding:.85rem 2rem;
+  color:rgba(255,255,255,.75);text-decoration:none;
+  font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.06);transition:.2s;
+}
+.mobile-menu ul li a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.mobile-menu ul li a.active{color:var(--teal)}
+.mobile-menu-bottom{
+  padding:1rem 2rem 0;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.mobile-lang-pill{
+  display:flex;background:rgba(255,255,255,.1);
+  border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2);
+}
+.mobile-lang-btn{
+  padding:5px 14px;border-radius:18px;border:none;
+  background:transparent;color:rgba(255,255,255,.7);
+  font-size:11px;font-family:var(--ff-sans);font-weight:600;
+  letter-spacing:.06em;cursor:pointer;transition:.2s;
+}
+.mobile-lang-btn.active{background:var(--teal);color:var(--dark)}
+
+@media(max-width:1024px){
+  .hamburger{display:flex}
+  .nav-links{display:none!important}
+}
+@media(min-width:1025px){
+  .mobile-menu{display:none!important}
+  .hamburger{display:none!important}
 }
 </style>
 </head>
@@ -650,9 +718,30 @@ img{
       </div>
       <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-cta-nav en" target="_top">Register Now</a>
       <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-cta-nav vi" target="_top">Đăng ký ngay</a>
-    </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="https://www.nuoy.org/cleft-conference/about" class="en" target="_top">About</a><a href="https://www.nuoy.org/cleft-conference/about" class="vi" target="_top">Về hội nghị</a></li>
+    <li><a href="https://www.nuoy.org/cleft-conference/program" class="en" target="_top">Programme</a><a href="https://www.nuoy.org/cleft-conference/program" class="vi" target="_top">Chương trình</a></li>
+    <li><a href="https://www.nuoy.org/cleft-conference/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-conference/speakers" class="vi" target="_top">Diễn giả</a></li>
+    <li><a href="https://www.nuoy.org/cleft-conference/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-conference/registration" class="vi" target="_top">Đăng ký</a></li>
+  </ul>
+  <div class="mobile-menu-bottom">
+    <div class="mobile-lang-pill">
+      <button class="mobile-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
+      <button class="mobile-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
+    </div>
+    <a href="https://www.nuoy.org/cleft-conference/registration" style="padding:7px 18px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase" target="_top">
+      <span class="en">Register Now</span><span class="vi">Đăng ký ngay</span>
+    </a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1175,5 +1264,27 @@ setTimeout(sendHeight,1000);
 })();
 </script>
 
+<script>
+function toggleMenu(){
+  var btn=document.getElementById('hamburger');
+  var menu=document.getElementById('mobile-menu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function setMobileLang(l){
+  document.getElementById('mlang-en').classList.toggle('active', l==='en');
+  document.getElementById('mlang-vi').classList.toggle('active', l==='vi');
+}
+document.addEventListener('click',function(e){
+  var menu=document.getElementById('mobile-menu');
+  var btn=document.getElementById('hamburger');
+  if(menu&&btn&&menu.classList.contains('open')){
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    }
+  }
+});
+</script>
 </body>
 </html>

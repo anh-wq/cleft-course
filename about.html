@@ -189,8 +189,37 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
 .foot-bottom a:hover{color:rgba(255,255,255,.5)}
 .foot-links{display:flex;gap:1.5rem}
 
-@media(max-width:1024px){.nav-links{display:none}.ph-inner{grid-template-columns:1fr}.ph-card{display:none}.about-desc-grid,.ctx-2col,.goals-2col,.edu-grid,.event-card,.policy-grid{grid-template-columns:1fr}.aud-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){section,footer{padding-left:1.25rem;padding-right:1.25rem}.aud-grid{grid-template-columns:1fr}.ph-h1{font-size:clamp(1.4rem,6vw,2rem)!important;white-space:normal!important}.ph-body{font-size:.9rem}.sec-h2{font-size:clamp(1.2rem,5vw,1.75rem)!important}.page-hero{padding:5rem 1.25rem 2rem}.about-desc,.cta-bottom{padding:2.5rem 1.25rem}}
+@media(max-width:1024px){.nav-links{display:none!important}.ph-inner{grid-template-columns:1fr}.ph-card{display:none}.about-desc-grid,.ctx-2col,.goals-2col,.edu-grid,.event-card,.policy-grid{grid-template-columns:1fr}.aud-grid{grid-template-columns:repeat(2,1fr)}}
+/* ── MOBILE NAV ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;border-radius:6px;transition:.2s;flex-shrink:0}
+.hamburger:hover{background:rgba(255,255,255,.1)}
+.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:69px;left:0;right:0;z-index:190;background:rgba(20,40,64,.98);backdrop-filter:blur(20px);padding:1rem 0 1.5rem;border-bottom:1px solid rgba(0,180,188,.2)}
+.mobile-menu.open{display:block}
+.mobile-menu ul{list-style:none;padding:0;margin:0}
+.mobile-menu ul li a{display:block;padding:.85rem 2rem;color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06);transition:.2s}
+.mobile-menu ul li a:hover{color:#fff;background:rgba(255,255,255,.05)}
+.mobile-menu ul li a.active{color:var(--teal)}
+.mobile-menu-bottom{padding:1rem 2rem 0;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.mobile-lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2)}
+.mobile-lang-btn{padding:5px 14px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.06em;cursor:pointer;transition:.2s}
+.mobile-lang-btn.active{background:var(--teal);color:var(--dark)}
+body.lang-loading{visibility:hidden}
+@media(max-width:1024px){.hamburger{display:flex}.nav-links{display:none!important}}
+@media(min-width:1025px){.mobile-menu{display:none!important}.hamburger{display:none!important}}
+@media(max-width:640px){
+  section,footer{padding-left:1.25rem;padding-right:1.25rem}
+  .aud-grid{grid-template-columns:1fr}
+  .ph-h1{font-size:clamp(1.3rem,6vw,1.9rem)!important;white-space:normal!important;line-height:1.2!important}
+  .ph-body{font-size:.88rem;line-height:1.7}
+  .sec-h2{font-size:clamp(1.2rem,5vw,1.75rem)!important}
+  .page-hero{padding:5.5rem 1.25rem 2rem}
+  .about-desc,.cta-bottom{padding:2.5rem 1.25rem}
+  .ph-inner{gap:2rem}
+}
 </style>
 </head>
 <body data-lang="en" class="lang-loading">
@@ -207,9 +236,26 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
     <div class="nav-right">
       <div class="lang-pill"><button class="lang-btn active" onclick="setLang('en')">EN</button><button class="lang-btn" onclick="setLang('vi')">VI</button></div>
       <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-cta-nav en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-conference/registration" class="btn-cta-nav vi" target="_top">Đăng ký</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="https://www.nuoy.org/cleft-conference/about" class="active en" target="_top">About</a><a href="https://www.nuoy.org/cleft-conference/about" class="active vi" target="_top">Về hội nghị</a></li>
+    <li><a href="https://www.nuoy.org/cleft-conference/program" class="en" target="_top">Programme</a><a href="https://www.nuoy.org/cleft-conference/program" class="vi" target="_top">Chương trình</a></li>
+    <li><a href="https://www.nuoy.org/cleft-conference/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-conference/speakers" class="vi" target="_top">Diễn giả</a></li>
+    <li><a href="https://www.nuoy.org/cleft-conference/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-conference/registration" class="vi" target="_top">Đăng ký</a></li>
+  </ul>
+  <div class="mobile-menu-bottom">
+    <div class="mobile-lang-pill">
+      <button class="mobile-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
+      <button class="mobile-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
+    </div>
+    <a href="https://www.nuoy.org/cleft-conference/registration" style="padding:7px 18px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase" target="_top"><span class="en">Register Now</span><span class="vi">Đăng ký ngay</span></a>
+  </div>
+</div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -567,5 +613,27 @@ window.addEventListener('resize', function() {
 </script>
 
 
+<script>
+function toggleMenu(){
+  var btn=document.getElementById('hamburger');
+  var menu=document.getElementById('mobile-menu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+function setMobileLang(l){
+  document.getElementById('mlang-en').classList.toggle('active',l==='en');
+  document.getElementById('mlang-vi').classList.toggle('active',l==='vi');
+}
+document.addEventListener('click',function(e){
+  var menu=document.getElementById('mobile-menu');
+  var btn=document.getElementById('hamburger');
+  if(menu&&btn&&menu.classList.contains('open')){
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    }
+  }
+});
+</script>
 </body>
 </html>
