@@ -263,9 +263,15 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
 }
 @media(max-width:600px){
   .prog-section{padding:2rem 1.25rem 5rem}
-  .session-row{grid-template-columns:80px 1fr auto}
-  .session-time{font-size:10px;padding:.9rem .75rem}
+  .session-row{grid-template-columns:72px 1fr}
+  .session-track{display:none}
+  .session-time{font-size:10px;padding:.75rem .5rem}
   .day-header{flex-direction:column;align-items:flex-start}
+  .page-header{padding:5rem 1.25rem 2.5rem}
+  .ph-h1{font-size:clamp(1.5rem,6vw,2.2rem)!important;white-space:normal!important}
+  .ph-body{font-size:.9rem}
+  .day-tabs{flex-wrap:wrap;gap:.4rem}
+  .day-tab{font-size:11px;padding:.4rem .75rem}
 }
 </style>
 </head>
@@ -1025,6 +1031,13 @@ function setLang(l){
   document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
   localStorage.setItem('icms-lang',l);
 }
+(function(){
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'vi') { localStorage.setItem('icms-lang', urlLang); }
+  if (!urlLang && window.location.pathname.indexOf('/vi/') !== -1) {
+    localStorage.setItem('icms-lang', 'vi');
+  }
+})();
 setLang(localStorage.getItem('icms-lang')||'en');
 
 /* Day tabs */

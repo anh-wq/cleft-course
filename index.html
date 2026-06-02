@@ -1107,6 +1107,13 @@ function setLang(l){
   document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
   localStorage.setItem('icms-lang',l);
 }
+(function(){
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'vi') { localStorage.setItem('icms-lang', urlLang); }
+  if (!urlLang && window.location.pathname.indexOf('/vi/') !== -1) {
+    localStorage.setItem('icms-lang', 'vi');
+  }
+})();
 setLang(localStorage.getItem('icms-lang')||'en');
 
 /* Nav scroll */

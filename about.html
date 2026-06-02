@@ -189,7 +189,7 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
 .foot-links{display:flex;gap:1.5rem}
 
 @media(max-width:1024px){.nav-links{display:none}.ph-inner{grid-template-columns:1fr}.ph-card{display:none}.about-desc-grid,.ctx-2col,.goals-2col,.edu-grid,.event-card,.policy-grid{grid-template-columns:1fr}.aud-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){section,footer{padding-left:1.25rem;padding-right:1.25rem}.aud-grid{grid-template-columns:1fr}}
+@media(max-width:640px){section,footer{padding-left:1.25rem;padding-right:1.25rem}.aud-grid{grid-template-columns:1fr}.ph-h1{font-size:clamp(1.4rem,6vw,2rem)!important;white-space:normal!important}.ph-body{font-size:.9rem}.sec-h2{font-size:clamp(1.2rem,5vw,1.75rem)!important}.page-hero{padding:5rem 1.25rem 2rem}.about-desc,.cta-bottom{padding:2.5rem 1.25rem}}
 </style>
 </head>
 <body data-lang="en">
@@ -217,8 +217,8 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
     <div>
       <div class="ph-eyebrow en">About the Conference</div>
       <div class="ph-eyebrow vi">Về Hội nghị</div>
-      <h1 class="ph-h1 en" style="font-size: clamp(36px, 2vw, 40px); white-space: nowrap;">International Cleft Mastery Summit<br>Ha Noi, 2026</h1>
-      <h1 class="ph-h1 vi" style="font-size: clamp(36px, 2vw, 40px); white-space: nowrap;">Hội nghị Quốc tế <br> Làm chủ Kỹ thuật Điều trị <br><em>Khe hở môi – vòm miệng</em><br>Hà Nội, 2026</h1>
+      <h1 class="ph-h1 en" style="font-size: clamp(1.4rem, 5vw, 2.5rem);">International Cleft Mastery Summit<br>Ha Noi, 2026</h1>
+      <h1 class="ph-h1 vi" style="font-size: clamp(1.4rem, 5vw, 2.5rem);">Hội nghị Quốc tế <br> Làm chủ Kỹ thuật Điều trị <br><em>Khe hở môi – vòm miệng</em><br>Hà Nội, 2026</h1>
 <p class="ph-body en">An advanced, interdisciplinary summit dedicated to the comprehensive management of the cleft patient — from neonatal intervention through skeletal maturity. Organised by Nuoy Reconstructive International.</p>
 <p class="ph-body vi">Hội nghị chuyên sâu, liên ngành, tập trung vào quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt. Tổ chức bởi Nuoy Reconstructive International.</p>
 </div>
@@ -542,6 +542,15 @@ function setLang(l) {
   sendHeight(); /* an toàn vì sendHeight đã được định nghĩa ở trên */
 }
 
+/* Fix: read URL ?lang= param first, THEN apply lang so Wix /vi/ pages render correctly */
+(function(){
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'vi') { localStorage.setItem('icms-lang', urlLang); }
+  /* Also detect Wix multilingual path: /vi/ prefix */
+  if (!urlLang && window.location.pathname.indexOf('/vi/') !== -1) {
+    localStorage.setItem('icms-lang', 'vi');
+  }
+})();
 setLang(localStorage.getItem('icms-lang') || 'en');
 
 document.fonts.ready.then(function() {
@@ -554,26 +563,7 @@ window.addEventListener('resize', function() {
   window._resizeTimer = setTimeout(sendHeight, 150);
 });
 </script>
-<script>
-/* Lang persistence across pages via URL param */
-(function(){
-  var PAGES=["https://www.nuoy.org/cleft-conference","https://www.nuoy.org/cleft-conference-about","https://www.nuoy.org/cleft-conference-program","https://www.nuoy.org/cleft-conference-registration","https://www.nuoy.org/cleft-conference-speakers"];
-  var urlLang=new URLSearchParams(window.location.search).get("lang");
-  if(urlLang==="en"||urlLang==="vi"){localStorage.setItem("icms-lang",urlLang);}
-  document.addEventListener("click",function(e){
-    var a=e.target.closest("a");
-    if(!a)return;
-    var href=a.getAttribute("href");
-    if(!href)return;
-    var isInternal=PAGES.some(function(p){return href===p||href.startsWith(p+"?");});
-    if(!isInternal)return;
-    var lang=localStorage.getItem("icms-lang")||"en";
-    var url=new URL(href,window.location.href);
-    url.searchParams.set("lang",lang);
-    a.setAttribute("href",url.toString());
-  });
-})();
-</script>
+
 
 </body>
 </html>

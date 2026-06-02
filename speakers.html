@@ -100,7 +100,7 @@ footer{background:#2d4a8a;padding:2.5rem 2rem}
 .foot-bottom a{color:rgba(255,255,255,.2);text-decoration:none}
 .foot-bottom a:hover{color:rgba(255,255,255,.5)}
 
-@media(max-width:960px){.nav-links{display:none}.faculty-grid{grid-template-columns:1fr}}
+@media(max-width:960px){.nav-links{display:none}.faculty-grid{grid-template-columns:1fr}}@media(max-width:640px){.page-header{padding:5rem 1.25rem 2.5rem}.ph-h1{font-size:clamp(1.5rem,6vw,2.2rem)!important;white-space:normal!important}.ph-body{font-size:.9rem}.filter-bar{padding:.75rem 1.25rem}.filter-inner{gap:.5rem}.faculty-section{padding:2rem 1.25rem 3rem}.fcard-head{flex-wrap:wrap}.fcard-name{font-size:14px}.org-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body data-lang="en">
@@ -134,11 +134,11 @@ footer{background:#2d4a8a;padding:2.5rem 2rem}
   <div class="filter-inner">
     <span class="filter-label en">Filter:</span>
     <span class="filter-label vi">Lọc:</span>
-    <button class="filter-btn active" onclick="filterFaculty('all')"><span class="en">All Faculty</span><span class="vi">Tất cả</span></button>
-    <button class="filter-btn" onclick="filterFaculty('surgery')"><span class="en">Surgery</span><span class="vi">Phẫu thuật</span></button>
-    <button class="filter-btn" onclick="filterFaculty('ortho')"><span class="en">Orthodontics</span><span class="vi">Chỉnh nha</span></button>
-    <button class="filter-btn" onclick="filterFaculty('vietnam')"><span class="en">Vietnam</span><span class="vi">Việt Nam</span></button>
-    <button class="filter-btn" onclick="filterFaculty('international')"><span class="en">International</span><span class="vi">Quốc tế</span></button>
+    <button class="filter-btn active" onclick=\"filterFaculty('all', this)\"><span class="en">All Faculty</span><span class="vi">Tất cả</span></button>
+    <button class="filter-btn" onclick=\"filterFaculty('surgery', this)\"><span class="en">Surgery</span><span class="vi">Phẫu thuật</span></button>
+    <button class="filter-btn" onclick=\"filterFaculty('ortho', this)\"><span class="en">Orthodontics</span><span class="vi">Chỉnh nha</span></button>
+    <button class="filter-btn" onclick=\"filterFaculty('vietnam', this)\"><span class="en">Vietnam</span><span class="vi">Việt Nam</span></button>
+    <button class="filter-btn" onclick=\"filterFaculty('international', this)\"><span class="en">International</span><span class="vi">Quốc tế</span></button>
   </div>
 </div>
 
@@ -724,6 +724,13 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia giảng dạy v
 
 <script>
 function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('icms-lang',l)}
+(function(){
+  var urlLang = new URLSearchParams(window.location.search).get('lang');
+  if (urlLang === 'en' || urlLang === 'vi') { localStorage.setItem('icms-lang', urlLang); }
+  if (!urlLang && window.location.pathname.indexOf('/vi/') !== -1) {
+    localStorage.setItem('icms-lang', 'vi');
+  }
+})();
 setLang(localStorage.getItem('icms-lang')||'en');
 
 function toggleBio(id,btn){
@@ -734,9 +741,9 @@ function toggleBio(id,btn){
   btn.querySelector('.vi').textContent=open?'Thu gọn':'Xem tiểu sử đầy đủ';
 }
 
-function filterFaculty(tag){
+function filterFaculty(tag, btn){
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  event.target.classList.add('active');
+  if(btn) btn.classList.add('active');
   document.querySelectorAll('.fcard').forEach(c=>{
     c.style.display=(tag==='all'||c.dataset.tags.includes(tag))?'':'none';
   });
