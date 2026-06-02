@@ -315,6 +315,41 @@ nav {
 .bi-sep{color:var(--teal);font-size:9px}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
+/* ═══ FACULTY SECTION ═══ */
+.faculty-section{
+  background:var(--white);
+  padding:5rem 2.5rem;
+}
+.faculty-section .si{max-width:1280px;margin:0 auto}
+.faculty-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.75rem 1.25rem;
+  margin-top:3rem;
+}
+.faculty-card{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+}
+.faculty-photo{
+  width:80%;aspect-ratio:3/4;
+  object-fit:cover;object-position:top center;
+  border-radius:7px;
+  display:block;
+  margin-bottom:0.7rem;
+  background:var(--llgrey);
+}
+.faculty-name{
+  font-size:12px;font-weight:600;
+  color:var(--dark);line-height:1.3;
+  margin-bottom:2px;
+}
+.faculty-inst{
+  font-size:10.5px;color:var(--tx2);
+  line-height:1.5;font-weight:300;
+}
+@media(max-width:1024px){.faculty-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.faculty-grid{grid-template-columns:repeat(2,1fr)!important}}
+
 /* ═══ SECTION BASE ═══ */
 section{padding:6rem 2.5rem}
 .si{max-width:1280px;margin:0 auto}
@@ -919,6 +954,163 @@ body.is-mobile .day-tabs{top:0!important}
 </div>
       
      
+<!-- FACULTY -->
+<section class="faculty-section">
+  <div class="si">
+    <div class="sec-eyebrow en" style="justify-content:center">International Faculty</div>
+    <div class="sec-eyebrow vi" style="justify-content:center">Chuyên gia quốc tế</div>
+    <h2 class="sec-h2 en" style="text-align:center;margin:0 auto 0">Meet the <em>Faculty</em></h2>
+    <h2 class="sec-h2 vi" style="text-align:center;margin:0 auto 0">Gặp gỡ <em>Báo cáo viên</em></h2>
+    <div class="faculty-grid">
+
+      <!-- Breugem, Corstiaan -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/breugem1.png" alt="Corstiaan Breugem">
+        <div class="faculty-name en">Corstiaan Breugem, MD, PhD</div>
+        <div class="faculty-name vi">GS.TS.BS. Corstiaan Breugem</div>
+        <div class="faculty-inst en">University of Amsterdam · Netherlands</div>
+        <div class="faculty-inst vi">Đại học Amsterdam · Hà Lan</div>
+      </div>
+
+      <!-- Choi, Jong-Woo -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/choi1.png" alt="Jong-Woo Choi">
+        <div class="faculty-name en">Jong-Woo Choi, MD, PhD, MMM</div>
+        <div class="faculty-name vi">GS.TS.BS. Jong-Woo Choi</div>
+        <div class="faculty-inst en">Asan Medical Center · South Korea</div>
+        <div class="faculty-inst vi">Trung tâm Y khoa Asan · Hàn Quốc</div>
+      </div>
+
+      <!-- Chong, David K. -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/chong1.png" alt="David K. Chong">
+        <div class="faculty-name en">David K. Chong, MD</div>
+        <div class="faculty-name vi">PGS.BS. David K. Chong</div>
+        <div class="faculty-inst en">Royal Children's Hospital · Australia</div>
+        <div class="faculty-inst vi">Bệnh viện Nhi Hoàng gia · Úc</div>
+      </div>
+
+      <!-- Fisher, David -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/fisher1.png" alt="David Fisher">
+        <div class="faculty-name en">David Fisher, MD</div>
+        <div class="faculty-name vi">GS.BS. David Fisher</div>
+        <div class="faculty-inst en">Hospital for Sick Children · Canada</div>
+        <div class="faculty-inst vi">Bệnh viện Nhi SickKids · Canada</div>
+      </div>
+
+      <!-- Hai, Do Tien -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/hai1.png" alt="Do Tien Hai">
+        <div class="faculty-name en">Do Tien Hai, MD, MSc.</div>
+        <div class="faculty-name vi">ThS.BSCKII. Đỗ Tiến Hải</div>
+        <div class="faculty-inst en">National Hospital of Odonto-Stomatology · Viet Nam</div>
+        <div class="faculty-inst vi">BV Răng Hàm Mặt TW TP.HCM · Việt Nam</div>
+      </div>
+
+      <!-- Hau, Le Thua Trung -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/hau1.png" alt="Le Thua Trung Hau">
+        <div class="faculty-name en">Le Thua Trung Hau, MD, PhD</div>
+        <div class="faculty-name vi">TS.BS. Lê Thừa Trung Hậu</div>
+        <div class="faculty-inst en">Hue Odonto-Stomatology Hospital · Viet Nam</div>
+        <div class="faculty-inst vi">Bệnh viện Răng Hàm Mặt Huế · Việt Nam</div>
+      </div>
+
+      <!-- Lan, Nguyen Thi Ngoc -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/lan1.png" alt="Nguyen Thi Ngoc Lan">
+        <div class="faculty-name en">Nguyen Thi Ngoc Lan, MD, MSc.</div>
+        <div class="faculty-name vi">ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
+        <div class="faculty-inst en">Ha Noi Children's Hospital · Viet Nam</div>
+        <div class="faculty-inst vi">Bệnh viện Nhi Hà Nội · Việt Nam</div>
+      </div>
+
+      <!-- Lo, Lun-Jou -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/lo1.png" alt="Lun-Jou Lo">
+        <div class="faculty-name en">Lun-Jou Lo, MD, PhD</div>
+        <div class="faculty-name vi">GS.TS.BS. Lun-Jou Lo</div>
+        <div class="faculty-inst en">Chang Gung Memorial Hospital · Taiwan</div>
+        <div class="faculty-inst vi">BV Tưởng niệm Trường Canh · Đài Loan</div>
+      </div>
+
+      <!-- Nguyen, Phuong D. -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/nguyen1.png" alt="Phuong D. Nguyen">
+        <div class="faculty-name en">Phuong D. Nguyen, MD</div>
+        <div class="faculty-name vi">GS.BS. Phuong D. Nguyen</div>
+        <div class="faculty-inst en">University of Colorado · USA</div>
+        <div class="faculty-inst vi">Đại học Colorado · Hoa Kỳ</div>
+      </div>
+
+      <!-- Oh, Tae-Suk -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/oh1.png" alt="Tae-Suk Oh">
+        <div class="faculty-name en">Tae-Suk Oh, MD, PhD</div>
+        <div class="faculty-name vi">GS.TS.BS. Tae-Suk Oh</div>
+        <div class="faculty-inst en">Asan Medical Center · South Korea</div>
+        <div class="faculty-inst vi">Trung tâm Y khoa Asan · Hàn Quốc</div>
+      </div>
+
+      <!-- Phillips, John H. -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/phillips1.png" alt="John H. Phillips">
+        <div class="faculty-name en">John H. Phillips, MD</div>
+        <div class="faculty-name vi">PGS.BS. John H. Phillips</div>
+        <div class="faculty-inst en">Hospital for Sick Children · Canada</div>
+        <div class="faculty-inst vi">Bệnh viện Nhi SickKids · Canada</div>
+      </div>
+
+      <!-- Runyan, Christopher M. -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/runyan1.png" alt="Christopher M. Runyan">
+        <div class="faculty-name en">Christopher M. Runyan, MD, PhD</div>
+        <div class="faculty-name vi">PGS.TS.BS. Christopher M. Runyan</div>
+        <div class="faculty-inst en">Wake Forest School of Medicine · USA</div>
+        <div class="faculty-inst vi">Trường Y Wake Forest · Hoa Kỳ</div>
+      </div>
+
+      <!-- Son, Le Van -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/son1.png" alt="Le Van Son">
+        <div class="faculty-name en">Le Van Son, MD, PhD</div>
+        <div class="faculty-name vi">PGS.TS.BS. Lê Văn Sơn</div>
+        <div class="faculty-inst en">Phenikaa University · Viet Nam</div>
+        <div class="faculty-inst vi">Đại học Phenikaa · Việt Nam</div>
+      </div>
+
+      <!-- Tanikawa, Daniela -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/tanikawa1.png" alt="Daniela Tanikawa">
+        <div class="faculty-name en">Daniela Tanikawa, MD, PhD</div>
+        <div class="faculty-name vi">TS.BS. Daniela Tanikawa</div>
+        <div class="faculty-inst en">Sabará Children's Hospital · Brazil</div>
+        <div class="faculty-inst vi">Bệnh viện Nhi Sabará · Brazil</div>
+      </div>
+
+      <!-- Wangsrimongkol, Buddhathida -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/cartoon1.png" alt="Buddhathida Wangsrimongkol">
+        <div class="faculty-name en">Buddhathida Wangsrimongkol, MD</div>
+        <div class="faculty-name vi">PGS.BS. Buddhathida Wangsrimongkol</div>
+        <div class="faculty-inst en">Khon Kaen University · Thailand</div>
+        <div class="faculty-inst vi">Đại học Khon Kaen · Thái Lan</div>
+      </div>
+
+      <!-- Yang, Robin -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/yang1.png" alt="Robin Yang">
+        <div class="faculty-name en">Robin Yang, MD, DDS</div>
+        <div class="faculty-name vi">PGS.BS. Robin Yang</div>
+        <div class="faculty-inst en">Johns Hopkins School of Medicine · USA</div>
+        <div class="faculty-inst vi">Trường Y Johns Hopkins · Hoa Kỳ</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about" id="about" style="padding: 80px 0;">
   <div class="si">
