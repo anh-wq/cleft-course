@@ -25,9 +25,7 @@ body{
   margin:0;
   padding:0;
   overflow-x:hidden;
-  /* FIX 1: overflow hidden prevents Wix from misreading scrollHeight.
-     Wix controls scrolling at the page level — body must NOT scroll internally. */
-  overflow:hidden;
+  /* FIX: body overflow visible để hiển thị đầy đủ trong iframe Wix */
   -webkit-font-smoothing:antialiased;
 }
 body[data-lang="vi"] .en{display:none!important}
@@ -36,7 +34,7 @@ body.lang-loading{visibility:hidden}
 .brand-stripe {
   height: 5px;
   background: linear-gradient(90deg, var(--blue) 20%, var(--sky) 40%, var(--teal) 60%, var(--green) 80%, var(--yellow) 100%);
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -44,8 +42,8 @@ body.lang-loading{visibility:hidden}
 }
 
 nav {
-  position: fixed;
-  top: 5px; /* Khít hoàn toàn với chiều cao 5px của stripe */
+  position: sticky;
+  top: 0; /* Sticky nav: bám đầu viewport khi cuộn */
   left: 0;
   right: 0;
   z-index: 300;
