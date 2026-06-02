@@ -25,12 +25,11 @@ body{
   margin:0;
   padding:0;
   overflow-x:hidden;
-  overflow-y:scroll;
-  scrollbar-width:none;
-  -ms-overflow-style:none;
+  /* FIX 1: overflow hidden prevents Wix from misreading scrollHeight.
+     Wix controls scrolling at the page level — body must NOT scroll internally. */
+  overflow:hidden;
   -webkit-font-smoothing:antialiased;
 }
-body::-webkit-scrollbar{display:none;}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe {
@@ -515,18 +514,45 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
 </footer>
 
 <script>
-function setLang(l){document.body.setAttribute('data-lang',l);document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');localStorage.setItem('icms-lang',l)}
-setLang(localStorage.getItem('icms-lang')||'en');
-</script>
-<script>
-function sendHeight(){
-  const h=document.documentElement.scrollHeight;
-  if(window.parent)window.parent.postMessage({type:'resize',height:h},'*');
+/* sendHeight phải được định nghĩa TRƯỚC khi setLang gọi nó */
+
+function getContentHeight() {
+  const allEls = document.querySelectorAll('body > *');
+  let maxBottom = 0;
+  allEls.forEach(el => {
+    const bottom = el.getBoundingClientRect().bottom + window.scrollY;
+    if (bottom > maxBottom) maxBottom = bottom;
+  });
+  return Math.max(maxBottom, document.documentElement.scrollHeight) + 8;
 }
-window.addEventListener('load',sendHeight);
-window.addEventListener('resize',sendHeight);
-setTimeout(sendHeight,300);
-setTimeout(sendHeight,1000);
+
+function sendHeight() {
+  const h = getContentHeight();
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: 'resize', height: h }, '*');
+    window.parent.postMessage({ type: 'iframeReady', height: h }, '*');
+  }
+}
+
+function setLang(l) {
+  document.body.setAttribute('data-lang', l);
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  localStorage.setItem('icms-lang', l);
+  sendHeight(); /* an toàn vì sendHeight đã được định nghĩa ở trên */
+}
+
+setLang(localStorage.getItem('icms-lang') || 'en');
+
+document.fonts.ready.then(function() {
+  sendHeight();
+  setTimeout(sendHeight, 400);
+});
+
+window.addEventListener('resize', function() {
+  clearTimeout(window._resizeTimer);
+  window._resizeTimer = setTimeout(sendHeight, 150);
+});
 </script>
 </body>
 </html>
