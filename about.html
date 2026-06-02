@@ -32,6 +32,7 @@ body{
 }
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
+body.lang-loading{visibility:hidden}
 .brand-stripe {
   height: 5px;
   background: linear-gradient(90deg, var(--blue) 20%, var(--sky) 40%, var(--teal) 60%, var(--green) 80%, var(--yellow) 100%);
@@ -192,7 +193,7 @@ footer{background:#2d4a8a;padding:3rem 2.5rem 2rem}
 @media(max-width:640px){section,footer{padding-left:1.25rem;padding-right:1.25rem}.aud-grid{grid-template-columns:1fr}.ph-h1{font-size:clamp(1.4rem,6vw,2rem)!important;white-space:normal!important}.ph-body{font-size:.9rem}.sec-h2{font-size:clamp(1.2rem,5vw,1.75rem)!important}.page-hero{padding:5rem 1.25rem 2rem}.about-desc,.cta-bottom{padding:2.5rem 1.25rem}}
 </style>
 </head>
-<body data-lang="en">
+<body data-lang="en" class="lang-loading">
 <div class="brand-stripe"></div>
 <nav>
   <div class="nav-inner">
@@ -536,10 +537,11 @@ function sendHeight() {
 
 function setLang(l) {
   document.body.setAttribute('data-lang', l);
+  document.body.classList.remove('lang-loading');
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
   document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
   localStorage.setItem('icms-lang', l);
-  sendHeight(); /* an toàn vì sendHeight đã được định nghĩa ở trên */
+  sendHeight();
 }
 
 /* Fix: read URL ?lang= param first, THEN apply lang so Wix /vi/ pages render correctly */
