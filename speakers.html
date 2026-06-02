@@ -17,7 +17,7 @@ html::-webkit-scrollbar{display:none;}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe{height:5px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%);position:fixed;top:0;left:0;right:0;z-index:300}
-nav{position:fixed;top:5px;left:0;right:0;z-index:200;background:rgba(74,103,170,.98);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(0,180,188,.15)}
+nav{position:fixed;top:5px;left:0;right:0;z-index:200;background:rgba(74,103,170,.98);backdrop-filter:blur(16px);border:none;outline:none;box-shadow:0 1px 0 rgba(255,255,255,.05),0 4px 20px rgba(0,0,0,.15)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
 .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
 .nav-mark{height:48px;display:flex;align-items:center}
@@ -51,21 +51,21 @@ nav{position:fixed;top:5px;left:0;right:0;z-index:200;background:rgba(74,103,170
 .filter-btn:hover,.filter-btn.active{background:var(--teal);color:var(--dark);border-color:var(--teal)}
 
 /* ORGANIZING COMMITTEE */
-.org-section{padding:4rem 2rem 2rem;background:var(--off)}
+.org-section{padding:4rem 2rem 2rem;background:#fff}
 .si{max-width:1280px;margin:0 auto}
 .sec-eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
 .sec-eyebrow::before{content:'';width:20px;height:2px;background:var(--teal);border-radius:2px}
 h2.sec-h2{font-family:var(--ff-serif);font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:400;line-height:1.2;color:var(--tx);margin-bottom:2rem}
 h2.sec-h2 em{font-style:italic;color:var(--teal)}
 .org-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
-.org-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px;transition:.2s}
+.org-card{background:var(--off);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;gap:12px;transition:.2s}
 .org-card:hover{border-color:var(--teal)}
 .org-initial{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--sky));display:flex;align-items:center;justify-content:center;font-family:var(--ff-serif);font-size:16px;font-weight:600;color:var(--dark);flex-shrink:0;font-style:italic}
 .org-info strong{display:block;font-size:13px;font-weight:600;color:var(--tx);line-height:1.3}
 .org-info span{font-size:11px;color:var(--tx3)}
 
 /* FACULTY GRID */
-.faculty-section{padding:3rem 2rem 5rem}
+.faculty-section{padding:3rem 2rem 5rem;background:var(--off)}
 .faculty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;margin-top:2rem}
 .fcard{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.3s var(--ease);cursor:pointer}
 .fcard:hover{border-color:var(--teal);box-shadow:0 12px 32px rgba(14,26,46,.08);transform:translateY(-3px)}
@@ -153,8 +153,8 @@ footer{background:#2d4a8a;padding:2.5rem 2rem}
       <div class="org-card"><div class="org-initial">DC</div><div class="org-info"><strong>David Chong, MD</strong><span> </div></div>
       <div class="org-card"><div class="org-initial">CR</div><div class="org-info"><strong>Christopher Runyan, MD PhD</strong><span> </span></div></div>
       <div class="org-card"><div class="org-initial">PN</div><div class="org-info"><strong>Phuong D. Nguyen, MD</strong><span></div></div>
-      <div class="org-card"><div class="org-initial">MA</div><div class="org-info"><strong>Dinh Minh Anh </strong><span>Director of Operations · Nuoy International</span></div></div>
-      <div class="org-card"><div class="org-initial">JK</div><div class="org-info"><strong>Julien Klaudt-Moreau, MPH</strong><span>CEO · Nuoy International</span></div></div>
+      <div class="org-card"><div class="org-initial">MA</div><div class="org-info"><strong>Dinh Minh Anh</strong></div></div>
+      <div class="org-card"><div class="org-initial">JK</div><div class="org-info"><strong>Julien Klaudt-Moreau, MPH</strong></div></div>
     </div>
   </div>
 </section>
