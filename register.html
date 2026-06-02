@@ -167,7 +167,7 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
 .foot-bottom a{color:rgba(255,255,255,.35);text-decoration:none;transition:.2s}
 .foot-bottom a:hover{color:#fff}
 
-@media(max-width:1024px){.nav-links{display:none}.reg-layout{grid-template-columns:1fr}.price-sidebar{position:static}}
+@media(max-width:1024px){.nav-links{display:none!important}.reg-layout{grid-template-columns:1fr}.price-sidebar{position:static}}
 @media(max-width:640px){.form-row{grid-template-columns:1fr}.reg-layout{padding:3rem 1.25rem 5rem;gap:2rem}.check-grid{grid-template-columns:1fr}.page-header{padding:5.5rem 1.25rem 2.5rem}.ph-h1{font-size:clamp(1.4rem,6vw,2rem)!important;white-space:normal!important;line-height:1.2!important}.ph-body{font-size:.88rem}.price-card{padding:1.25rem}.tier-price{font-size:2rem}.price-tabs{flex-direction:column;gap:4px}.price-tab{width:100%;text-align:center}}
 
 /* ── MOBILE NAV ── */
@@ -231,9 +231,61 @@ footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
   .mobile-menu{display:none!important}
   .hamburger{display:none!important}
 }
+
+/* JS-driven mobile override — fires regardless of @media viewport */
+body.is-mobile .nav-links{display:none!important}
+body.is-mobile .hamburger{display:flex!important}
+body.is-mobile .hero-inner{grid-template-columns:1fr!important;padding:5rem 1.25rem 2rem!important}
+body.is-mobile .hero-card{display:none!important}
+body.is-mobile .hero-h1{font-size:clamp(1.6rem,7vw,2.4rem)!important;white-space:normal!important}
+body.is-mobile .hero-sub,body.is-mobile .hero-slogan{font-size:.9rem!important}
+body.is-mobile .hero-btns{flex-direction:column!important;align-items:stretch!important;gap:8px!important}
+body.is-mobile .btn-primary,body.is-mobile .btn-ghost{text-align:center!important;justify-content:center!important;display:block!important}
+body.is-mobile .about-grid,body.is-mobile .ctx-grid,body.is-mobile .goals-grid,body.is-mobile .foot-grid{grid-template-columns:1fr!important}
+body.is-mobile .aud-grid{grid-template-columns:repeat(2,1fr)!important}
+body.is-mobile .ph-inner{grid-template-columns:1fr!important}
+body.is-mobile .ph-card{display:none!important}
+body.is-mobile .page-hero,body.is-mobile .page-header{padding:5.5rem 1.25rem 2.5rem!important}
+body.is-mobile .ph-h1{font-size:clamp(1.3rem,6vw,1.9rem)!important;white-space:normal!important;line-height:1.2!important}
+body.is-mobile .ph-body{font-size:.88rem!important;line-height:1.7!important;max-width:100%!important}
+body.is-mobile .sec-h2{font-size:clamp(1.2rem,5vw,1.75rem)!important}
+body.is-mobile section{padding-left:1.25rem!important;padding-right:1.25rem!important}
+body.is-mobile .reg-layout{grid-template-columns:1fr!important;padding:3rem 1.25rem 5rem!important}
+body.is-mobile .form-row{grid-template-columns:1fr!important}
+body.is-mobile .faculty-grid{grid-template-columns:1fr!important}
+body.is-mobile .org-grid{grid-template-columns:1fr!important}
+body.is-mobile .filter-btn{font-size:11px!important;padding:5px 10px!important}
+body.is-mobile .session-row{grid-template-columns:68px 1fr!important}
+body.is-mobile .session-track{display:none!important}
+body.is-mobile .day-tabs-inner{flex-wrap:wrap!important;padding:.6rem 1.25rem!important}
+body.is-mobile .price-tabs{flex-direction:column!important;gap:4px!important}
+body.is-mobile .price-tab{width:100%!important;text-align:center!important}
+body.is-mobile .about-desc-grid,.body.is-mobile .ctx-2col,body.is-mobile .goals-2col,body.is-mobile .edu-grid,body.is-mobile .event-card,body.is-mobile .policy-grid{grid-template-columns:1fr!important}
+body.is-desktop .mobile-menu{display:none!important}
+body.is-desktop .hamburger{display:none!important}
 </style>
 </head>
 <body data-lang="en">
+<script>
+/* Wix iframe responsive fix: @media queries use iframe's declared width,
+   not the actual rendered width on mobile. This JS reads real width and
+   applies mobile layout manually. */
+(function(){
+  function applyResponsive(){
+    var w = document.documentElement.clientWidth || window.innerWidth;
+    var body = document.body;
+    if(w <= 768){
+      body.classList.add('is-mobile');
+      body.classList.remove('is-desktop');
+    } else {
+      body.classList.add('is-desktop');
+      body.classList.remove('is-mobile');
+    }
+  }
+  applyResponsive();
+  window.addEventListener('resize', applyResponsive);
+})();
+</script>
 <div class="brand-stripe"></div>
 <nav>
   <div class="nav-inner">
