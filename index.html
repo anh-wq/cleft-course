@@ -720,23 +720,33 @@ body.is-mobile .price-tab{width:100%!important;text-align:center!important}
 body.is-mobile .about-desc-grid,.body.is-mobile .ctx-2col,body.is-mobile .goals-2col,body.is-mobile .edu-grid,body.is-mobile .event-card,body.is-mobile .policy-grid{grid-template-columns:1fr!important}
 body.is-desktop .mobile-menu{display:none!important}
 body.is-desktop .hamburger{display:none!important}
+
+/* Hide HTML nav + brand stripe on mobile — Wix renders its own nav */
+body.is-mobile .brand-stripe{display:none!important}
+body.is-mobile nav{display:none!important}
+body.is-mobile .mobile-menu{top:0!important}
+/* Remove top padding compensation for hidden nav */
+body.is-mobile .hero,
+body.is-mobile .page-hero,
+body.is-mobile .page-header{padding-top:2rem!important}
+body.is-mobile .filter-bar{top:0!important}
+body.is-mobile .day-tabs{top:0!important}
 </style>
 </head>
 <body data-lang="en">
 <script>
-/* Wix iframe responsive fix: @media queries use iframe's declared width,
-   not the actual rendered width on mobile. This JS reads real width and
-   applies mobile layout manually. */
 (function(){
+  /* Wix scales iframe with transform:scale() so clientWidth stays large.
+     screen.width gives the real device screen width regardless of scaling. */
   function applyResponsive(){
-    var w = document.documentElement.clientWidth || window.innerWidth;
+    var w = screen.width || window.outerWidth || document.documentElement.clientWidth;
     var body = document.body;
     if(w <= 768){
       body.classList.add('is-mobile');
       body.classList.remove('is-desktop');
     } else {
-      body.classList.add('is-desktop');
       body.classList.remove('is-mobile');
+      body.classList.add('is-desktop');
     }
   }
   applyResponsive();
