@@ -30,16 +30,16 @@ body[data-lang="en"] .vi{display:none!important}
 .brand-stripe {
   height: 5px;
   background: linear-gradient(90deg, var(--blue) 20%, var(--sky) 40%, var(--teal) 60%, var(--green) 80%, var(--yellow) 100%);
-  position: fixed;
-  top: -1px; /* Đẩy nhẹ lên 1px để triệt tiêu vạch đen sub-pixel do iframe Wix */
-  left: -1px;
-  right: -1px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 400;
 }
 
 nav {
-  position: fixed;
-  top: 4px; /* Dịch lên theo stripe để khít hoàn toàn không lộ khe hở */
+  position: sticky;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 300;
