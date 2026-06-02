@@ -549,16 +549,23 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 /* ═══ SUPPORTERS ═══ */
 .supporters{background:var(--cream);padding:4.5rem 2.5rem;text-align:center}
 .sup-flex{
-  display:flex;flex-wrap:wrap;gap:1rem;
-  justify-content:center;margin-top:2.75rem;
+  display:flex;flex-wrap:wrap;gap:1.25rem;
+  justify-content:center;align-items:center;margin-top:2.75rem;
 }
 .sup-chip{
-  padding:10px 24px;background:var(--white);
+  padding:14px 28px;background:var(--white);
   border:1px solid var(--border);border-radius:5px;
-  font-size:12px;font-weight:500;color:var(--tx2);
-  letter-spacing:.03em;transition:.2s;
+  display:flex;align-items:center;justify-content:center;
+  transition:.2s;
 }
-.sup-chip:hover{border-color:var(--teal);color:var(--dark)}
+.sup-chip:hover{border-color:var(--teal);box-shadow:0 4px 16px rgba(0,180,188,.1)}
+.sup-chip img{
+  height:36px;width:auto;max-width:140px;
+  object-fit:contain;display:block;
+  filter:grayscale(100%);opacity:.65;
+  transition:.2s;
+}
+.sup-chip:hover img{filter:grayscale(0%);opacity:1}
 
 /* ═══ CTA STRIP ═══ */
 .cta-strip{
@@ -1358,11 +1365,11 @@ body.is-mobile .day-tabs{top:0!important}
     <h2 class="sec-h2 en" style="max-width:480px;margin:0 auto 0">Made Possible With <br><em>Our Partners</em></h2>
     <h2 class="sec-h2 vi" style="max-width:480px;margin:0 auto 0">Thực hiện cùng <br><em>các đối tác</em></h2>
     <div class="sup-flex">
-      <div class="sup-chip">Hong Ngoc Hospital</div>
-      <div class="sup-chip">KLS Martin Group</div>
-      <div class="sup-chip">Vietnam Airlines</div>
-      <div class="sup-chip">Smile Train</div>
-      <div class="sup-chip">Noordhoff Craniofacial Foundation</div>
+      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/hongngoclogo.png" alt="Hong Ngoc Hospital"></div>
+      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/kls.png" alt="KLS Martin Group"></div>
+      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/vna.png" alt="Vietnam Airlines"></div>
+      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/st.png" alt="Smile Train"></div>
+      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/ncf.png" alt="Noordhoff Craniofacial Foundation"></div>
     </div>
   </div>
 </section>
