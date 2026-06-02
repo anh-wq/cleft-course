@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ICMS Ha Noi 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
+  --sky:#1295D8;--green:#97D88A;
+  --dark:#0E1A2E;--dark2:#142840;
+  --off:#F5F4F0;--white:#fff;
+  --tx:#0E1A2E;--tx2:#414042;--tx3:#636466;
+  --border:rgba(14,26,46,.1);
+  --ff-serif:'Literata',Georgia,serif;
+  --ff-sans:system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
+body{font-family:var(--ff-sans);color:var(--tx);background:var(--dark);font-weight:300;-webkit-font-smoothing:antialiased}
+body[data-lang="vi"] .en{display:none!important}
+body[data-lang="en"] .vi{display:none!important}
+
+/* BRAND STRIPE */
+.brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
+
+/* NAV */
+nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:60px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:36px;width:auto;filter:brightness(0) invert(1)}
+.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block}
+.nav-wordmark span{color:rgba(255,255,255,.6);font-size:9px;letter-spacing:.05em}
+.nav-right{display:flex;align-items:center;gap:8px}
+.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
+.lang-btn{padding:4px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
+.lang-btn.active{background:var(--teal);color:var(--dark)}
+.hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;border-radius:6px}
+.hamburger span{display:block;width:20px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* DROPDOWN MENU */
+.mobile-menu{display:none;background:rgba(14,26,46,.98);border-bottom:1px solid rgba(0,180,188,.2)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:.85rem 1.5rem;color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06)}
+.mobile-menu a.active{color:var(--teal)}
+.menu-bottom{padding:1rem 1.5rem;display:flex;align-items:center;gap:10px}
+.m-lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2)}
+.m-lang-btn{padding:5px 12px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.6);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
+.m-lang-btn.active{background:var(--teal);color:var(--dark)}
+.menu-reg-btn{padding:8px 16px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+
+/* HERO */
+.hero{background:var(--dark);padding:2.5rem 1.25rem 2.5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;right:-30%;width:500px;height:500px;border-radius:50%;border:1px solid rgba(0,180,188,.08);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.eyebrow::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 2.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--ff-serif);font-size:2rem;font-weight:400;color:#fff;line-height:1.15;margin-bottom:.5rem}
+.hero h1 em{font-style:normal;color:var(--white);opacity:.85}
+.venue-date{font-family:var(--ff-serif);font-size:1.1rem;color:rgba(255,255,255,.5);margin-bottom:.75rem;font-style:italic}
+.hero-sub{font-size:.88rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:.6rem;font-style:italic}
+.hero-slogan{font-size:.78rem;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;border-left:2px solid rgba(0,180,188,.4);padding-left:.75rem;margin-bottom:1.75rem;line-height:1.6}
+.hero-meta{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem}
+.hm{display:flex;align-items:flex-start;gap:.75rem}
+.hm-icon{width:32px;height:32px;border-radius:8px;background:rgba(0,180,188,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hm-icon svg{width:16px;height:16px;fill:rgba(0,180,188,.85)}
+.hm-txt strong{display:block;font-size:13px;color:rgba(255,255,255,.9);font-weight:600;line-height:1.3;margin-bottom:2px}
+.hm-txt span{font-size:11px;color:rgba(255,255,255,.4);line-height:1.4}
+.hero-btns{display:flex;flex-direction:column;gap:10px}
+.btn-primary{display:block;background:var(--yellow);color:var(--dark);padding:13px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.btn-ghost{display:block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+
+/* STATS BANNER */
+.stats{background:var(--dark2);padding:1.5rem 1.25rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-top:1px solid rgba(0,180,188,.15);border-bottom:1px solid rgba(0,180,188,.15)}
+.stat{text-align:center}
+.stat strong{display:block;font-family:var(--ff-serif);font-size:1.75rem;font-weight:400;color:var(--teal);line-height:1}
+.stat span{font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.06em;text-transform:uppercase;margin-top:4px;display:block;line-height:1.4}
+
+/* ABOUT SECTION */
+.section{background:var(--off);padding:2.5rem 1.25rem}
+.sec-eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:2px}
+.sec-h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1rem}
+.sec-h2 em{font-style:italic;color:var(--teal)}
+.sec-body{font-size:.88rem;color:var(--tx2);line-height:1.8;font-weight:300}
+
+/* CTA */
+.cta{background:var(--dark);padding:3rem 1.25rem;text-align:center}
+.cta h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:#fff;line-height:1.2;margin-bottom:.75rem}
+.cta h2 em{font-style:italic;color:var(--teal)}
+.cta p{font-size:.88rem;color:rgba(255,255,255,.45);line-height:1.75;margin-bottom:1.75rem}
+.cta .btn-primary{display:inline-block;margin-bottom:.75rem}
+.cta .btn-ghost{display:inline-block;border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.6)}
+</style>
+</head>
+<body data-lang="en">
+
+<div class="brand-stripe"></div>
+
+<nav>
+  <a href="https://www.nuoy.org/cleft-conference" class="nav-logo" target="_top">
+    <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy">
+    <div class="nav-wordmark"><strong>ICMS Ha Noi 2026</strong><span>Sept 21–23 · Viet Nam</span></div>
+  </a>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('vi')">VI</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="https://www.nuoy.org/cleft-conference/about" class="en" target="_top">About</a>
+  <a href="https://www.nuoy.org/cleft-conference/about" class="vi" target="_top">Về hội nghị</a>
+  <a href="https://www.nuoy.org/cleft-conference/program" class="en" target="_top">Programme</a>
+  <a href="https://www.nuoy.org/cleft-conference/program" class="vi" target="_top">Chương trình</a>
+  <a href="https://www.nuoy.org/cleft-conference/speakers" class="en" target="_top">Speakers</a>
+  <a href="https://www.nuoy.org/cleft-conference/speakers" class="vi" target="_top">Diễn giả</a>
+  <a href="https://www.nuoy.org/cleft-conference/registration" class="en" target="_top">Register</a>
+  <a href="https://www.nuoy.org/cleft-conference/registration" class="vi" target="_top">Đăng ký</a>
+  <div class="menu-bottom">
+    <div class="m-lang-pill">
+      <button class="m-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
+      <button class="m-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
+    </div>
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="menu-reg-btn" target="_top">
+      <span class="en">Register Now</span><span class="vi">Đăng ký ngay</span>
+    </a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="eyebrow"><span class="en">ICMS Ha Noi 2026</span><span class="vi">ICMS Hà Nội 2026</span></div>
+  <h1 class="en">International Cleft<br><em>Mastery Summit</em></h1>
+  <h1 class="vi">Hội nghị Quốc tế<br>Làm chủ Kỹ thuật<br><em>Điều trị Khe hở</em></h1>
+  <div class="venue-date en">Ha Noi, 2026</div>
+  <div class="venue-date vi">Hà Nội, 2026</div>
+  <p class="hero-sub en">Advancing Surgical Precision and Longitudinal Outcomes</p>
+  <p class="hero-sub vi">Nâng cao chất lượng phẫu thuật và cải thiện kết quả điều trị lâu dài</p>
+  <p class="hero-slogan en">Beyond the Mission: Peer-to-Peer Partnership for Global Excellence</p>
+  <p class="hero-slogan vi">Vượt trên sứ mệnh: Kết nối đồng nghiệp, vươn tầm quốc tế</p>
+
+  <div class="hero-meta">
+    <div class="hm">
+      <div class="hm-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg></div>
+      <div class="hm-txt">
+        <strong>September 21–23, 2026</strong>
+        <span class="en">3 days · 16 international faculty · 9+ countries</span>
+        <span class="vi">3 ngày · 16 chuyên gia quốc tế · 9+ quốc gia</span>
+      </div>
+    </div>
+    <div class="hm">
+      <div class="hm-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+      <div class="hm-txt">
+        <strong class="en">Hong Ngoc Phuc Truong Minh Hospital</strong>
+        <strong class="vi">BV Hồng Ngọc Phúc Trường Minh</strong>
+        <span>8 Châu Văn Liêm, Hà Nội</span>
+      </div>
+    </div>
+    <div class="hm">
+      <div class="hm-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+      <div class="hm-txt">
+        <strong>cleftcourse@nuoy.org</strong>
+        <span class="en">Conference enquiries & registration support</span>
+        <span class="vi">Hỗ trợ đăng ký và thông tin hội nghị</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-btns">
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary en" target="_top">Register Now →</a>
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary vi" target="_top">Đăng ký ngay →</a>
+    <a href="https://www.nuoy.org/cleft-conference/about" class="btn-ghost en" target="_top">About the Summit</a>
+    <a href="https://www.nuoy.org/cleft-conference/about" class="btn-ghost vi" target="_top">Về hội nghị</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat"><strong>16</strong><span class="en">Faculty</span><span class="vi">Chuyên gia</span></div>
+  <div class="stat"><strong>9+</strong><span class="en">Countries</span><span class="vi">Quốc gia</span></div>
+  <div class="stat"><strong>3</strong><span class="en">Days</span><span class="vi">Ngày</span></div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <div class="sec-eyebrow en">About the Summit</div>
+  <div class="sec-eyebrow vi">Về Hội nghị</div>
+  <h2 class="sec-h2 en">A Longitudinal Approach to <em>Cleft Reconstruction</em></h2>
+  <h2 class="sec-h2 vi">Chương trình chuyên sâu về <em>Phẫu thuật Khe hở</em></h2>
+  <p class="sec-body en">The Nuoy International Cleft Mastery Summit is an advanced, interdisciplinary summit dedicated to the comprehensive management of the cleft patient — from neonatal intervention through skeletal maturity. A high-level site for bilateral knowledge exchange, where international innovation integrates with the technical precision of the Vietnamese surgical model.</p>
+  <p class="sec-body vi">Hội nghị ICMS là chương trình đào tạo chuyên sâu, liên ngành về quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt. Nơi trao đổi kiến thức hai chiều giữa chuyên gia quốc tế và mô hình phẫu thuật Việt Nam.</p>
+</div>
+
+<!-- CTA -->
+<div class="cta">
+  <h2 class="en">Secure Your Place at <em>the Summit</em></h2>
+  <h2 class="vi">Đặt chỗ của bạn tại <em>hội nghị</em></h2>
+  <p class="en">Join 16 international specialists for three days of advanced surgical education in Ha Noi. Early Bird pricing available until 15 July 2026.</p>
+  <p class="vi">Tham gia cùng 16 chuyên gia quốc tế trong 3 ngày đào tạo phẫu thuật chuyên sâu tại Hà Nội. Early Bird đến hết 15/07/2026.</p>
+  <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary en" target="_top" style="margin-bottom:10px">Register Now →</a>
+  <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary vi" target="_top" style="margin-bottom:10px">Đăng ký ngay →</a>
+  <a href="https://www.nuoy.org/cleft-conference/program" class="btn-ghost en" target="_top">View Programme</a>
+  <a href="https://www.nuoy.org/cleft-conference/program" class="btn-ghost vi" target="_top">Xem chương trình</a>
+</div>
+
+<script>
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  setMobileLang(l);
+  localStorage.setItem('icms-lang',l);
+  sendHeight();
+}
+function setMobileLang(l){
+  document.getElementById('mlang-en').classList.toggle('active',l==='en');
+  document.getElementById('mlang-vi').classList.toggle('active',l==='vi');
+}
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+document.addEventListener('click',function(e){
+  var menu=document.getElementById('mobile-menu');
+  var btn=document.getElementById('hamburger');
+  if(menu&&btn&&menu.classList.contains('open')){
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+    }
+  }
+});
+(function(){
+  var urlLang=new URLSearchParams(window.location.search).get('lang');
+  if(urlLang==='en'||urlLang==='vi'){localStorage.setItem('icms-lang',urlLang);}
+  if(!urlLang&&window.location.pathname.indexOf('/vi/')!==-1){localStorage.setItem('icms-lang','vi');}
+})();
+setLang(localStorage.getItem('icms-lang')||'en');
+
+function sendHeight(){
+  var h=document.documentElement.scrollHeight;
+  if(window.parent&&window.parent!==window){
+    window.parent.postMessage({type:'resize',height:h},'*');
+  }
+}
+window.addEventListener('load',sendHeight);
+setTimeout(sendHeight,500);
+</script>
+</body>
+</html>
