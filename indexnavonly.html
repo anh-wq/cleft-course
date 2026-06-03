@@ -966,22 +966,33 @@ html, body {
 
 <!-- HERO -->
 
+
 <script>
+var _bc;
+try{ _bc=new BroadcastChannel('icms-lang'); }catch(e){}
+
 function setLang(l){
   document.body.setAttribute('data-lang',l);
+  localStorage.setItem('icms-lang',l);
+
+  /* Desktop lang buttons */
+  document.querySelectorAll('.lang-btn').forEach(function(b){
+    b.classList.toggle('active', b.textContent.trim().toLowerCase()===l);
+  });
+
+  /* Mobile lang buttons */
   var en=document.getElementById('mlang-en');
   var vi=document.getElementById('mlang-vi');
   if(en) en.classList.toggle('active',l==='en');
   if(vi) vi.classList.toggle('active',l==='vi');
-  window.parent.postMessage({type:'lang',lang:l},'*');
-  localStorage.setItem('icms-lang',l);
+
+  /* Broadcast to other iframes */
+  try{ if(_bc) _bc.postMessage({lang:l}); }catch(e){}
+  try{ window.parent.postMessage({type:'icms-lang',lang:l},'*'); }catch(e){}
 }
 (function(){
   setLang(localStorage.getItem('icms-lang')||'en');
 })();
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='lang') setLang(e.data.lang);
-});
 function toggleMenu(){
   var btn=document.getElementById('hamburger');
   var menu=document.getElementById('mobile-menu');
