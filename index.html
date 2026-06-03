@@ -164,6 +164,19 @@ nav {
   object-fit:cover;
   opacity:0.52;
 }
+/* Vimeo iframe background — Wix-scale-proof */
+.hero-video-bg iframe {
+  position:absolute;
+  top:50%;left:50%;
+  width:177.78vh;
+  height:100vh;
+  min-width:100%;
+  min-height:56.25vw;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  border:none;
+  opacity:0.52;
+}
 /* Gradient overlay — light, preserves video colors */
 .hero-video-overlay {
   position:absolute;
@@ -956,30 +969,19 @@ body.is-mobile .day-tabs{top:0!important}
 
 <!-- HERO -->
 <section class="hero">
-  <!-- VIDEO BACKGROUND -->
+  <!-- VIDEO BACKGROUND — Vimeo iframe (Wix-safe) -->
   <div class="hero-video-bg">
-    <!-- 
-      ╔══════════════════════════════════════════════════════╗
-      ║  REPLACE src WITH YOUR GOOGLE DRIVE VIDEO URL        ║
-      ║  Drive → Trip → September 2026 Cleft Course          ║
-      ║  → Marketing folder → your video file               ║
-      ║  Use: File → Share → Copy direct download link      ║
-      ║  Format: https://drive.google.com/uc?export=download ║
-      ║          &id=YOUR_FILE_ID                            ║
-      ╚══════════════════════════════════════════════════════╝
-    -->
-    <video autoplay muted loop playsinline preload="auto"
-      src="https://anh-wq.github.io/cleft-course/download.mp4"
-      poster="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png">
-    </video>
-    <!-- Placeholder shown when video not yet connected -->
-    <div class="hero-video-placeholder" id="video-placeholder" style="display:none">
-      <div class="hero-video-placeholder-inner">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        <span>Video background</span>
-        <span style="font-size:9px;opacity:.6">Sept 2026 Cleft Course · Marketing</span>
-      </div>
-    </div>
+    <iframe
+      src="https://player.vimeo.com/video/1197938083?autoplay=1&muted=1&loop=1&background=1&autopause=0&title=0&byline=0&portrait=0"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      style="position:absolute;top:50%;left:50%;
+             width:177.78vh;height:100vh;
+             min-width:100%;min-height:56.25vw;
+             transform:translate(-50%,-50%);
+             pointer-events:none;border:none;opacity:0.52;">
+    </iframe>
   </div>
   <div class="hero-video-overlay"></div>
   <div class="hero-video-colorgrade"></div>
@@ -1687,47 +1689,5 @@ document.addEventListener('click',function(e){
   }
 });
 </script>
-
-<script>
-/* ── Wix video scale fix ──
-   Wix embeds HTML in an iframe scaled with transform:scale(N).
-   We detect N by comparing innerWidth vs screen.width,
-   then counter-scale the video container to fill correctly. */
-(function fixWixVideoScale(){
-  function apply(){
-    var scaleX = window.innerWidth / (screen.width || window.outerWidth);
-    // If Wix is scaling down (scaleX < 1), we scale video up to compensate
-    var bg = document.querySelector('.hero-video-bg');
-    var vid = document.querySelector('.hero-video-bg video');
-    if(!bg || !vid) return;
-    if(scaleX < 0.98){
-      var inv = 1 / scaleX;
-      // Scale from center, expand to fill
-      vid.style.transform = 'translate(-50%,-50%) scale('+inv+')';
-      vid.style.position = 'absolute';
-      vid.style.top = '50%';
-      vid.style.left = '50%';
-      vid.style.width = '100%';
-      vid.style.height = '100%';
-      vid.style.minWidth = '100%';
-      vid.style.minHeight = '100%';
-      vid.style.maxWidth = 'none';
-      vid.style.transformOrigin = 'center center';
-    } else {
-      vid.style.transform = '';
-      vid.style.position = '';
-      vid.style.top = '';
-      vid.style.left = '';
-    }
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', apply);
-  } else {
-    apply();
-  }
-  window.addEventListener('resize', apply);
-})();
-</script>
-
 </body>
 </html>
