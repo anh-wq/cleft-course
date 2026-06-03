@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>International Cleft Mastery Summit | Ha Noi 2026</title>
-<meta name="description" content="International Cleft Mastery Summit Ha Noi 2026 — September 21–23. Hong Ngoc Phuc Truong Minh Hospital. Advancing Surgical Precision and Longitudinal Outcomes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&family=Averta&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,300;1,7..72,400;1,7..72,600&display=swap" rel="stylesheet">
 <style>
 /* Khai báo font bình thường */
 @font-face {
@@ -881,6 +879,7 @@ body.is-mobile .hero-inner{padding-top:100px!important;padding-bottom:80px!impor
 body.is-mobile .filter-bar{top:0!important}
 body.is-mobile .day-tabs{top:0!important}
 </style>
+<style>
 /* Nav-only embed overrides */
 html, body {
   margin: 0;
@@ -888,61 +887,30 @@ html, body {
   background: transparent !important;
   overflow: hidden;
 }
-.brand-stripe { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
-#nav { position: fixed; top: 4px; left: 0; right: 0; }
+.brand-stripe {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+}
+#nav {
+  position: fixed;
+  top: 4px;
+  left: 0; right: 0;
+}
 </style>
 </head>
 <body data-lang="en">
+
 <script>
 (function(){
-  function applyResponsive(){
+  function apply(){
     var w=screen.width||window.outerWidth||document.documentElement.clientWidth;
     document.body.classList.toggle('is-mobile',w<=768);
     document.body.classList.toggle('is-desktop',w>768);
   }
-  applyResponsive();
-  window.addEventListener('resize',applyResponsive);
+  apply();
+  window.addEventListener('resize',apply);
 })();
-</script>
-<script>
-function setLang(l){
-  document.body.setAttribute('data-lang',l);
-  var en=document.getElementById('mlang-en');
-  var vi=document.getElementById('mlang-vi');
-  if(en)en.classList.toggle('active',l==='en');
-  if(vi)vi.classList.toggle('active',l==='vi');
-  // Sync lang across all embeds via postMessage
-  window.parent.postMessage({type:'lang',lang:l},'*');
-  localStorage.setItem('icms-lang',l);
-}
-(function(){
-  var l=localStorage.getItem('icms-lang')||'en';
-  document.body.setAttribute('data-lang',l);
-})();
-// Listen for lang change from other embeds
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='lang') setLang(e.data.lang);
-});
-function toggleMenu(){
-  var btn=document.getElementById('hamburger');
-  var menu=document.getElementById('mobile-menu');
-  if(btn)btn.classList.toggle('open');
-  if(menu)menu.classList.toggle('open');
-}
-// Nav scroll effect
-var navEl=document.getElementById('nav');
-if(navEl){
-  window.addEventListener('scroll',function(){
-    navEl.classList.toggle('scrolled',window.scrollY>10);
-  },{passive:true});
-}
-// Send height to Wix
-function sendHeight(){
-  var h=document.documentElement.scrollHeight;
-  window.parent.postMessage({type:'resize',height:h},'*');
-}
-window.addEventListener('load',sendHeight);
-setTimeout(sendHeight,300);
 </script>
 
 <!-- NUOY BRAND STRIPE -->
@@ -997,5 +965,36 @@ setTimeout(sendHeight,300);
 </div>
 
 <!-- HERO -->
+
+<script>
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  var en=document.getElementById('mlang-en');
+  var vi=document.getElementById('mlang-vi');
+  if(en) en.classList.toggle('active',l==='en');
+  if(vi) vi.classList.toggle('active',l==='vi');
+  window.parent.postMessage({type:'lang',lang:l},'*');
+  localStorage.setItem('icms-lang',l);
+}
+(function(){
+  setLang(localStorage.getItem('icms-lang')||'en');
+})();
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.type==='lang') setLang(e.data.lang);
+});
+function toggleMenu(){
+  var btn=document.getElementById('hamburger');
+  var menu=document.getElementById('mobile-menu');
+  if(btn) btn.classList.toggle('open');
+  if(menu) menu.classList.toggle('open');
+}
+var navEl=document.getElementById('nav');
+if(navEl){
+  window.addEventListener('scroll',function(){
+    navEl.classList.toggle('scrolled',window.scrollY>10);
+  },{passive:true});
+}
+</script>
+
 </body>
 </html>
