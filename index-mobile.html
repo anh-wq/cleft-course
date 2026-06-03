@@ -105,11 +105,26 @@ nav {
 .nav-logomark{
   height:32px;display:flex;align-items:center;flex-shrink:0;
 }
-.nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
+.nav-wordmark{
+  display:flex;flex-direction:column;line-height:1.25;
+  overflow:hidden;max-width:160px;
+}
 .nav-wordmark strong{
   font-size:10px;font-weight:600;color:var(--white);
   letter-spacing:.05em;text-transform:uppercase;
   white-space:nowrap;
+  display:block;
+}
+/* Marquee animation for mobile */
+body.is-mobile .nav-wordmark strong {
+  animation: marquee-text 8s linear infinite;
+  display:inline-block;
+}
+@keyframes marquee-text {
+  0%   { transform: translateX(0); }
+  30%  { transform: translateX(0); }
+  70%  { transform: translateX(calc(-100% + 160px)); }
+  100% { transform: translateX(0); }
 }
 .nav-wordmark span{font-size:9px;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase}
 .nav-links{display:flex;list-style:none;gap:0;align-items:center}
@@ -851,7 +866,7 @@ body.is-mobile .lang-pill            { display:flex !important; flex-shrink:0; }
 body.is-mobile .lang-btn             { display:flex !important; padding:4px 10px !important; font-size:11px !important; }
 body.is-mobile .nav-right            { display:flex !important; gap:6px !important; align-items:center !important; flex-shrink:0; }
 body.is-mobile .nav-logo             { flex-shrink:1; min-width:0; overflow:hidden; }
-body.is-mobile .nav-wordmark span    { display:none !important }
+body.is-mobile .nav-wordmark span    { display:none !important; }
 body.is-mobile .hero-inner           { grid-template-columns:1fr !important; padding:5rem 1.25rem 2rem !important }
 body.is-mobile .hero-card{display:none!important}
 body.is-mobile .hero-h1{font-size:clamp(1.6rem,7vw,2.4rem)!important;white-space:normal!important}
@@ -1323,9 +1338,9 @@ body.is-mobile .mobile-hero         { padding-top:0 }
         <div class="faculty-name vi">PGS.BS. David K. Chong</div>
         <div class="faculty-inst en">Royal Children's Hospital · Australia</div>
         <div class="faculty-inst vi">Bệnh viện Nhi Hoàng gia · Úc</div>
-        <div style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 10px;background:rgba(74,103,170,0.15);border:1px solid rgba(74,103,170,0.3);border-radius:100px;">
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6a8fd8" class="en">Planning Committee</span>
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6a8fd8" class="vi">Ban Tổ chức</span>
+        <div style="display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;padding:3px 8px;background:rgba(74,103,170,0.15);border:1px solid rgba(74,103,170,0.3);border-radius:100px;max-width:100%;box-sizing:border-box;">
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6a8fd8;white-space:nowrap" class="en">Planning Committee</span>
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6a8fd8;white-space:nowrap" class="vi">Ban Tổ chức</span>
         </div>
       </div>
 
@@ -1336,9 +1351,9 @@ body.is-mobile .mobile-hero         { padding-top:0 }
         <div class="faculty-name vi">PGS.TS.BS. Christopher M. Runyan</div>
         <div class="faculty-inst en">Wake Forest School of Medicine · USA</div>
         <div class="faculty-inst vi">Trường Y Wake Forest · Hoa Kỳ</div>
-        <div style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 10px;background:rgba(74,103,170,0.15);border:1px solid rgba(74,103,170,0.3);border-radius:100px;">
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6a8fd8" class="en">Planning Committee</span>
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6a8fd8" class="vi">Ban Tổ chức</span>
+        <div style="display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;padding:3px 8px;background:rgba(74,103,170,0.15);border:1px solid rgba(74,103,170,0.3);border-radius:100px;max-width:100%;box-sizing:border-box;">
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6a8fd8;white-space:nowrap" class="en">Planning Committee</span>
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6a8fd8;white-space:nowrap" class="vi">Ban Tổ chức</span>
         </div>
       </div>
 
@@ -1349,9 +1364,9 @@ body.is-mobile .mobile-hero         { padding-top:0 }
         <div class="faculty-name vi">GS.BS. Phuong D. Nguyen</div>
         <div class="faculty-inst en">University of Colorado · USA</div>
         <div class="faculty-inst vi">Đại học Colorado · Hoa Kỳ</div>
-        <div style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 10px;background:rgba(74,103,170,0.15);border:1px solid rgba(74,103,170,0.3);border-radius:100px;">
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6a8fd8" class="en">Planning Committee</span>
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6a8fd8" class="vi">Ban Tổ chức</span>
+        <div style="display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;padding:3px 8px;background:rgba(74,103,170,0.15);border:1px solid rgba(74,103,170,0.3);border-radius:100px;max-width:100%;box-sizing:border-box;">
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6a8fd8;white-space:nowrap" class="en">Planning Committee</span>
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#6a8fd8;white-space:nowrap" class="vi">Ban Tổ chức</span>
         </div>
       </div>
 
@@ -1384,9 +1399,9 @@ body.is-mobile .mobile-hero         { padding-top:0 }
         <div class="faculty-name vi">GS.BS. David Fisher</div>
         <div class="faculty-inst en">Hospital for Sick Children · Canada</div>
         <div class="faculty-inst vi">Bệnh viện Nhi SickKids · Canada</div>
-        <div style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:3px 10px;background:rgba(248,232,22,0.12);border:1px solid rgba(248,232,22,0.3);border-radius:100px;">
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#c9bc1a" class="en">Keynote Speaker</span>
-          <span style="font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#c9bc1a" class="vi">Diễn giả Keynote</span>
+        <div style="display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;padding:3px 8px;background:rgba(248,232,22,0.12);border:1px solid rgba(248,232,22,0.3);border-radius:100px;max-width:100%;box-sizing:border-box;">
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#c9bc1a;white-space:nowrap" class="en">Keynote Speaker</span>
+          <span style="font-size:8px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#c9bc1a;white-space:nowrap" class="vi">Diễn giả Keynote</span>
         </div>
       </div>
 

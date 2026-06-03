@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Averta';src:url('https://anh-wq.github.io/cleft-course/Averta-Regular.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Averta';src:url('https://anh-wq.github.io/cleft-course/Averta-Bold.ttf') format('truetype');font-weight:700;font-style:normal}
 
 :root{
   --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
@@ -21,15 +23,28 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
-body{font-family:var(--ff-sans);color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
+body{font-family:'Averta',system-ui,sans-serif;color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
 nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
-.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;line-height:1.2}
-.nav-wordmark span{color:rgba(255,255,255,.6);font-size:9px;letter-spacing:.05em}
+.nav-wordmark{
+  display:flex;flex-direction:column;line-height:1.25;
+  overflow:hidden;max-width:140px;
+}
+.nav-wordmark strong{
+  font-size:10px;font-weight:600;color:var(--white);
+  letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;display:inline-block;
+  animation:marquee-text 8s linear infinite;
+}
+@keyframes marquee-text{
+  0%,30%{transform:translateX(0)}
+  70%,100%{transform:translateX(calc(-100% + 140px))}
+}
+.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.04em;white-space:nowrap}
 .nav-right{display:flex;align-items:center;gap:8px}
 .lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
 .lang-btn{padding:4px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
@@ -98,6 +113,17 @@ nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;a
 .prog-notes ul{padding-left:1.25rem}
 .prog-notes li{font-size:12px;color:var(--tx3);line-height:1.75;margin-bottom:.25rem}
 
+footer{background:#2d4a8a;padding:2.5rem 1.25rem 2rem}
+.foot-wrap{max-width:100%;margin:0 auto}
+.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--sky),var(--teal),var(--green),var(--yellow));border-radius:2px;margin-bottom:1.75rem}
+.foot-grid{display:flex;flex-direction:column;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.25rem}
+.foot-brand p{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.75;margin-top:.75rem}
+.foot-col h5{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem}
+.foot-col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.foot-col a{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:10px;color:rgba(255,255,255,.35)}
+.foot-bottom a{color:rgba(255,255,255,.35);text-decoration:none}
 </style>
 </head>
 <body data-lang="en">

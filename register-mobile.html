@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Averta';src:url('https://anh-wq.github.io/cleft-course/Averta-Regular.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Averta';src:url('https://anh-wq.github.io/cleft-course/Averta-Bold.ttf') format('truetype');font-weight:700;font-style:normal}
 
 :root{
   --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
@@ -21,15 +23,28 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
-body{font-family:var(--ff-sans);color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
+body{font-family:'Averta',system-ui,sans-serif;color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
 nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
-.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;line-height:1.2}
-.nav-wordmark span{color:rgba(255,255,255,.6);font-size:9px;letter-spacing:.05em}
+.nav-wordmark{
+  display:flex;flex-direction:column;line-height:1.25;
+  overflow:hidden;max-width:140px;
+}
+.nav-wordmark strong{
+  font-size:10px;font-weight:600;color:var(--white);
+  letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;display:inline-block;
+  animation:marquee-text 8s linear infinite;
+}
+@keyframes marquee-text{
+  0%,30%{transform:translateX(0)}
+  70%,100%{transform:translateX(calc(-100% + 140px))}
+}
+.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.04em;white-space:nowrap}
 .nav-right{display:flex;align-items:center;gap:8px}
 .lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
 .lang-btn{padding:4px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
@@ -96,15 +111,56 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);bo
 .price-tabs{display:flex;flex-direction:column!important;gap:4px}
 .price-tab{width:100%;text-align:center;padding:.75rem;border-radius:6px;border:1px solid var(--border);background:#fff;font-family:var(--ff-sans);font-size:12px;font-weight:500;color:var(--tx2);cursor:pointer}
 .price-tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
-footer{background:var(--dark2);padding:2rem 1.25rem 3rem}
-.foot-grid{display:block}
-.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--yellow));margin-bottom:1.5rem;border-radius:2px}
-.foot-brand p{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.75;margin-top:.75rem}
-.foot-col{margin-bottom:1.25rem}
-.foot-col h5{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem}
-.foot-col ul{list-style:none;padding:0}
-.foot-col li{margin-bottom:.35rem}
-.foot-col a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px}
+
+
+
+
+
+
+
+
+
+
+footer{background:#2d4a8a;padding:2.5rem 1.25rem 2rem}
+.foot-wrap{max-width:100%;margin:0 auto}
+.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--sky),var(--teal),var(--green),var(--yellow));border-radius:2px;margin-bottom:1.75rem}
+.foot-grid{display:flex;flex-direction:column;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.25rem}
+.foot-brand p{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.75;margin-top:.75rem}
+.foot-col h5{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem}
+.foot-col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.foot-col a{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:10px;color:rgba(255,255,255,.35)}
+.foot-bottom a{color:rgba(255,255,255,.35);text-decoration:none}
+
+/* ── Price Sidebar ── */
+.price-sidebar{margin-top:2rem;position:static!important}
+.ps-deadline{
+  background:rgba(248,232,22,.12);border:1px solid rgba(248,232,22,.3);
+  border-radius:10px;padding:.875rem 1rem;margin-bottom:1rem;
+}
+.ps-deadline-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#b8ab00;margin-bottom:3px}
+.ps-deadline-val{font-family:var(--ff-serif);font-size:1.2rem;font-weight:400;color:var(--dark)}
+.ps-deadline-sub{font-size:11px;color:var(--tx3);margin-top:2px}
+.ps-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff}
+.ps-title{font-family:var(--ff-serif);font-size:1.1rem;font-weight:400;padding:1rem 1rem .5rem;color:var(--dark)}
+.ps-period-badge{display:flex;align-items:center;gap:6px;padding:0 1rem .75rem;font-size:10px;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.06em}
+.ps-period-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:dotpulse 2s ease-in-out infinite}
+@keyframes dotpulse{0%,100%{opacity:1}50%{opacity:.3}}
+.ps-tier{border-top:1px solid var(--border);padding:.875rem 1rem}
+.ps-tier-name{font-size:11px;font-weight:600;color:var(--dark);margin-bottom:.6rem}
+.ps-tier-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.ps-price{text-align:center;padding:.5rem .3rem;border-radius:7px;background:var(--off);border:1px solid var(--border);transition:.2s}
+.ps-price.active-period{background:var(--teal);border-color:var(--teal)}
+.ps-price.active-period .ps-price-lbl,
+.ps-price.active-period .ps-price-amt{color:#fff}
+.ps-price-lbl{font-size:8px;color:var(--tx3);letter-spacing:.05em;text-transform:uppercase;font-weight:500;margin-bottom:2px}
+.ps-price-amt{font-family:var(--ff-serif);font-size:1rem;font-weight:400;color:var(--dark)}
+.ps-includes{border-top:1px solid var(--border);padding:.875rem 1rem}
+.ps-includes h5{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem}
+.ps-includes ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.ps-includes li{font-size:11px;color:var(--tx2);padding-left:1rem;position:relative;font-weight:300}
+.ps-includes li::before{content:'✓';position:absolute;left:0;color:var(--teal);font-weight:700;font-size:10px}
 
 </style>
 </head>
@@ -601,18 +657,49 @@ footer{background:var(--dark2);padding:2rem 1.25rem 3rem}
 </div>
 </div>
 <footer>
-<div class="foot-wrap">
-<div class="foot-stripe"></div>
-<div class="foot-bottom">
-<span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
-<div style="display:flex;gap:1.5rem">
-<a class="en" href="https://www.nuoy.org/cleft-conference" target="_top">Home</a><a class="vi" href="https://www.nuoy.org/cleft-conference" target="_top">Trang chủ</a>
-<a class="en" href="https://www.nuoy.org/cleft-conference/program" target="_top">Programme</a><a class="vi" href="https://www.nuoy.org/cleft-conference/program" target="_top">Chương trình</a>
-<a class="en" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Speakers</a><a class="vi" href="https://www.nuoy.org/cleft-conference/speakers" target="_top">Diễn giả</a>
-<a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a>
-</div>
-</div>
-</div>
+  <div class="foot-wrap">
+    <div class="foot-stripe"></div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="nav-logo" style="margin-bottom:0">
+          <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy" style="height:32px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
+          <div class="nav-wordmark" style="overflow:visible;max-width:none;animation:none">
+            <strong style="animation:none;white-space:normal">International Cleft Mastery Summit</strong>
+            <span>Ha Noi 2026</span>
+          </div>
+        </div>
+        <p class="en" style="margin-top:.75rem">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable medical capacity building in Viet Nam and Southeast Asia.</p>
+        <p class="vi" style="margin-top:.75rem">Được tổ chức bởi Nuoy Reconstructive International — tổ chức phi lợi nhuận thúc đẩy chăm sóc phẫu thuật tạo hình thông qua đào tạo, hợp tác và phát triển năng lực y tế bền vững tại Việt Nam và Đông Nam Á.</p>
+      </div>
+      <div class="foot-col">
+        <h5 class="en">Pages</h5><h5 class="vi">Điều hướng</h5>
+        <ul>
+          <li><a href="https://www.nuoy.org/cleft-conference" class="en" target="_top">Home</a><a href="https://www.nuoy.org/cleft-conference" class="vi" target="_top">Trang chủ</a></li>
+          <li><a href="https://www.nuoy.org/cleft-conference/about" class="en" target="_top">About</a><a href="https://www.nuoy.org/cleft-conference/about" class="vi" target="_top">Về hội nghị</a></li>
+          <li><a href="https://www.nuoy.org/cleft-conference/program" class="en" target="_top">Programme</a><a href="https://www.nuoy.org/cleft-conference/program" class="vi" target="_top">Chương trình</a></li>
+          <li><a href="https://www.nuoy.org/cleft-conference/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-conference/speakers" class="vi" target="_top">Diễn giả</a></li>
+          <li><a href="https://www.nuoy.org/cleft-conference/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-conference/registration" class="vi" target="_top">Đăng ký</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></li>
+          <li><a href="https://www.nuoy.org" target="_blank">nuoy.org</a></li>
+        </ul>
+        <h5 style="margin-top:1.25rem" class="en">Venue</h5>
+        <h5 style="margin-top:1.25rem" class="vi">Địa điểm</h5>
+        <ul>
+          <li><a href="https://www.nuoy.org/cleft-conference/about" class="en" target="_top">Hong Ngoc Phuc Truong Minh Hospital</a><a href="https://www.nuoy.org/cleft-conference/about" class="vi" target="_top">BV Hồng Ngọc Phúc Trường Minh</a></li>
+          <li><a style="font-size:11px;opacity:.7" target="_top">8 Châu Văn Liêm, Hà Nội</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nuoy Reconstructive International · ICMS Ha Noi</span>
+      <a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
+    </div>
+  </div>
 </footer>
 
 <script>
