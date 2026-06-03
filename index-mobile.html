@@ -59,6 +59,7 @@ body{
   margin:0;
   padding:0;
   overflow-x:hidden;
+  overflow-x:hidden;
   overflow-y:scroll;
   scrollbar-width:none;
   -ms-overflow-style:none;
@@ -433,10 +434,14 @@ nav {
 }
 .faculty-card{
   display:flex;flex-direction:column;align-items:center;text-align:center;
+  overflow:hidden;
+  min-width:0;
 }
 .faculty-photo{
-  width:80%;aspect-ratio:3/4;
-  object-fit:cover;object-position:top center;
+  width:100%;
+  aspect-ratio:3/4;
+  object-fit:cover;
+  object-position:center 15%;
   border-radius:7px;
   display:block;
   margin-bottom:0.7rem;
@@ -791,13 +796,14 @@ img{
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 .mobile-menu{
-  display:none;position:fixed;top:69px;left:0;right:0;z-index:190;
+  display:none;position:fixed;top:60px;left:0;right:0;z-index:190;
   background:rgba(20,40,64,.98);backdrop-filter:blur(20px);
   padding:1rem 0 1.5rem;
   border-bottom:1px solid rgba(0,180,188,.2);
   transform:translateY(-8px);opacity:0;
   transition:transform .25s var(--ease),opacity .25s var(--ease);
   pointer-events:none;
+  flex-direction:column;
 }
 .mobile-menu.open{ display:flex!important;flex-direction:column;transform:translateY(0);opacity:1;pointer-events:auto;}
 .mobile-menu ul{list-style:none;padding:0;margin:0}
@@ -835,9 +841,13 @@ img{
 }
 
 /* JS-driven mobile override — fires regardless of @media viewport */
-body.is-mobile .nav-links{display:none!important}
-body.is-mobile .hamburger{display:flex!important}
-body.is-mobile .hero-inner{grid-template-columns:1fr!important;padding:5rem 1.25rem 2rem!important}
+body.is-mobile .nav-links    { display:none !important }
+body.is-mobile .btn-cta-nav   { display:none !important }
+body.is-mobile .hamburger     { display:flex !important }
+body.is-mobile .lang-pill     { display:flex !important }
+body.is-mobile .lang-btn      { display:flex !important }
+body.is-mobile .nav-right     { display:flex !important; gap:6px; align-items:center; }
+body.is-mobile .hero-inner    { grid-template-columns:1fr !important; padding:5rem 1.25rem 2rem !important }
 body.is-mobile .hero-card{display:none!important}
 body.is-mobile .hero-h1{font-size:clamp(1.6rem,7vw,2.4rem)!important;white-space:normal!important}
 body.is-mobile .hero-sub,body.is-mobile .hero-slogan{font-size:.9rem!important}
