@@ -23,28 +23,15 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
-body{font-family:'Averta',system-ui,sans-serif;color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
+body{font-family:var(--ff-sans);color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
 .brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
 nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
-.nav-wordmark{
-  display:flex;flex-direction:column;line-height:1.25;
-  overflow:hidden;max-width:140px;
-}
-.nav-wordmark strong{
-  font-size:10px;font-weight:600;color:var(--white);
-  letter-spacing:.05em;text-transform:uppercase;
-  white-space:nowrap;display:inline-block;
-  animation:marquee-text 8s linear infinite;
-}
-@keyframes marquee-text{
-  0%,30%{transform:translateX(0)}
-  70%,100%{transform:translateX(calc(-100% + 140px))}
-}
-.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.04em;white-space:nowrap}
+.nav-wordmark strong{color:#fff;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:block;line-height:1.2}
+.nav-wordmark span{color:rgba(255,255,255,.6);font-size:9px;letter-spacing:.05em}
 .nav-right{display:flex;align-items:center;gap:8px}
 .lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
 .lang-btn{padding:4px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
@@ -92,19 +79,12 @@ nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;a
 .sec-h2 em{font-style:italic;color:var(--teal)}
 .faculty-grid{display:grid;grid-template-columns:1fr 1fr!important;gap:.75rem;margin-top:1.25rem}
 .fcard{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer}
-.fcard-head{padding:.75rem;display:flex;gap:.6rem;align-items:flex-start;border-bottom:1px solid var(--border)}
+.fcard-head{padding:.75rem;display:flex;gap:.6rem;align-items:flex-start;border-bottom:1px solid var(--border);overflow:hidden}
+.fcard-avatar{width:56px;height:72px;max-width:56px;border-radius:5px;flex-shrink:0;object-fit:cover;object-position:center 15%;display:block}
 .fcard-info{flex:1;min-width:0}
 .fcard-name{font-size:11px;font-weight:600;color:var(--dark);line-height:1.3;margin-bottom:2px}
 .fcard-title{font-size:10px;color:var(--tx3);line-height:1.4;font-weight:300}
-.fcard-flag-wrap{position:relative;flex-shrink:0;width:56px}
-.fcard-flag{
-  position:absolute;bottom:2px;right:2px;
-  font-size:11px;line-height:1;
-  background:rgba(255,255,255,.92);
-  border-radius:3px;
-  padding:1px 2px;
-  box-shadow:0 1px 3px rgba(0,0,0,.15);
-}
+.fcard-flag{font-size:14px;margin-top:3px;display:block}
 .fcard-tags{padding:.5rem 1rem;display:flex;flex-wrap:wrap;gap:.35rem;border-bottom:1px solid var(--border)}
 .ftag{font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:rgba(0,180,188,.08);color:var(--teal)}
 .fcard-body{padding:.875rem 1rem}
@@ -120,16 +100,44 @@ nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;a
 .org-initial{width:32px;height:32px;border-radius:50%;background:var(--dark);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0}
 .org-info strong{display:block;font-size:11px;font-weight:600;color:var(--dark);line-height:1.3}
 .org-info span{font-size:10px;color:var(--tx3)}
+footer{background:var(--dark2);padding:2rem 1.25rem 3rem}
+.foot-grid{display:block}
+.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--yellow));margin-bottom:1.5rem;border-radius:2px}
+.foot-brand p{font-size:.8rem;color:rgba(255,255,255,.35);line-height:1.75;margin-top:.75rem}
+.foot-col{margin-bottom:1.25rem}
+.foot-col h5{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem}
+.foot-col ul{list-style:none;padding:0}
+.foot-col li{margin-bottom:.35rem}
+.foot-col a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px}
 
 
+/* ── Nav mobile fix ── */
+nav{position:sticky;top:0;width:100%;z-index:200;background:rgba(74,103,170,.98);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(0,180,188,.15);display:flex;align-items:center;justify-content:space-between;padding:0 0.875rem;height:52px;box-sizing:border-box;overflow:visible}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:1;min-width:0;overflow:hidden}
+.nav-logo img{height:32px;width:auto;flex-shrink:0}
+.nav-wordmark{overflow:hidden;max-width:130px;display:flex;flex-direction:column;line-height:1.25}
+.nav-wordmark strong{font-size:10px;font-weight:600;color:#fff;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap;display:inline-block;animation:marquee-text 8s linear infinite}
+@keyframes marquee-text{0%,30%{transform:translateX(0)}70%,100%{transform:translateX(calc(-100% + 130px))}}
+.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.6);white-space:nowrap;display:none}
+.nav-right{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.lang-pill{display:flex;background:rgba(255,255,255,.12);border-radius:20px;padding:2px}
+.lang-btn{padding:3px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.65);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans);transition:.2s}
+.lang-btn.active{background:var(--teal);color:var(--dark)}
+.hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;border-radius:6px;flex-shrink:0}
+.hamburger span{display:block;width:20px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .25s,opacity .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%);position:sticky;top:0;z-index:201}
 
+/* ── Page hero ── */
+.ph-outer,.page-hero{background:var(--dark);padding:2rem 1.25rem 2.5rem;position:relative}
+.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 70% 40%,rgba(0,180,188,.08) 0%,transparent 60%),radial-gradient(ellipse 50% 70% at 10% 70%,rgba(74,103,170,.08) 0%,transparent 55%);pointer-events:none}
+.ph-inner{display:block!important;position:relative;z-index:1}
+.ph-card{display:none!important}
+.ph-reg-btn{display:block;margin-top:1.25rem;padding:11px;background:var(--yellow);color:var(--dark);border-radius:5px;text-align:center;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 
-
-
-
-
-
-
+/* ── Footer ── */
 footer{background:#2d4a8a;padding:2.5rem 1.25rem 2rem}
 .foot-wrap{max-width:100%;margin:0 auto}
 .foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--sky),var(--teal),var(--green),var(--yellow));border-radius:2px;margin-bottom:1.75rem}
@@ -141,6 +149,15 @@ footer{background:#2d4a8a;padding:2.5rem 1.25rem 2rem}
 .foot-col a:hover{color:var(--white)}
 .foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:10px;color:rgba(255,255,255,.35)}
 .foot-bottom a{color:rgba(255,255,255,.35);text-decoration:none}
+
+
+/* ── Speaker card fix ── */
+.fcard{overflow:hidden;word-break:break-word}
+.fcard-info{flex:1;min-width:0;overflow:hidden}
+.fcard-name{font-size:11px;font-weight:600;color:var(--dark);line-height:1.3;margin-bottom:2px;word-break:break-word}
+.fcard-title{font-size:10px;color:var(--tx3);line-height:1.4;font-weight:300;word-break:break-word}
+.faculty-grid{display:grid;grid-template-columns:1fr 1fr!important;gap:.75rem}
+
 </style>
 </head>
 <body data-lang="en">
@@ -208,13 +225,14 @@ footer{background:#2d4a8a;padding:2.5rem 1.25rem 2rem}
 <!-- 1. CORSTIAAN BREUGEM -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Corstiaan Breugem" class="fcard-avatar" src="breugum.png"/><div class="fcard-flag">🇳🇱</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Corstiaan Breugem" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/breugem1.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Corstiaan Breugem, MD, PhD</div>
 <div class="fcard-name vi">GS.TS.BS. Corstiaan Breugem</div>
 <div class="fcard-title en">Professor, Plastic &amp; Reconstructive Surgery<br/>University of Amsterdam · Emma Children's Hospital, Netherlands</div>
 <div class="fcard-title vi">Giáo sư Phẫu thuật Tạo hình &amp; Tái tạo<br/>Đại học Amsterdam · Bệnh viện Nhi Emma, Hà Lan</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇳🇱</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Cleft Palate</span><span class="tag tag-teal vi">Khe hở vòm miệng</span>
@@ -239,13 +257,14 @@ Bác sĩ Breugem đã công bố hơn 140 bài báo khoa học bình duyệt và
 <!-- 2. JONG-WOO CHOI -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Jong-Woo Choi" class="fcard-avatar" src="choi.png"/><div class="fcard-flag">🇰🇷</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Jong-Woo Choi" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/choi.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Jong-Woo Choi, MD, PhD, MMM</div>
 <div class="fcard-name vi">GS.TS.BS. Jong-Woo Choi </div>
 <div class="fcard-title en">Professor &amp; Chief, Plastic &amp; Reconstructive Surgery<br/>Asan Medical Center, Ulsan University · Seoul, South Korea</div>
 <div class="fcard-title vi">Giáo sư Trưởng khoa Phẫu thuật Tạo hình &amp; Tái tạo<br/>Trung tâm Y khoa Asan, Đại học Ulsan · Seoul, Hàn Quốc</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇰🇷</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Microsurgery</span><span class="tag tag-teal vi">Vi phẫu</span>
@@ -270,13 +289,14 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia nghiên cứu v
 <!-- 3. DAVID CHONG -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="David K. Chong" class="fcard-avatar" src="chong.png"/><div class="fcard-flag">🇦🇺</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="David K. Chong" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/chong.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">David K. Chong, MD</div>
 <div class="fcard-name vi">PGS.BS. David K. Chong</div>
 <div class="fcard-title en">Associate Professor, University of Melbourne<br/>Royal Children's Hospital · Melbourne, Australia</div>
 <div class="fcard-title vi">Phó Giáo sư, Đại học Melbourne<br/>Bệnh viện Nhi Hoàng gia · Melbourne, Úc</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇦🇺</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Craniofacial Surgery</span><span class="tag tag-teal vi">Phẫu thuật sọ mặt</span>
@@ -302,13 +322,14 @@ Bên cạnh hoạt động lâm sàng và hợp tác quốc tế, ông còn có 
 <!-- 4. DAVID FISHER -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="David Fisher" class="fcard-avatar" src="fisher.png"/><div class="fcard-flag">🇨🇦</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="David Fisher" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/fisher.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">David Fisher, MD</div>
 <div class="fcard-name vi"> GS.BS. David Fisher</div>
 <div class="fcard-title en">Medical Director, Cleft Lip &amp; Palate Program<br/>Hospital for Sick Children (SickKids), University of Toronto · Canada</div>
 <div class="fcard-title vi">Giám đốc Y khoa, Chương trình Khe hở môi – vòm miệng<br/>Bệnh viện Nhi SickKids, Đại học Toronto · Canada</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇨🇦</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Cleft Program</span><span class="tag tag-teal vi">Chương trình khe hở môi vòm</span>
@@ -334,13 +355,14 @@ Bác sĩ Fisher giữ vai trò quan trọng trong việc phát triển mô hình
 <!-- 5. DO TIEN HAI -->
 <div class="fcard" data-tags="surgery Viet Nam">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Do Tien Hai" class="fcard-avatar" src="hai.png"/><div class="fcard-flag">🇻🇳</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Do Tien Hai" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/hai.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Do Tien Hai, MD, MSc.</div>
 <div class="fcard-name">ThS.BSCKII. Đỗ Tiến Hải</div>
 <div class="fcard-title en">Head, Plastic &amp; Reconstructive Surgery<br/>National Odonto-Stomatology Hospital · Ho Chi Minh City, Viet Nam</div>
 <div class="fcard-title vi">Trưởng khoa Vi phẫu – Tạo hình Hàm mặt<br/>Bệnh viện Răng Hàm Mặt Trung ương TP.HCM · Việt Nam</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇻🇳</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Orthognathic Surgery</span><span class="tag tag-teal vi">Chỉnh hình xương hàm</span>
@@ -366,13 +388,14 @@ Bên cạnh công tác lâm sàng, ông tích cực tham gia đào tạo và chu
 <!-- 6. LE THUA TRUNG HAU -->
 <div class="fcard" data-tags="surgery Viet Nam">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Le Thua Trung Hau" class="fcard-avatar" src="hau.png"/><div class="fcard-flag">🇻🇳</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Le Thua Trung Hau" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/hau.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Le Thua Trung Hau, MD, PhD</div>
 <div class="fcard-name vi">TS.BS. Lê Thừa Trung Hậu, TS.BS</div>
 <div class="fcard-title en">Head, Plastic, Aesthetic &amp; Maxillofacial Surgery<br/>Hue Odonto-Stomatology Hospital · Hue, Viet Nam</div>
 <div class="fcard-title vi">Trưởng khoa Phẫu thuật Tạo hình &amp; Thẩm mỹ<br/>Bệnh viện Răng Hàm Mặt Huế · Huế, Việt Nam</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇻🇳</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Reconstructive Surgery</span><span class="tag tag-teal vi">Phẫu thuật tái tạo</span>
@@ -397,13 +420,14 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia giảng dạy v
 <!-- 7. NGUYEN THI NGOC LAN -->
 <div class="fcard" data-tags="surgery Viet Nam">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Nguyen Thi Ngoc Lan" class="fcard-avatar" src="lan.png"/><div class="fcard-flag">🇻🇳</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Nguyen Thi Ngoc Lan" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/lan.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Nguyen Thi Ngoc Lan, MD, MSc.</div>
 <div class="fcard-name vi">ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
 <div class="fcard-title en">Chief, Maxillofacial Surgery · Comprehensive Cleft Care Center<br/>Ha Noi Children's Hospital · Ha Noi, Viet Nam</div>
 <div class="fcard-title vi">Trưởng khoa Phẫu thuật Hàm mặt · Trung tâm Chăm sóc Khe hở Toàn diện<br/>Bệnh viện Nhi Hà Nội · Hà Nội, Việt Nam</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇻🇳</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Comprehensive Cleft Care</span><span class="tag tag-teal vi">Chăm sóc khe hở toàn diện</span>
@@ -429,13 +453,14 @@ Bác sĩ Ngọc Lan đã tham gia các chương trình đào tạo nâng cao t�
 <!-- 8. LUN-JOU LO -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Lun-Jou Lo" class="fcard-avatar" src="lo.png"/><div class="fcard-flag">🇹🇼</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Lun-Jou Lo" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/lo.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Lun-Jou Lo, MD, PhD</div>
 <div class="fcard-name vi">GS.TS.BS. Lun-Jou Lo</div>
 <div class="fcard-title en">Professor, Plastic &amp; Reconstructive Surgery<br/>Chang Gung University &amp; Chang Gung Memorial Hospital · Taipei, Taiwan</div>
 <div class="fcard-title vi">Giáo sư Phẫu thuật Tạo hình &amp; Tái tạo<br/>Đại học &amp; Bệnh viện Tưởng niệm Trường Canh · Đài Bắc, Đài Loan</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇹🇼</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Orthognathic Surgery</span><span class="tag tag-teal vi">Chỉnh hình xương hàm</span>
@@ -462,13 +487,14 @@ Với hơn 350 bài báo khoa học bình duyệt, ông được Đại học St
 <!-- 9. PHUONG NGUYEN -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Phuong Nguyen" class="fcard-avatar" src="nguyen.png"/><div class="fcard-flag">🇺🇸🇻🇳</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Phuong Nguyen" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/nguyen.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Phuong D. Nguyen, MD</div>
 <div class="fcard-name vi">GS.BS. Phuong D. Nguyen</div>
 <div class="fcard-title en">Professor, Plastic &amp; Reconstructive Surgery<br/>University of Colorado · Children's Hospital Colorado, USA</div>
 <div class="fcard-title vi">Giáo sư Phẫu thuật Tạo hình &amp; Tái tạo<br/>Đại học Colorado · Bệnh viện Nhi Colorado, Hoa Kỳ</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇺🇸🇻🇳</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Craniofacial Surgery</span><span class="tag tag-teal vi">Phẫu thuật sọ mặt</span>
@@ -494,13 +520,14 @@ Với hơn 20 năm kinh nghiệm trong lĩnh vực phẫu thuật toàn cầu, �
 <!-- 10. TAE-SUK OH -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Tae-Suk Oh" class="fcard-avatar" src="oh.png"/><div class="fcard-flag">🇰🇷</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Tae-Suk Oh" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/oh.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Tae-Suk Oh, MD, PhD</div>
 <div class="fcard-name vi">GS.TS.BS. Tae-Suk Oh</div>
 <div class="fcard-title en">Professor &amp; Chair, Plastic Surgery<br/>Asan Medical Center, Ulsan University · Seoul, South Korea</div>
 <div class="fcard-title vi">Giáo sư Trưởng khoa Phẫu thuật Tạo hình<br/>Trung tâm Y khoa Asan, Đại học Ulsan · Seoul, Hàn Quốc</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇰🇷</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Head &amp; Neck Reconstruction</span><span class="tag tag-teal vi">Tái tạo đầu cổ</span>
@@ -525,13 +552,14 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia nghiên cứu h
 <!-- 11. JOHN PHILLIPS -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="John Phillips" class="fcard-avatar" src="phillips.png"/><div class="fcard-flag">🇨🇦</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="John Phillips" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/phillips.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">John H. Phillips, MD</div>
 <div class="fcard-name vi">PGS.BS. John H. Phillips</div>
 <div class="fcard-title en">Associate Professor, Surgery · Chief, Division of Plastic Surgery<br/>Hospital for Sick Children (SickKids), University of Toronto · Canada</div>
 <div class="fcard-title vi">Phó Giáo sư Ngoại khoa · Trưởng đơn vị Phẫu thuật Tạo hình<br/>Bệnh viện Nhi SickKids, Đại học Toronto · Canada</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇨🇦</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Craniosynostosis</span><span class="tag tag-teal vi">Dính khớp sọ</span>
@@ -557,13 +585,14 @@ Bên cạnh hoạt động lâm sàng và học thuật, ông là tác giả và
 <!-- 12. CHRISTOPHER RUNYAN -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Christopher Runyan" class="fcard-avatar" src="runyan.png"/><div class="fcard-flag">🇺🇸</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Christopher Runyan" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/runyan.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Christopher M. Runyan, MD, PhD</div>
 <div class="fcard-name vi">PGS.TS.BS. Christopher M. Runyan</div>
 <div class="fcard-title en">Associate Professor &amp; Vice Chair, Plastic &amp; Reconstructive Surgery<br/>Wake Forest School of Medicine · North Carolina, USA</div>
 <div class="fcard-title vi">Phó Giáo sư, Phó Trưởng khoa Phẫu thuật Tạo hình &amp; Tái tạo<br/>Trường Y Wake Forest · Bắc Carolina, Hoa Kỳ</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇺🇸</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Craniosynostosis</span><span class="tag tag-teal vi">Dính khớp sọ</span>
@@ -589,13 +618,14 @@ Hướng nghiên cứu của ông bao gồm kỹ thuật mô, kéo giãn xương
 <!-- 13. LE VAN SON -->
 <div class="fcard" data-tags="surgery Viet Nam">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Le Van Son" class="fcard-avatar" src="son.png"/><div class="fcard-flag">🇻🇳</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Le Van Son" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/son.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Le Van Son, MD, PhD</div>
 <div class="fcard-name vi">PGS.TS.BS.Lê Văn Sơn</div>
 <div class="fcard-title en">Head, Faculty of Odonto-Stomatology<br/>Phenikaa University · Ha Noi, Viet Nam</div>
 <div class="fcard-title vi">Trưởng khoa Răng Hàm Mặt<br/>Đại học Phenikaa · Hà Nội, Việt Nam</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇻🇳</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Maxillofacial Reconstruction</span><span class="tag tag-teal vi">Tái tạo hàm mặt</span>
@@ -620,13 +650,14 @@ Bên cạnh hoạt động lâm sàng, PGS. TS. Lê Văn Sơn còn đóng vai tr
 <!-- 14. DANIELA TANIKAWA -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Daniela Tanikawa" class="fcard-avatar" src="tanikawa.png"/><div class="fcard-flag">🇧🇷</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Daniela Tanikawa" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/tanikawa.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Daniela Tanikawa, MD, PhD</div>
 <div class="fcard-name vi">TS.BS. Daniela Tanikawa</div>
 <div class="fcard-title en">Coordinator, Cleft Lip &amp; Palate Center<br/>Sabará Children's Hospital &amp; Menino Jesus Municipal Hospital · São Paulo, Brazil</div>
 <div class="fcard-title vi">Điều phối viên Trung tâm Khe hở môi – vòm miệng<br/>Bệnh viện Nhi Sabará &amp; Bệnh viện Menino Jesus · São Paulo, Brazil</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇧🇷</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Primary Cleft Surgery</span><span class="tag tag-teal vi">Phẫu thuật khe hở ban đầu</span>
@@ -652,13 +683,14 @@ Lĩnh vực chuyên môn và nghiên cứu của bà bao gồm chỉnh hình ti�
 <!-- 15. BUDDHATHIDA WANGSRIMONGKOL -->
 <div class="fcard" data-tags="ortho international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Buddhathida Wangsrimongkol" class="fcard-avatar" src="cartoon.png"/><div class="fcard-flag">🇹🇭</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Buddhathida Wangsrimongkol" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/cartoon.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Buddhathida Wangsrimongkol, MD</div>
 <div class="fcard-name vi">PGS.BS. Buddhathida Wangsrimongkol</div>
 <div class="fcard-title en">Assistant Professor, Orthodontics · Khon Kaen University<br/>Tawanchai Center · Thailand</div>
 <div class="fcard-title vi">Phó Giáo sư · Đại học Khon Kaen<br/>Trung tâm Tawanchai · Thái Lan</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇹🇭</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Cleft Orthodontics</span><span class="tag tag-teal vi">Chỉnh nha khe hở</span>
@@ -684,13 +716,14 @@ Công việc của bà tập trung vào đổi mới trong điều trị khe h�
 <!-- 16. ROBIN YANG -->
 <div class="fcard" data-tags="surgery international">
 <div class="fcard-head">
-<div class="fcard-flag-wrap"><img alt="Robin Yang" class="fcard-avatar" src="yang.png"/><div class="fcard-flag">🇺🇸</div></div>
-<div class="fcard-info"><div class="fcard-info">
+<img alt="Robin Yang" class="fcard-avatar" src="https://anh-wq.github.io/cleft-course/yang.png"/>
+<div class="fcard-info">
 <div class="fcard-name en">Robin Yang, MD, DDS</div>
 <div class="fcard-name vi">PGS.BS. Robin Yang</div>
 <div class="fcard-title en">Assistant Professor · Director, Pediatric Plastic Surgery<br/>Johns Hopkins School of Medicine · Maryland, USA</div>
 <div class="fcard-title vi">Giảng viên · Giám đốc Phẫu thuật Tạo hình Nhi<br/>Trường Y Johns Hopkins · Maryland, Hoa Kỳ</div>
-</div></div>
+</div>
+<div class="fcard-flag">🇺🇸</div>
 </div>
 <div class="fcard-tags">
 <span class="tag tag-teal en">Virtual Surgical Planning</span><span class="tag tag-teal vi">Lập kế hoạch phẫu thuật ảo</span>
@@ -739,7 +772,7 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia giảng dạy v
           <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy" style="height:32px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
           <div class="nav-wordmark" style="overflow:visible;max-width:none;animation:none">
             <strong style="animation:none;white-space:normal">International Cleft Mastery Summit</strong>
-            <span>Ha Noi 2026</span>
+            <span style="display:block">Ha Noi 2026</span>
           </div>
         </div>
         <p class="en" style="margin-top:.75rem">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable medical capacity building in Viet Nam and Southeast Asia. Co-hosted by Hong Ngoc Hospital — the summit's premier venue, pairing modern medical facilities with a shared mission to elevate local surgical standards.</p>
