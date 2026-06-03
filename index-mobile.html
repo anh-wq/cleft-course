@@ -815,7 +815,7 @@ img{
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
 .mobile-menu{
-  display:none;position:fixed;top:69px;left:0;right:0;z-index:190;
+  display:none;position:fixed;top:60px;left:0;right:0;z-index:999;
   background:rgba(20,40,64,.98);backdrop-filter:blur(20px);
   padding:1rem 0 1.5rem;
   border-bottom:1px solid rgba(0,180,188,.2);
@@ -899,7 +899,7 @@ body.is-desktop .hamburger{display:none!important}
 /* Hide HTML nav + brand stripe on mobile — Wix renders its own nav */
 body.is-mobile .brand-stripe{display:none!important}
 body.is-mobile nav{display:none!important}
-body.is-mobile .mobile-menu{top:0!important}
+/* mobile-menu top handled above */
 /* Remove top padding compensation for hidden nav */
 body.is-mobile .hero,
 body.is-mobile .page-hero,
