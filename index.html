@@ -157,19 +157,12 @@ nav {
   inset:0;
   z-index:0;
   pointer-events:none;
-  overflow:hidden;
 }
 .hero-video-bg video {
   width:100%;
   height:100%;
-  min-width:100%;
-  min-height:100%;
-  max-width:100%;
-  max-height:100%;
   object-fit:cover;
-  object-position:center center;
   opacity:0.52;
-  display:block;
 }
 /* Gradient overlay — light, preserves video colors */
 .hero-video-overlay {
@@ -887,18 +880,6 @@ body.is-mobile .page-header{padding-top:2rem!important}
 body.is-mobile .hero-inner{padding-top:100px!important;padding-bottom:80px!important}
 body.is-mobile .filter-bar{top:0!important}
 body.is-mobile .day-tabs{top:0!important}
-
-/* ── Wix iframe video scaling fix ── */
-.hero-video-bg video {
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:auto;height:auto;
-  min-width:100%;min-height:100%;
-  max-width:none;max-height:none;
-  object-fit:cover;
-  opacity:0.52;
-}
 </style>
 </head>
 <body data-lang="en">
@@ -1706,5 +1687,47 @@ document.addEventListener('click',function(e){
   }
 });
 </script>
+
+<script>
+/* ── Wix video scale fix ──
+   Wix embeds HTML in an iframe scaled with transform:scale(N).
+   We detect N by comparing innerWidth vs screen.width,
+   then counter-scale the video container to fill correctly. */
+(function fixWixVideoScale(){
+  function apply(){
+    var scaleX = window.innerWidth / (screen.width || window.outerWidth);
+    // If Wix is scaling down (scaleX < 1), we scale video up to compensate
+    var bg = document.querySelector('.hero-video-bg');
+    var vid = document.querySelector('.hero-video-bg video');
+    if(!bg || !vid) return;
+    if(scaleX < 0.98){
+      var inv = 1 / scaleX;
+      // Scale from center, expand to fill
+      vid.style.transform = 'translate(-50%,-50%) scale('+inv+')';
+      vid.style.position = 'absolute';
+      vid.style.top = '50%';
+      vid.style.left = '50%';
+      vid.style.width = '100%';
+      vid.style.height = '100%';
+      vid.style.minWidth = '100%';
+      vid.style.minHeight = '100%';
+      vid.style.maxWidth = 'none';
+      vid.style.transformOrigin = 'center center';
+    } else {
+      vid.style.transform = '';
+      vid.style.position = '';
+      vid.style.top = '';
+      vid.style.left = '';
+    }
+  }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', apply);
+  } else {
+    apply();
+  }
+  window.addEventListener('resize', apply);
+})();
+</script>
+
 </body>
 </html>
