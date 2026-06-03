@@ -92,22 +92,26 @@ nav {
   background: rgba(74, 103, 170, .98);
   backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 rgba(0, 180, 188, .15);
+  width: 100%;
+  overflow: visible;
 }
 .nav-inner{
-  max-width:100%;margin:0 auto;padding:0 1rem;
-  height:56px;display:flex;align-items:center;
-  justify-content:space-between;gap:0.5rem;
+  max-width:100%;margin:0;padding:0 0.75rem;
+  height:52px;display:flex;align-items:center;
+  justify-content:space-between;gap:0.25rem;
+  overflow:visible;
 }
 .nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
 .nav-logomark{
-  height:36px;display:flex;align-items:center;flex-shrink:0;
+  height:32px;display:flex;align-items:center;flex-shrink:0;
 }
 .nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
 .nav-wordmark strong{
   font-size:10px;font-weight:600;color:var(--white);
-  letter-spacing:.06em;text-transform:uppercase;
+  letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;
 }
-.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.8);letter-spacing:.05em;text-transform:uppercase}
+.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase}
 .nav-links{display:flex;list-style:none;gap:0;align-items:center}
 .nav-links a{
   display:block;padding:7px 15px;
@@ -840,13 +844,15 @@ img{
 }
 
 /* JS-driven mobile override — fires regardless of @media viewport */
-body.is-mobile .nav-links    { display:none !important }
-body.is-mobile .btn-cta-nav   { display:none !important }
-body.is-mobile .hamburger     { display:flex !important }
-body.is-mobile .lang-pill     { display:flex !important }
-body.is-mobile .lang-btn      { display:flex !important }
-body.is-mobile .nav-right     { display:flex !important; gap:6px; align-items:center; }
-body.is-mobile .hero-inner    { grid-template-columns:1fr !important; padding:5rem 1.25rem 2rem !important }
+body.is-mobile .nav-links           { display:none !important }
+body.is-mobile .btn-cta-nav          { display:none !important; width:0 !important; padding:0 !important; margin:0 !important; overflow:hidden !important; }
+body.is-mobile .hamburger            { display:flex !important; flex-shrink:0; }
+body.is-mobile .lang-pill            { display:flex !important; flex-shrink:0; }
+body.is-mobile .lang-btn             { display:flex !important; padding:4px 10px !important; font-size:11px !important; }
+body.is-mobile .nav-right            { display:flex !important; gap:6px !important; align-items:center !important; flex-shrink:0; }
+body.is-mobile .nav-logo             { flex-shrink:1; min-width:0; overflow:hidden; }
+body.is-mobile .nav-wordmark span    { display:none !important }
+body.is-mobile .hero-inner           { grid-template-columns:1fr !important; padding:5rem 1.25rem 2rem !important }
 body.is-mobile .hero-card{display:none!important}
 body.is-mobile .hero-h1{font-size:clamp(1.6rem,7vw,2.4rem)!important;white-space:normal!important}
 body.is-mobile .hero-sub,body.is-mobile .hero-slogan{font-size:.9rem!important}
