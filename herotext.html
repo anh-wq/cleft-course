@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,300;1,7..72,400;1,7..72,600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Averta';src:url('Averta-Regular.ttf') format('truetype');font-weight:400}
+@font-face{font-family:'Averta';src:url('Averta-Bold.ttf') format('truetype');font-weight:700}
+
+:root{
+  --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
+  --dark:#0E1A2E;--white:#FFFFFF;
+  --ff-sans:'Averta',system-ui,sans-serif;
+  --ff-serif:'Literata',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  width:100%;height:100%;
+  background:transparent!important;
+  overflow:hidden;
+  font-family:var(--ff-sans);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Lang */
+body[data-lang="vi"] .en{display:none!important}
+body[data-lang="en"] .vi{display:none!important}
+
+/* Wrapper */
+.hero-text{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  padding:2rem;
+}
+
+/* Welcome accent */
+.welcome{
+  font-family:var(--ff-serif);
+  font-size:clamp(.8rem,1.4vw,.95rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.75);
+  letter-spacing:.06em;
+  margin-bottom:1rem;
+  animation:up .8s cubic-bezier(0,0,.2,1) both;
+  animation-delay:.3s;
+}
+
+/* Conference name */
+.conf-name{
+  font-family:var(--ff-serif);
+  font-size:clamp(2rem,5.5vw,5rem);
+  font-weight:400;line-height:1.05;
+  color:#fff;letter-spacing:-.02em;
+  white-space:nowrap;
+  margin-bottom:.4rem;
+  animation:up 1s cubic-bezier(0,0,.2,1) both;
+  animation-delay:.55s;
+}
+.conf-name em{font-style:italic;color:#fff}
+
+/* Location */
+.conf-loc{
+  font-family:var(--ff-serif);
+  font-size:clamp(1rem,2.2vw,1.8rem);
+  font-weight:400;font-style:italic;
+  color:rgba(255,255,255,.55);
+  margin-bottom:1.4rem;
+  animation:up .9s cubic-bezier(0,0,.2,1) both;
+  animation-delay:.72s;
+}
+
+/* Rule */
+.rule{
+  width:0;height:1px;
+  background:linear-gradient(to right,transparent,var(--teal),transparent);
+  margin:0 auto 1.5rem;
+  animation:expand .9s cubic-bezier(0,0,.2,1) forwards;
+  animation-delay:.9s;
+}
+@keyframes expand{to{width:200px}}
+
+/* Tagline */
+.tagline{
+  font-family:var(--ff-serif);
+  font-size:clamp(.9rem,1.5vw,1.1rem);
+  font-weight:300;font-style:italic;
+  color:rgba(255,255,255,.85);
+  margin-bottom:1.5rem;
+  animation:up .8s cubic-bezier(0,0,.2,1) both;
+  animation-delay:1s;
+}
+
+/* Meta pills */
+.meta{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:10px;
+  margin-bottom:2rem;
+  animation:up .8s cubic-bezier(0,0,.2,1) both;
+  animation-delay:1.1s;
+}
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 20px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:100px;
+}
+.pill svg{width:13px;height:13px;fill:var(--teal);flex-shrink:0}
+.pill-bold{font-size:11px;font-weight:600;color:rgba(255,255,255,1)}
+.pill-muted{font-size:11px;color:rgba(255,255,255,.65)}
+
+/* CTA buttons */
+.btns{
+  display:flex;flex-wrap:wrap;
+  justify-content:center;gap:12px;
+  animation:up .8s cubic-bezier(0,0,.2,1) both;
+  animation-delay:1.25s;
+}
+.btn-primary{
+  display:inline-flex;align-items:center;
+  padding:14px 34px;
+  background:var(--yellow);color:var(--dark);
+  text-decoration:none;border-radius:5px;
+  font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  transition:.25s;
+}
+.btn-primary:hover{background:var(--teal);color:#fff}
+.btn-ghost{
+  display:inline-flex;align-items:center;
+  padding:14px 34px;
+  background:transparent;color:rgba(255,255,255,.75);
+  border:1px solid rgba(255,255,255,.25);
+  text-decoration:none;border-radius:5px;
+  font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  transition:.25s;
+}
+.btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff}
+
+@keyframes up{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:768px){
+  .conf-name{white-space:normal;font-size:clamp(1.8rem,8vw,3rem)}
+  .pill-muted{display:none}
+}
+</style>
+</head>
+<body data-lang="en">
+
+<div class="hero-text">
+
+  <!-- Welcome accent -->
+  <div class="welcome en">Welcome to Ha Noi</div>
+  <div class="welcome vi">Chào mừng đến Hà Nội</div>
+
+  <!-- Conference name -->
+  <h1 class="conf-name en">International Cleft <em>Mastery Summit</em></h1>
+  <h1 class="conf-name vi" style="white-space:normal;font-size:clamp(1.6rem,4vw,3.6rem)">Hội nghị Quốc tế Làm chủ Kỹ thuật <em>Điều trị Khe hở</em></h1>
+
+  <!-- Location -->
+  <div class="conf-loc en">Ha Noi · 2026</div>
+  <div class="conf-loc vi">Hà Nội · 2026</div>
+
+  <!-- Rule -->
+  <div class="rule"></div>
+
+  <!-- Tagline -->
+  <p class="tagline en">Advancing Surgical Precision and Longitudinal Outcomes</p>
+  <p class="tagline vi">Nâng cao chất lượng phẫu thuật và cải thiện kết quả điều trị lâu dài</p>
+
+  <!-- Meta pills -->
+  <div class="meta">
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+      <span class="pill-bold">September 21–23, 2026</span>
+      <span class="pill-muted en">· 16 Faculty · 9+ Countries</span>
+      <span class="pill-muted vi">· 16 Chuyên gia · 9+ Quốc gia</span>
+    </div>
+    <div class="pill">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span class="pill-bold en">Hong Ngoc Hospital · Ha Noi</span>
+      <span class="pill-bold vi">BV Hồng Ngọc · Hà Nội</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="btns">
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary en" target="_top">Register Now →</a>
+    <a href="https://www.nuoy.org/cleft-conference/registration" class="btn-primary vi" target="_top">Đăng ký ngay →</a>
+    <a href="https://www.nuoy.org/cleft-conference/about" class="btn-ghost en" target="_top">About the Summit</a>
+    <a href="https://www.nuoy.org/cleft-conference/about" class="btn-ghost vi" target="_top">Về hội nghị</a>
+  </div>
+
+</div>
+
+<script>
+/* ── Language sync — BroadcastChannel + localStorage polling ── */
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  localStorage.setItem('icms-lang',l);
+}
+
+/* BroadcastChannel (same origin — cả 3 file trên cùng GitHub domain) */
+try{
+  var bc=new BroadcastChannel('icms-lang');
+  bc.onmessage=function(e){
+    if(e.data&&e.data.lang) setLang(e.data.lang);
+  };
+}catch(e){}
+
+/* localStorage polling fallback */
+setInterval(function(){
+  var l=localStorage.getItem('icms-lang')||'en';
+  if(document.body.getAttribute('data-lang')!==l) setLang(l);
+},500);
+
+/* Init */
+setLang(localStorage.getItem('icms-lang')||'en');
+</script>
+
+</body>
+</html>
