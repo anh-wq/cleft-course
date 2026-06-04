@@ -96,8 +96,8 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 /* FOOTER */
 footer{background:#2d4a8a;padding:2.5rem 2rem}
 .foot-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%);margin-bottom:2rem;border-radius:2px}
-.foot-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.2);flex-wrap:wrap;gap:.5rem}
-.foot-bottom a{color:rgba(255,255,255,.2);text-decoration:none}
+.foot-bottom{max-width:1280px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:.5rem}
+.foot-bottom a{color:rgba(255,255,255,.5);text-decoration:none}
 .foot-bottom a:hover{color:rgba(255,255,255,.5)}
 
 @media(max-width:1024px){.nav-links{display:none!important}.faculty-grid{grid-template-columns:1fr}}@media(max-width:640px){.page-header{padding:5.5rem 1.25rem 2.5rem}.ph-h1{font-size:clamp(1.4rem,6vw,2rem)!important;white-space:normal!important;line-height:1.2!important}.ph-body{font-size:.88rem;line-height:1.7;max-width:100%}.filter-bar{padding:.75rem 1.25rem;top:64px}.filter-inner{gap:.4rem}.filter-btn{font-size:11px;padding:5px 10px}.faculty-section{padding:2rem 1.25rem 3rem}.fcard-head{flex-wrap:wrap}.fcard-name{font-size:14px}.org-grid{grid-template-columns:1fr}.fcard-toggle{font-size:11px}}
@@ -279,11 +279,11 @@ body.is-mobile .day-tabs{top:0!important}
   <div class="filter-inner">
     <span class="filter-label en">Filter:</span>
     <span class="filter-label vi">Lọc:</span>
-    <button class="filter-btn active" onclick=\"filterFaculty('all', this)\"><span class="en">All Faculty</span><span class="vi">Tất cả</span></button>
-    <button class="filter-btn" onclick=\"filterFaculty('surgery', this)\"><span class="en">Surgery</span><span class="vi">Phẫu thuật</span></button>
-    <button class="filter-btn" onclick=\"filterFaculty('ortho', this)\"><span class="en">Orthodontics</span><span class="vi">Chỉnh nha</span></button>
-    <button class="filter-btn" onclick=\"filterFaculty('Viet Nam', this)\"><span class="en">Viet Nam</span><span class="vi">Việt Nam</span></button>
-    <button class="filter-btn" onclick=\"filterFaculty('international', this)\"><span class="en">International</span><span class="vi">Quốc tế</span></button>
+    <button class="filter-btn active" onclick="filterFaculty('all',this)"><span class="en">All Faculty</span><span class="vi">Tất cả</span></button>
+    <button class="filter-btn" onclick="filterFaculty('surgery',this)"><span class="en">Surgery</span><span class="vi">Phẫu thuật</span></button>
+    <button class="filter-btn" onclick="filterFaculty('ortho',this)"><span class="en">Orthodontics</span><span class="vi">Chỉnh nha</span></button>
+    <button class="filter-btn" onclick="filterFaculty('vietnam',this)"><span class="en">Viet Nam</span><span class="vi">Việt Nam</span></button>
+    <button class="filter-btn" onclick="filterFaculty('international',this)"><span class="en">International</span><span class="vi">Quốc tế</span></button>
   </div>
 </div>
 
@@ -448,7 +448,7 @@ Bác sĩ Fisher giữ vai trò quan trọng trong việc phát triển mô hình
       </div>
 
       <!-- 5. DO TIEN HAI -->
-      <div class="fcard" data-tags="surgery Viet Nam">
+      <div class="fcard" data-tags="surgery vietnam">
         <div class="fcard-head">
           <img src="hai.png" alt="Do Tien Hai" class="fcard-avatar">
           <div class="fcard-info">
@@ -471,7 +471,7 @@ Bác sĩ Fisher giữ vai trò quan trọng trong việc phát triển mô hình
           <div class="fcard-expand" id="exp-hai">
             <p class="en">He received his Doctor of Dental Surgery degree from the University of Medicine and Pharmacy in Ho Chi Minh City and later obtained a Master’s degree and Specialist Level II certification. His advanced training includes multiple programs in oral and maxillofacial surgery and plastic surgery, as well as international training at Seoul National University.
 Dr. Hai’s clinical practice focuses on facial trauma, tumors, orthognathic surgery, and congenital craniofacial deformities. He has extensive experience in reconstructive procedures and plays a key role in managing both functional and aesthetic aspects of facial surgery.
-In addition to his clinical work, he is actively engaged in surgical training, providing on-the-job education for young doctors across southern Viet Nam. He also participates in humanitarian missions, working with organizations such as Operation Smile to deliver free reconstructive surgery to underserved populations in Viet Nam and Laos.
+In addition to his clinical work, he is actively engaged in surgical training, providing on-the-job education for young doctors across southern Viet Nam. He also participates in humanitarian missions, working with organizations such as Operation Smile to deliver free reconstructive surgery to underserved populations in vietnam and Laos.
 </p>
             <p class="vi">Ông tốt nghiệp Bác sĩ Răng Hàm Mặt tại Đại học Y Dược TP.HCM, sau đó tiếp tục hoàn thành Thạc sĩ và Bác sĩ Chuyên khoa II. Ông đã tham gia nhiều chương trình đào tạo chuyên sâu về phẫu thuật hàm mặt và phẫu thuật tạo hình, đồng thời có kinh nghiệm đào tạo quốc tế tại Đại học Quốc gia Seoul (Hàn Quốc).
 Hoạt động lâm sàng của ông tập trung vào điều trị chấn thương vùng mặt, khối u, phẫu thuật chỉnh hình xương hàm và các dị tật sọ mặt bẩm sinh. Ông có kinh nghiệm phong phú trong các kỹ thuật tái tạo, kết hợp giữa phục hồi chức năng và yếu tố thẩm mỹ trong điều trị.
@@ -483,7 +483,7 @@ Bên cạnh công tác lâm sàng, ông tích cực tham gia đào tạo và chu
       </div>
 
       <!-- 6. LE THUA TRUNG HAU -->
-      <div class="fcard" data-tags="surgery Viet Nam">
+      <div class="fcard" data-tags="surgery vietnam">
         <div class="fcard-head">
           <img src="hau.png" alt="Le Thua Trung Hau" class="fcard-avatar">
           <div class="fcard-info">
@@ -496,7 +496,6 @@ Bên cạnh công tác lâm sàng, ông tích cực tham gia đào tạo và chu
         </div>
         <div class="fcard-tags">
           <span class="tag tag-teal en">Reconstructive Surgery</span><span class="tag tag-teal vi">Phẫu thuật tái tạo</span>
-          <span class="tag tag-blue en">PhD Brussels</span>
           
         </div>
         <div class="fcard-body">
@@ -517,7 +516,7 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia giảng dạy v
       </div>
 
       <!-- 7. NGUYEN THI NGOC LAN -->
-      <div class="fcard" data-tags="surgery Viet Nam">
+      <div class="fcard" data-tags="surgery vietnam">
         <div class="fcard-head">
           <img src="lan.png" alt="Nguyen Thi Ngoc Lan" class="fcard-avatar">
           <div class="fcard-info">
@@ -533,11 +532,11 @@ Bên cạnh hoạt động lâm sàng, ông tích cực tham gia giảng dạy v
           <span class="tag tag-blue en">Nuoy Scholar</span>
         </div>
         <div class="fcard-body">
-          <div class="fcard-excerpt en">Dr. Nguyen Thi Ngoc Lan is a pediatric maxillofacial surgeon in Viet Nam specializing in congenital craniofacial conditions, particularly cleft lip and palate. She currently leads the Maxillofacial Surgery Unit at Ha Noi Children’s Hospital, where she is developing a comprehensive cleft care model that spans from early intervention through long-term follow-up into adulthood.
+          <div class="fcard-excerpt en">Dr. Nguyen Thi Ngoc Lan is a pediatric maxillofacial surgeon in vietnam specializing in congenital craniofacial conditions, particularly cleft lip and palate. She currently leads the Maxillofacial Surgery Unit at Ha Noi Children’s Hospital, where she is developing a comprehensive cleft care model that spans from early intervention through long-term follow-up into adulthood.
 </div>
           <div class="fcard-excerpt vi">Bác sĩ Nguyễn Thị Ngọc Lan là chuyên gia phẫu thuật hàm mặt nhi khoa tại Việt Nam, chuyên sâu trong điều trị các dị tật sọ mặt bẩm sinh, đặc biệt là khe hở môi – vòm miệng. Bà hiện phụ trách Đơn vị Phẫu thuật Hàm mặt tại Bệnh viện Nhi Hà Nội, nơi bà đang xây dựng mô hình chăm sóc khe hở toàn diện, từ can thiệp sớm đến theo dõi lâu dài đến tuổi trưởng thành.</div>
           <div class="fcard-expand" id="exp-lan">
-            <p class="en">She trained at Ha Noi Medical University and completed her residency in Odonto-Stomatology before beginning her career in pediatric maxillofacial surgery in 2012. With over 15 years of experience, including nearly a decade in a senior leadership role at Viet Nam National Children’s Hospital, she has played a key role in advancing surgical techniques and expanding access to specialized care.
+            <p class="en">She trained at Ha Noi Medical University and completed her residency in Odonto-Stomatology before beginning her career in pediatric maxillofacial surgery in 2012. With over 15 years of experience, including nearly a decade in a senior leadership role at vietnam National Children’s Hospital, she has played a key role in advancing surgical techniques and expanding access to specialized care.
 Dr. Ngoc Lan has received advanced training at leading craniofacial centers in Taiwan, South Korea, and the United States, including Chang Gung Memorial Hospital and the Children’s Hospital of Philadelphia. Her clinical work focuses on complex reconstructive procedures and multidisciplinary cleft care, integrating surgery with orthodontics, speech therapy, and long-term rehabilitation.
 Committed to patient-centered care, she focuses on delivering safe, timely, and coordinated treatment that improves both functional outcomes and quality of life for children with craniofacial conditions.
 </p>
@@ -565,7 +564,6 @@ Bác sĩ Ngọc Lan đã tham gia các chương trình đào tạo nâng cao t�
         <div class="fcard-tags">
           <span class="tag tag-teal en">Orthognathic Surgery</span><span class="tag tag-teal vi">Chỉnh hình xương hàm</span>
           <span class="tag tag-blue en">3D Imaging &amp; VSP</span><span class="tag tag-blue vi">Hình ảnh 3D &amp; VSP</span>
-          <span class="tag tag-yellow en">Top 2% Scientists</span><span class="tag tag-yellow vi">Top 2% nhà khoa học</span>
         </div>
         <div class="fcard-body">
           <div class="fcard-excerpt en">Dr. Lun-Jou Lo is a Professor of Plastic and Reconstructive Surgery at Chang Gung Memorial Hospital, one of the leading centers for craniofacial surgery in Asia. He completed his medical training at National Taiwan University and his plastic surgery training at Chang Gung Memorial Hospital, followed by fellowship training at Washington University in St. Louis.
@@ -599,7 +597,6 @@ Với hơn 350 bài báo khoa học bình duyệt, ông được Đại học St
         </div>
         <div class="fcard-tags">
           <span class="tag tag-teal en">Craniofacial Surgery</span><span class="tag tag-teal vi">Phẫu thuật sọ mặt</span>
-          <span class="tag tag-blue en">Global Surgery</span><span class="tag tag-blue vi">Phẫu thuật toàn cầu</span>
           <span class="tag tag-yellow en">Nuoy Co-Founder</span><span class="tag tag-yellow vi">Đồng sáng lập Nuoy</span>
         </div>
         <div class="fcard-body">
@@ -721,7 +718,7 @@ Hướng nghiên cứu của ông bao gồm kỹ thuật mô, kéo giãn xương
       </div>
 
       <!-- 13. LE VAN SON -->
-      <div class="fcard" data-tags="surgery Viet Nam">
+      <div class="fcard" data-tags="surgery vietnam">
         <div class="fcard-head">
           <img src="son.png" alt="Le Van Son" class="fcard-avatar">
           <div class="fcard-info">
