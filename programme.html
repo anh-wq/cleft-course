@@ -375,6 +375,11 @@ body.is-mobile .page-hero,
 body.is-mobile .page-header{padding-top:2rem!important}
 body.is-mobile .filter-bar{top:0!important}
 body.is-mobile .day-tabs{top:0!important}
+
+/* Allow iframe to shrink when switching days */
+html{height:auto!important}
+body{min-height:0!important}
+.day-panel{min-height:0}
 </style>
 </head>
 <body data-lang="en">
@@ -1182,7 +1187,7 @@ setLang(localStorage.getItem('icms-lang')||'en');
 
 /* Day tabs */
 function showDay(id,btn){
-  document.querySelectorAll('.day-panel').forEach(p=>{p.classList.remove('active');p.style.display='none';});
+  document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.day-tab').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
@@ -1193,14 +1198,9 @@ function showDay(id,btn){
     if(sum) sum.classList.remove('open');
   });
 
-  // Force display block then measure
-  var activePanel = document.getElementById(day);
-  if(activePanel) activePanel.style.display = 'block';
-  // Multiple timeouts to catch layout reflow
   sendHeight();
-  setTimeout(sendHeight, 100);
-  setTimeout(sendHeight, 300);
-  setTimeout(sendHeight, 600);}
+  setTimeout(sendHeight, 200);
+  setTimeout(sendHeight, 500);}
 
 /* Session accordion */
 function toggleSession(el){
@@ -1223,18 +1223,7 @@ function toggleSession(el){
  
 <script>
 function sendHeight(){
-  // Use active panel height + other elements, not full scrollHeight
-  var activePanel = document.querySelector('.day-panel.active');
-  var tabs = document.querySelector('.day-tabs');
-  var header = document.querySelector('.page-header');
-  var footer = document.querySelector('footer');
-  var nav = document.querySelector('nav');
-  var h = (nav ? nav.offsetHeight : 0) +
-          (header ? header.offsetHeight : 0) +
-          (tabs ? tabs.offsetHeight : 0) +
-          (activePanel ? activePanel.offsetHeight : 0) +
-          (footer ? footer.offsetHeight : 0) + 20;
-  if(!activePanel) h = document.documentElement.scrollHeight;
+  const h=document.documentElement.scrollHeight;
   if(window.parent)window.parent.postMessage({type:'resize',height:h},'*');
 }
 window.addEventListener('load',sendHeight);
