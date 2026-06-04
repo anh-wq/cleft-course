@@ -107,7 +107,7 @@ nav {
 }
 .nav-wordmark{
   display:flex;flex-direction:column;line-height:1.25;
-  overflow:hidden;max-width:160px;
+  overflow:hidden;max-width:140px;
 }
 .nav-wordmark strong{
   font-size:10px;font-weight:600;color:var(--white);
@@ -117,13 +117,15 @@ nav {
 }
 /* Marquee animation for mobile */
 body.is-mobile .nav-wordmark strong {
-  animation: marquee-text 8s linear infinite;
+  animation: marquee-text 10s ease-in-out infinite;
   display:inline-block;
 }
 @keyframes marquee-text {
   0%   { transform: translateX(0); }
-  30%  { transform: translateX(0); }
-  70%  { transform: translateX(calc(-100% + 160px)); }
+  15%  { transform: translateX(0); }
+  50%  { transform: translateX(calc(-100% + 140px)); }
+  65%  { transform: translateX(calc(-100% + 140px)); }
+  85%  { transform: translateX(0); }
   100% { transform: translateX(0); }
 }
 .nav-wordmark span{font-size:9px;color:rgba(255,255,255,.8);letter-spacing:.04em;text-transform:uppercase}

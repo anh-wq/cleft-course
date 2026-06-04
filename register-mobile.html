@@ -861,24 +861,95 @@ function onCountryChange() {
 }
 
 /* ── VALIDATE ── */
-function validate() {
-  let ok = true;
-  ['f-name','f-email','f-phone','f-org'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el.value.trim()) { el.classList.add('field-error'); ok = false; }
-    else el.classList.remove('field-error');
-  });
-  if (!document.getElementById('f-country').value) ok = false;
-  if (!document.querySelector('input[name="jobtitle"]:checked')) ok = false;
-  if (!document.querySelector('input[name="years_exp"]:checked')) ok = false;
-  if (!document.querySelector('input[name="reception"]:checked')) ok = false;
-  return ok;
-}
+
 
 /* ── SUBMIT → SHEET → PAYMENT ── */
+
+/* ════ VALIDATION ════ */
+function showError(el, msg) {
+  el.classList.add('field-error');
+  var ex = el.parentNode.querySelector('.field-error-msg');
+  if (ex) ex.remove();
+  var s = document.createElement('span');
+  s.className = 'field-error-msg';
+  s.style.cssText = 'display:block;font-size:11px;color:#e53e3e;margin-top:4px;font-weight:500';
+  s.textContent = msg;
+  el.parentNode.appendChild(s);
+}
+function clearError(el) {
+  el.classList.remove('field-error');
+  var ex = el.parentNode.querySelector('.field-error-msg');
+  if (ex) ex.remove();
+}
+function isValidEmail(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+}
+function isValidPhone(v) {
+  var d = v.replace(/[^0-9]/g, '');
+  return d.length >= 7 && d.length <= 15;
+}
+function validate() {
+  var ok = true;
+  var first = null;
+  var nameEl = document.getElementById('f-name') || document.getElementById('f-fname');
+  if (nameEl) {
+    if (!nameEl.value.trim()) {
+      showError(nameEl, 'Full name is required');
+      ok = false; if (!first) first = nameEl;
+    } else clearError(nameEl);
+  }
+  var emailEl = document.getElementById('f-email');
+  if (emailEl) {
+    if (!emailEl.value.trim()) {
+      showError(emailEl, 'Email is required');
+      ok = false; if (!first) first = emailEl;
+    } else if (!isValidEmail(emailEl.value)) {
+      showError(emailEl, 'Please enter a valid email (e.g. name@hospital.org)');
+      ok = false; if (!first) first = emailEl;
+    } else clearError(emailEl);
+  }
+  var phoneEl = document.getElementById('f-phone');
+  if (phoneEl && phoneEl.value.trim()) {
+    if (!isValidPhone(phoneEl.value)) {
+      showError(phoneEl, 'Phone must have 7–15 digits (e.g. +84 90 000 0000)');
+      ok = false; if (!first) first = phoneEl;
+    } else clearError(phoneEl);
+  }
+  var orgEl = document.getElementById('f-org') || document.getElementById('f-institution');
+  if (orgEl && !orgEl.value.trim()) {
+    showError(orgEl, 'Institution / hospital is required');
+    ok = false; if (!first) first = orgEl;
+  } else if (orgEl) clearError(orgEl);
+  var countryEl = document.getElementById('f-country');
+  if (countryEl && !countryEl.value) {
+    countryEl.classList.add('field-error');
+    ok = false; if (!first) first = countryEl;
+  } else if (countryEl) countryEl.classList.remove('field-error');
+  if (!document.querySelector('input[name="jobtitle"]:checked')) ok = false;
+  if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+  return ok;
+}
+function attachLiveValidation() {
+  ['f-email','f-phone','f-name','f-fname','f-org','f-institution'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', function() { clearError(el); });
+    el.addEventListener('blur', function() {
+      if (!el.value.trim()) return;
+      if (id === 'f-email' && !isValidEmail(el.value))
+        showError(el, 'Please enter a valid email (e.g. name@hospital.org)');
+      if (id === 'f-phone' && !isValidPhone(el.value))
+        showError(el, 'Phone must have 7–15 digits');
+    });
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', attachLiveValidation);
+} else { attachLiveValidation(); }
+
 async function submitForm() {
   if (!validate()) {
-    alert('Please fill in all required fields before proceeding.');
+    /* errors shown inline */
     return;
   }
 
