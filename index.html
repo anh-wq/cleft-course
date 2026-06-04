@@ -685,6 +685,20 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 .sup-chip.logo-lg img{
   height:160px;max-width:360px;
 }
+.sup-coorg{
+  display:flex;flex-direction:column;align-items:center;
+  margin-bottom:1.5rem;width:100%;
+}
+.sup-tag{
+  margin-top:.5rem;
+  background:var(--teal);color:#fff;
+  font-size:.7rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 12px;border-radius:20px;
+  display:inline-block;
+}
+.sup-tag .en,.sup-tag .vi{display:none}
+[data-lang=en] .sup-tag .en{display:inline}
+[data-lang=vi] .sup-tag .vi{display:inline}
 
 /* ═══ CTA STRIP ═══ */
 .cta-strip{
@@ -1503,8 +1517,11 @@ body.is-mobile .day-tabs{top:0!important}
     <div class="sec-eyebrow vi" style="justify-content:center">Đối tác hỗ trợ &amp; Triển lãm</div>
     <h2 class="sec-h2 en" style="max-width:480px;margin:0 auto 0">Made Possible With <br><em>Our Partners</em></h2>
     <h2 class="sec-h2 vi" style="max-width:480px;margin:0 auto 0">Thực hiện cùng <br><em>các đối tác</em></h2>
+    <div class="sup-coorg">
+      <div class="sup-chip logo-lg"><img src="https://anh-wq.github.io/cleft-course/hongngoclogo.png" alt="Hong Ngoc Hospital"></div>
+      <div class="sup-tag"><span class="en">Co-organise</span><span class="vi">Đồng tổ chức</span></div>
+    </div>
     <div class="sup-flex">
-      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/hongngoclogo.png" alt="Hong Ngoc Hospital"></div>
       <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/kls.png" alt="KLS Martin Group"></div>
       <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/vna.png" alt="Vietnam Airlines"></div>
       <div class="sup-chip" style="height:78px"><img src="https://anh-wq.github.io/cleft-course/st.png" alt="Smile Train" style="height:78px;max-width:210px"></div>
@@ -1548,8 +1565,8 @@ body.is-mobile .day-tabs{top:0!important}
             <span>Ha Noi 2026</span>
           </div>
         </div>
-        <p class="en">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable medical capacity building in Viet Nam and Southeast Asia. Co-hosted by Hong Ngoc Hospital - The hospital serves as the summit's premier venue, pairing modern medical facilities with a shared mission to elevate local surgical standards.</p>
-        <p class="vi">Được tổ chức bởi Nuoy Reconstructive International — tổ chức phi lợi nhuận thúc đẩy chăm sóc phẫu thuật tạo hình thông qua đào tạo, hợp tác và phát triển năng lực y tế bền vững tại Việt Nam và Đông Nam Á. Đồng tổ chức bởi Bệnh viện Hồng Ngọc - Bệnh viện đóng vai trò là địa điểm tổ chức của hội nghị, kết hợp cơ sở vật chất y tế hiện đại với sứ mệnh chung nhằm nâng cao tiêu chuẩn phẫu thuật tại địa phương.</p>
+        <p class="en">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable medical capacity building in Viet Nam and Southeast Asia. Co-organised by Hong Ngoc - Phuc Truong Minh General Hospital, a private medical institution with modern, well-equipped facilities. The programme is organised with a mission to elevate local surgical standards.</p>
+        <p class="vi">Được tổ chức bởi Nuoy Reconstructive International — tổ chức phi lợi nhuận thúc đẩy chăm sóc phẫu thuật tạo hình thông qua đào tạo, hợp tác và phát triển năng lực y tế bền vững tại Việt Nam và Đông Nam Á. Đồng tổ chức bởi Bệnh viện Đa khoa Hồng Ngọc - Phúc Trường Minh là đơn vị y tế tư nhân với cơ sở vật chất khang trang, hiện đại. Chương trình được tổ chức với sứ mệnh nâng cao tiêu chuẩn phẫu thuật tại địa phương.</p>
       </div>
       <div class="foot-col">
         <h5 class="en">Pages</h5>
@@ -1571,14 +1588,14 @@ body.is-mobile .day-tabs{top:0!important}
         <h5 style="margin-top:1.5rem" class="en">Venue</h5>
         <h5 style="margin-top:1.5rem" class="vi">Địa điểm</h5>
         <ul>
-          <li><a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">Hong Ngoc Phuc Truong Minh Hospital</a><a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Bệnh viện Hồng Ngọc Phúc Trường Minh</a></li>
-          <li><a href="https://www.nuoy.org/cleft-summit/about" style="font-size:12px;opacity:.7" target="_top">8 Châu Văn Liêm, Hà Nội</a></li>
+          <li><a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">Hong Ngoc - Phuc Truong Minh General Hospital</a><a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Bệnh viện Đa khoa Hồng Ngọc - Phúc Trường Minh</a></li>
+          <li><a href="https://www.nuoy.org/cleft-summit/about" style="font-size:12px;opacity:.7" target="_top">Số 8 Châu Văn Liêm, Phường Từ Liêm, Hà Nội, Việt Nam</a></li>
         </ul>
         <h5 style="margin-top:1.5rem" class="en">Organised by</h5>
         <h5 style="margin-top:1.5rem" class="vi">Đơn vị tổ chức</h5>
         <ul>
           <li><a href="https://www.nuoy.org" target="_blank">Nuoy Reconstructive International</a></li>
-           <li><a href="https://www.hongngochospital.vn" target="_blank">Hong Ngoc Hospital</a></li>
+           <li><a href="https://www.hongngochospital.vn" target="_blank">Hong Ngoc - Phuc Truong Minh General Hospital</a></li>
         </ul>
       </div>
     </div>
