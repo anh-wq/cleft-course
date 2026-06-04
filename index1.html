@@ -1432,14 +1432,35 @@ This summit is designed to be the catalyst for the formalization of a National V
 })();
 
 /* ── Language — no lang-btn in this embed, just set body attr ── */
+var _bc_below;
+try{ _bc_below = new BroadcastChannel('icms-lang'); }catch(e){}
+
 function setLang(l){
   document.body.setAttribute('data-lang',l);
   localStorage.setItem('icms-lang',l);
 }
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='lang') setLang(e.data.lang);
+
+/* BroadcastChannel — same origin iframes */
+if(_bc_below){
+  _bc_below.onmessage = function(e){
+    if(e.data && e.data.lang) setLang(e.data.lang);
+  };
+}
+
+/* postMessage from Wix parent — catch all type variants */
+window.addEventListener('message', function(e){
+  if(!e.data) return;
+  if(e.data.type === 'lang' && e.data.lang) setLang(e.data.lang);
+  if(e.data.type === 'icms-lang' && e.data.lang) setLang(e.data.lang);
 });
-setLang(localStorage.getItem('icms-lang')||'en');
+
+/* localStorage polling fallback — 500ms */
+setInterval(function(){
+  var l = localStorage.getItem('icms-lang') || 'en';
+  if(document.body.getAttribute('data-lang') !== l) setLang(l);
+}, 500);
+
+setLang(localStorage.getItem('icms-lang') || 'en');
 
 /* ── Countdown ── */
 (function tick(){
