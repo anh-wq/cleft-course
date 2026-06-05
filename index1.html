@@ -102,15 +102,15 @@ nav {
 }
 .nav-wordmark{display:flex;flex-direction:column;line-height:1.25}
 .nav-wordmark strong{
-  font-size:12px;font-weight:600;color:var(--white);
+  font-size:13px;font-weight:600;color:var(--white);
   letter-spacing:.08em;text-transform:uppercase;
 }
-.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.8);letter-spacing:.07em;text-transform:uppercase}
+.nav-wordmark span{font-size:11px;color:rgba(255,255,255,.8);letter-spacing:.07em;text-transform:uppercase}
 .nav-links{display:flex;list-style:none;gap:0;align-items:center}
 .nav-links a{
   display:block;padding:7px 15px;
   color:rgba(255,255,255,.92);text-decoration:none;
-  font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
   border-radius:5px;transition:color .2s,background .2s;
 }
 .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.09)}
@@ -124,13 +124,13 @@ nav {
 .lang-btn{
   padding:4px 13px;border-radius:20px;border:none;
   background:transparent;color:rgba(255,255,255,.5);
-  font-size:11px;font-family:var(--ff-sans);font-weight:600;
+  font-size:12px;font-family:var(--ff-sans);font-weight:600;
   letter-spacing:.07em;cursor:pointer;transition:.2s;
 }
 .lang-btn.active{background:var(--teal);color:var(--dark)}
 .btn-cta-nav{
   padding:9px 22px;background:var(--yellow);color:var(--dark);
-  border-radius:5px;text-decoration:none;font-size:11px;
+  border-radius:5px;text-decoration:none;font-size:12px;
   font-weight:600;letter-spacing:.08em;text-transform:uppercase;
   transition:.2s;white-space:nowrap;
 }
@@ -348,7 +348,7 @@ nav {
 .hero-btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .btn-primary{
   padding:14px 32px;background:var(--yellow);color:var(--dark);
-  border-radius:5px;text-decoration:none;font-size:12px;
+  border-radius:5px;text-decoration:none;font-size:13px;
   font-weight:600;letter-spacing:.07em;text-transform:uppercase;
   transition:.25s;display:inline-flex;align-items:center;gap:8px;
 }
@@ -357,7 +357,7 @@ nav {
   padding:14px 28px;background:transparent;
   color:rgba(255,255,255,.65);
   border:1px solid rgba(255,255,255,.18);border-radius:5px;
-  text-decoration:none;font-size:12px;font-weight:500;
+  text-decoration:none;font-size:13px;font-weight:500;
   letter-spacing:.06em;text-transform:uppercase;transition:.25s;
 }
 .btn-ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);color:var(--white)}
@@ -412,7 +412,7 @@ nav {
 .banner-track:hover{animation-play-state:paused}
 .bi{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:12px;font-weight:400;letter-spacing:.04em;
+  font-size:13px;font-weight:400;letter-spacing:.04em;
   color:rgba(255,255,255,.65);flex-shrink:0;
 }
 .bi-sep{color:var(--teal);font-size:9px;margin:0 5px;opacity:.65;}
@@ -443,12 +443,12 @@ nav {
   margin:0 auto 0.7rem;
 }
 .faculty-name{
-  font-size:12px;font-weight:600;
+  font-size:13px;font-weight:600;
   color:var(--dark);line-height:1.3;
   margin-bottom:2px;
 }
 .faculty-inst{
-  font-size:10.5px;color:var(--tx2);
+  font-size:12px;color:var(--tx2);
   line-height:1.5;font-weight:300;
 }
 @media(max-width:1024px){.faculty-grid{grid-template-columns:repeat(3,1fr)}}
@@ -461,7 +461,7 @@ section{padding:6rem 2.5rem}
 /* eyebrow label */
 .sec-eyebrow{
   display:inline-flex;align-items:center;gap:10px;
-  font-size:10px;font-weight:600;letter-spacing:.14em;
+  font-size:11px;font-weight:600;letter-spacing:.14em;
   text-transform:uppercase;color:var(--teal);margin-bottom:1rem;
 }
 .sec-eyebrow::before{content:'';width:20px;height:2px;background:var(--teal);border-radius:2px}
@@ -478,8 +478,19 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 /* body — Averta light weight 400 (rule 3 of Nuoy typography) */
 .sec-body{
   font-family: var(--ff-sans);
-  font-size: 1rem; color: var(--tx2);
-  line-height: 1.85; max-width: 650px; font-weight: 400;
+  font-size: 1.14rem; color: var(--tx2);
+  line-height: 1.85; max-width: 680px; font-weight: 400;
+}
+body[data-lang="en"] .sec-body{
+  text-align:justify;
+  hyphens:auto;
+  -webkit-hyphens:auto;
+  hyphenate-limit-chars:6 3 2;
+  text-wrap:pretty;
+}
+body[data-lang="vi"] .sec-body{
+  text-align:justify;
+  text-wrap:pretty;
 }
 
 /* ═══ ABOUT ═══ */
@@ -514,7 +525,7 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
   font-weight:400;font-style:italic;display:block;
   line-height:1.3;margin-bottom:3px;
 }
-.about-caption span{font-size:11px;opacity:.6;letter-spacing:.04em}
+.about-caption span{font-size:12px;opacity:.6;letter-spacing:.04em}
 
 
 /* features */
@@ -524,8 +535,8 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
   width:10px;height:10px;background:var(--teal);
   border-radius:50%;flex-shrink:0;margin-top:5px;
 }
-.af h4{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:4px;letter-spacing:.01em}
-.af p{font-size:13px;color:var(--tx2);line-height:1.7;font-weight:300}
+.af h4{font-size:16px;font-weight:600;color:var(--dark);margin-bottom:4px;letter-spacing:.01em}
+.af p{font-size:15px;color:var(--tx2);line-height:1.7;font-weight:300}
 
 .btn-teal{
   display:inline-flex;align-items:center;gap:8px;
@@ -542,7 +553,7 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 .context .sec-eyebrow::before{background:var(--yellow)}
 .context h2.sec-h2{color:var(--white)}
 .context h2.sec-h2 em{color:var(--teal)}
-.context .sec-body{color:rgba(255,255,255,.5)}
+.context .sec-body{color:rgba(255,255,255,.5);max-width:780px}
 .ctx-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
 .ctx-card{
   background:rgba(255,255,255,.04);
@@ -558,10 +569,10 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
   line-height:1;margin-bottom:.6rem;
 }
 .ctx-card h4{
-  font-size:12px;font-weight:600;color:var(--white);
+  font-size:13px;font-weight:600;color:var(--white);
   margin-bottom:.5rem;letter-spacing:.08em;text-transform:uppercase;
 }
-.ctx-card p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300}
+.ctx-card p{font-size:15px;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300}
 
 /* ═══ GOALS ═══ */
 .goals{background:var(--white)}
@@ -581,10 +592,10 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
   flex-shrink:0;width:48px;
 }
 .goal h4{
-  font-size:12px;font-weight:600;color:var(--dark);
+  font-size:13px;font-weight:600;color:var(--dark);
   margin-bottom:6px;letter-spacing:.07em;text-transform:uppercase;
 }
-.goal p{font-size:13px;color:var(--tx2);line-height:1.7;font-weight:300}
+.goal p{font-size:15px;color:var(--tx2);line-height:1.7;font-weight:300}
 
 /* ═══ AUDIENCE ═══ */
 .audience{background:var(--off)}
@@ -602,7 +613,7 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
   justify-content:center;margin:0 auto 1.1rem;
 }
 .aud-icon svg{width:22px;height:22px;fill:var(--teal)}
-.aud h4{font-size:13px;font-weight:600;color:var(--dark);line-height:1.45;letter-spacing:.01em}
+.aud h4{font-size:15px;font-weight:600;color:var(--dark);line-height:1.45;letter-spacing:.01em}
 
 /* ═══ PRICING ═══ */
 .pricing{background:var(--dark)}
@@ -610,20 +621,20 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 .pricing .sec-eyebrow::before{background:var(--yellow)}
 .pricing h2.sec-h2{color:var(--white)}
 .pricing h2.sec-h2 em{color:var(--teal)}
-.pricing .sec-body{color:rgba(255,255,255,.5)}
+.pricing .sec-body{color:rgba(255,255,255,.5);max-width:680px}
 
 .ptab-wrap{margin-top:3rem;overflow-x:auto}
 .ptab{width:100%;border-collapse:collapse;min-width:700px}
 .ptab thead tr{border-bottom:1px solid rgba(255,255,255,.1)}
 .ptab th{
-  padding:13px 20px;font-size:10px;font-weight:600;
+  padding:13px 20px;font-size:11px;font-weight:600;
   letter-spacing:.1em;text-transform:uppercase;
 }
 .ptab th:first-child{text-align:left;color:rgba(255,255,255,.35)}
 .ptab th:not(:first-child){text-align:center;color:var(--yellow)}
 .ptab td{
   padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.05);
-  font-size:13px;vertical-align:top;
+  font-size:15px;vertical-align:top;
 }
 .ptab td:first-child{color:rgba(255,255,255,.75);line-height:1.55;font-weight:300}
 .ptab td:first-child small{display:block;font-size:11px;color:rgba(255,255,255,.3);margin-top:3px;font-weight:300}
@@ -638,14 +649,14 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
   margin-top:1.75rem;padding:1.5rem 1.75rem;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.07);
-  border-radius:10px;font-size:13px;
+  border-radius:10px;font-size:15px;
   color:rgba(255,255,255,.45);line-height:1.85;font-weight:300;
 }
 .price-note strong{color:rgba(255,255,255,.75);font-weight:500}
 .cancel-note{
   margin-top:1rem;padding-left:16px;
   border-left:3px solid rgba(0,180,188,.4);
-  font-size:13px;color:rgba(255,255,255,.35);
+  font-size:15px;color:rgba(255,255,255,.35);
   line-height:1.75;font-weight:300;
 }
 .cancel-note strong{color:rgba(255,255,255,.6);font-weight:500}
@@ -684,12 +695,13 @@ h2.sec-h2 em{font-style:italic;color:var(--teal)}
 }
 .cta-strip .sec-eyebrow{justify-content:center;color:var(--yellow)}
 .cta-strip .sec-eyebrow::before{background:var(--yellow)}
-.cta-strip h2.sec-h2{color:var(--white);max-width:480px;margin:0 auto 1rem}
+.cta-strip h2.sec-h2{color:var(--white);max-width:600px;margin:0 auto 1rem;white-space:nowrap}
 .cta-strip h2.sec-h2 em{color:var(--teal)}
 .cta-body{
-  font-size:1rem;color:rgba(255,255,255,.45);
-  max-width:500px;margin:0 auto 2.75rem;
+  font-size:1.14rem;color:rgba(255,255,255,.45);
+  max-width:640px;margin:0 auto 2.75rem;
   line-height:1.85;font-weight:300;
+  text-align:center;
 }
 .cta-btns{
   display:flex;align-items:center;justify-content:center;
@@ -714,7 +726,7 @@ footer{background:#2d4a8a;padding:4rem 2.5rem 2.25rem}
   border-radius:2px;margin-bottom:3rem;
 }
 .foot-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr;gap:3.5rem;
+  display:grid;grid-template-columns:2fr 1.2fr 1.2fr;gap:2.5rem;
   padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);
   margin-bottom:1.75rem;
 }
@@ -731,6 +743,7 @@ footer{background:#2d4a8a;padding:4rem 2.5rem 2.25rem}
 .foot-col a{
   font-size:13px;color:rgba(255,255,255,.65);
   text-decoration:none;transition:.2s;font-weight:300;
+  text-wrap:balance;
 }
 .foot-col a:hover{color:var(--white)}
 .foot-bottom{
@@ -806,7 +819,7 @@ img{
 .mobile-menu ul li a{
   display:block;padding:.85rem 2rem;
   color:rgba(255,255,255,.75);text-decoration:none;
-  font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  font-size:15px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
   border-bottom:1px solid rgba(255,255,255,.06);transition:.2s;
 }
 .mobile-menu ul li a:hover{color:#fff;background:rgba(255,255,255,.05)}
@@ -1106,8 +1119,8 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
         <div class="sec-eyebrow vi">Về hội nghị</div>
         <h2 class="sec-h2 en"> A Longitudinal Approach to <br><em>Cleft Reconstruction</em></h2>
         <h2 class="sec-h2 vi">Chương trình đào tạo chuyên sâu về <em>Phẫu thuật Khe hở</em></h2>
-        <p class="sec-body en">The Nuoy International Cleft Mastery Summit is an advanced, interdisciplinary summit dedicated to the comprehensive management of the cleft patient from neonatal intervention through skeletal maturity. This summit serves as a high-level site for bilateral knowledge exchange, where international innovation integrates with the technical precision and high-volume expertise of the Vietnamese surgical model. The curriculum is structured to address the critical longitudinal dependencies of cleft care: analyzing how primary interventions in neonatal molding and lip repair influence the technical success of later orthognathic advancement and definitive rhinoplasty.</p>
-        <p class="sec-body vi">Hội nghị là chương trình đào tạo chuyên sâu, liên ngành, tập trung vào quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt. Đây là nơi các tiến bộ quốc tế kết nối với kinh nghiệm thực tiễn từ mô hình phẫu thuật số lượng lớn của Việt Nam. Chương trình hội nghị được thiết kế nhằm giải quyết các mối liên hệ phụ thuộc theo thời gian mang tính cốt lõi trong toàn bộ quá trình điều trị khe hở: phân tích cách thức các can thiệp ban đầu ở giai đoạn sơ sinh (như nắn chỉnh mũi nang bướm) và phẫu thuật sửa mũi-môi ảnh hưởng đến sự thành công về mặt kỹ thuật của các phẫu thuật đẩy xương hàm ra trước và tạo hình mũi hoàn thiện về sau.</p>
+        <p class="sec-body en" lang="en">The Nuoy International Cleft Mastery Summit is an advanced, interdisciplinary summit dedicated to the comprehensive management of the cleft patient from neonatal intervention through skeletal maturity. This summit serves as a high-level site for bilateral knowledge exchange, where international innovation integrates with the technical precision and high-volume expertise of the Vietnamese surgical model. The curriculum is structured to address the critical longitudinal dependencies of cleft care: analyzing how primary interventions in neonatal molding and lip repair influence the technical success of later orthognathic advancement and definitive rhinoplasty.</p>
+        <p class="sec-body vi" lang="vi">Hội nghị là chương trình đào tạo chuyên sâu, liên ngành, tập trung vào quản lý toàn diện bệnh nhân khe hở từ can thiệp sơ sinh đến khi hoàn thiện phát triển xương mặt. Đây là nơi các tiến bộ quốc tế kết nối với kinh nghiệm thực tiễn từ mô hình phẫu thuật số lượng lớn của Việt Nam. Chương trình hội nghị được thiết kế nhằm giải quyết các mối liên hệ phụ thuộc theo thời gian mang tính cốt lõi trong toàn bộ quá trình điều trị khe hở: phân tích cách thức các can thiệp ban đầu ở giai đoạn sơ sinh (như nắn chỉnh mũi nang bướm) và phẫu thuật sửa mũi-môi ảnh hưởng đến sự thành công về mặt kỹ thuật của các phẫu thuật đẩy xương hàm ra trước và tạo hình mũi hoàn thiện về sau.</p>
         <div class="about-features">
           <div class="af">
             <div class="af-mark"></div>
@@ -1151,10 +1164,10 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
     <div class="sec-eyebrow vi">Bối cảnh khu vực</div>
     <h2 class="sec-h2 en">A Catalyst for National <em>Clinical Integration</em></h2>
     <h2 class="sec-h2 vi">Động lực thúc đẩy <em>Kết nối Lâm sàng Toàn quốc</em></h2>
-    <p class="sec-body en">Vietnam is a nearly unmatched wealth of experience in cleft care, characterized by a surgical volume and clinical efficiency that is virtually unmatched. With an incidence rate nearly double the global average, Vietnamese centers have developed a high-velocity expertise that defines mastery at scale. However, as a low-middle income country, there are also resource limitations which have encouraged innovation and interaction with the international community to further comprehensive cleft care.
+    <p class="sec-body en" lang="en">Vietnam is a nearly unmatched wealth of experience in cleft care, characterized by a surgical volume and clinical efficiency that is virtually unmatched. With an incidence rate nearly double the global average, Vietnamese centers have developed a high-velocity expertise that defines mastery at scale. However, as a low-middle income country, there are also resource limitations which have encouraged innovation and interaction with the international community to further comprehensive cleft care.
 
 This summit is designed to be the catalyst for the formalization of a National Vietnamese Reconstructive Community.</p>
-    <p class="sec-body vi">Việt Nam là quốc gia sở hữu kho tàng kinh nghiệm phong phú và hiếm nơi nào sánh kịp trong lĩnh vực điều trị khe hở môi - vòm miệng, với số lượng ca phẫu thuật cùng hiệu suất lâm sàng hiếm nơi nào sánh kịp. Với tỉ lệ mắc gần như gấp đôi mức trung bình toàn cầu, các trung tâm y tế tại Việt Nam đã tích lũy và phát triển chuyên môn với tốc độ nhanh chóng, thiết lập nên một chuẩn mực về sự thành thạo ở quy mô lớn. Tuy nhiên, là một quốc gia có thu nhập trung bình thấp, Việt Nam cũng đối mặt với những hạn chế về nguồn lực — chính điều này đã thúc đẩy sự đổi mới sáng tạo và tăng cường hợp tác với cộng đồng quốc tế để tiến tới hoàn thiện quy trình chăm sóc khe hở toàn diện. Hội nghị này được thiết kế để trở thành chất xúc tác cho việc chính thức hình thành một Cộng đồng Phẫu thuật Tạo hình Quốc gia Việt Nam</p>
+    <p class="sec-body vi" lang="vi">Việt Nam là quốc gia sở hữu kho tàng kinh nghiệm phong phú và hiếm nơi nào sánh kịp trong lĩnh vực điều trị khe hở môi - vòm miệng, với số lượng ca phẫu thuật cùng hiệu suất lâm sàng hiếm nơi nào sánh kịp. Với tỉ lệ mắc gần như gấp đôi mức trung bình toàn cầu, các trung tâm y tế tại Việt Nam đã tích lũy và phát triển chuyên môn với tốc độ nhanh chóng, thiết lập nên một chuẩn mực về sự thành thạo ở quy mô lớn. Tuy nhiên, là một quốc gia có thu nhập trung bình thấp, Việt Nam cũng đối mặt với những hạn chế về nguồn lực — chính điều này đã thúc đẩy sự đổi mới sáng tạo và tăng cường hợp tác với cộng đồng quốc tế để tiến tới hoàn thiện quy trình chăm sóc khe hở toàn diện. Hội nghị này được thiết kế để trở thành chất xúc tác cho việc chính thức hình thành một Cộng đồng Phẫu thuật Tạo hình Quốc gia Việt Nam</p>
     <div class="ctx-grid">
       <div class="ctx-card reveal">
         <div class="ctx-n">1/550</div>
@@ -1236,8 +1249,8 @@ This summit is designed to be the catalyst for the formalization of a National V
     <div class="sec-eyebrow vi">Đối tượng tham dự</div>
     <h2 class="sec-h2 en">Built for Every Member of <em>the Cleft Team</em></h2>
     <h2 class="sec-h2 vi">Dành cho tất cả thành viên <em>trong đội ngũ điều trị</em></h2>
-    <p class="sec-body en">This advanced symposium welcomes specialists at every stage of the cleft reconstructive continuum — from primary surgery to long-term multidisciplinary follow-up.</p>
-    <p class="sec-body vi">Hội nghị chuyên sâu này chào đón các chuyên gia ở mọi giai đoạn trong hành trình điều trị khe hở toàn diện, từ phẫu thuật ban đầu đến theo dõi đa chuyên ngành dài hạn.</p>
+    <p class="sec-body en" lang="en">This advanced symposium welcomes specialists at every stage of the cleft reconstructive continuum — from primary surgery to long-term multidisciplinary follow-up.</p>
+    <p class="sec-body vi" lang="vi">Hội nghị chuyên sâu này chào đón các chuyên gia ở mọi giai đoạn trong hành trình điều trị khe hở toàn diện, từ phẫu thuật ban đầu đến theo dõi đa chuyên ngành dài hạn.</p>
     <div class="aud-grid">
       <div class="aud reveal">
         <div class="aud-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg></div>
@@ -1280,8 +1293,8 @@ This summit is designed to be the catalyst for the formalization of a National V
     <div class="sec-eyebrow vi">Phí tham dự</div>
     <h2 class="sec-h2 en">Equitable Access, <em>Global Participation</em></h2>
     <h2 class="sec-h2 vi">Tiếp cận công bằng, <em>Tham gia toàn cầu</em></h2>
-    <p class="sec-body en">Fees are structured according to World Bank Country Income Classifications. Contributions from high-income country participants directly support colleagues from lower-income regions — strengthening the global network of cleft care. Early Bird closes July 15, 2026.</p>
-    <p class="sec-body vi">Phí tham dự được phân loại theo Phân nhóm Thu nhập Quốc gia của Ngân hàng Thế giới. Đóng góp từ người tham dự quốc gia thu nhập cao trực tiếp hỗ trợ đồng nghiệp từ khu vực thu nhập thấp hơn. Đăng ký sớm sẽ kết thúc vào ngày 15/07/2026.</p>
+    <p class="sec-body en" lang="en">Fees are structured according to World Bank Country Income Classifications. Contributions from high-income country participants directly support colleagues from lower-income regions — strengthening the global network of cleft care. Early Bird closes July 15, 2026.</p>
+    <p class="sec-body vi" lang="vi">Phí tham dự được phân loại theo Phân nhóm Thu nhập Quốc gia của Ngân hàng Thế giới. Đóng góp từ người tham dự quốc gia thu nhập cao trực tiếp hỗ trợ đồng nghiệp từ khu vực thu nhập thấp hơn. Đăng ký sớm sẽ kết thúc vào ngày 15/07/2026.</p>
     <div class="ptab-wrap">
       <table class="ptab">
         <thead>
@@ -1334,12 +1347,21 @@ This summit is designed to be the catalyst for the formalization of a National V
     <div class="sec-eyebrow vi" style="justify-content:center">Đối tác hỗ trợ &amp; Triển lãm</div>
     <h2 class="sec-h2 en" style="max-width:480px;margin:0 auto 0">Made Possible With <br><em>Our Partners</em></h2>
     <h2 class="sec-h2 vi" style="max-width:480px;margin:0 auto 0">Thực hiện cùng <br><em>các đối tác</em></h2>
-    <div class="sup-flex">
-      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/hongngoclogo.png" alt="Hong Ngoc - Phuc Truong Minh General Hospital"></div>
-      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/kls.png" alt="KLS Martin Group"></div>
-      <div class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/vna.png" alt="Vietnam Airlines"></div>
-      <div class="sup-chip" style="height:78px"><img src="https://anh-wq.github.io/cleft-course/st.png" alt="Smile Train" style="height:78px;max-width:210px"></div>
-      <div class="sup-chip" style="height:78px"><img src="https://anh-wq.github.io/cleft-course/ncf.png" alt="Noordhoff Craniofacial Foundation" style="height:78px;max-width:210px"></div>
+    <!-- Co-host: Hong Ngoc -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:2.75rem;margin-bottom:1.25rem;">
+      <div style="display:inline-flex;align-items:center;gap:8px;padding:4px 14px;border-radius:100px;border:1px solid var(--teal);background:rgba(0,180,188,.08);">
+        <span class="en" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">Co-hosted by</span>
+        <span class="vi" style="font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal)">Đồng tổ chức</span>
+      </div>
+      <a href="https://hongngochospital.vn/vi/benh-vien-da-khoa-hong-ngoc-phuc-truong-minh" target="_blank" class="sup-chip" style="height:72px"><img src="https://anh-wq.github.io/cleft-course/hongngoclogo.png" alt="Hong Ngoc - Phuc Truong Minh General Hospital" style="height:72px;max-width:260px"></a>
+    </div>
+    <div style="width:60%;height:1px;background:rgba(0,0,0,.1);margin:0 auto 1.5rem;"></div>
+    <!-- Other supporters -->
+    <div class="sup-flex" style="margin-top:0">
+      <a href="https://www.klsmartin.com/en-na/" target="_blank" class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/kls.png" alt="KLS Martin Group"></a>
+      <a href="https://www.vietnamairlines.com/vn/vi" target="_blank" class="sup-chip"><img src="https://anh-wq.github.io/cleft-course/vna.png" alt="Vietnam Airlines"></a>
+      <a href="https://www.smiletrain.org/" target="_blank" class="sup-chip" style="height:78px"><img src="https://anh-wq.github.io/cleft-course/st.png" alt="Smile Train" style="height:78px;max-width:210px"></a>
+      <a href="https://www.nncf.org/en" target="_blank" class="sup-chip" style="height:78px"><img src="https://anh-wq.github.io/cleft-course/ncf.png" alt="Noordhoff Craniofacial Foundation" style="height:78px;max-width:210px"></a>
     </div>
   </div>
 </section>
@@ -1409,7 +1431,7 @@ This summit is designed to be the catalyst for the formalization of a National V
         <h5 style="margin-top:1.5rem" class="vi">Đơn vị tổ chức</h5>
         <ul>
           <li><a href="https://www.nuoy.org" target="_blank">Nuoy Reconstructive International</a></li>
-           <li><a href="https://www.hongngochospital.vn" class="en" target="_blank">Hong Ngoc - Phuc Truong Minh General Hospital</a><a href="https://www.hongngochospital.vn" class="vi" target="_blank">Bệnh viện Hồng Ngọc</a></li>
+           <li><a href="https://hongngochospital.vn/vi/benh-vien-da-khoa-hong-ngoc-phuc-truong-minh" class="en" target="_blank">Hong Ngoc - Phuc Truong Minh General Hospital</a><a href="https://hongngochospital.vn/vi/benh-vien-da-khoa-hong-ngoc-phuc-truong-minh" class="vi" target="_blank">Bệnh viện Hồng Ngọc</a></li>
         </ul>
       </div>
     </div>
