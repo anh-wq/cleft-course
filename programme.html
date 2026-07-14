@@ -2,1280 +2,909 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programme | ICMS Ha Noi 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>ICMS Ha Noi 2026 · Programme</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,600;1,7..72,300;1,7..72,400&family=Averta&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;1,7..72,400&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Averta';src:url('https://anh-wq.github.io/cleft-course/AvertaW03-Regular.ttf') format('truetype');font-weight:400;font-style:normal}
+@font-face{font-family:'Averta';src:url('https://anh-wq.github.io/cleft-course/Averta-Bold.ttf') format('truetype');font-weight:700;font-style:normal}
+
 :root{
   --teal:#00B4BC;--blue:#4A67AA;--yellow:#F8E816;
   --sky:#1295D8;--green:#97D88A;
   --dark:#0E1A2E;--dark2:#142840;
   --off:#F5F4F0;--white:#fff;
-  --tx:#414042;--tx2:#636466;--tx3:#808285;
-  --border:rgba(65,64,66,.12);
-  --ff-sans:'Averta',system-ui,sans-serif;
+  --tx:#0E1A2E;--tx2:#414042;--tx3:#636466;
+  --border:rgba(14,26,46,.1);
   --ff-serif:'Literata',Georgia,serif;
-  --ease:cubic-bezier(.4,0,.2,1);
+  --ff-sans:system-ui,-apple-system,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;margin:0;padding:0;overflow-x:hidden;}
-body{font-family:var(--ff-sans);color:var(--tx);background:var(--white);font-weight:300;margin:0;padding:0;overflow-x:hidden;overflow-y:scroll;scrollbar-width:none;-ms-overflow-style:none;-webkit-font-smoothing:antialiased;}body::-webkit-scrollbar{display:none;}
+html,body{margin:0;padding:0;overflow-x:hidden;width:100%}
+body{font-family:'Averta',system-ui,sans-serif;color:var(--tx);background:#fff;font-weight:300;-webkit-font-smoothing:antialiased}
 body[data-lang="vi"] .en{display:none!important}
 body[data-lang="en"] .vi{display:none!important}
-
-/* BRAND STRIPE */
-.brand-stripe {
-  height: 5px;
-  background: linear-gradient(90deg, var(--blue) 20%, var(--sky) 40%, var(--teal) 60%, var(--green) 80%, var(--yellow) 100%);
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 400;
+.brand-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 20%,var(--sky) 40%,var(--teal) 60%,var(--green) 80%,var(--yellow) 100%)}
+nav{background:rgba(74,103,170,.98);padding:0 1.25rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{height:34px;width:auto;filter:brightness(0) invert(1)}
+.nav-wordmark{
+  display:flex;flex-direction:column;line-height:1.25;
+  overflow:hidden;max-width:140px;
 }
-
-nav {
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 300;
-  background: rgba(74, 103, 170, .98);
-  backdrop-filter: blur(16px);
-  border: none;
-  outline: none;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05), 0 4px 20px rgba(0, 0, 0, 0.15);
+.nav-wordmark strong{
+  font-size:10px;font-weight:600;color:var(--white);
+  letter-spacing:.05em;text-transform:uppercase;
+  white-space:nowrap;display:inline-block;
+  animation:marquee-text 8s linear infinite;
 }
-.nav-inner{max-width:1280px;margin:0 auto;padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
-.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;flex-shrink:0}
-.nav-logomark{
-  height:48px;display:flex;align-items:center;flex-shrink:0;
+@keyframes marquee-text{
+  0%,30%{transform:translateX(0)}
+  70%,100%{transform:translateX(calc(-100% + 140px))}
 }
-/* Ẩn scrollbar WebKit */
-.nav-wordmark strong{font-size:12px;font-weight:600;color:#fff;letter-spacing:.08em;text-transform:uppercase;display:block;line-height:1.25}
-.nav-wordmark span{font-size:10px;color:rgba(255,255,255,.8);letter-spacing:.07em;text-transform:uppercase}
-.nav-links{display:flex;list-style:none;gap:0}
-.nav-links a{display:block;padding:7px 15px;color:rgba(255,255,255,.92);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-radius:5px;transition:.2s}
-.nav-links a:hover{color:#fff;background:rgba(255,255,255,.09)}
-.nav-links a.active{color:var(--teal)}
-.nav-right{display:flex;align-items:center;gap:10px}
-.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:22px;padding:2px;border:1px solid rgba(255,255,255,.35)}
-.lang-btn{padding:4px 13px;border-radius:20px;border:none;background:transparent;color:rgba(255,255,255,.8);font-size:11px;font-family:var(--ff-sans);font-weight:600;letter-spacing:.07em;cursor:pointer;transition:.2s}
+.nav-wordmark span{font-size:9px;color:rgba(255,255,255,.6);letter-spacing:.04em;white-space:nowrap}
+.nav-right{display:flex;align-items:center;gap:8px}
+.lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.25)}
+.lang-btn{padding:4px 10px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.7);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
 .lang-btn.active{background:var(--teal);color:var(--dark)}
-.btn-cta-nav{padding:9px 22px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
-.btn-cta-nav:hover{background:var(--teal);color:#fff}
-
-/* PAGE HEADER */
-.page-header{background:var(--dark);padding:9rem 2.5rem 5rem;position:relative;overflow:hidden}
-.page-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent)}
-.ph-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 70% 50%,rgba(0,180,188,.1) 0%,transparent 55%);pointer-events:none}
-.ph-inner{max-width:1280px;margin:0 auto;position:relative;z-index:2}
-.ph-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem}
-.ph-h1{font-family:var(--ff-serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:.75rem;letter-spacing:-.01em}
-.ph-h1 em{font-style:italic;color:var(--teal)}
-.ph-body{font-size:1rem;color:rgba(255,255,255,.5);max-width:600px;line-height:1.85;font-weight:300}
-.ph-meta{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:2rem}
-.ph-meta-item{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.5)}
-.ph-meta-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0}
-
-/* DAY TABS */
-.day-tabs{
-  background:var(--white);
-  border-bottom:1px solid var(--border);
-  padding:0 2.5rem;
-  position:sticky;top:72px;z-index:100;
-}
-.day-tabs-inner{max-width:1280px;margin:0 auto;display:flex;overflow-x:auto}
-.day-tab{
-  padding:1.1rem 1.5rem;border:none;background:none;
-  font-family:var(--ff-sans);font-size:13px;font-weight:500;
-  color:var(--tx3);cursor:pointer;
-  border-bottom:3px solid transparent;
-  transition:color .2s,border-color .2s;
-  white-space:nowrap;letter-spacing:.01em;
-}
-.day-tab:hover{color:var(--tx)}
-.day-tab.active{color:var(--teal);border-bottom-color:var(--teal);font-weight:600}
-
-/* PROGRAMME SECTION */
-.prog-section{padding:3rem 2.5rem 6rem;background:var(--off)}
-.si{max-width:1280px;margin:0 auto}
-
-.day-panel{display:none}
-.day-panel.active{display:block}
-
-/* DAY HEADER */
-.day-header{
-  background:var(--dark);border-radius:12px;
-  padding:1.5rem 2rem;margin-bottom:1.5rem;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:1rem;
-}
-.day-header-left{}
-.day-title{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;color:#fff;line-height:1.2}
-.day-title em{font-style:italic;color:var(--teal)}
-.day-date{font-size:12px;color:rgba(255,255,255,.4);margin-top:4px;font-weight:300;letter-spacing:.04em}
-.day-tag{
-  padding:6px 16px;border-radius:20px;
-  font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-  background:rgba(0,180,188,.15);color:var(--teal);
-  border:1px solid rgba(0,180,188,.25);
-}
-
-/* SESSION LIST */
-.sessions-list{display:flex;flex-direction:column;gap:3px}
-
-/* ── INDIVIDUAL SESSION ── */
-.session{
-  background:var(--white);border:1px solid var(--border);
-  border-radius:10px;overflow:hidden;
-  transition:border-color .2s,box-shadow .2s;
-}
-.session:hover{border-color:rgba(0,180,188,.35);box-shadow:0 2px 12px rgba(14,26,46,.06)}
-
-/* Break / admin sessions — muted */
-.session.is-break{background:rgba(245,244,240,.6);border-color:transparent}
-.session.is-break:hover{border-color:var(--border);box-shadow:none}
-
-/* Special accent sessions */
-.session.is-keynote{border-left:4px solid var(--yellow)}
-.session.is-reception{border-left:4px solid var(--green)}
-.session.is-ceremony{border-left:4px solid rgba(0,180,188,.4)}
-.session.is-ngo{border-left:4px solid var(--sky)}
-
-/* CLICKABLE HEADER ROW */
-.session-row{
-  display:grid;
-  grid-template-columns:110px 1fr auto;
-  gap:0;
-  cursor:pointer;
-  user-select:none;
-}
-/* Non-expandable sessions (breaks) */
-.session.is-break .session-row{cursor:default}
-
-.session-time{
-  padding:1.1rem 1rem;
-  background:var(--off);
-  font-size:11px;font-weight:600;color:var(--tx2);
-  line-height:1.4;display:flex;align-items:flex-start;
-  border-right:1px solid var(--border);flex-shrink:0;
-}
-.session.is-break .session-time{background:transparent;color:var(--tx3)}
-
-.session-main{padding:1.1rem 1.25rem;min-width:0}
-
-.session-pill{
-  display:inline-flex;padding:2px 9px;border-radius:10px;
-  font-size:10px;font-weight:600;letter-spacing:.05em;
-  margin-bottom:6px;
-}
-.pill-panel{background:rgba(0,180,188,.1);color:var(--teal)}
-.pill-keynote{background:rgba(248,232,22,.18);color:#7a6900}
-.pill-reception{background:rgba(151,216,138,.2);color:#2e7a26}
-.pill-break{background:rgba(128,130,133,.12);color:var(--tx3)}
-.pill-ceremony{background:rgba(74,103,170,.1);color:var(--blue)}
-.pill-ngo{background:rgba(18,149,216,.1);color:var(--sky)}
-
-.session-title{
-  font-size:14px;font-weight:600;color:var(--dark);
-  line-height:1.4;margin-bottom:0;
-}
-.session-panellists{
-  font-size:12px;color:var(--tx3);margin-top:5px;
-  line-height:1.55;font-weight:300;
-}
-.session-panellists strong{color:var(--tx2);font-weight:500}
-
-/* CHEVRON TOGGLE */
-.session-chevron{
-  padding:1.1rem 1.25rem;display:flex;align-items:flex-start;
-  flex-shrink:0;
-}
-.chevron-icon{
-  width:22px;height:22px;border-radius:50%;
-  background:var(--off);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  transition:background .2s,transform .3s var(--ease);
-  flex-shrink:0;margin-top:2px;
-}
-.chevron-icon svg{width:10px;height:10px;fill:var(--tx3);transition:transform .3s var(--ease)}
-.session.open .chevron-icon{background:var(--teal);border-color:var(--teal)}
-.session.open .chevron-icon svg{fill:#fff;transform:rotate(180deg)}
-.session.is-break .session-chevron{display:none}
-
-/* EXPANDABLE SUMMARY */
-.session-summary{
-  max-height:0;overflow:hidden;
-  transition:max-height .35s var(--ease),opacity .25s ease;
-  opacity:0;
-}
-.session-summary.open{
-  max-height:400px;opacity:1;
-}
-.session-summary-inner{
-  padding:.75rem 1.25rem 1.25rem;
-  border-top:1px solid var(--border);
-  margin-top:0;
-}
-.summary-label{
-  font-size:10px;font-weight:600;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--teal);
-  margin-bottom:.6rem;
-}
-.summary-text{
-  font-size:13px;color:var(--tx2);line-height:1.8;
-  font-weight:300;
-}
-
-/* NOTES BOX */
-.prog-notes{
-  background:var(--dark);border-radius:12px;
-  padding:2rem 2.5rem;margin-top:2rem;
-}
-.prog-notes-title{
-  font-family:var(--ff-serif);font-size:1.1rem;font-weight:400;
-  font-style:italic;color:var(--teal);margin-bottom:1.1rem;
-}
-.prog-notes-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-.prog-notes-list li{
-  font-size:13px;color:rgba(255,255,255,.5);
-  padding-left:16px;position:relative;font-weight:300;line-height:1.65;
-}
-.prog-notes-list li::before{
-  content:'◆';position:absolute;left:0;
-  color:var(--teal);font-size:8px;top:4px;
-}
-
-/* FOOTER */
-footer{background:#2d4a8a;padding:2.5rem 2.5rem 2rem}
-.foot-wrap{max-width:1280px;margin:0 auto}
-.foot-stripe{height:4px;background:linear-gradient(90deg,var(--blue) 0% 20%,var(--sky) 20% 40%,var(--teal) 40% 60%,var(--green) 60% 80%,var(--yellow) 80% 100%);border-radius:2px;margin-bottom:1.75rem}
-.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:rgba(255,255,255,.5);flex-wrap:wrap;gap:.5rem}
-.foot-bottom a{color:rgba(255,255,255,.5);text-decoration:none;transition:.2s}
-.foot-bottom a:hover{color:rgba(255,255,255,.5)}
-
-@media(max-width:960px){
-  .nav-links{display:none}
-  .session-row{grid-template-columns:90px 1fr auto}
-}
-@media(max-width:600px){
-  .prog-section{padding:2rem 1.25rem 5rem}
-  .session-row{grid-template-columns:68px 1fr}
-  .session-track{display:none}
-  .session-time{font-size:10px;padding:.75rem .4rem}
-  .day-header{flex-direction:column;align-items:flex-start}
-  .page-header{padding:5.5rem 1.25rem 2.5rem}
-  .ph-h1{font-size:clamp(1.4rem,6vw,2rem)!important;white-space:normal!important;line-height:1.2!important}
-  .ph-body{font-size:.88rem;line-height:1.7;max-width:100%}
-  .ph-meta{flex-direction:column;gap:.4rem}
-  .day-tabs{position:sticky;top:64px}
-  .day-tabs-inner{flex-wrap:wrap;gap:.4rem;padding:.6rem 1.25rem}
-  .day-tab{font-size:11px;padding:.4rem .75rem}
-  .session-title{font-size:13px}
-  .session-speaker{font-size:11px}
-}
-
-/* ── MOBILE NAV ── */
-.hamburger{
-  display:none;flex-direction:column;justify-content:center;gap:5px;
-  width:36px;height:36px;background:none;border:none;cursor:pointer;
-  padding:4px;border-radius:6px;transition:.2s;flex-shrink:0;
-}
-.hamburger:hover{background:rgba(255,255,255,.1)}
-.hamburger span{
-  display:block;width:22px;height:2px;
-  background:rgba(255,255,255,.85);border-radius:2px;
-  transition:transform .25s,opacity .25s;
-}
+.hamburger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;border-radius:6px}
+.hamburger span{display:block;width:20px;height:2px;background:rgba(255,255,255,.85);border-radius:2px;transition:transform .25s,opacity .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{
-  display:none;position:fixed;top:69px;left:0;right:0;z-index:190;
-  background:rgba(20,40,64,.98);backdrop-filter:blur(20px);
-  padding:1rem 0 1.5rem;
-  border-bottom:1px solid rgba(0,180,188,.2);
-}
+.mobile-menu{display:none;background:rgba(14,26,64,.98);border-bottom:1px solid rgba(0,180,188,.2);position:sticky;top:58px;z-index:99}
 .mobile-menu.open{display:block}
-.mobile-menu ul{list-style:none;padding:0;margin:0}
-.mobile-menu ul li a{
-  display:block;padding:.85rem 2rem;
-  color:rgba(255,255,255,.75);text-decoration:none;
-  font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-  border-bottom:1px solid rgba(255,255,255,.06);transition:.2s;
-}
-.mobile-menu ul li a:hover{color:#fff;background:rgba(255,255,255,.05)}
-.mobile-menu ul li a.active{color:var(--teal)}
-.mobile-menu-bottom{
-  padding:1rem 2rem 0;
-  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
-}
-.mobile-lang-pill{
-  display:flex;background:rgba(255,255,255,.1);
-  border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2);
-}
-.mobile-lang-btn{
-  padding:5px 14px;border-radius:18px;border:none;
-  background:transparent;color:rgba(255,255,255,.7);
-  font-size:11px;font-family:var(--ff-sans);font-weight:600;
-  letter-spacing:.06em;cursor:pointer;transition:.2s;
-}
-.mobile-lang-btn.active{background:var(--teal);color:var(--dark)}
-@media(max-width:1024px){
-  .hamburger{display:flex}
-  .nav-links{display:none!important}
-}
-@media(min-width:1025px){
-  .mobile-menu{display:none!important}
-  .hamburger{display:none!important}
-}
+.mobile-menu a{display:block;padding:.85rem 1.5rem;color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.06)}
+.mobile-menu a.active-link{color:var(--teal)}
+.menu-bottom{padding:1rem 1.5rem;display:flex;align-items:center;gap:10px}
+.m-lang-pill{display:flex;background:rgba(255,255,255,.1);border-radius:20px;padding:2px;border:1px solid rgba(255,255,255,.2)}
+.m-lang-btn{padding:5px 12px;border-radius:18px;border:none;background:transparent;color:rgba(255,255,255,.6);font-size:11px;font-weight:600;cursor:pointer;font-family:var(--ff-sans)}
+.m-lang-btn.active{background:var(--teal);color:var(--dark)}
+.menu-reg{padding:8px 16px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.sec-eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.75rem;display:flex;align-items:center;gap:8px}
+.sec-eyebrow::before{content:'';width:16px;height:2px;background:var(--teal);border-radius:2px;flex-shrink:0}
+.sec-h2{font-family:var(--ff-serif);font-size:1.5rem;font-weight:400;line-height:1.2;margin-bottom:1rem}
+.sec-h2 em{font-style:italic;color:var(--teal)}
+.sec-body{font-size:.875rem;color:var(--tx2);line-height:1.85;font-weight:300}
+.btn-primary{display:block;background:var(--yellow);color:var(--dark);padding:13px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.btn-ghost{display:block;border:1px solid rgba(14,26,46,.2);color:var(--tx2);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+.btn-ghost-dark{display:block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);padding:12px 20px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;text-align:center}
+.btn-teal{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--teal);color:var(--teal);padding:10px 18px;border-radius:6px;text-decoration:none;font-size:13px;font-weight:500;margin-top:1.25rem}
 
-/* JS-driven mobile override — fires regardless of @media viewport */
-body.is-mobile .nav-links{display:none!important}
-body.is-mobile .hamburger{display:flex!important}
-body.is-mobile .hero-inner{grid-template-columns:1fr!important;padding:5rem 1.25rem 2rem!important}
-body.is-mobile .hero-card{display:none!important}
-body.is-mobile .hero-h1{font-size:clamp(1.6rem,7vw,2.4rem)!important;white-space:normal!important}
-body.is-mobile .hero-sub,body.is-mobile .hero-slogan{font-size:.9rem!important}
-body.is-mobile .hero-btns{flex-direction:column!important;align-items:stretch!important;gap:8px!important}
-body.is-mobile .btn-primary,body.is-mobile .btn-ghost{text-align:center!important;justify-content:center!important;display:block!important}
-body.is-mobile .about-grid,body.is-mobile .ctx-grid,body.is-mobile .goals-grid,body.is-mobile .foot-grid{grid-template-columns:1fr!important}
-body.is-mobile .aud-grid{grid-template-columns:repeat(2,1fr)!important}
-body.is-mobile .ph-inner{grid-template-columns:1fr!important}
-body.is-mobile .ph-card{display:none!important}
-body.is-mobile .page-hero,body.is-mobile .page-header{padding:5.5rem 1.25rem 2.5rem!important}
-body.is-mobile .ph-h1{font-size:clamp(1.3rem,6vw,1.9rem)!important;white-space:normal!important;line-height:1.2!important}
-body.is-mobile .ph-body{font-size:.88rem!important;line-height:1.7!important;max-width:100%!important}
-body.is-mobile .sec-h2{font-size:clamp(1.2rem,5vw,1.75rem)!important}
-body.is-mobile section{padding-left:1.25rem!important;padding-right:1.25rem!important}
-body.is-mobile .reg-layout{grid-template-columns:1fr!important;padding:3rem 1.25rem 5rem!important}
-body.is-mobile .form-row{grid-template-columns:1fr!important}
-body.is-mobile .faculty-grid{grid-template-columns:1fr!important}
-body.is-mobile .org-grid{grid-template-columns:1fr!important}
-body.is-mobile .filter-btn{font-size:11px!important;padding:5px 10px!important}
-body.is-mobile .session-row{grid-template-columns:68px 1fr!important}
-body.is-mobile .session-track{display:none!important}
-body.is-mobile .day-tabs-inner{flex-wrap:wrap!important;padding:.6rem 1.25rem!important}
-body.is-mobile .price-tabs{flex-direction:column!important;gap:4px!important}
-body.is-mobile .price-tab{width:100%!important;text-align:center!important}
-body.is-mobile .about-desc-grid,.body.is-mobile .ctx-2col,body.is-mobile .goals-2col,body.is-mobile .edu-grid,body.is-mobile .event-card,body.is-mobile .policy-grid{grid-template-columns:1fr!important}
-body.is-desktop .mobile-menu{display:none!important}
-body.is-desktop .hamburger{display:none!important}
 
-/* Hide HTML nav + brand stripe on mobile — Wix renders its own nav */
-body.is-mobile .brand-stripe{display:none!important}
-body.is-mobile nav{display:none!important}
-body.is-mobile .mobile-menu{top:0!important}
-/* Remove top padding compensation for hidden nav */
-body.is-mobile .hero,
-body.is-mobile .page-hero,
-body.is-mobile .page-header{padding-top:2rem!important}
-body.is-mobile .filter-bar{top:0!important}
-body.is-mobile .day-tabs{top:0!important}
+.hero{background:var(--dark);padding:2rem 1.25rem 2.5rem}
+.hero::after{content:'';display:block;height:1px;background:linear-gradient(90deg,transparent,var(--teal),transparent);margin-top:2.5rem}
+.hero .ph-h1{font-family:var(--ff-serif);font-size:1.85rem;font-weight:400;color:#fff;line-height:1.15;margin-bottom:.5rem}
+.hero .ph-h1 em{font-style:italic;color:rgba(255,255,255,.7)}
+.hero .ph-body{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.75;margin-top:.5rem}
+.day-tabs-wrap{display:flex;gap:.5rem;padding:.875rem 1.25rem;background:#fff;border-bottom:1px solid var(--border);overflow-x:auto;position:sticky;top:58px;z-index:50;-webkit-overflow-scrolling:touch}
+.day-tab{padding:.45rem 1rem;border-radius:20px;border:1px solid var(--border);background:#fff;font-size:12px;font-weight:500;color:var(--tx3);cursor:pointer;white-space:nowrap;font-family:var(--ff-sans);transition:.2s;flex-shrink:0}
+.day-tab.active,.day-tab:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.day-panel{display:none;padding:0 0 2rem}
+.day-panel.active{display:block}
+.day-header{padding:1.25rem 1.25rem .75rem;border-bottom:1px solid var(--border);margin-bottom:.25rem}
+.day-title{font-family:var(--ff-serif);font-size:1.15rem;font-weight:400;color:var(--dark);line-height:1.2}
+.day-title em{font-style:italic;color:var(--teal)}
+.day-date{font-size:.8rem;color:var(--tx3);margin-top:.25rem}
+.sessions-list{padding:0 1.25rem}
+.session{border-bottom:1px solid var(--border)}
+.session-row{display:grid;grid-template-columns:68px 1fr auto;gap:.75rem;padding:.875rem 0;align-items:start}
+.session-time{font-size:10px;font-weight:600;color:var(--teal);letter-spacing:.03em;line-height:1.4;padding-top:2px}
+.session-main{min-width:0}
+.session-pill{display:inline-block;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;margin-bottom:4px}
+.pill-break{background:rgba(0,180,188,.08);color:var(--teal)}
+.pill-ceremony{background:rgba(248,232,22,.15);color:#7a6600}
+.pill-keynote{background:rgba(74,103,170,.1);color:var(--blue)}
+.pill-panel{background:rgba(14,26,46,.06);color:var(--tx2)}
+.pill-reception{background:rgba(151,216,138,.15);color:#2d6e22}
+.session-title{font-size:13px;font-weight:600;color:var(--dark);line-height:1.4;margin-bottom:3px}
+.session-panellists{font-size:11px;color:var(--tx3);line-height:1.5;font-weight:300}
+.session-chevron{padding-top:4px;flex-shrink:0}
+.chevron-icon svg{width:12px;height:8px;color:var(--tx3)}
+.session-summary{display:none;padding:0 0 .875rem}
+.session-summary.open{display:block}
+.session-summary-inner{background:var(--off);border-radius:8px;padding:1rem}
+.summary-label{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem}
+.summary-text{font-size:12px;color:var(--tx3);line-height:1.75;font-weight:300}
+.is-break .session-title,.is-ceremony .session-title,.is-reception .session-title{color:var(--tx2);font-weight:500}
+.prog-notes{padding:1.5rem 1.25rem;background:var(--off)}
+.prog-notes ul{padding-left:1.25rem}
+.prog-notes li{font-size:12px;color:var(--tx3);line-height:1.75;margin-bottom:.25rem}
 
-/* Allow iframe to shrink when switching days */
-html{height:auto!important}
-body{min-height:0!important}
-.day-panel{min-height:0}
+footer{background:#2d4a8a;padding:2.5rem 1.25rem 2rem}
+.foot-wrap{max-width:100%;margin:0 auto}
+.foot-stripe{height:3px;background:linear-gradient(90deg,var(--blue),var(--sky),var(--teal),var(--green),var(--yellow));border-radius:2px;margin-bottom:1.75rem}
+.foot-grid{display:flex;flex-direction:column;gap:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.25rem}
+.foot-brand p{font-size:.78rem;color:rgba(255,255,255,.6);line-height:1.75;margin-top:.75rem}
+.foot-col h5{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.6rem}
+.foot-col ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.foot-col a{font-size:12px;color:rgba(255,255,255,.6);text-decoration:none}
+.foot-col a:hover{color:var(--white)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;font-size:10px;color:rgba(255,255,255,.35)}
+.foot-bottom a{color:rgba(255,255,255,.35);text-decoration:none}
 </style>
 </head>
 <body data-lang="en">
-<script>
-(function(){
-  /* Wix scales iframe with transform:scale() so clientWidth stays large.
-     screen.width gives the real device screen width regardless of scaling. */
-  function applyResponsive(){
-    var w = screen.width || window.outerWidth || document.documentElement.clientWidth;
-    var body = document.body;
-    if(w <= 768){
-      body.classList.add('is-mobile');
-      body.classList.remove('is-desktop');
-    } else {
-      body.classList.remove('is-mobile');
-      body.classList.add('is-desktop');
-    }
-  }
-  applyResponsive();
-  window.addEventListener('resize', applyResponsive);
-})();
-</script>
-
 <div class="brand-stripe"></div>
 <nav>
-  <div class="nav-inner">
-    <a href="https://www.nuoy.org/cleft-summit" class="nav-logo" target="_top">
-      <img src="https://anh-wq.github.io/cleft-course/nuoy_logo_nobackground.png" alt="Nuoy" class="nav-logomark" style="height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
-      <div class="nav-wordmark"><strong>ICMS Ha Noi 2026</strong><span>Sept 21–23</span></div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">About</a><a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Về hội nghị</a></li>
-      <li><a href="https://www.nuoy.org/cleft-summit/program" class="active en" target="_top">Programme</a><a href="https://www.nuoy.org/cleft-summit/program" class="active vi" target="_top">Chương trình</a></li>
-      <li><a href="https://www.nuoy.org/cleft-summit/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-summit/speakers" class="vi" target="_top">Diễn giả</a></li>
-      <li><a href="https://www.nuoy.org/cleft-summit/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-summit/registration" class="vi" target="_top">Đăng ký</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="lang-pill">
-        <button class="lang-btn active" onclick="setLang('en')">EN</button>
-        <button class="lang-btn" onclick="setLang('vi')">VI</button>
-      </div>
-      <a href="https://www.nuoy.org/cleft-summit/registration" class="btn-cta-nav en" target="_top">Register</a>
-      <a href="https://www.nuoy.org/cleft-summit/registration" class="btn-cta-nav vi" target="_top">Đăng ký</a>
+  <a href="https://www.nuoy.org/cleft-summit" class="nav-logo" target="_top">
+    <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy">
+    <div class="nav-wordmark"><strong>ICMS Ha Noi 2026</strong><span>Sept 21–23 · Viet Nam</span></div>
+  </a>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('vi')">VI</button>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
-
 <div class="mobile-menu" id="mobile-menu">
-  <ul>
-    <li><a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">About</a><a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Về hội nghị</a></li>
-    <li><a href="https://www.nuoy.org/cleft-summit/program" class="active en" target="_top">Programme</a><a href="https://www.nuoy.org/cleft-summit/program" class="active vi" target="_top">Chương trình</a></li>
-    <li><a href="https://www.nuoy.org/cleft-summit/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-summit/speakers" class="vi" target="_top">Diễn giả</a></li>
-    <li><a href="https://www.nuoy.org/cleft-summit/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-summit/registration" class="vi" target="_top">Đăng ký</a></li>
-  </ul>
-  <div class="mobile-menu-bottom">
-    <div class="mobile-lang-pill">
-      <button class="mobile-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
-      <button class="mobile-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
+  <a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">About</a>
+  <a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Về hội nghị</a>
+  <a href="https://www.nuoy.org/cleft-summit/program" class="en active-link" target="_top">Programme</a>
+  <a href="https://www.nuoy.org/cleft-summit/program" class="vi active-link" target="_top">Chương trình</a>
+  <a href="https://www.nuoy.org/cleft-summit/speakers" class="en" target="_top">Speakers</a>
+  <a href="https://www.nuoy.org/cleft-summit/speakers" class="vi" target="_top">Diễn giả</a>
+  <a href="https://www.nuoy.org/cleft-summit/registration" class="en" target="_top">Register</a>
+  <a href="https://www.nuoy.org/cleft-summit/registration" class="vi" target="_top">Đăng ký</a>
+  <div class="menu-bottom">
+    <div class="m-lang-pill">
+      <button class="m-lang-btn active" id="mlang-en" onclick="setLang('en');setMobileLang('en')">EN</button>
+      <button class="m-lang-btn" id="mlang-vi" onclick="setLang('vi');setMobileLang('vi')">VI</button>
     </div>
-    <a href="https://www.nuoy.org/cleft-summit/registration" style="padding:7px 18px;background:var(--yellow);color:var(--dark);border-radius:5px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase" target="_top">
+    <a href="https://www.nuoy.org/cleft-summit/registration" class="menu-reg" target="_top">
       <span class="en">Register Now</span><span class="vi">Đăng ký ngay</span>
     </a>
   </div>
 </div>
 
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div class="ph-bg"></div>
-  <div class="ph-inner">
-    <div class="ph-eyebrow en">Scientific Programme</div>
-    <div class="ph-eyebrow vi">Chương trình Khoa học</div>
-    <h1 class="ph-h1 en">Programme <em>Agenda</em></h1>
-    <h1 class="ph-h1 vi">Chương trình <em>Hội nghị</em></h1>
-    <p class="ph-body en">Three days of advanced case-based discussion, panel discussion, and peer-to-peer exchange across surgery, orthodontics, speech therapy, and multidisciplinary cleft care.</p>
-    <p class="ph-body vi">Ba ngày thảo luận ca lâm sàng chuyên sâu, tranh luận chuyên gia và trao đổi ngang hàng về phẫu thuật, chỉnh nha, âm ngữ trị liệu và chăm sóc đa chuyên ngành.</p>
-    <div class="ph-meta">
-      <span class="ph-meta-item"><span class="ph-meta-dot"></span><span class="en">Hong Ngoc - Phuc Truong Minh General Hospital · No. 8 Chau Van Liem, Tu Liem Ward, Ha Noi, Viet Nam</span><span class="vi">Bệnh viện Đa khoa Hồng Ngọc - Phúc Trường Minh · Số 8 Châu Văn Liêm,Phường Từ Liêm, Hà Nội, Việt Nam</span></span>
-      <span class="ph-meta-item"><span class="ph-meta-dot"></span><span class="en">English with Vietnamese interpretation</span><span class="vi">Tiếng Anh có phiên dịch tiếng Việt</span></span>
-      <span class="ph-meta-item"><span class="ph-meta-dot"></span><span class="en">Click any session to expand summary</span><span class="vi">Bấm vào từng phiên để xem tóm tắt</span></span>
-    </div>
-  </div>
-</div>
-
-<!-- DAY TABS -->
-<div class="day-tabs">
-  <div class="day-tabs-inner">
-    <button class="day-tab active" onclick="showDay('day1',this)">
-      <span class="en">Day 1 — Mon 21 Sept</span>
-      <span class="vi">Ngày 1 — Thứ Hai 21/09</span>
-    </button>
-    <button class="day-tab" onclick="showDay('day2',this)">
-      <span class="en">Day 2 — Tue 22 Sept</span>
-      <span class="vi">Ngày 2 — Thứ Ba 22/09</span>
-    </button>
-    <button class="day-tab" onclick="showDay('day3',this)">
-      <span class="en">Day 3 — Wed 23 Sept</span>
-      <span class="vi">Ngày 3 — Thứ Tư 23/09</span>
-    </button>
-  </div>
-</div>
-
-<!-- PROGRAMME CONTENT -->
-<section class="prog-section">
-<div class="si">
-
-<!-- ═══════════ DAY 1 ═══════════ -->
-<div class="day-panel active" id="day1">
-  <div class="day-header">
-    <div class="day-header-left">
-      <div class="day-title en">Day 1 — <em>Primary Cleft Surgery</em></div>
-      <div class="day-title vi">Ngày 1 — <em>Phẫu thuật Khe hở Nguyên phát</em></div>
-      <div class="day-date en">Monday, September 21, 2026</div>
-      <div class="day-date vi">Thứ Hai, 21/09/2026</div>
-  </div> </div> <div class="sessions-list">
-
-    <!-- Registration -->
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">08:00 – 08:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-break en">Check-in</span><span class="session-pill pill-break vi">Đón tiếp</span>
-          <div class="session-title en">Registration, Check-in &amp; Welcome</div>
-          <div class="session-title vi">Đăng ký, Check-in và Đón tiếp</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Opening -->
-    <div class="session is-ceremony">
-      <div class="session-row">
-        <div class="session-time">08:30 – 08:45</div>
-        <div class="session-main">
-          <span class="session-pill pill-ceremony en">Opening</span><span class="session-pill pill-ceremony vi">Khai mạc</span>
-          <div class="session-title en">Opening Ceremony</div>
-          <div class="session-title vi">Lễ Khai mạc Hội nghị</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Intro -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">08:45 – 08:55</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
-          <div class="session-title en">Summit Introduction &amp; Learning Objectives</div>
-          <div class="session-title vi">Giới thiệu hội nghị và Mục tiêu đào tạo</div>
-          <div class="session-panellists en"><strong>Speakers:</strong> David K. Chong, MD · Phuong D. Nguyen, MD · Christopher M. Runyan, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.BS. David K. Chong · GS.BS. Phuong D. Nguyen · PGS.TS.BS. Christopher M. Runyan</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div>
-          <div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This opening session establishes the strategic foundation for the summit, framing the transition from basic surgical repair to a comprehensive, multi-disciplinary life-cycle of care. We will define the "2020s Standard" of cleft management, emphasizing the critical integration of global clinical protocols with Vietnam’s high-volume surgical expertise. The discussion will outline a roadmap for formalizing a collaborative national network, preparing participants for an intensive three-day deep dive into complex clinical decision-making and longitudinal outcome optimization.</div>
-          <div class="summary-text vi">Phiên khai mạc này đặt nền tảng chiến lược cho toàn bộ hội nghị, định hướng sự chuyển dịch từ các can thiệp phẫu thuật đơn lẻ sang mô hình chăm sóc toàn diện, đa chuyên ngành theo suốt vòng đời bệnh nhân. Chúng tôi sẽ xác lập “Tiêu chuẩn của thập niên 2020” trong điều trị khe hở môi – vòm miệng, nhấn mạnh sự tích hợp chặt chẽ giữa các phác đồ lâm sàng quốc tế và thế mạnh phẫu thuật với khối lượng lớn tại Việt Nam. Phiên thảo luận cũng sẽ phác thảo lộ trình xây dựng một mạng lưới hợp tác cấp quốc gia, đồng thời chuẩn bị cho người tham dự bước vào ba ngày làm việc chuyên sâu, tập trung vào ra quyết định lâm sàng phức tạp và tối ưu hóa kết quả điều trị dài hạn.
-.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Global evolution -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">08:55 – 09:10</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
-          <div class="session-title en">Global Evolution and Timeline of Comprehensive Cleft Care</div>
-          <div class="session-title vi">Sự phát triển trên toàn cầu và lộ trình của điều trị Khe hở môi - vòm miệng toàn diện</div>
-          <div class="session-panellists en"><strong>Speaker:</strong> Phuong D. Nguyen, MD</div>
-          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> GS.BS. Phuong D. Nguyen</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session traces the structural transformation of cleft care, moving from isolated, episodic interventions to the modern, multidisciplinary team paradigm. We will analyze the historical interface between international organizations and the Vietnamese healthcare system, utilizing current research to identify strategies for long-term clinical sustainability. The discussion focuses on a critical challenge: leveraging Vietnam’s world-leading surgical volume to bridge the "Continuity Gap" between primary repair and definitive functional success in adulthood.</div>
-          <div class="summary-text vi">Phiên này tập trung phân tích quá trình chuyển đổi về mặt cấu trúc trong chăm sóc khe hở môi – vòm miệng, từ các can thiệp rời rạc, mang tính từng giai đoạn sang mô hình hiện đại dựa trên đội ngũ đa chuyên ngành. Chúng tôi sẽ xem xét mối tương tác lịch sử giữa các tổ chức quốc tế và hệ thống y tế Việt Nam, đồng thời vận dụng các bằng chứng nghiên cứu hiện tại để xác định các chiến lược đảm bảo tính bền vững lâm sàng trong dài hạn. Trọng tâm của phiên thảo luận là một thách thức then chốt: tận dụng lợi thế về khối lượng phẫu thuật hàng đầu thế giới của Việt Nam nhằm thu hẹp “khoảng trống liên tục” giữa phẫu thuật ban đầu và kết quả chức năng tối ưu ở giai đoạn trưởng thành
-.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- History VN -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">09:10 – 09:35</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
-          <div class="session-title en">History of Cleft Care in Viet Nam</div>
-          <div class="session-title vi">Lịch sử Điều trị Khe hở môi – vòm miệng tại Việt Nam</div>
-          <div class="session-panellists en"><strong>Speaker:</strong> Le Van Son, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.TS.BS. Lê Văn Sơn</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">A comprehensive overview of the development of cleft care in Viet Nam — from early international NGO missions to the establishment of dedicated centres, and the current trajectory toward a nationally coordinated, multidisciplinary model of care.</div>
-          <div class="summary-text vi">Tổng quan toàn diện về sự phát triển điều trị khe hở tại Việt Nam — từ những sứ mệnh NGO quốc tế ban đầu đến việc thành lập các trung tâm chuyên biệt, và lộ trình hiện tại hướng đến mô hình chăm sóc đa chuyên ngành, phối hợp toàn quốc.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PSIO -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">09:35 – 10:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Presurgical Infant Orthopedics (PSIO): Indications, Techniques, and Outcomes</div>
-          <div class="session-title vi">Chỉnh hình trước phẫu thuật ở trẻ sơ sinh (PSIO): Chỉ định, Kỹ thuật và Kết quả</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathia Wangsrimongkol, MD · Daniela Tanikawa, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathia Wangsrimongkol · TS.BS. Daniela Tanikawa · ThS.BSCKII. Đinh Thị Như Thảo </div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the critical neonatal phase of cleft care, evaluating the role of Presurgical Infant Orthopedics (PSIO) in optimizing the anatomical framework prior to surgical intervention. The panel will provide a comparative analysis of Nasoalveolar Molding (NAM) and the PLANA approach, focusing on their biomechanical efficacy in reducing cleft width and molding nasal cartilage. Experts will discuss the transition from orthopedic molding to primary surgery, prioritizing resource-adaptive protocols that ensure clinical excellence across diverse healthcare environments in Viet Nam.</div>
-          <div class="summary-text vi">Phiên này tập trung vào giai đoạn sơ sinh mang tính quyết định trong điều trị khe hở môi – vòm miệng, đánh giá vai trò của chỉnh hình trước phẫu thuật (PSIO) trong việc tối ưu hóa nền tảng giải phẫu trước khi can thiệp phẫu thuật. Các chuyên gia sẽ thực hiện phân tích so sánh giữa kỹ thuật NAM và phương pháp PLANA, với trọng tâm là hiệu quả cơ sinh học trong việc giảm độ rộng khe hở và tạo hình sụn mũi. Phiên thảo luận cũng làm rõ quá trình chuyển tiếp từ chỉnh hình sang phẫu thuật chính, đồng thời nhấn mạnh các phác đồ linh hoạt theo điều kiện nguồn lực nhằm đảm bảo chất lượng điều trị cao trong các bối cảnh y tế đa dạng tại Việt Nam.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Coffee -->
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">10:30 – 10:45</div>
-        <div class="session-main">
-          <span class="session-pill pill-break">☕</span>
-          <div class="session-title en">Coffee Break</div>
-          <div class="session-title vi">Tea break</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Unilateral -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">10:45 – 12:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Unilateral Cleft Lip Repair &amp; Primary Rhinoplasty: Principles &amp; Techniques</div>
-          <div class="session-title vi">Tạo hình Khe hở môi một bên và Tạo hình mũi thì đầu: Nguyên tắc và Kỹ thuật</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD · Daniela Tanikawa, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo · TS.BS. Danieal Tanikawa</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session provides a rigorous comparative analysis of the leading surgical paradigms in unilateral cleft reconstruction. The panel will evaluate the anatomical rationale and longitudinal stability of the Rotation-Advancement model versus the Anatomic Subunit repair. Experts will dissect the technical nuances of functional muscle reconstruction and the restoration of the nasal base, with a specific focus on mitigating the secondary revision burden. The discussion concludes with a live commentary on managing anatomical extremes, including wide complete clefts and complex incomplete variants.</div>
-          <div class="summary-text vi">Phiên này cung cấp phân tích chuyên sâu và mang tính so sánh về các trường phái phẫu thuật hàng đầu trong điều trị khe hở môi một bên. Hội đồng chuyên gia sẽ đánh giá cơ sở giải phẫu và tính ổn định lâu dài của kỹ thuật xoay – đẩy vạt (Rotation-Advancement) so với kỹ thuật phục hồi theo đơn vị giải phẫu thẩm mỹ (Anatomic Subunit Repair). Các báo cáo viên sẽ phân tích chi tiết những điểm kỹ thuật then chốt trong tái tạo chức năng cơ vòng môi và phục hồi nền mũi, với trọng tâm là giảm thiểu nhu cầu chỉnh sửa thứ phát. Phiên thảo luận sẽ kết thúc bằng phần bình luận lâm sàng trực tiếp về xử trí các dạng giải phẫu phức tạp, bao gồm khe hở rộng toàn bộ và các thể khe hở không hoàn toàn phức tạp.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lunch -->
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">12:00 – 13:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-break">🍽</span>
-          <div class="session-title en">Lunch Break</div>
-          <div class="session-title vi">Nghỉ trưa</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bilateral -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">13:00 – 14:15</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Bilateral Cleft Lip Repair: Strategies and Pitfalls</div>
-          <div class="session-title vi">Tạo hình Khe hở môi hai bên: Chiến lược và Vấn đề thường gặp</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Daniela Tanikawa, MD, PhD · David Fisher, MD, PhD · David Chong, MD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> TS.BS. Daniela Tanikawa · GS.BS. David Fisher · PGS.BS. David Chong</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the significant anatomical and technical challenges inherent in bilateral cleft reconstruction. The panel will examine the critical coordination between presurgical alignment and definitive soft tissue closure, with a focus on the stabilization of the "fly-away" premaxilla. Experts will evaluate the technical integration of vomer flaps and meticulous nasal floor reconstruction to mitigate the risk of anterior oronasal fistulae. The discussion will further analyze the indications for extensive primary rhinoplasty and the role of postoperative molding in maintaining structural symmetry through the patient’s development.
-</div>
-          <div class="summary-text vi">Phiên này tập trung vào những thách thức giải phẫu và kỹ thuật phức tạp vốn có trong điều trị khe hở môi hai bên. Các báo cáo viên sẽ phân tích sự phối hợp then chốt giữa chỉnh hình trước phẫu thuật và đóng mô mềm triệt để, với trọng tâm là ổn định khối tiền hàm nhô ra phía trước. Các báo cáo viên sẽ đánh giá việc ứng dụng kỹ thuật vạt xương lá mía kết hợp tái tạo sàn mũi tỉ mỉ nhằm giảm nguy cơ rò miệng – mũi phía trước. Phiên thảo luận cũng sẽ phân tích chỉ định của tạo hình mũi nguyên phát mở rộng và vai trò của chỉnh hình sau mổ trong duy trì sự cân đối cấu trúc trong quá trình phát triển của bệnh nhân.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Keynote -->
-    <div class="session is-keynote" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">14:15 – 15:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-keynote en">Plenary Keynote</span><span class="session-pill pill-keynote vi">Báo cáo toàn thể</span>
-          <div class="session-title en">Cleft Palate Anatomy</div>
-          <div class="session-title vi">Giải phẫu Khe hở vòm miệng</div>
-          <div class="session-panellists en"><strong>Speaker:</strong> David Fisher, MD</div>
-          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> GS.BS. David Fisher</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">Plenary keynote address reviewing long-term outcomes following primary cleft lip reconstruction across different surgical techniques, patient populations, and follow-up protocols. Emphasis on outcome metrics that matter most to patients and families through skeletal maturity and beyond.</div>
-          <div class="summary-text vi">Báo cáo toàn thể về kết quả dài hạn sau tạo hình khe hở môi thì đầu theo các kỹ thuật phẫu thuật, nhóm bệnh nhân và phác đồ theo dõi khác nhau. Nhấn mạnh các chỉ số kết quả quan trọng nhất đối với bệnh nhân và gia đình.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Palatoplasty -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">15:00 – 16:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Cleft Palate Repair</div>
-          <div class="session-title vi">Tạo hình Vòm miệng</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Lun-Jou Lo, MD, PhD · Tae-Suk Oh, MD, PhD · Nguyen Thi Ngoc Lan, MD, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · GS.TS.BS. Lun-Jou Lo · GS.TS.BS. Tae-Suk Oh · ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session evaluates the competing surgical philosophies of palatoplasty, focusing on the critical tension between radical anatomical restoration and long-term maxillofacial growth. The panel will provide a rigorous comparative analysis of the vomer flap, two-flap palatoplasty, and the Furlow technique, with specific attention to the "Mann Doctrine" of tension-free closure using adjunctive buccal flaps. Discussion will center on identifying the surgical variables that influence velopharyngeal competence while mitigating the risk of oronasal fistulae and maxillary growth inhibition in the developing child.</div>
-          <div class="summary-text vi">Phiên này đánh giá các triết lý phẫu thuật khác nhau trong tạo hình vòm miệng, tập trung vào sự cân bằng then chốt giữa phục hồi giải phẫu triệt để và sự phát triển lâu dài của khối hàm mặt. Hội đồng chuyên gia sẽ thực hiện phân tích so sánh chuyên sâu giữa kỹ thuật vạt xương lá mía (vomer flap), tạo hình vòm miệng hai vạt (two-flap palatoplasty) và kỹ thuật Furlow, với trọng tâm đặc biệt vào “Học thuyết Mann” về đóng kín không căng bằng cách sử dụng thêm vạt niêm mạc má hỗ trợ. Phiên thảo luận sẽ tập trung xác định các yếu tố phẫu thuật ảnh hưởng đến chức năng đóng kín họng – màn hầu, đồng thời giảm nguy cơ rò miệng – mũi và hạn chế sự ức chế phát triển xương hàm trên ở trẻ đang lớn.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pierre Robin -->
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">16:00 – 17:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Pierre Robin Sequence</div>
-          <div class="session-title vi">Hội chứng Pierre Robin</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc· Le Thua Trung Hau, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · ThS.BSCKII. Đinh Thị Như Thảo · TS.BS. Lê Thừa Trung Hậu</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the complex diagnostic and therapeutic landscape of Pierre Robin Sequence (PRS). The discussion focuses on the multidisciplinary management of neonatal airway obstruction and secondary nutritional failure. The panel conducts a comparative analysis of conservative orthopedic protocols, specifically the Tübingen Palatal Plate, against surgical interventions including Mandibular Distraction Osteogenesis (MDO) and Tongue-Lip Adhesion (TLA). Experts provide a rigorous clinical framework for escalating care to ensure respiratory stability and optimize long-term growth in the PRS infant.</div>
-          <div class="summary-text vi">Phiên này tập trung vào các thách thức phức tạp trong chẩn đoán và điều trị hội chứng Pierre Robin (PRS). Nội dung thảo luận nhấn mạnh chiến lược quản lý đa chuyên ngành đối với tình trạng tắc nghẽn đường thở ở trẻ sơ sinh và suy dinh dưỡng thứ phát. Hội đồng chuyên gia sẽ thực hiện phân tích so sánh giữa các phương pháp chỉnh hình bảo tồn, đặc biệt là máng khẩu cái Tübingen, với các can thiệp phẫu thuật bao gồm kéo giãn xương hàm dưới (Mandibular Distraction Osteogenesis – MDO) và dính lưỡi – môi (Tongue-Lip Adhesion – TLA). Các chuyên gia sẽ xây dựng khung lâm sàng chặt chẽ nhằm định hướng thời điểm nâng mức can thiệp điều trị, đảm bảo ổn định hô hấp và tối ưu hóa sự phát triển dài hạn cho trẻ mắc PRS.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Reception -->
-    <div class="session is-reception">
-      <div class="session-row">
-        <div class="session-time">17:00 – 18:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-reception en">Social Event</span><span class="session-pill pill-reception vi">Hoạt động kết nối</span>
-          <div class="session-title en">Welcome Reception — Networking &amp; Refreshments</div>
-          <div class="session-title vi">Sự kiện Kết nối Đồng nghiệp và Đồ uống nhẹ</div>
-          <div class="session-panellists en">All registered attendees · Smart casual attire</div>
-          <div class="session-panellists vi">Tất cả người tham dự đã đăng ký · Trang phục lịch sự</div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /sessions-list -->
-</div><!-- /day1 -->
-
-<!-- ═══════════ DAY 2 ═══════════ -->
-<div class="day-panel" id="day2">
-  <div class="day-header">
-    <div class="day-header-left">
-      <div class="day-title en">Day 2 — <em>Secondary &amp; Intermediate Reconstruction</em></div>
-      <div class="day-title vi">Ngày 2 — <em>Tạo hình Thứ cấp &amp; Trung gian</em></div>
-      <div class="day-date en">Tuesday, September 22, 2026</div>
-      <div class="day-date vi">Thứ Ba, 22/09/2026</div>
-     </div> </div> <div class="sessions-list">
-
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">08:00 – 08:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-break en">Welcome</span><span class="session-pill pill-break vi">Đón tiếp</span>
-          <div class="session-title en">Welcome &amp; Recap of Day 1</div>
-          <div class="session-title vi">Đón tiếp và Tổng kết Ngày 1</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">08:30 – 10:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Management of Palatal Fistulae</div>
-          <div class="session-title vi">Xử trí Lỗ rò Vòm miệng</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lun-Jou Lo, MD, PhD · Christopher Runyan, MD, PhD · Le Van Son, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Lun-Jou Lo · PGS.TS.BS. Christopher Runyan · PGS.TS.BS. Lê Văn Sơn</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session provides a comprehensive framework for the diagnosis and surgical management of palatal fistulae. The discussion focuses on identifying the anatomical and technical risk factors that contribute to tissue breakdown and recurrence. Experts evaluate the efficacy of primary re-repair and Furlow conversion in comparison to the use of vascularized tissue, including buccal, tongue, and microvascular free flaps. The panel emphasizes the critical role of layered closure and tension-free reconstruction in restoring palatal integrity and maintaining optimal speech function.
-</div>
-          <div class="summary-text vi">Phiên này cung cấp khung tiếp cận toàn diện cho chẩn đoán và điều trị phẫu thuật lỗ rò vòm miệng. Nội dung thảo luận tập trung vào việc xác định các yếu tố nguy cơ về giải phẫu và kỹ thuật góp phần gây bục mô và tái phát lỗ rò. Các chuyên gia sẽ đánh giá hiệu quả của phẫu thuật sửa lại nguyên phát và chuyển đổi sang kỹ thuật Furlow so với việc sử dụng các mô có cấp máu nuôi như vạt niêm mạc má, vạt lưỡi và các vạt tự do vi phẫu. Các báo cáo viên sẽ nhấn mạnh vai trò then chốt của đóng nhiều lớp và tái tạo không căng trong việc phục hồi tính toàn vẹn của vòm miệng và duy trì chức năng phát âm tối ưu.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">10:00 – 11:15</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Velopharyngeal Insufficiency (VPI): Precision Diagnostics and Surgical Management</div>
-          <div class="session-title vi">Hở màn hầu (VPI): Chẩn đoán chính xác và Mục tiêu điều trị bằng phẫu thuật</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Christopher Runyan, MD, PhD  · Corstiaan Breugem, MD, PhD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.TS.BS. Christopher Runyan  · GS.TS.BS. Corstiaan Breugem </div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the diagnostic challenges and surgical management of Velopharyngeal Insufficiency (VPI) through a rigorous, data-driven framework. The panel evaluates a comprehensive workup integrating nasopharyngoscopy, nasometry, and dynamic MRI to guide the precise selection of surgical interventions. Discussion focuses on the surgical treatment algorithm, technical pitfalls of pharyngeal reconstruction, and the evolving impact of adolescent skeletal growth on longitudinal velopharyngeal competence.
-</div>
-          <div class="summary-text vi">Phiên này tập trung vào những thách thức trong chẩn đoán và điều trị phẫu thuật hở màn hầu thông qua cách tiếp cận chặt chẽ dựa trên dữ liệu. Hội đồng chuyên gia sẽ đánh giá quy trình thăm khám toàn diện kết hợp nội soi mũi họng, đo âm mũi (nasometry) và MRI động nhằm định hướng lựa chọn chính xác các can thiệp phẫu thuật. Nội dung thảo luận tập trung vào thuật toán điều trị phẫu thuật, các sai sót kỹ thuật trong tái tạo họng, cũng như ảnh hưởng thay đổi theo thời gian của sự phát triển xương hàm mặt ở tuổi vị thành niên lên chức năng màn hầu - họng lâu dài.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">11:15 – 12:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Phase I Orthodontics — Skeletal Optimisation for Alveolar Reconstruction</div>
-          <div class="session-title vi">Chỉnh nha Giai đoạn I — Tối ưu cấu trúc xương cho Tái tạo Ổ răng</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, MS · Dinh Thi Nhu Thao, DDS, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Chrisopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · ThS.BSCKII. Đinh Thị Như Thảo</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session evaluates the strategic objectives of Phase 1 Orthodontics, focusing on the correction of transverse deficiencies and the stabilization of maxillary segments in the mixed dentition. The panel analyzes the role of arch expansion as a prerequisite for successful alveolar bone grafting and evaluates advanced modalities for maxillary protraction, including bone-anchored skeletal traction. Experts emphasize the longitudinal consequences of orthodontic timing, addressing how precise management during this developmental window prevents segment collapse and simplifies future orthognathic requirements.
-</div>
-          <div class="summary-text vi">Phiên này tập trung đánh giá các mục tiêu chiến lược của chỉnh nha giai đoạn I, với trọng tâm là điều chỉnh hẹp ngang cung hàm và ổn định các đoạn xương hàm trên trong giai đoạn răng hỗn hợp. Báo cáo viên sẽ phân tích vai trò của nong cung hàm như một bước chuẩn bị thiết yếu cho ghép xương ổ răng thành công, đồng thời đánh giá các phương pháp kéo xương hàm trên nâng cao, bao gồm kéo chỉnh xương bằng neo chặn xương (bone-anchored skeletal traction). Báo cáo viên cũng nhấn mạnh ảnh hưởng lâu dài của thời điểm can thiệp chỉnh nha, làm rõ cách quản lý chính xác trong giai đoạn phát triển này có thể ngăn ngừa xẹp đoạn hàm và giảm mức độ phức tạp của các can thiệp chỉnh hình xương hàm trong tương lai.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">12:00 – 13:00</div>
-        <div class="session-main"><span class="session-pill pill-break">🍽</span><div class="session-title en">Lunch Break</div><div class="session-title vi">Nghỉ trưa</div></div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">13:00 – 14:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Alveolar Bone Grafting: Timing, Technical Execution, and Outcomes</div>
-          <div class="session-title vi">Ghép xương Ổ răng: Thời điểm, Kỹ thuật thực hiện và Kết quả</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen &nbsp;·&nbsp; <strong>Panellists:</strong> Tae-Suk Oh, MD, PhD · Robin Yang, MD, DDS · John Phillips, MD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Tae-Suk Oh · PGS.BS. Robin Yang · PGS.BS. John Phillips</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the strategic objectives and technical execution of alveolar bone grafting, focusing on the three-dimensional anatomical considerations required to restore the functional dental arch. The panel examines the critical influence of pre-operative palatal expansion and the concurrent management of nasolabial or palatal fistulae on graft viability. Experts provide clinical protocols for facilitating dental eruption through the reconstructed site and establish objective benchmarks for the timing of late-stage interventions in the maturing patient.</div>
-          <div class="summary-text vi">Phiên này tập trung vào các mục tiêu chiến lược và kỹ thuật thực hiện ghép xương ổ răng, với trọng tâm là các yếu tố giải phẫu ba chiều cần thiết nhằm phục hồi cung răng chức năng. Hội đồng chuyên gia sẽ phân tích ảnh hưởng then chốt của nong khẩu cái trước phẫu thuật và việc xử trí đồng thời các lỗ rò môi – mũi hoặc lỗ rò vòm miệng đối với khả năng sống còn của mảnh ghép. Các báo cáo viên cũng sẽ trình bày các phác đồ lâm sàng nhằm hỗ trợ sự mọc răng qua vùng tái tạo, đồng thời xác lập các tiêu chuẩn khách quan cho thời điểm can thiệp ở giai đoạn muộn trên bệnh nhân đang trưởng thành.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">14:30 – 15:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Intermediate Secondary Reconstruction: Lip and Nasal Revision Strategies</div>
-          <div class="session-title vi">Tạo hình Thứ cấp Giai đoạn trung gian: Chiến lược chỉnh sửa Môi và Mũi</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher M. Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> David Chong, MD · Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS. Christopher M. Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. David Chong · GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the clinical indications and precise timing for secondary lip and nasal revisions during the intermediate growth period. The panel evaluates surgical strategies for correcting labial asymmetry, hypertrophic scarring, and columellar shortening, with a primary focus on the relief of functional nasal airway obstruction. Experts discuss the critical balance between achieving psychological and aesthetic improvement during childhood while preserving the anatomical substrate for definitive reconstruction at skeletal maturity.</div>
-          <div class="summary-text vi">Phiên này tập trung vào chỉ định lâm sàng và thời điểm thích hợp cho các can thiệp chỉnh sửa môi và mũi thứ phát trong giai đoạn tăng trưởng trung gian. Báo cáo viên sẽ đánh giá các chiến lược phẫu thuật nhằm điều chỉnh bất cân xứng môi, sẹo phì đại và tình trạng ngắn trụ mũi, với trọng tâm chính là cải thiện tắc nghẽn chức năng đường thở mũi. Các báo cáo viên cũng sẽ thảo luận về sự cân bằng quan trọng giữa việc cải thiện tâm lý, thẩm mỹ trong giai đoạn trẻ em và bảo tồn nền tảng giải phẫu cho tái tạo hoàn thiện khi trưởng thành xương.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">15:30 – 16:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Psychosocial Integration and Social Determinants in Cleft Care</div>
-          <div class="session-title vi">Hoà nhập Tâm lý-Xã hội và Các yếu tố xã hội trong Điều trị Khe hở</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc · Ms. Chiu - Jung Ku</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · ThS.BSCKII. Đinh Thị Như Thảo· Bà Chiu - Jung Ku</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the psychological and social complexities faced by patients and their support systems throughout the multi-decade treatment continuum. The panel explores the impact of cumulative surgical burden on family dynamics and mental health, with a specific emphasis on identifying regional barriers to comprehensive care within Viet Nam. Experts discuss the integration of validated patient-reported outcome measures (PROMs) to objectively assess quality of life, family satisfaction, and the long-term success of multidisciplinary intervention.
-</div>
-          <div class="summary-text vi">Phiên này tập trung vào những thách thức tâm lý và xã hội mà bệnh nhân cùng người chăm sóc và hỗ trợ của họ phải đối mặt trong suốt quá trình điều trị kéo dài nhiều năm. Báo cáo viên sẽ phân tích ảnh hưởng của gánh nặng phẫu thuật tích lũy lên động lực gia đình và sức khỏe tinh thần, với trọng tâm đặc biệt là nhận diện các rào cản khu vực đối với chăm sóc toàn diện tại Việt Nam. Các báo cáo viên cũng sẽ thảo luận về việc tích hợp các thang đo kết quả do bệnh nhân báo cáo (Patient-Reported Outcome Measures – PROMs) đã được chuẩn hóa nhằm đánh giá khách quan chất lượng cuộc sống, mức độ hài lòng của gia đình và hiệu quả lâu dài của mô hình điều trị đa chuyên ngành.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">16:30 – 17:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">The Future of National Infrastructure and Research: Strategic Opportunities in Vietnamese Cleft Care</div>
-          <div class="session-title vi">Định hướng phát triển Hệ thống và Nghiên cứu quốc gia: Cơ hội chiến lược trong Điều trị Khe hở tại Việt Nam</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lê Thừa Trung Hậu, MD, PhD · Đỗ Tiến Hải, MD, MSc · Nguyễn Thị Ngọc Lan, MD, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> TS.BS. Lê Thừa Trung Hậu · ThS.BSCKII. Đỗ Tiến Hải · Ths.BSCKII. Nguyễn Thị Ngọc Lan</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session evaluates the current clinical infrastructure and the future trajectory of cleft care in Viet Nam, focusing on the formalization of regional centers of excellence. The panel conducts a critical analysis of the evolving interface between international organizations and the national healthcare system, exploring how these partnerships can most effectively support the transition toward autonomous, multidisciplinary care models. Discussion facilitates a high-level dialogue between regional leaders to identify structural impediments and formulate a national roadmap for standardized, comprehensive care across all provinces.
-</div>
-          <div class="summary-text vi">Phiên này tập trung đánh giá thực trạng hạ tầng lâm sàng hiện nay và định hướng phát triển tương lai của hệ thống điều trị khe hở môi – vòm miệng tại Việt Nam, với trọng tâm là xây dựng và chính thức hóa các trung tâm chuyên sâu theo khu vực. Báo cáo viên sẽ phân tích mối tương tác đang thay đổi giữa các tổ chức quốc tế và hệ thống y tế quốc gia, đồng thời thảo luận cách các mối quan hệ hợp tác này có thể hỗ trợ hiệu quả nhất cho quá trình chuyển đổi sang mô hình chăm sóc đa chuyên ngành mang tính tự chủ và bền vững. Phiên thảo luận cũng tạo diễn đàn đối thoại cấp chiến lược giữa các lãnh đạo khu vực nhằm nhận diện các rào cản hệ thống và xây dựng lộ trình quốc gia hướng tới mô hình chăm sóc toàn diện, chuẩn hóa trên phạm vi toàn quốc.
-</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div><!-- /day2 -->
-
-<!-- ═══════════ DAY 3 ═══════════ -->
-<div class="day-panel" id="day3">
-  <div class="day-header">
-    <div class="day-header-left">
-      <div class="day-title en">Day 3 — <em>Adult Reconstruction &amp; National Infrastructure</em></div>
-      <div class="day-title vi">Ngày 3 — <em>Tái tạo Người lớn &amp; Hệ thống Quốc gia</em></div>
-      <div class="day-date en">Wednesday, September 23, 2026</div>
-      <div class="day-date vi">Thứ Tư, 23/09/2026</div>
-     </div> </div>  <div class="sessions-list">
-
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">08:00 – 08:30</div>
-        <div class="session-main"><span class="session-pill pill-break en">Welcome</span><span class="session-pill pill-break vi">Đón tiếp</span><div class="session-title en">Welcome &amp; Recap of Days 1 &amp; 2</div><div class="session-title vi">Đón tiếp và Tổng kết Ngày 1 &amp; 2</div></div>
-      </div>
-    </div>
-
-    <div class="session is-ngo" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">08:30 – 09:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-ngo en">NGO Leadership Forum</span><span class="session-pill pill-ngo vi">Diễn đàn NGO</span>
-          <div class="session-title en">NGO Leadership Forum</div>
-          <div class="session-title vi">Diễn đàn Lãnh đạo các Tổ chức Phi chính phủ</div>
-          <div class="session-panellists en"><strong>Panellists:</strong> Operation Smile · Smile Train · NCF · ReSurge International · Nuoy Reconstructive International</div>
-          <div class="session-panellists vi"><strong>Đại diện:</strong> Operation Smile · Smile Train · NCF · ReSurge International · Nuoy Reconstructive International</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This leadership forum convenes the primary international stakeholders in Vietnamese cleft care to analyze the transition from surgical outreach to the establishment of permanent, high-fidelity national infrastructure. The panel will evaluate the intersection of global NGO philosophies and the Vietnamese healthcare system, focusing on the elimination of care silos and the synchronization of regional protocols. Experts will discuss the roadmap for institutionalizing multidisciplinary care to ensure that every patient has access to the full reconstructive continuum through adulthood.
-</div>
-          <div class="summary-text vi">Diễn đàn lãnh đạo này quy tụ các tổ chức quốc tế chủ chốt đang hoạt động trong lĩnh vực điều trị khe hở môi – vòm miệng tại Việt Nam nhằm phân tích quá trình chuyển dịch từ các chương trình phẫu thuật ngắn hạn sang xây dựng hệ thống điều trị quốc gia bền vững và chất lượng cao. Báo cáo viên sẽ đánh giá sự giao thoa giữa triết lý hoạt động của các tổ chức phi chính phủ quốc tế và hệ thống y tế Việt Nam, với trọng tâm là giảm thiểu tình trạng phân mảnh trong chăm sóc và đồng bộ hóa các phác đồ điều trị giữa các khu vực. Phiên thảo luận cũng sẽ tập trung xây dựng lộ trình thể chế hóa mô hình chăm sóc đa chuyên ngành, nhằm đảm bảo mỗi bệnh nhân đều có cơ hội tiếp cận đầy đủ chuỗi điều trị tái tạo chức năng đến tuổi trưởng thành.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">09:30 – 10:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Orthodontic Preparation for Phase II Intervention: Advanced Planning and Structural Integration</div>
-          <div class="session-title vi">Chuẩn bị Chỉnh nha cho Giai đoạn II: Lập kế hoạch nâng cao và Tích hợp cấu trúc</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> John Phillips, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, MS · Robin Yang, MD, DDS </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. John Phillips &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · PGS.BS. Robin Yang </div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the advanced orthodontic challenges encountered during the permanent dentition phase of cleft care. The panel evaluates complex strategies for correcting severe transverse narrowing and Class III malocclusions, specifically focusing on the preparation of the maxillary arch for definitive orthognathic surgery. Experts discuss the biomechanical integration of maxillary expansion, bone-anchored skeletal traction, and the comprehensive management of recalcitrant alveolar defects. The discussion prioritizes the establishment of a stable dental and skeletal foundation as a prerequisite for successful adolescent reconstruction.
-</div>
-          <div class="summary-text vi">Phiên này tập trung vào các thách thức chỉnh nha nâng cao trong giai đoạn răng vĩnh viễn ở bệnh nhân khe hở môi – vòm miệng. Các báo cáo viên sẽ đánh giá các chiến lược phức tạp nhằm điều chỉnh tình trạng hẹp ngang nghiêm trọng và sai khớp cắn hạng III, với trọng tâm là chuẩn bị cung hàm trên cho phẫu thuật chỉnh hình xương hàm triệt để. Các báo cáo viên sẽ thảo luận về sự tích hợp cơ sinh học giữa nong hàm trên, kéo chỉnh xương bằng neo chặn xương và quản lý toàn diện các khuyết hổng ổ răng khó điều trị. Phiên thảo luận nhấn mạnh việc xây dựng nền tảng xương và khớp cắn ổn định như điều kiện tiên quyết cho tái tạo hoàn thiện ở tuổi vị thành niên.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">10:30 – 10:45</div>
-        <div class="session-main"><span class="session-pill pill-break">☕</span><div class="session-title en">Coffee Break</div><div class="session-title vi">Tea break</div></div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">10:45 – 11:45</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Orthognathic Surgery in the Cleft Patient: Digital Workflows and Virtual Planning</div>
-          <div class="session-title vi">Phẫu thuật Chỉnh hình Xương hàm ở Bệnh nhân Khe hở: Quy trình số hóa và Lập kế hoạch ảo</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John Phillips</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session evaluates the integration of Virtual Surgical Planning (VSP) in the correction of complex skeletal malocclusion for the adult cleft patient. The panel analyzes the transition from traditional model surgery to fully digital workflows, highlighting the precision of 3D simulation in achieving facial symmetry and stable occlusion. Experts explore various VSP platforms and provide a comprehensive framework for sequencing complex LeFort I and mandibular movements. The discussion prioritizes strategies for navigating the unique anatomical constraints imposed by previous cleft repairs and scarred soft tissue envelopes.
-</div>
-          <div class="summary-text vi">Phiên này tập trung đánh giá việc tích hợp lập kế hoạch phẫu thuật ảo (Virtual Surgical Planning – VSP) trong điều trị các sai khớp cắn xương phức tạp ở bệnh nhân khe hở môi – vòm miệng trưởng thành. Hội đồng chuyên gia sẽ phân tích quá trình chuyển đổi từ phương pháp phẫu thuật trên mẫu hàm truyền thống sang quy trình số hóa hoàn toàn, nhấn mạnh độ chính xác của mô phỏng 3D trong việc đạt được sự cân đối khuôn mặt và khớp cắn ổn định. Các báo cáo viên sẽ giới thiệu nhiều nền tảng VSP khác nhau và xây dựng khung tiếp cận toàn diện cho việc lập trình các di chuyển phức tạp của LeFort I và xương hàm dưới. Phiên thảo luận cũng tập trung vào các chiến lược xử lý những giới hạn giải phẫu đặc thù do sẹo và các can thiệp khe hở trước đó gây ra.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">11:45 – 13:00</div>
-        <div class="session-main"><span class="session-pill pill-break">🍽</span><div class="session-title en">Lunch Break</div><div class="session-title vi">Nghỉ trưa</div></div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">13:00 – 14:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Advanced Orthognathic Surgery: Operative Execution and Technical Refinements</div>
-          <div class="session-title vi">Phẫu thuật Chỉnh hình Xương hàm Nâng cao: Thực hành phẫu thuật và Tối ưu kỹ thuật</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD · Đỗ Tiến Hải, MD, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John Phillips · ThS.BSCKII. Đỗ Tiến Hải</div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session addresses the intraoperative management of profound skeletal discrepancies in the adult cleft patient, where cumulative scarring and residual alveolar defects complicate conventional orthognathic movements. Experts evaluate the critical decision-making process between single-stage reconstruction and distraction osteogenesis for the correction of extreme Class III malocclusions. The panel provides technical insights into the management of the scarred soft tissue envelope, the utilization of adjunctive bone grafting for skeletal stability, and the respiratory implications of high-magnitude maxillary advancements.</div>
-          <div class="summary-text vi">Phiên này tập trung vào xử trí trong phẫu thuật đối với các bất tương hợp xương hàm nghiêm trọng ở bệnh nhân khe hở môi – vòm miệng trưởng thành, nơi tình trạng sẹo tích lũy và các khuyết hổng ổ răng tồn dư làm phức tạp các di chuyển chỉnh hình xương hàm thông thường. Báo cáo viên sẽ đánh giá quá trình ra quyết định giữa tái tạo một thì và kéo giãn xương trong điều trị sai khớp cắn hạng III mức độ nặng. Các báo cáo viên sẽ chia sẻ những điểm kỹ thuật quan trọng trong xử trí mô mềm sẹo, ứng dụng ghép xương bổ trợ nhằm tăng độ ổn định cấu trúc xương, cũng như ảnh hưởng hô hấp của các di chuyển hàm trên biên độ lớn.
-</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">14:30 – 15:30</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
-          <div class="session-title en">Definitive Cleft Rhinoplasty: Structural Restoration and Longitudinal Outcomes</div>
-          <div class="session-title vi">Tạo hình Mũi Khe hở Hoàn thiện: Phục hồi cấu trúc và Kết quả dài hạn</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiann Breugem, MD, PhD · Jong-Woo Choi, MD, PhD · Lun-Jou Lo, MD, PhD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiann Breugem · GS.TS.BS. Jong-Woo Choi · GS.TS.BS. Lun-Jou Lo </div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This session provides a comprehensive analysis of definitive cleft rhinoplasty, focusing on the anatomical restoration of the nasal framework following the completion of skeletal growth. Experts dissect the complexities of the cleft nasal base, severe septal deviations, and lower lateral cartilage asymmetries that persist beyond the primary repair phase. The panel evaluates the comparative merits of open versus closed surgical approaches while addressing the specific aesthetic and structural considerations unique to the Asian patient population. The discussion prioritizes the creation of a stable, harmonious nasal architecture that withstands the forces of long-term tissue contracture.
-</div>
-          <div class="summary-text vi">Phiên này cung cấp phân tích toàn diện về tạo hình mũi khe hở hoàn thiện, tập trung vào phục hồi cấu trúc giải phẫu mũi sau khi quá trình phát triển xương đã hoàn tất. Các chuyên gia sẽ phân tích những thách thức phức tạp liên quan đến nền mũi khe hở, lệch vách ngăn nặng và bất cân xứng sụn cánh mũi dưới còn tồn tại sau giai đoạn phẫu thuật nguyên phát. Hội đồng chuyên gia sẽ đánh giá ưu điểm và hạn chế của kỹ thuật tạo hình mũi kín và hở, đồng thời thảo luận các yếu tố thẩm mỹ và cấu trúc đặc thù ở bệnh nhân châu Á. Phiên thảo luận nhấn mạnh mục tiêu xây dựng cấu trúc mũi ổn định, hài hòa và có khả năng duy trì lâu dài trước tác động của co kéo mô sẹo theo thời gian.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="session" onclick="toggleSession(this)">
-      <div class="session-row">
-        <div class="session-time">15:30 – 16:00</div>
-        <div class="session-main">
-          <span class="session-pill pill-panel en">Planery Keynote</span><span class="session-pill pill-panel vi">Báo cáo toàn thể</span>
-          <div class="session-title en">Lessons Learned from a Career in Cleft Surgery</div>
-          <div class="session-title vi">Những bài học kinh nghiệm từ sự nghiệp phẫu thuật khe hở môi - vòm miệng</div>
-          <div class="session-panellists en"><strong>Speaker:</strong> David Fisher, MD &nbsp;·&nbsp; </div>
-          <div class="session-panellists vi"><strong>Diễn giả:</strong> GS.BS. David Fisher &nbsp;·&nbsp; </div>
-        </div>
-        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-      </div>
-      <div class="session-summary">
-        <div class="session-summary-inner">
-          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
-          <div class="summary-text en">This keynote session presents a reflective journey through more than three decades of cleft and craniofacial surgery by one of the field’s most respected educators and reconstructive surgeons. Drawing upon thousands of patient encounters, longitudinal outcome studies, surgical innovations, and global educational initiatives, Dr. David Fisher shares the most important lessons learned throughout his career.
-Rather than focusing on a single surgical technique, this session explores the principles that consistently lead to successful outcomes: understanding anatomy, respecting growth, prioritizing function over appearance, embracing multidisciplinary collaboration, and maintaining lifelong commitment to patient follow-up. Through clinical stories, successes, failures, and personal reflections, participants will gain insights that extend beyond the operating room and into leadership, education, and the future of cleft care.</div>
-          <div class="summary-text vi">Bài giảng toàn thể này là phần chia sẻ tổng kết từ sự nghiệp lâu dài của Giáo sư David M. Fisher trong lĩnh vực phẫu thuật khe hở môi - vòm miệng và sọ mặt. Thay vì tập trung vào một kỹ thuật đơn lẻ, phiên này nhìn lại những nguyên tắc cốt lõi đã định hình thực hành phẫu thuật qua nhiều thập kỷ: hiểu sâu giải phẫu, tôn trọng sự phát triển của trẻ, ưu tiên chức năng song song với thẩm mỹ, học hỏi từ biến chứng và duy trì theo dõi dài hạn.
-Thông qua các ca lâm sàng, kinh nghiệm thành công và cả những bài học từ kết quả chưa tối ưu, phiên này giúp người tham dự hiểu rõ hơn vai trò của phẫu thuật viên không chỉ trong phòng mổ, mà còn trong đào tạo, xây dựng đội ngũ đa chuyên ngành và phát triển hệ thống chăm sóc khe hở bền vững.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Closing -->
-    <div class="session is-ceremony">
-      <div class="session-row">
-        <div class="session-time">16:00 – 16:15</div>
-        <div class="session-main">
-          <span class="session-pill pill-ceremony en">Closing</span><span class="session-pill pill-ceremony vi">Bế mạc</span>
-          <div class="session-title en">Closing Remarks &amp; Future Directions in Cleft Care</div>
-          <div class="session-title vi">Phát biểu Bế mạc và Định hướng Tương lai trong Điều trị Khe hở</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div><!-- /day3 -->
-
-<!-- NOTES -->
-<div class="prog-notes">
-  <div class="prog-notes-title en">Programme Notes</div>
-  <div class="prog-notes-title vi">Ghi chú Chương trình</div>
-  <ul class="prog-notes-list">
-    <li class="en">All sessions conducted in English. Vietnamese simultaneous interpretation available throughout.</li>
-    <li class="vi">Tất cả phiên diễn ra bằng tiếng Anh. Phiên dịch đồng thời tiếng Việt được cung cấp xuyên suốt chương trình.</li>
-    <li class="en">Registration includes all scientific sessions, summit materials, lunch, and tea breaks on all three days.</li>
-    <li class="vi">Phí đăng ký bao gồm toàn bộ phiên khoa học, tài liệu hội nghị, bữa trưa và tea break trong cả ba ngày.</li>
-    <li class="en">Welcome Reception on September 21 (17:00–18:30) included for all registered attendees. Smart casual attire.</li>
-    <li class="vi">Sự kiện Kết nối Đồng nghiệp ngày 21/09 (17:00–18:30) dành cho tất cả người tham dự đã đăng ký. Trang phục lịch sự.</li>
-    <li class="en">CME credits available for Vietnamese participant only. Fee and accreditation details to be announced separately.</li>
-    <li class="vi">Hội nghị chỉ cấp Chứng chỉ CME cho hội thảo viên Việt Nam. Thông tin về phí và giấy chứng nhận sẽ được thông báo riêng.</li>
-    <li class="en">Programme subject to minor changes. Final programme distributed at registration check-in.</li>
-    <li class="vi">Chương trình có thể có thay đổi nhỏ. Chương trình chính thức sẽ được phát tại khu vực check-in.</li>
-  </ul>
-</div>
-
-</div><!-- /si -->
+<section class="hero">
+  <h1 class="ph-h1 en">Programme <em>Agenda</em></h1>
+  <h1 class="ph-h1 vi">Chương trình <em>Hội nghị</em></h1>
+  <p class="ph-body en">Three days of advanced case-based discussion, panel discussion, and peer-to-peer exchange across surgery, orthodontics, speech therapy, and multidisciplinary cleft care.</p>
+  <p class="ph-body vi">Ba ngày thảo luận ca lâm sàng chuyên sâu, tranh luận chuyên gia và trao đổi ngang hàng về phẫu thuật, chỉnh nha, âm ngữ trị liệu và chăm sóc đa chuyên ngành.</p>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="foot-wrap">
-    <div class="foot-stripe"></div>
-    <div class="foot-bottom">
-      <span>© 2026 Nuoy Reconstructive International · International Cleft Mastery Summit Ha Noi</span>
-      <div style="display:flex;gap:1.5rem">
-        <a href="https://www.nuoy.org/cleft-summit" class="en" target="_top">Home</a><a href="https://www.nuoy.org/cleft-summit" class="vi" target="_top">Trang chủ</a>
-        <a href="https://www.nuoy.org/cleft-summit/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-summit/speakers" class="vi" target="_top">Diễn giả</a>
-        <a href="https://www.nuoy.org/cleft-summit/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-summit/registration" class="vi" target="_top">Đăng ký</a>
-        <a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<div class="day-tabs-wrap">
+  <button class="day-tab active" onclick="showDay(1,this)"><span class="en">Day 1 · Sept 21</span><span class="vi">Ngày 1 · 21/09</span></button>
+  <button class="day-tab" onclick="showDay(2,this)"><span class="en">Day 2 · Sept 22</span><span class="vi">Ngày 2 · 22/09</span></button>
+  <button class="day-tab" onclick="showDay(3,this)"><span class="en">Day 3 · Sept 23</span><span class="vi">Ngày 3 · 23/09</span></button>
+</div>
+
+<div class="day-panel active" id="day1">
+<div class="day-header">
+<div class="day-header-left">
+<div class="day-title en">Day 1 — <em>Primary Cleft Surgery</em></div>
+<div class="day-title vi">Ngày 1 — <em>Phẫu thuật Khe hở Nguyên phát</em></div>
+<div class="day-date en">Monday, September 21, 2026</div>
+<div class="day-date vi">Thứ Hai, 21/09/2026</div>
+</div> </div> <div class="sessions-list">
+<!-- Registration -->
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">08:00 – 08:30</div>
+<div class="session-main">
+<span class="session-pill pill-break en">Check-in</span><span class="session-pill pill-break vi">Đón tiếp</span>
+<div class="session-title en">Registration, Check-in &amp; Welcome</div>
+<div class="session-title vi">Đăng ký, Check-in và Đón tiếp</div>
+</div>
+</div>
+</div>
+<!-- Opening -->
+<div class="session is-ceremony">
+<div class="session-row">
+<div class="session-time">08:30 – 08:45</div>
+<div class="session-main">
+<span class="session-pill pill-ceremony en">Opening</span><span class="session-pill pill-ceremony vi">Khai mạc</span>
+<div class="session-title en">Opening Ceremony</div>
+<div class="session-title vi">Lễ Khai mạc Hội nghị</div>
+</div>
+</div>
+</div>
+<!-- Intro -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">08:45 – 08:55</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
+<div class="session-title en">Summit Introduction &amp; Learning Objectives</div>
+<div class="session-title vi">Giới thiệu hội nghị và Mục tiêu đào tạo</div>
+<div class="session-panellists en"><strong>Speakers:</strong> David K. Chong, MD · Phuong D. Nguyen, MD · Christopher M. Runyan, MD, PhD</div>
+<div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.BS. David K. Chong · GS.BS. Phuong D. Nguyen · PGS.TS.BS. Christopher M. Runyan</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div>
+<div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This opening session establishes the strategic foundation for the summit, framing the transition from basic surgical repair to a comprehensive, multi-disciplinary life-cycle of care. We will define the "2020s Standard" of cleft management, emphasizing the critical integration of global clinical protocols with Vietnam’s high-volume surgical expertise. The discussion will outline a roadmap for formalizing a collaborative national network, preparing participants for an intensive three-day deep dive into complex clinical decision-making and longitudinal outcome optimization.</div>
+<div class="summary-text vi">Phiên khai mạc này đặt nền tảng chiến lược cho toàn bộ hội nghị, định hướng sự chuyển dịch từ các can thiệp phẫu thuật đơn lẻ sang mô hình chăm sóc toàn diện, đa chuyên ngành theo suốt vòng đời bệnh nhân. Chúng tôi sẽ xác lập “Tiêu chuẩn của thập niên 2020” trong điều trị khe hở môi – vòm miệng, nhấn mạnh sự tích hợp chặt chẽ giữa các phác đồ lâm sàng quốc tế và thế mạnh phẫu thuật với khối lượng lớn tại Việt Nam. Phiên thảo luận cũng sẽ phác thảo lộ trình xây dựng một mạng lưới hợp tác cấp quốc gia, đồng thời chuẩn bị cho người tham dự bước vào ba ngày làm việc chuyên sâu, tập trung vào ra quyết định lâm sàng phức tạp và tối ưu hóa kết quả điều trị dài hạn.
+.</div>
+</div>
+</div>
+</div>
+<!-- Global evolution -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">08:55 – 09:10</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
+<div class="session-title en">Global Evolution and Timeline of Comprehensive Cleft Care</div>
+<div class="session-title vi">Sự phát triển trên toàn cầu và lộ trình của điều trị Khe hở môi - vòm miệng toàn diện</div>
+<div class="session-panellists en"><strong>Speaker:</strong> Phuong D. Nguyen, MD</div>
+<div class="session-panellists vi"><strong>Báo cáo viên:</strong> GS.BS. Phuong D. Nguyen</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session traces the structural transformation of cleft care, moving from isolated, episodic interventions to the modern, multidisciplinary team paradigm. We will analyze the historical interface between international organizations and the Vietnamese healthcare system, utilizing current research to identify strategies for long-term clinical sustainability. The discussion focuses on a critical challenge: leveraging Vietnam’s world-leading surgical volume to bridge the "Continuity Gap" between primary repair and definitive functional success in adulthood.</div>
+<div class="summary-text vi">Phiên này tập trung phân tích quá trình chuyển đổi về mặt cấu trúc trong chăm sóc khe hở môi – vòm miệng, từ các can thiệp rời rạc, mang tính từng giai đoạn sang mô hình hiện đại dựa trên đội ngũ đa chuyên ngành. Chúng tôi sẽ xem xét mối tương tác lịch sử giữa các tổ chức quốc tế và hệ thống y tế Việt Nam, đồng thời vận dụng các bằng chứng nghiên cứu hiện tại để xác định các chiến lược đảm bảo tính bền vững lâm sàng trong dài hạn. Trọng tâm của phiên thảo luận là một thách thức then chốt: tận dụng lợi thế về khối lượng phẫu thuật hàng đầu thế giới của Việt Nam nhằm thu hẹp “khoảng trống liên tục” giữa phẫu thuật ban đầu và kết quả chức năng tối ưu ở giai đoạn trưởng thành
+.</div>
+</div>
+</div>
+</div>
+<!-- History VN -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">09:10 – 09:35</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
+<div class="session-title en">History of Cleft Care in Viet Nam</div>
+<div class="session-title vi">Lịch sử Điều trị Khe hở môi – vòm miệng tại Việt Nam</div>
+<div class="session-panellists en"><strong>Speaker:</strong> Le Van Son, MD, PhD</div>
+<div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.TS.BS. Lê Văn Sơn</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">A comprehensive overview of the development of cleft care in Viet Nam — from early international NGO missions to the establishment of dedicated centres, and the current trajectory toward a nationally coordinated, multidisciplinary model of care.</div>
+<div class="summary-text vi">Tổng quan toàn diện về sự phát triển điều trị khe hở tại Việt Nam — từ những sứ mệnh NGO quốc tế ban đầu đến việc thành lập các trung tâm chuyên biệt, và lộ trình hiện tại hướng đến mô hình chăm sóc đa chuyên ngành, phối hợp toàn quốc.</div>
+</div>
+</div>
+</div>
+<!-- PSIO -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">09:35 – 10:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Presurgical Infant Orthopedics (PSIO): Indications, Techniques, and Outcomes</div>
+<div class="session-title vi">Chỉnh hình trước phẫu thuật ở trẻ sơ sinh (PSIO): Chỉ định, Kỹ thuật và Kết quả</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathia Wangsrimongkol, MD · Daniela Tanikawa, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathia Wangsrimongkol · TS.BS. Daniela Tanikawa · ThS.BSCKII. Đinh Thị Như Thảo </div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the critical neonatal phase of cleft care, evaluating the role of Presurgical Infant Orthopedics (PSIO) in optimizing the anatomical framework prior to surgical intervention. The panel will provide a comparative analysis of Nasoalveolar Molding (NAM) and the PLANA approach, focusing on their biomechanical efficacy in reducing cleft width and molding nasal cartilage. Experts will discuss the transition from orthopedic molding to primary surgery, prioritizing resource-adaptive protocols that ensure clinical excellence across diverse healthcare environments in Viet Nam.</div>
+<div class="summary-text vi">Phiên này tập trung vào giai đoạn sơ sinh mang tính quyết định trong điều trị khe hở môi – vòm miệng, đánh giá vai trò của chỉnh hình trước phẫu thuật (PSIO) trong việc tối ưu hóa nền tảng giải phẫu trước khi can thiệp phẫu thuật. Các chuyên gia sẽ thực hiện phân tích so sánh giữa kỹ thuật NAM và phương pháp PLANA, với trọng tâm là hiệu quả cơ sinh học trong việc giảm độ rộng khe hở và tạo hình sụn mũi. Phiên thảo luận cũng làm rõ quá trình chuyển tiếp từ chỉnh hình sang phẫu thuật chính, đồng thời nhấn mạnh các phác đồ linh hoạt theo điều kiện nguồn lực nhằm đảm bảo chất lượng điều trị cao trong các bối cảnh y tế đa dạng tại Việt Nam.</div>
+</div>
+</div>
+</div>
+<!-- Coffee -->
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">10:30 – 10:45</div>
+<div class="session-main">
+<span class="session-pill pill-break">☕</span>
+<div class="session-title en">Coffee Break</div>
+<div class="session-title vi">Tea break</div>
+</div>
+</div>
+</div>
+<!-- Unilateral -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">10:45 – 12:00</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Unilateral Cleft Lip Repair &amp; Primary Rhinoplasty: Principles &amp; Techniques</div>
+<div class="session-title vi">Tạo hình Khe hở môi một bên và Tạo hình mũi thì đầu: Nguyên tắc và Kỹ thuật</div>
+<div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD · Daniela Tanikawa, MD, PhD</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo · TS.BS. Danieal Tanikawa</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session provides a rigorous comparative analysis of the leading surgical paradigms in unilateral cleft reconstruction. The panel will evaluate the anatomical rationale and longitudinal stability of the Rotation-Advancement model versus the Anatomic Subunit repair. Experts will dissect the technical nuances of functional muscle reconstruction and the restoration of the nasal base, with a specific focus on mitigating the secondary revision burden. The discussion concludes with a live commentary on managing anatomical extremes, including wide complete clefts and complex incomplete variants.</div>
+<div class="summary-text vi">Phiên này cung cấp phân tích chuyên sâu và mang tính so sánh về các trường phái phẫu thuật hàng đầu trong điều trị khe hở môi một bên. Hội đồng chuyên gia sẽ đánh giá cơ sở giải phẫu và tính ổn định lâu dài của kỹ thuật xoay – đẩy vạt (Rotation-Advancement) so với kỹ thuật phục hồi theo đơn vị giải phẫu thẩm mỹ (Anatomic Subunit Repair). Các báo cáo viên sẽ phân tích chi tiết những điểm kỹ thuật then chốt trong tái tạo chức năng cơ vòng môi và phục hồi nền mũi, với trọng tâm là giảm thiểu nhu cầu chỉnh sửa thứ phát. Phiên thảo luận sẽ kết thúc bằng phần bình luận lâm sàng trực tiếp về xử trí các dạng giải phẫu phức tạp, bao gồm khe hở rộng toàn bộ và các thể khe hở không hoàn toàn phức tạp.
+</div>
+</div>
+</div>
+</div>
+<!-- Lunch -->
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">12:00 – 13:00</div>
+<div class="session-main">
+<span class="session-pill pill-break">🍽</span>
+<div class="session-title en">Lunch Break</div>
+<div class="session-title vi">Nghỉ trưa</div>
+</div>
+</div>
+</div>
+<!-- Bilateral -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">13:00 – 14:15</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Bilateral Cleft Lip Repair: Strategies and Pitfalls</div>
+<div class="session-title vi">Tạo hình Khe hở môi hai bên: Chiến lược và Vấn đề thường gặp</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Daniela Tanikawa, MD, PhD · David Fisher, MD, PhD · David Chong, MD</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> TS.BS. Daniela Tanikawa · GS.BS. David Fisher · PGS.BS. David Chong</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the significant anatomical and technical challenges inherent in bilateral cleft reconstruction. The panel will examine the critical coordination between presurgical alignment and definitive soft tissue closure, with a focus on the stabilization of the "fly-away" premaxilla. Experts will evaluate the technical integration of vomer flaps and meticulous nasal floor reconstruction to mitigate the risk of anterior oronasal fistulae. The discussion will further analyze the indications for extensive primary rhinoplasty and the role of postoperative molding in maintaining structural symmetry through the patient’s development.
+</div>
+<div class="summary-text vi">Phiên này tập trung vào những thách thức giải phẫu và kỹ thuật phức tạp vốn có trong điều trị khe hở môi hai bên. Các báo cáo viên sẽ phân tích sự phối hợp then chốt giữa chỉnh hình trước phẫu thuật và đóng mô mềm triệt để, với trọng tâm là ổn định khối tiền hàm nhô ra phía trước. Các báo cáo viên sẽ đánh giá việc ứng dụng kỹ thuật vạt xương lá mía kết hợp tái tạo sàn mũi tỉ mỉ nhằm giảm nguy cơ rò miệng – mũi phía trước. Phiên thảo luận cũng sẽ phân tích chỉ định của tạo hình mũi nguyên phát mở rộng và vai trò của chỉnh hình sau mổ trong duy trì sự cân đối cấu trúc trong quá trình phát triển của bệnh nhân.</div>
+</div>
+</div>
+</div>
+<!-- Keynote -->
+<div class="session is-keynote expandable">
+<div class="session-row">
+<div class="session-time">14:15 – 15:00</div>
+<div class="session-main">
+<span class="session-pill pill-keynote en">Plenary Keynote</span><span class="session-pill pill-keynote vi">Báo cáo toàn thể</span>
+<div class="session-title en">Cleft Palate Anatomy</div>
+<div class="session-title vi">Giải phẫu Khe hở vòm miệng</div>
+<div class="session-panellists en"><strong>Speaker:</strong> David Fisher, MD</div>
+<div class="session-panellists vi"><strong>Báo cáo viên:</strong> GS.BS. David Fisher</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">Plenary keynote address reviewing long-term outcomes following primary cleft lip reconstruction across different surgical techniques, patient populations, and follow-up protocols. Emphasis on outcome metrics that matter most to patients and families through skeletal maturity and beyond.</div>
+<div class="summary-text vi">Báo cáo toàn thể về kết quả dài hạn sau tạo hình khe hở môi thì đầu theo các kỹ thuật phẫu thuật, nhóm bệnh nhân và phác đồ theo dõi khác nhau. Nhấn mạnh các chỉ số kết quả quan trọng nhất đối với bệnh nhân và gia đình.</div>
+</div>
+</div>
+</div>
+<!-- Palatoplasty -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">15:00 – 16:00</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Cleft Palate Repair</div>
+<div class="session-title vi">Tạo hình Vòm miệng</div>
+<div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Lun-Jou Lo, MD, PhD · Tae-Suk Oh, MD, PhD · Nguyen Thi Ngoc Lan, MD, MSc</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · GS.TS.BS. Lun-Jou Lo · GS.TS.BS. Tae-Suk Oh · ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session evaluates the competing surgical philosophies of palatoplasty, focusing on the critical tension between radical anatomical restoration and long-term maxillofacial growth. The panel will provide a rigorous comparative analysis of the vomer flap, two-flap palatoplasty, and the Furlow technique, with specific attention to the "Mann Doctrine" of tension-free closure using adjunctive buccal flaps. Discussion will center on identifying the surgical variables that influence velopharyngeal competence while mitigating the risk of oronasal fistulae and maxillary growth inhibition in the developing child.</div>
+<div class="summary-text vi">Phiên này đánh giá các triết lý phẫu thuật khác nhau trong tạo hình vòm miệng, tập trung vào sự cân bằng then chốt giữa phục hồi giải phẫu triệt để và sự phát triển lâu dài của khối hàm mặt. Hội đồng chuyên gia sẽ thực hiện phân tích so sánh chuyên sâu giữa kỹ thuật vạt xương lá mía (vomer flap), tạo hình vòm miệng hai vạt (two-flap palatoplasty) và kỹ thuật Furlow, với trọng tâm đặc biệt vào “Học thuyết Mann” về đóng kín không căng bằng cách sử dụng thêm vạt niêm mạc má hỗ trợ. Phiên thảo luận sẽ tập trung xác định các yếu tố phẫu thuật ảnh hưởng đến chức năng đóng kín họng – màn hầu, đồng thời giảm nguy cơ rò miệng – mũi và hạn chế sự ức chế phát triển xương hàm trên ở trẻ đang lớn.</div>
+</div>
+</div>
+</div>
+<!-- Pierre Robin -->
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">16:00 – 17:00</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Pierre Robin Sequence</div>
+<div class="session-title vi">Hội chứng Pierre Robin</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc· Le Thua Trung Hau, MD, PhD</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · ThS.BSCKII. Đinh Thị Như Thảo · TS.BS. Lê Thừa Trung Hậu</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the complex diagnostic and therapeutic landscape of Pierre Robin Sequence (PRS). The discussion focuses on the multidisciplinary management of neonatal airway obstruction and secondary nutritional failure. The panel conducts a comparative analysis of conservative orthopedic protocols, specifically the Tübingen Palatal Plate, against surgical interventions including Mandibular Distraction Osteogenesis (MDO) and Tongue-Lip Adhesion (TLA). Experts provide a rigorous clinical framework for escalating care to ensure respiratory stability and optimize long-term growth in the PRS infant.</div>
+<div class="summary-text vi">Phiên này tập trung vào các thách thức phức tạp trong chẩn đoán và điều trị hội chứng Pierre Robin (PRS). Nội dung thảo luận nhấn mạnh chiến lược quản lý đa chuyên ngành đối với tình trạng tắc nghẽn đường thở ở trẻ sơ sinh và suy dinh dưỡng thứ phát. Hội đồng chuyên gia sẽ thực hiện phân tích so sánh giữa các phương pháp chỉnh hình bảo tồn, đặc biệt là máng khẩu cái Tübingen, với các can thiệp phẫu thuật bao gồm kéo giãn xương hàm dưới (Mandibular Distraction Osteogenesis – MDO) và dính lưỡi – môi (Tongue-Lip Adhesion – TLA). Các chuyên gia sẽ xây dựng khung lâm sàng chặt chẽ nhằm định hướng thời điểm nâng mức can thiệp điều trị, đảm bảo ổn định hô hấp và tối ưu hóa sự phát triển dài hạn cho trẻ mắc PRS.
+</div>
+</div>
+</div>
+</div>
+<!-- Reception -->
+<div class="session is-reception">
+<div class="session-row">
+<div class="session-time">17:00 – 18:30</div>
+<div class="session-main">
+<span class="session-pill pill-reception en">Social Event</span><span class="session-pill pill-reception vi">Hoạt động kết nối</span>
+<div class="session-title en">Welcome Reception — Networking &amp; Refreshments</div>
+<div class="session-title vi">Sự kiện Kết nối Đồng nghiệp và Đồ uống nhẹ</div>
+<div class="session-panellists en">All registered attendees · Smart casual attire</div>
+<div class="session-panellists vi">Tất cả người tham dự đã đăng ký · Trang phục lịch sự</div>
+</div>
+</div>
+</div>
+</div><!-- /sessions-list -->
+</div>
+<div class="day-panel" id="day2">
+<div class="day-header">
+<div class="day-header-left">
+<div class="day-title en">Day 2 — <em>Secondary &amp; Intermediate Reconstruction</em></div>
+<div class="day-title vi">Ngày 2 — <em>Tạo hình Thứ cấp &amp; Trung gian</em></div>
+<div class="day-date en">Tuesday, September 22, 2026</div>
+<div class="day-date vi">Thứ Ba, 22/09/2026</div>
+</div> </div> <div class="sessions-list">
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">08:00 – 08:30</div>
+<div class="session-main">
+<span class="session-pill pill-break en">Welcome</span><span class="session-pill pill-break vi">Đón tiếp</span>
+<div class="session-title en">Welcome &amp; Recap of Day 1</div>
+<div class="session-title vi">Đón tiếp và Tổng kết Ngày 1</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">08:30 – 10:00</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Management of Palatal Fistulae</div>
+<div class="session-title vi">Xử trí Lỗ rò Vòm miệng</div>
+<div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lun-Jou Lo, MD, PhD · Christopher Runyan, MD, PhD · Le Van Son, MD, PhD</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Lun-Jou Lo · PGS.TS.BS. Christopher Runyan · PGS.TS.BS. Lê Văn Sơn</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session provides a comprehensive framework for the diagnosis and surgical management of palatal fistulae. The discussion focuses on identifying the anatomical and technical risk factors that contribute to tissue breakdown and recurrence. Experts evaluate the efficacy of primary re-repair and Furlow conversion in comparison to the use of vascularized tissue, including buccal, tongue, and microvascular free flaps. The panel emphasizes the critical role of layered closure and tension-free reconstruction in restoring palatal integrity and maintaining optimal speech function.
+</div>
+<div class="summary-text vi">Phiên này cung cấp khung tiếp cận toàn diện cho chẩn đoán và điều trị phẫu thuật lỗ rò vòm miệng. Nội dung thảo luận tập trung vào việc xác định các yếu tố nguy cơ về giải phẫu và kỹ thuật góp phần gây bục mô và tái phát lỗ rò. Các chuyên gia sẽ đánh giá hiệu quả của phẫu thuật sửa lại nguyên phát và chuyển đổi sang kỹ thuật Furlow so với việc sử dụng các mô có cấp máu nuôi như vạt niêm mạc má, vạt lưỡi và các vạt tự do vi phẫu. Các báo cáo viên sẽ nhấn mạnh vai trò then chốt của đóng nhiều lớp và tái tạo không căng trong việc phục hồi tính toàn vẹn của vòm miệng và duy trì chức năng phát âm tối ưu.
+</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">10:00 – 11:15</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Velopharyngeal Insufficiency (VPI): Precision Diagnostics and Surgical Management</div>
+<div class="session-title vi">Hở màn hầu (VPI): Chẩn đoán chính xác và Mục tiêu điều trị bằng phẫu thuật</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Christopher Runyan, MD, PhD  · Corstiaan Breugem, MD, PhD </div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.TS.BS. Christopher Runyan  · GS.TS.BS. Corstiaan Breugem </div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the diagnostic challenges and surgical management of Velopharyngeal Insufficiency (VPI) through a rigorous, data-driven framework. The panel evaluates a comprehensive workup integrating nasopharyngoscopy, nasometry, and dynamic MRI to guide the precise selection of surgical interventions. Discussion focuses on the surgical treatment algorithm, technical pitfalls of pharyngeal reconstruction, and the evolving impact of adolescent skeletal growth on longitudinal velopharyngeal competence.
+</div>
+<div class="summary-text vi">Phiên này tập trung vào những thách thức trong chẩn đoán và điều trị phẫu thuật hở màn hầu thông qua cách tiếp cận chặt chẽ dựa trên dữ liệu. Hội đồng chuyên gia sẽ đánh giá quy trình thăm khám toàn diện kết hợp nội soi mũi họng, đo âm mũi (nasometry) và MRI động nhằm định hướng lựa chọn chính xác các can thiệp phẫu thuật. Nội dung thảo luận tập trung vào thuật toán điều trị phẫu thuật, các sai sót kỹ thuật trong tái tạo họng, cũng như ảnh hưởng thay đổi theo thời gian của sự phát triển xương hàm mặt ở tuổi vị thành niên lên chức năng màn hầu - họng lâu dài.
+</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">11:15 – 12:00</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Phase I Orthodontics — Skeletal Optimisation for Alveolar Reconstruction</div>
+<div class="session-title vi">Chỉnh nha Giai đoạn I — Tối ưu cấu trúc xương cho Tái tạo Ổ răng</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, MS · Dinh Thi Nhu Thao, DDS, MSc</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Chrisopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · ThS.BSCKII. Đinh Thị Như Thảo</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session evaluates the strategic objectives of Phase 1 Orthodontics, focusing on the correction of transverse deficiencies and the stabilization of maxillary segments in the mixed dentition. The panel analyzes the role of arch expansion as a prerequisite for successful alveolar bone grafting and evaluates advanced modalities for maxillary protraction, including bone-anchored skeletal traction. Experts emphasize the longitudinal consequences of orthodontic timing, addressing how precise management during this developmental window prevents segment collapse and simplifies future orthognathic requirements.
+</div>
+<div class="summary-text vi">Phiên này tập trung đánh giá các mục tiêu chiến lược của chỉnh nha giai đoạn I, với trọng tâm là điều chỉnh hẹp ngang cung hàm và ổn định các đoạn xương hàm trên trong giai đoạn răng hỗn hợp. Báo cáo viên sẽ phân tích vai trò của nong cung hàm như một bước chuẩn bị thiết yếu cho ghép xương ổ răng thành công, đồng thời đánh giá các phương pháp kéo xương hàm trên nâng cao, bao gồm kéo chỉnh xương bằng neo chặn xương (bone-anchored skeletal traction). Báo cáo viên cũng nhấn mạnh ảnh hưởng lâu dài của thời điểm can thiệp chỉnh nha, làm rõ cách quản lý chính xác trong giai đoạn phát triển này có thể ngăn ngừa xẹp đoạn hàm và giảm mức độ phức tạp của các can thiệp chỉnh hình xương hàm trong tương lai.
+</div>
+</div>
+</div>
+</div>
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">12:00 – 13:00</div>
+<div class="session-main"><span class="session-pill pill-break">🍽</span><div class="session-title en">Lunch Break</div><div class="session-title vi">Nghỉ trưa</div></div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">13:00 – 14:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Alveolar Bone Grafting: Timing, Technical Execution, and Outcomes</div>
+<div class="session-title vi">Ghép xương Ổ răng: Thời điểm, Kỹ thuật thực hiện và Kết quả</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen &nbsp;·&nbsp; <strong>Panellists:</strong> Tae-Suk Oh, MD, PhD · Robin Yang, MD, DDS · John Phillips, MD </div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Tae-Suk Oh · PGS.BS. Robin Yang · PGS.BS. John Phillips</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the strategic objectives and technical execution of alveolar bone grafting, focusing on the three-dimensional anatomical considerations required to restore the functional dental arch. The panel examines the critical influence of pre-operative palatal expansion and the concurrent management of nasolabial or palatal fistulae on graft viability. Experts provide clinical protocols for facilitating dental eruption through the reconstructed site and establish objective benchmarks for the timing of late-stage interventions in the maturing patient.</div>
+<div class="summary-text vi">Phiên này tập trung vào các mục tiêu chiến lược và kỹ thuật thực hiện ghép xương ổ răng, với trọng tâm là các yếu tố giải phẫu ba chiều cần thiết nhằm phục hồi cung răng chức năng. Hội đồng chuyên gia sẽ phân tích ảnh hưởng then chốt của nong khẩu cái trước phẫu thuật và việc xử trí đồng thời các lỗ rò môi – mũi hoặc lỗ rò vòm miệng đối với khả năng sống còn của mảnh ghép. Các báo cáo viên cũng sẽ trình bày các phác đồ lâm sàng nhằm hỗ trợ sự mọc răng qua vùng tái tạo, đồng thời xác lập các tiêu chuẩn khách quan cho thời điểm can thiệp ở giai đoạn muộn trên bệnh nhân đang trưởng thành.</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">14:30 – 15:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Intermediate Secondary Reconstruction: Lip and Nasal Revision Strategies</div>
+<div class="session-title vi">Tạo hình Thứ cấp Giai đoạn trung gian: Chiến lược chỉnh sửa Môi và Mũi</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Christopher M. Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> David Chong, MD · Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD </div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS. Christopher M. Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. David Chong · GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the clinical indications and precise timing for secondary lip and nasal revisions during the intermediate growth period. The panel evaluates surgical strategies for correcting labial asymmetry, hypertrophic scarring, and columellar shortening, with a primary focus on the relief of functional nasal airway obstruction. Experts discuss the critical balance between achieving psychological and aesthetic improvement during childhood while preserving the anatomical substrate for definitive reconstruction at skeletal maturity.</div>
+<div class="summary-text vi">Phiên này tập trung vào chỉ định lâm sàng và thời điểm thích hợp cho các can thiệp chỉnh sửa môi và mũi thứ phát trong giai đoạn tăng trưởng trung gian. Báo cáo viên sẽ đánh giá các chiến lược phẫu thuật nhằm điều chỉnh bất cân xứng môi, sẹo phì đại và tình trạng ngắn trụ mũi, với trọng tâm chính là cải thiện tắc nghẽn chức năng đường thở mũi. Các báo cáo viên cũng sẽ thảo luận về sự cân bằng quan trọng giữa việc cải thiện tâm lý, thẩm mỹ trong giai đoạn trẻ em và bảo tồn nền tảng giải phẫu cho tái tạo hoàn thiện khi trưởng thành xương.
+</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">15:30 – 16:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Psychosocial Integration and Social Determinants in Cleft Care</div>
+<div class="session-title vi">Hoà nhập Tâm lý-Xã hội và Các yếu tố xã hội trong Điều trị Khe hở</div>
+<div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc · Ms. Chiu - Jung Ku</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · ThS.BSCKII. Đinh Thị Như Thảo· Bà Chiu - Jung Ku</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the psychological and social complexities faced by patients and their support systems throughout the multi-decade treatment continuum. The panel explores the impact of cumulative surgical burden on family dynamics and mental health, with a specific emphasis on identifying regional barriers to comprehensive care within Viet Nam. Experts discuss the integration of validated patient-reported outcome measures (PROMs) to objectively assess quality of life, family satisfaction, and the long-term success of multidisciplinary intervention.
+</div>
+<div class="summary-text vi">Phiên này tập trung vào những thách thức tâm lý và xã hội mà bệnh nhân cùng người chăm sóc và hỗ trợ của họ phải đối mặt trong suốt quá trình điều trị kéo dài nhiều năm. Báo cáo viên sẽ phân tích ảnh hưởng của gánh nặng phẫu thuật tích lũy lên động lực gia đình và sức khỏe tinh thần, với trọng tâm đặc biệt là nhận diện các rào cản khu vực đối với chăm sóc toàn diện tại Việt Nam. Các báo cáo viên cũng sẽ thảo luận về việc tích hợp các thang đo kết quả do bệnh nhân báo cáo (Patient-Reported Outcome Measures – PROMs) đã được chuẩn hóa nhằm đánh giá khách quan chất lượng cuộc sống, mức độ hài lòng của gia đình và hiệu quả lâu dài của mô hình điều trị đa chuyên ngành.
+</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">16:30 – 17:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">The Future of National Infrastructure and Research: Strategic Opportunities in Vietnamese Cleft Care</div>
+<div class="session-title vi">Định hướng phát triển Hệ thống và Nghiên cứu quốc gia: Cơ hội chiến lược trong Điều trị Khe hở tại Việt Nam</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Phuong Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lê Thừa Trung Hậu, MD, PhD · Đỗ Tiến Hải, MD, MSc · Nguyễn Thị Ngọc Lan, MD, MSc</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> TS.BS. Lê Thừa Trung Hậu · ThS.BSCKII. Đỗ Tiến Hải · Ths.BSCKII. Nguyễn Thị Ngọc Lan</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session evaluates the current clinical infrastructure and the future trajectory of cleft care in Viet Nam, focusing on the formalization of regional centers of excellence. The panel conducts a critical analysis of the evolving interface between international organizations and the national healthcare system, exploring how these partnerships can most effectively support the transition toward autonomous, multidisciplinary care models. Discussion facilitates a high-level dialogue between regional leaders to identify structural impediments and formulate a national roadmap for standardized, comprehensive care across all provinces.
+</div>
+<div class="summary-text vi">Phiên này tập trung đánh giá thực trạng hạ tầng lâm sàng hiện nay và định hướng phát triển tương lai của hệ thống điều trị khe hở môi – vòm miệng tại Việt Nam, với trọng tâm là xây dựng và chính thức hóa các trung tâm chuyên sâu theo khu vực. Báo cáo viên sẽ phân tích mối tương tác đang thay đổi giữa các tổ chức quốc tế và hệ thống y tế quốc gia, đồng thời thảo luận cách các mối quan hệ hợp tác này có thể hỗ trợ hiệu quả nhất cho quá trình chuyển đổi sang mô hình chăm sóc đa chuyên ngành mang tính tự chủ và bền vững. Phiên thảo luận cũng tạo diễn đàn đối thoại cấp chiến lược giữa các lãnh đạo khu vực nhằm nhận diện các rào cản hệ thống và xây dựng lộ trình quốc gia hướng tới mô hình chăm sóc toàn diện, chuẩn hóa trên phạm vi toàn quốc.
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="day-panel" id="day3">
+<div class="day-header">
+<div class="day-header-left">
+<div class="day-title en">Day 3 — <em>Adult Reconstruction &amp; National Infrastructure</em></div>
+<div class="day-title vi">Ngày 3 — <em>Tái tạo Người lớn &amp; Hệ thống Quốc gia</em></div>
+<div class="day-date en">Wednesday, September 23, 2026</div>
+<div class="day-date vi">Thứ Tư, 23/09/2026</div>
+</div> </div> <div class="sessions-list">
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">08:00 – 08:30</div>
+<div class="session-main"><span class="session-pill pill-break en">Welcome</span><span class="session-pill pill-break vi">Đón tiếp</span><div class="session-title en">Welcome &amp; Recap of Days 1 &amp; 2</div><div class="session-title vi">Đón tiếp và Tổng kết Ngày 1 &amp; 2</div></div>
+</div>
+</div>
+<div class="session is-ngo expandable">
+<div class="session-row">
+<div class="session-time">08:30 – 09:30</div>
+<div class="session-main">
+<span class="session-pill pill-ngo en">NGO Leadership Forum</span><span class="session-pill pill-ngo vi">Diễn đàn NGO</span>
+<div class="session-title en">NGO Leadership Forum</div>
+<div class="session-title vi">Diễn đàn Lãnh đạo các Tổ chức Phi chính phủ</div>
+<div class="session-panellists en"><strong>Panellists:</strong> Operation Smile · Smile Train · NCF · ReSurge International · Nuoy Reconstructive International</div>
+<div class="session-panellists vi"><strong>Đại diện:</strong> Operation Smile · Smile Train · NCF · ReSurge International · Nuoy Reconstructive International</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This leadership forum convenes the primary international stakeholders in Vietnamese cleft care to analyze the transition from surgical outreach to the establishment of permanent, high-fidelity national infrastructure. The panel will evaluate the intersection of global NGO philosophies and the Vietnamese healthcare system, focusing on the elimination of care silos and the synchronization of regional protocols. Experts will discuss the roadmap for institutionalizing multidisciplinary care to ensure that every patient has access to the full reconstructive continuum through adulthood.
+</div>
+<div class="summary-text vi">Diễn đàn lãnh đạo này quy tụ các tổ chức quốc tế chủ chốt đang hoạt động trong lĩnh vực điều trị khe hở môi – vòm miệng tại Việt Nam nhằm phân tích quá trình chuyển dịch từ các chương trình phẫu thuật ngắn hạn sang xây dựng hệ thống điều trị quốc gia bền vững và chất lượng cao. Báo cáo viên sẽ đánh giá sự giao thoa giữa triết lý hoạt động của các tổ chức phi chính phủ quốc tế và hệ thống y tế Việt Nam, với trọng tâm là giảm thiểu tình trạng phân mảnh trong chăm sóc và đồng bộ hóa các phác đồ điều trị giữa các khu vực. Phiên thảo luận cũng sẽ tập trung xây dựng lộ trình thể chế hóa mô hình chăm sóc đa chuyên ngành, nhằm đảm bảo mỗi bệnh nhân đều có cơ hội tiếp cận đầy đủ chuỗi điều trị tái tạo chức năng đến tuổi trưởng thành.</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">09:30 – 10:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Orthodontic Preparation for Phase II Intervention: Advanced Planning and Structural Integration</div>
+<div class="session-title vi">Chuẩn bị Chỉnh nha cho Giai đoạn II: Lập kế hoạch nâng cao và Tích hợp cấu trúc</div>
+<div class="session-panellists en"><strong>Moderator:</strong> John Phillips, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, MS · Robin Yang, MD, DDS </div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. John Phillips &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · PGS.BS. Robin Yang </div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the advanced orthodontic challenges encountered during the permanent dentition phase of cleft care. The panel evaluates complex strategies for correcting severe transverse narrowing and Class III malocclusions, specifically focusing on the preparation of the maxillary arch for definitive orthognathic surgery. Experts discuss the biomechanical integration of maxillary expansion, bone-anchored skeletal traction, and the comprehensive management of recalcitrant alveolar defects. The discussion prioritizes the establishment of a stable dental and skeletal foundation as a prerequisite for successful adolescent reconstruction.
+</div>
+<div class="summary-text vi">Phiên này tập trung vào các thách thức chỉnh nha nâng cao trong giai đoạn răng vĩnh viễn ở bệnh nhân khe hở môi – vòm miệng. Các báo cáo viên sẽ đánh giá các chiến lược phức tạp nhằm điều chỉnh tình trạng hẹp ngang nghiêm trọng và sai khớp cắn hạng III, với trọng tâm là chuẩn bị cung hàm trên cho phẫu thuật chỉnh hình xương hàm triệt để. Các báo cáo viên sẽ thảo luận về sự tích hợp cơ sinh học giữa nong hàm trên, kéo chỉnh xương bằng neo chặn xương và quản lý toàn diện các khuyết hổng ổ răng khó điều trị. Phiên thảo luận nhấn mạnh việc xây dựng nền tảng xương và khớp cắn ổn định như điều kiện tiên quyết cho tái tạo hoàn thiện ở tuổi vị thành niên.</div>
+</div>
+</div>
+</div>
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">10:30 – 10:45</div>
+<div class="session-main"><span class="session-pill pill-break">☕</span><div class="session-title en">Coffee Break</div><div class="session-title vi">Tea break</div></div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">10:45 – 11:45</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Orthognathic Surgery in the Cleft Patient: Digital Workflows and Virtual Planning</div>
+<div class="session-title vi">Phẫu thuật Chỉnh hình Xương hàm ở Bệnh nhân Khe hở: Quy trình số hóa và Lập kế hoạch ảo</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John Phillips</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session evaluates the integration of Virtual Surgical Planning (VSP) in the correction of complex skeletal malocclusion for the adult cleft patient. The panel analyzes the transition from traditional model surgery to fully digital workflows, highlighting the precision of 3D simulation in achieving facial symmetry and stable occlusion. Experts explore various VSP platforms and provide a comprehensive framework for sequencing complex LeFort I and mandibular movements. The discussion prioritizes strategies for navigating the unique anatomical constraints imposed by previous cleft repairs and scarred soft tissue envelopes.
+</div>
+<div class="summary-text vi">Phiên này tập trung đánh giá việc tích hợp lập kế hoạch phẫu thuật ảo (Virtual Surgical Planning – VSP) trong điều trị các sai khớp cắn xương phức tạp ở bệnh nhân khe hở môi – vòm miệng trưởng thành. Hội đồng chuyên gia sẽ phân tích quá trình chuyển đổi từ phương pháp phẫu thuật trên mẫu hàm truyền thống sang quy trình số hóa hoàn toàn, nhấn mạnh độ chính xác của mô phỏng 3D trong việc đạt được sự cân đối khuôn mặt và khớp cắn ổn định. Các báo cáo viên sẽ giới thiệu nhiều nền tảng VSP khác nhau và xây dựng khung tiếp cận toàn diện cho việc lập trình các di chuyển phức tạp của LeFort I và xương hàm dưới. Phiên thảo luận cũng tập trung vào các chiến lược xử lý những giới hạn giải phẫu đặc thù do sẹo và các can thiệp khe hở trước đó gây ra.</div>
+</div>
+</div>
+</div>
+<div class="session is-break">
+<div class="session-row">
+<div class="session-time">11:45 – 13:00</div>
+<div class="session-main"><span class="session-pill pill-break">🍽</span><div class="session-title en">Lunch Break</div><div class="session-title vi">Nghỉ trưa</div></div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">13:00 – 14:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Advanced Orthognathic Surgery: Operative Execution and Technical Refinements</div>
+<div class="session-title vi">Phẫu thuật Chỉnh hình Xương hàm Nâng cao: Thực hành phẫu thuật và Tối ưu kỹ thuật</div>
+<div class="session-panellists en"><strong>Moderator:</strong> Phuong Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD · Đỗ Tiến Hải, MD, MSc</div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John Phillips · ThS.BSCKII. Đỗ Tiến Hải</div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session addresses the intraoperative management of profound skeletal discrepancies in the adult cleft patient, where cumulative scarring and residual alveolar defects complicate conventional orthognathic movements. Experts evaluate the critical decision-making process between single-stage reconstruction and distraction osteogenesis for the correction of extreme Class III malocclusions. The panel provides technical insights into the management of the scarred soft tissue envelope, the utilization of adjunctive bone grafting for skeletal stability, and the respiratory implications of high-magnitude maxillary advancements.</div>
+<div class="summary-text vi">Phiên này tập trung vào xử trí trong phẫu thuật đối với các bất tương hợp xương hàm nghiêm trọng ở bệnh nhân khe hở môi – vòm miệng trưởng thành, nơi tình trạng sẹo tích lũy và các khuyết hổng ổ răng tồn dư làm phức tạp các di chuyển chỉnh hình xương hàm thông thường. Báo cáo viên sẽ đánh giá quá trình ra quyết định giữa tái tạo một thì và kéo giãn xương trong điều trị sai khớp cắn hạng III mức độ nặng. Các báo cáo viên sẽ chia sẻ những điểm kỹ thuật quan trọng trong xử trí mô mềm sẹo, ứng dụng ghép xương bổ trợ nhằm tăng độ ổn định cấu trúc xương, cũng như ảnh hưởng hô hấp của các di chuyển hàm trên biên độ lớn.
+</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">14:30 – 15:30</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
+<div class="session-title en">Definitive Cleft Rhinoplasty: Structural Restoration and Longitudinal Outcomes</div>
+<div class="session-title vi">Tạo hình Mũi Khe hở Hoàn thiện: Phục hồi cấu trúc và Kết quả dài hạn</div>
+<div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiann Breugem, MD, PhD · Jong-Woo Choi, MD, PhD · Lun-Jou Lo, MD, PhD </div>
+<div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiann Breugem · GS.TS.BS. Jong-Woo Choi · GS.TS.BS. Lun-Jou Lo </div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This session provides a comprehensive analysis of definitive cleft rhinoplasty, focusing on the anatomical restoration of the nasal framework following the completion of skeletal growth. Experts dissect the complexities of the cleft nasal base, severe septal deviations, and lower lateral cartilage asymmetries that persist beyond the primary repair phase. The panel evaluates the comparative merits of open versus closed surgical approaches while addressing the specific aesthetic and structural considerations unique to the Asian patient population. The discussion prioritizes the creation of a stable, harmonious nasal architecture that withstands the forces of long-term tissue contracture.
+</div>
+<div class="summary-text vi">Phiên này cung cấp phân tích toàn diện về tạo hình mũi khe hở hoàn thiện, tập trung vào phục hồi cấu trúc giải phẫu mũi sau khi quá trình phát triển xương đã hoàn tất. Các chuyên gia sẽ phân tích những thách thức phức tạp liên quan đến nền mũi khe hở, lệch vách ngăn nặng và bất cân xứng sụn cánh mũi dưới còn tồn tại sau giai đoạn phẫu thuật nguyên phát. Hội đồng chuyên gia sẽ đánh giá ưu điểm và hạn chế của kỹ thuật tạo hình mũi kín và hở, đồng thời thảo luận các yếu tố thẩm mỹ và cấu trúc đặc thù ở bệnh nhân châu Á. Phiên thảo luận nhấn mạnh mục tiêu xây dựng cấu trúc mũi ổn định, hài hòa và có khả năng duy trì lâu dài trước tác động của co kéo mô sẹo theo thời gian.</div>
+</div>
+</div>
+</div>
+<div class="session expandable">
+<div class="session-row">
+<div class="session-time">15:30 – 16:00</div>
+<div class="session-main">
+<span class="session-pill pill-panel en">Plenary Keynote</span><span class="session-pill pill-panel vi">Báo cáo toàn thể</span>
+<div class="session-title en">Lessons Learned from a Career in Cleft Surgery</div>
+<div class="session-title vi">Những bài học kinh nghiệm từ sự nghiệp phẫu thuật khe hở môi - vòm miệng</div>
+<div class="session-panellists en"><strong>Speaker:</strong> David Fisher, MD &nbsp;·&nbsp; </div>
+<div class="session-panellists vi"><strong>Diễn giả:</strong> GS.BS. David Fisher &nbsp;·&nbsp; </div>
+</div>
+<div class="session-chevron"><div class="chevron-icon"><svg viewbox="0 0 10 6"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg></div></div>
+</div>
+<div class="session-summary">
+<div class="session-summary-inner">
+<div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+<div class="summary-text en">This keynote session presents a reflective journey through more than three decades of cleft and craniofacial surgery by one of the field’s most respected educators and reconstructive surgeons. Drawing upon thousands of patient encounters, longitudinal outcome studies, surgical innovations, and global educational initiatives, Dr. David Fisher shares the most important lessons learned throughout his career.
+Rather than focusing on a single surgical technique, this session explores the principles that consistently lead to successful outcomes: understanding anatomy, respecting growth, prioritizing function over appearance, embracing multidisciplinary collaboration, and maintaining lifelong commitment to patient follow-up. Through clinical stories, successes, failures, and personal reflections, participants will gain insights that extend beyond the operating room and into leadership, education, and the future of cleft care.</div>
+<div class="summary-text vi">Bài giảng toàn thể này là phần chia sẻ tổng kết từ sự nghiệp lâu dài của Giáo sư David M. Fisher trong lĩnh vực phẫu thuật khe hở môi - vòm miệng và sọ mặt. Thay vì tập trung vào một kỹ thuật đơn lẻ, phiên này nhìn lại những nguyên tắc cốt lõi đã định hình thực hành phẫu thuật qua nhiều thập kỷ: hiểu sâu giải phẫu, tôn trọng sự phát triển của trẻ, ưu tiên chức năng song song với thẩm mỹ, học hỏi từ biến chứng và duy trì theo dõi dài hạn.
+Thông qua các ca lâm sàng, kinh nghiệm thành công và cả những bài học từ kết quả chưa tối ưu, phiên này giúp người tham dự hiểu rõ hơn vai trò của phẫu thuật viên không chỉ trong phòng mổ, mà còn trong đào tạo, xây dựng đội ngũ đa chuyên ngành và phát triển hệ thống chăm sóc khe hở bền vững.</div>
+</div>
+</div>
+</div>
+<!-- Closing -->
+<div class="session is-ceremony">
+<div class="session-row">
+<div class="session-time">16:00 – 16:15</div>
+<div class="session-main">
+<span class="session-pill pill-ceremony en">Closing</span><span class="session-pill pill-ceremony vi">Bế mạc</span>
+<div class="session-title en">Closing Remarks &amp; Future Directions in Cleft Care</div>
+<div class="session-title vi">Phát biểu Bế mạc và Định hướng Tương lai trong Điều trị Khe hở</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="prog-notes">
+<div class="prog-notes-title en">Programme Notes</div>
+<div class="prog-notes-title vi">Ghi chú Chương trình</div>
+<ul class="prog-notes-list">
+<li class="en">All sessions conducted in English. Vietnamese simultaneous interpretation available throughout.</li>
+<li class="vi">Tất cả phiên diễn ra bằng tiếng Anh. Phiên dịch đồng thời tiếng Việt được cung cấp xuyên suốt chương trình.</li>
+<li class="en">Registration includes all scientific sessions, summit materials, lunch, and tea breaks on all three days.</li>
+<li class="vi">Phí đăng ký bao gồm toàn bộ phiên khoa học, tài liệu hội nghị, bữa trưa và tea break trong cả ba ngày.</li>
+<li class="en">Welcome Reception on September 21 (17:00–18:30) included for all registered attendees. Smart casual attire.</li>
+<li class="vi">Sự kiện Kết nối Đồng nghiệp ngày 21/09 (17:00–18:30) dành cho tất cả người tham dự đã đăng ký. Trang phục lịch sự.</li>
+<li class="en">CME credits available for Vietnamese participant only. Fee and accreditation details to be announced separately.</li>
+<li class="vi">Hội nghị chỉ cấp Chứng chỉ CME cho hội thảo viên Việt Nam. Thông tin về phí và giấy chứng nhận sẽ được thông báo riêng.</li>
+<li class="en">Programme subject to minor changes. Final programme distributed at registration check-in.</li>
+<li class="vi">Chương trình có thể có thay đổi nhỏ. Chương trình chính thức sẽ được phát tại khu vực check-in.</li>
+</ul>
+</div>
 
 <script>
-/* Lang */
-function setLang(l){
-  document.body.setAttribute('data-lang',l);
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
-  localStorage.setItem('icms-lang',l);
-}
-(function(){
-  var urlLang = new URLSearchParams(window.location.search).get('lang');
-  if (urlLang === 'en' || urlLang === 'vi') { localStorage.setItem('icms-lang', urlLang); }
-  if (!urlLang && window.location.pathname.indexOf('/vi/') !== -1) {
-    localStorage.setItem('icms-lang', 'vi');
-  }
-})();
-setLang(localStorage.getItem('icms-lang')||'en');
-
-/* Day tabs */
-function showDay(id,btn){
+function showDay(n,btn){
   document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.day-tab').forEach(b=>b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
+  document.getElementById('day'+n).classList.add('active');
   btn.classList.add('active');
-  // close all open sessions when switching day
-  document.querySelectorAll('.session.open').forEach(s=>{
-    s.classList.remove('open');
-    const sum=s.querySelector('.session-summary');
-    if(sum) sum.classList.remove('open');
-  });
-
   sendHeight();
-  setTimeout(sendHeight, 200);
-  setTimeout(sendHeight, 500);}
-
-/* Session accordion */
+}
 function toggleSession(el){
-  const summary=el.querySelector('.session-summary');
-  if(!summary) return;
-  const isOpen=el.classList.contains('open');
-  // close all others in same day panel
-  const panel=el.closest('.day-panel');
-  panel.querySelectorAll('.session.open').forEach(s=>{
-    if(s!==el){
-      s.classList.remove('open');
-      s.querySelector('.session-summary').classList.remove('open');
-    }
-  });
-  // toggle this one
-  el.classList.toggle('open',!isOpen);
-  summary.classList.toggle('open',!isOpen);
+  var summary = el.querySelector('.session-summary');
+  if(summary) summary.classList.toggle('open');
+  sendHeight();
 }
-</script>
- 
-<script>
-function sendHeight(){
-  const h=document.documentElement.scrollHeight;
-  if(window.parent)window.parent.postMessage({type:'resize',height:h},'*');
-}
-window.addEventListener('load',sendHeight);
-window.addEventListener('resize',sendHeight);
-setTimeout(sendHeight,300);
-setTimeout(sendHeight,1000);
+document.querySelectorAll('.session.expandable').forEach(function(s){
+  s.addEventListener('click', function(){ toggleSession(this); });
+});
 </script>
 <script>
-/* Lang persistence across pages via URL param */
-(function(){
-  var PAGES=["https://www.nuoy.org/cleft-summit","https://www.nuoy.org/cleft-summit/about","https://www.nuoy.org/cleft-summit/program","https://www.nuoy.org/cleft-summit/registration","https://www.nuoy.org/cleft-summit/speakers"];
-  var urlLang=new URLSearchParams(window.location.search).get("lang");
-  if(urlLang==="en"||urlLang==="vi"){localStorage.setItem("icms-lang",urlLang);}
-  document.addEventListener("click",function(e){
-    var a=e.target.closest("a");
-    if(!a)return;
-    var href=a.getAttribute("href");
-    if(!href)return;
-    var isInternal=PAGES.some(function(p){return href===p||href.startsWith(p+"?");});
-    if(!isInternal)return;
-    var lang=localStorage.getItem("icms-lang")||"en";
-    var url=new URL(href,window.location.href);
-    url.searchParams.set("lang",lang);
-    a.setAttribute("href",url.toString());
-  });
-})();
-</script>
-
-<script>
-function toggleMenu(){
-  var btn=document.getElementById('hamburger');
-  var menu=document.getElementById('mobile-menu');
-  btn.classList.toggle('open');
-  menu.classList.toggle('open');
+function setLang(l){
+  document.body.setAttribute('data-lang',l);
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
+  setMobileLang(l);
+  localStorage.setItem('icms-lang',l);
+  sendHeight();
 }
 function setMobileLang(l){
-  document.getElementById('mlang-en').classList.toggle('active', l==='en');
-  document.getElementById('mlang-vi').classList.toggle('active', l==='vi');
+  document.getElementById('mlang-en').classList.toggle('active',l==='en');
+  document.getElementById('mlang-vi').classList.toggle('active',l==='vi');
+}
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
 }
 document.addEventListener('click',function(e){
   var menu=document.getElementById('mobile-menu');
   var btn=document.getElementById('hamburger');
-  if(menu && btn && menu.classList.contains('open')){
-    if(!menu.contains(e.target) && !btn.contains(e.target)){
-      menu.classList.remove('open');
-      btn.classList.remove('open');
+  if(menu&&btn&&menu.classList.contains('open')){
+    if(!menu.contains(e.target)&&!btn.contains(e.target)){
+      menu.classList.remove('open');btn.classList.remove('open');
     }
   }
 });
+(function(){
+  var urlLang=new URLSearchParams(window.location.search).get('lang');
+  if(urlLang==='en'||urlLang==='vi'){localStorage.setItem('icms-lang',urlLang);}
+  if(!urlLang&&window.location.pathname.indexOf('/vi/')!==-1){localStorage.setItem('icms-lang','vi');}
+})();
+setLang(localStorage.getItem('icms-lang')||'en');
+function sendHeight(){
+  var h=document.documentElement.scrollHeight;
+  if(window.parent&&window.parent!==window){window.parent.postMessage({type:'resize',height:h},'*');}
+}
+document.fonts.ready.then(function(){sendHeight();setTimeout(sendHeight,400);});
+window.addEventListener('resize',function(){clearTimeout(window._rt);window._rt=setTimeout(sendHeight,150);});
 </script>
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-stripe"></div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="nav-logo" style="margin-bottom:0">
+          <img src="https://anh-wq.github.io/cleft-course/nuoy_white-logo_nobackground.png" alt="Nuoy" style="height:32px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
+          <div class="nav-wordmark" style="overflow:visible;max-width:none;animation:none">
+            <strong style="animation:none;white-space:normal">International Cleft Mastery Summit</strong>
+            <span>Ha Noi 2026</span>
+          </div>
+        </div>
+        <p class="en" style="margin-top:.75rem">Organised by Nuoy Reconstructive International — a global nonprofit advancing reconstructive surgical care through education, partnership, and sustainable medical capacity building in Viet Nam and Southeast Asia. Co-hosted by Hong Ngoc  - Phuc Truong Minh General Hospital — a premier private medical facility equipped with state-of-the-art infrastructure, partnering with a shared mission to elevate local surgical standards.</p>
+        <p class="vi" style="margin-top:.75rem">Được tổ chức bởi Nuoy Reconstructive International — tổ chức phi lợi nhuận thúc đẩy chăm sóc phẫu thuật tạo hình thông qua đào tạo, hợp tác và phát triển năng lực y tế bền vững tại Việt Nam và Đông Nam Á. Đồng tổ chức bởi Bệnh viện Đa khoa Hồng Ngọc - Phúc Trường Minh là đơn vị y tế tư nhân với cơ sở vật chất khang trang, hiện đại. Chương trình được tổ chức với sứ mệnh nâng cao tiêu chuẩn phẫu thuật tại địa phương</p>
+      </div>
+      <div class="foot-col">
+        <h5 class="en">Pages</h5><h5 class="vi">Điều hướng</h5>
+        <ul>
+          <li><a href="https://www.nuoy.org/cleft-summit" class="en" target="_top">Home</a><a href="https://www.nuoy.org/cleft-summit" class="vi" target="_top">Trang chủ</a></li>
+          <li><a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">About</a><a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Về hội nghị</a></li>
+          <li><a href="https://www.nuoy.org/cleft-summit/program" class="en" target="_top">Programme</a><a href="https://www.nuoy.org/cleft-summit/program" class="vi" target="_top">Chương trình</a></li>
+          <li><a href="https://www.nuoy.org/cleft-summit/speakers" class="en" target="_top">Speakers</a><a href="https://www.nuoy.org/cleft-summit/speakers" class="vi" target="_top">Diễn giả</a></li>
+          <li><a href="https://www.nuoy.org/cleft-summit/registration" class="en" target="_top">Register</a><a href="https://www.nuoy.org/cleft-summit/registration" class="vi" target="_top">Đăng ký</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:cleftcourse@nuoy.org">cleftcourse@nuoy.org</a></li>
+          <li><a href="https://www.nuoy.org" target="_blank">nuoy.org</a></li>
+        </ul>
+        <h5 style="margin-top:1.25rem" class="en">Venue</h5>
+        <h5 style="margin-top:1.25rem" class="vi">Địa điểm</h5>
+        <ul>
+          <li><a href="https://www.nuoy.org/cleft-summit/about" class="en" target="_top">Hong Ngoc - Phuc Truong Minh General Hospital</a><a href="https://www.nuoy.org/cleft-summit/about" class="vi" target="_top">Bệnh viện Đa khoa Hồng Ngọc - Phúc Trường Minh</a></li>
+          <li><a style="font-size:11px;opacity:.7">Số 8 Châu Văn Liêm, Phường Từ Liêm, Hà Nội, Việt Nam</a></li>
+        </ul>
+        <h5 style="margin-top:1.25rem" class="en">Organised by</h5>
+        <h5 style="margin-top:1.25rem" class="vi">Đơn vị tổ chức</h5>
+        <ul>
+          <li><a href="https://www.nuoy.org" target="_blank">Nuoy Reconstructive International</a></li>
+          <li><a href="https://www.hongngochospital.vn" target="_blank">Hong Ngoc -Phuc Truong Minh General Hospital</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Nuoy Reconstructive International · ICMS Ha Noi</span>
+      <a href="https://www.nuoy.org" target="_blank">nuoy.org</a>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

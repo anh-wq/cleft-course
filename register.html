@@ -770,7 +770,7 @@ body.is-mobile .day-tabs{top:0!important}
     <div class="ps-deadline">
       <div class="ps-deadline-label en">⏰ Early Bird closes</div>
       <div class="ps-deadline-label vi">⏰ Đăng ký sớm kết thúc</div>
-      <div class="ps-deadline-val">July 15, 2026</div>
+      <div class="ps-deadline-val">August 15, 2026</div>
       <div class="ps-deadline-sub" id="eb-days"></div>
     </div>
     <div class="ps-card">
@@ -867,7 +867,7 @@ const PRICES = {
 /* ── PERIOD LOGIC ── */
 function getPeriod() {
   const now = new Date();
-  if (now <= new Date('2026-07-15T23:59:59')) return 'eb';
+  if (now <= new Date('2026-08-15T23:59:59')) return 'eb';
   if (now <= new Date('2026-09-20T23:59:59')) return 'reg';
   return 'onsite';
 }
@@ -895,7 +895,7 @@ function init() {
     document.getElementById('sp-'+t+'-'+map[period]).classList.add('current');
   });
   // Early bird countdown
-  const diff = new Date('2026-07-15') - new Date();
+  const diff = new Date('2026-08-15') - new Date();
   const el = document.getElementById('eb-days');
   if(el && diff > 0) {
     const d = Math.floor(diff/86400000);
