@@ -144,6 +144,7 @@ nav {
 .session.is-reception{border-left:4px solid var(--green)}
 .session.is-ceremony{border-left:4px solid rgba(0,180,188,.4)}
 .session.is-ngo{border-left:4px solid var(--sky)}
+.session.is-video{border-left:4px solid #8b5cf6}
 
 /* CLICKABLE HEADER ROW */
 .session-row{
@@ -178,6 +179,7 @@ nav {
 .pill-break{background:rgba(128,130,133,.12);color:var(--tx3)}
 .pill-ceremony{background:rgba(74,103,170,.1);color:var(--blue)}
 .pill-ngo{background:rgba(18,149,216,.1);color:var(--sky)}
+.pill-video{background:rgba(139,92,246,.12);color:#7c3aed}
 
 .session-title{
   font-size:14px;font-weight:600;color:var(--dark);
@@ -499,7 +501,7 @@ body{min-height:0!important}
     <!-- Registration -->
     <div class="session is-break">
       <div class="session-row">
-        <div class="session-time">08:00 – 08:30</div>
+        <div class="session-time">07:30 – 08:00</div>
         <div class="session-main">
           <span class="session-pill pill-break en">Check-in</span><span class="session-pill pill-break vi">Đón tiếp</span>
           <div class="session-title en">Registration, Check-in &amp; Welcome</div>
@@ -511,7 +513,7 @@ body{min-height:0!important}
     <!-- Opening -->
     <div class="session is-ceremony">
       <div class="session-row">
-        <div class="session-time">08:30 – 08:45</div>
+        <div class="session-time">08:00 – 08:15</div>
         <div class="session-main">
           <span class="session-pill pill-ceremony en">Opening</span><span class="session-pill pill-ceremony vi">Khai mạc</span>
           <div class="session-title en">Opening Ceremony</div>
@@ -523,13 +525,13 @@ body{min-height:0!important}
     <!-- Intro -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">08:45 – 08:55</div>
+        <div class="session-time">08:15 – 08:30</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
-          <div class="session-title en">Summit Introduction &amp; Learning Objectives</div>
+          <div class="session-title en">Course Introduction &amp; Learning Objectives</div>
           <div class="session-title vi">Giới thiệu hội nghị và Mục tiêu đào tạo</div>
-          <div class="session-panellists en"><strong>Speakers:</strong> David K. Chong, MD · Phuong D. Nguyen, MD · Christopher M. Runyan, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.BS. David K. Chong · GS.BS. Phuong D. Nguyen · PGS.TS.BS. Christopher M. Runyan</div>
+          <div class="session-panellists en"><strong>Speakers:</strong> Christopher M. Runyan, MD, PhD · David K. Chong, MD</div>
+          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.TS.BS. Christopher M. Runyan · PGS.BS. David K. Chong</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -547,7 +549,7 @@ body{min-height:0!important}
     <!-- Global evolution -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">08:55 – 09:10</div>
+        <div class="session-time">08:30 – 08:45</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
           <div class="session-title en">Global Evolution and Timeline of Comprehensive Cleft Care</div>
@@ -570,13 +572,13 @@ body{min-height:0!important}
     <!-- History VN -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">09:10 – 09:35</div>
+        <div class="session-time">08:45 – 09:00</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Plenary</span><span class="session-pill pill-panel vi">Toàn thể</span>
           <div class="session-title en">History of Cleft Care in Viet Nam</div>
           <div class="session-title vi">Lịch sử Điều trị Khe hở môi – vòm miệng tại Việt Nam</div>
-          <div class="session-panellists en"><strong>Speaker:</strong> Le Van Son, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.TS.BS. Lê Văn Sơn</div>
+          <div class="session-panellists en"><strong>Speaker:</strong> Nguyen Van Dau, MD, PhD</div>
+          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> TTND.TS.BS. Nguyễn Văn Đẩu</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -592,13 +594,13 @@ body{min-height:0!important}
     <!-- PSIO -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">09:35 – 10:30</div>
+        <div class="session-time">09:00 – 10:00</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Presurgical Infant Orthopedics (PSIO): Indications, Techniques, and Outcomes</div>
           <div class="session-title vi">Chỉnh hình trước phẫu thuật ở trẻ sơ sinh (PSIO): Chỉ định, Kỹ thuật và Kết quả</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathia Wangsrimongkol, MD · Daniela Tanikawa, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathia Wangsrimongkol · TS.BS. Daniela Tanikawa · ThS.BSCKII. Đinh Thị Như Thảo </div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, DMSc · Daniela Tanikawa, MD, PhD · Dinh Thi Nhu Thao, DDS, MSc</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · TS.BS. Daniela Tanikawa · ThS.BSCKII. Đinh Thị Như Thảo </div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -614,7 +616,7 @@ body{min-height:0!important}
     <!-- Coffee -->
     <div class="session is-break">
       <div class="session-row">
-        <div class="session-time">10:30 – 10:45</div>
+        <div class="session-time">10:00 – 10:15</div>
         <div class="session-main">
           <span class="session-pill pill-break">☕</span>
           <div class="session-title en">Coffee Break</div>
@@ -626,13 +628,13 @@ body{min-height:0!important}
     <!-- Unilateral -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">10:45 – 12:00</div>
+        <div class="session-time">10:15 – 11:30</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Unilateral Cleft Lip Repair &amp; Primary Rhinoplasty: Principles &amp; Techniques</div>
           <div class="session-title vi">Tạo hình Khe hở môi một bên và Tạo hình mũi thì đầu: Nguyên tắc và Kỹ thuật</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD · Daniela Tanikawa, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo · TS.BS. Danieal Tanikawa</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Tae-Suk Oh, MD, PhD · Daniela Tanikawa, MD, PhD · Lun-Jou Lo, MD, PhD · Le Thua Trung Hau, MD, PhD</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Tae-Suk Oh · TS.BS. Daniela Tanikawa · GS.TS.BS. Lun-Jou Lo · TS.BS. Lê Thừa Trung Hậu</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -642,6 +644,28 @@ body{min-height:0!important}
           <div class="summary-text en">This session provides a rigorous comparative analysis of the leading surgical paradigms in unilateral cleft reconstruction. The panel will evaluate the anatomical rationale and longitudinal stability of the Rotation-Advancement model versus the Anatomic Subunit repair. Experts will dissect the technical nuances of functional muscle reconstruction and the restoration of the nasal base, with a specific focus on mitigating the secondary revision burden. The discussion concludes with a live commentary on managing anatomical extremes, including wide complete clefts and complex incomplete variants.</div>
           <div class="summary-text vi">Phiên này cung cấp phân tích chuyên sâu và mang tính so sánh về các trường phái phẫu thuật hàng đầu trong điều trị khe hở môi một bên. Hội đồng chuyên gia sẽ đánh giá cơ sở giải phẫu và tính ổn định lâu dài của kỹ thuật xoay – đẩy vạt (Rotation-Advancement) so với kỹ thuật phục hồi theo đơn vị giải phẫu thẩm mỹ (Anatomic Subunit Repair). Các báo cáo viên sẽ phân tích chi tiết những điểm kỹ thuật then chốt trong tái tạo chức năng cơ vòng môi và phục hồi nền mũi, với trọng tâm là giảm thiểu nhu cầu chỉnh sửa thứ phát. Phiên thảo luận sẽ kết thúc bằng phần bình luận lâm sàng trực tiếp về xử trí các dạng giải phẫu phức tạp, bao gồm khe hở rộng toàn bộ và các thể khe hở không hoàn toàn phức tạp.
 </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video Demo: Unilateral -->
+    <div class="session is-video" onclick="toggleSession(this)">
+      <div class="session-row">
+        <div class="session-time">11:30 – 12:00</div>
+        <div class="session-main">
+          <span class="session-pill pill-video en">Video Demonstration</span><span class="session-pill pill-video vi">Trình diễn Video</span>
+          <div class="session-title en">Video Demonstration: Unilateral Lip Repair and Anatomic Sub Unit Technique</div>
+          <div class="session-title vi">Trình diễn Video: Tạo hình Khe hở môi một bên và Kỹ thuật Anatomic Sub Unit</div>
+          <div class="session-panellists en"><strong>Speaker:</strong> David Fisher, MD</div>
+          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> GS.BS. David Fisher</div>
+        </div>
+        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </div>
+      <div class="session-summary">
+        <div class="session-summary-inner">
+          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+          <div class="summary-text en">A step-by-step video walkthrough of the Anatomic Subunit Approximation technique for unilateral cleft lip repair, presented live by the technique's original author. The demonstration highlights markings, muscle dissection, and closure sequencing that align scars with the natural subunits of the lip.</div>
+          <div class="summary-text vi">Video trình diễn từng bước kỹ thuật Anatomic Subunit Approximation trong tạo hình khe hở môi một bên, do chính tác giả của kỹ thuật này trực tiếp trình bày. Phần trình diễn tập trung vào cách đánh dấu, bóc tách cơ và trình tự đóng vết mổ nhằm giấu sẹo theo các đơn vị giải phẫu tự nhiên của môi.</div>
         </div>
       </div>
     </div>
@@ -666,7 +690,7 @@ body{min-height:0!important}
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Bilateral Cleft Lip Repair: Strategies and Pitfalls</div>
           <div class="session-title vi">Tạo hình Khe hở môi hai bên: Chiến lược và Vấn đề thường gặp</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Daniela Tanikawa, MD, PhD · David Fisher, MD, PhD · David Chong, MD</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> David Chong, MD · David Fisher, MD · Daniela Tanikawa, MD, PhD</div>
           <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> TS.BS. Daniela Tanikawa · GS.BS. David Fisher · PGS.BS. David Chong</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
@@ -706,13 +730,13 @@ body{min-height:0!important}
     <!-- Palatoplasty -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">15:00 – 16:00</div>
+        <div class="session-time">15:00 – 16:30</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Cleft Palate Repair</div>
           <div class="session-title vi">Tạo hình Vòm miệng</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Lun-Jou Lo, MD, PhD · Tae-Suk Oh, MD, PhD · Nguyen Thi Ngoc Lan, MD, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · GS.TS.BS. Lun-Jou Lo · GS.TS.BS. Tae-Suk Oh · ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiaan Breugem, MD, PhD · Lun-Jou Lo, MD, PhD · Tae-Suk Oh, MD, PhD · Nguyen Thi Ngoc Lan, MD, MSc · Dang Thi Lien Huong, MD</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiaan Breugem · GS.TS.BS. Lun-Jou Lo · GS.TS.BS. Tae-Suk Oh · ThS.BSCKII. Nguyễn Thị Ngọc Lan · BSCK II. Đặng Thị Liên Hương</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -728,7 +752,7 @@ body{min-height:0!important}
     <!-- Pierre Robin -->
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">16:00 – 17:00</div>
+        <div class="session-time">16:30 – 17:30</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Pierre Robin Sequence</div>
@@ -751,7 +775,7 @@ body{min-height:0!important}
     <!-- Reception -->
     <div class="session is-reception">
       <div class="session-row">
-        <div class="session-time">17:00 – 18:30</div>
+        <div class="session-time">17:30 – 19:00</div>
         <div class="session-main">
           <span class="session-pill pill-reception en">Social Event</span><span class="session-pill pill-reception vi">Hoạt động kết nối</span>
           <div class="session-title en">Welcome Reception — Networking &amp; Refreshments</div>
@@ -777,7 +801,7 @@ body{min-height:0!important}
 
     <div class="session is-break">
       <div class="session-row">
-        <div class="session-time">08:00 – 08:30</div>
+        <div class="session-time">08:00 – 08:10</div>
         <div class="session-main">
           <span class="session-pill pill-break en">Welcome</span><span class="session-pill pill-break vi">Đón tiếp</span>
           <div class="session-title en">Welcome &amp; Recap of Day 1</div>
@@ -788,13 +812,13 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">08:30 – 10:00</div>
+        <div class="session-time">08:10 – 09:40</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Management of Palatal Fistulae</div>
           <div class="session-title vi">Xử trí Lỗ rò Vòm miệng</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lun-Jou Lo, MD, PhD · Christopher Runyan, MD, PhD · Le Van Son, MD, PhD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Lun-Jou Lo · PGS.TS.BS. Christopher Runyan · PGS.TS.BS. Lê Văn Sơn</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lun-Jou Lo, MD, PhD · Christopher Runyan, MD, PhD · Nguyen Thi Ngoc Lan, MD, MSc</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Lun-Jou Lo · PGS.TS.BS. Christopher Runyan · ThS.BSCKII. Nguyễn Thị Ngọc Lan</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -811,13 +835,13 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">10:00 – 11:15</div>
+        <div class="session-time">09:40 – 10:55</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Velopharyngeal Insufficiency (VPI): Precision Diagnostics and Surgical Management</div>
           <div class="session-title vi">Hở màn hầu (VPI): Chẩn đoán chính xác và Mục tiêu điều trị bằng phẫu thuật</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Christopher Runyan, MD, PhD  · Corstiaan Breugem, MD, PhD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.TS.BS. Christopher Runyan  · GS.TS.BS. Corstiaan Breugem </div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Hoang Van Quyen, MD, MSc · Truong Minh Nga, DDS, MSc · Corstiaan Breugem, MD, PhD · Christopher Runyan, MD, PhD</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> ThS.BS. Hoàng Văn Quyên · Trương Minh Nga · GS.TS.BS. Corstiaan Breugem · PGS.TS.BS. Christopher Runyan</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -832,6 +856,13 @@ body{min-height:0!important}
       </div>
     </div>
 
+    <div class="session is-break">
+      <div class="session-row">
+        <div class="session-time">10:55 – 11:15</div>
+        <div class="session-main"><span class="session-pill pill-break">☕</span><div class="session-title en">Coffee Break</div><div class="session-title vi">Tea break</div></div>
+      </div>
+    </div>
+
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
         <div class="session-time">11:15 – 12:00</div>
@@ -839,8 +870,8 @@ body{min-height:0!important}
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Phase I Orthodontics — Skeletal Optimisation for Alveolar Reconstruction</div>
           <div class="session-title vi">Chỉnh nha Giai đoạn I — Tối ưu cấu trúc xương cho Tái tạo Ổ răng</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, MS · Dinh Thi Nhu Thao, DDS, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Chrisopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · ThS.BSCKII. Đinh Thị Như Thảo</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Dinh Thi Nhu Thao, DDS, MSc · Duong Thi Diem Hang, MD, MSc · Buddhathida Wangsrimongkol, DDS, DMSc</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> ThS.BSCKII. Đinh Thị Như Thảo · ThS.BS. Dương Thị Diễm Hằng · PGS.BS. Buddhathida Wangsrimongkol</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -864,7 +895,7 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">13:00 – 14:30</div>
+        <div class="session-time">13:00 – 14:15</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Alveolar Bone Grafting: Timing, Technical Execution, and Outcomes</div>
@@ -883,15 +914,44 @@ body{min-height:0!important}
       </div>
     </div>
 
+    <!-- Video Demo: Simulator model -->
+    <div class="session is-video" onclick="toggleSession(this)">
+      <div class="session-row">
+        <div class="session-time">14:15 – 14:45</div>
+        <div class="session-main">
+          <span class="session-pill pill-video en">Video Demonstration</span><span class="session-pill pill-video vi">Trình diễn Video</span>
+          <div class="session-title en">Video Demonstration: Simulator Model Demonstration (ABG + Fistula)</div>
+          <div class="session-title vi">Trình diễn Video: Mô hình mô phỏng (Ghép xương ổ răng + Lỗ rò)</div>
+          <div class="session-panellists en"><strong>Speaker:</strong> John Phillips, MD</div>
+          <div class="session-panellists vi"><strong>Báo cáo viên:</strong> PGS.BS. John H. Phillips</div>
+        </div>
+        <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+      </div>
+      <div class="session-summary">
+        <div class="session-summary-inner">
+          <div class="summary-label en">Session Summary</div><div class="summary-label vi">Tóm tắt phiên</div>
+          <div class="summary-text en">A hands-on video demonstration using surgical simulation models to illustrate key technical steps in alveolar bone grafting and palatal fistula repair, providing a practical bridge between the preceding panel discussions and everyday operative practice.</div>
+          <div class="summary-text vi">Video trình diễn thực hành trên mô hình mô phỏng phẫu thuật, minh họa các bước kỹ thuật then chốt trong ghép xương ổ răng và xử trí lỗ rò vòm miệng, giúp kết nối nội dung thảo luận nhóm trước đó với thực hành phẫu thuật hàng ngày.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="session is-break">
+      <div class="session-row">
+        <div class="session-time">14:45 – 15:00</div>
+        <div class="session-main"><span class="session-pill pill-break">☕</span><div class="session-title en">Coffee Break</div><div class="session-title vi">Tea break</div></div>
+      </div>
+    </div>
+
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">14:30 – 15:30</div>
+        <div class="session-time">15:00 – 16:00</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Intermediate Secondary Reconstruction: Lip and Nasal Revision Strategies</div>
           <div class="session-title vi">Tạo hình Thứ cấp Giai đoạn trung gian: Chiến lược chỉnh sửa Môi và Mũi</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher M. Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> David Chong, MD · Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS. Christopher M. Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. David Chong · GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Christopher M. Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> David Chong, MD · Tae-Suk Oh, MD, PhD · Lun-Jou Lo, MD, PhD · Tran Dinh Phuong, MD</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS. Christopher M. Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. David Chong · GS.TS.BS. Tae-Suk Oh · GS.TS.BS. Lun-Jou Lo · BSCKII. Trần Đình Phượng</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -907,7 +967,7 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">15:30 – 16:30</div>
+        <div class="session-time">16:00 – 16:45</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Psychosocial Integration and Social Determinants in Cleft Care</div>
@@ -930,7 +990,7 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">16:30 – 17:30</div>
+        <div class="session-time">16:45 – 17:45</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">The Future of National Infrastructure and Research: Strategic Opportunities in Vietnamese Cleft Care</div>
@@ -966,20 +1026,20 @@ body{min-height:0!important}
 
     <div class="session is-break">
       <div class="session-row">
-        <div class="session-time">08:00 – 08:30</div>
+        <div class="session-time">08:00 – 08:10</div>
         <div class="session-main"><span class="session-pill pill-break en">Welcome</span><span class="session-pill pill-break vi">Đón tiếp</span><div class="session-title en">Welcome &amp; Recap of Days 1 &amp; 2</div><div class="session-title vi">Đón tiếp và Tổng kết Ngày 1 &amp; 2</div></div>
       </div>
     </div>
 
     <div class="session is-ngo" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">08:30 – 09:30</div>
+        <div class="session-time">08:10 – 09:25</div>
         <div class="session-main">
           <span class="session-pill pill-ngo en">NGO Leadership Forum</span><span class="session-pill pill-ngo vi">Diễn đàn NGO</span>
           <div class="session-title en">NGO Leadership Forum</div>
           <div class="session-title vi">Diễn đàn Lãnh đạo các Tổ chức Phi chính phủ</div>
-          <div class="session-panellists en"><strong>Panellists:</strong> Operation Smile · Smile Train · NCF · ReSurge International · Nuoy Reconstructive International</div>
-          <div class="session-panellists vi"><strong>Đại diện:</strong> Operation Smile · Smile Train · NCF · ReSurge International · Nuoy Reconstructive International</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Phuong D. Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Nguyen Thi Hai Duc · Nguyen Van Thuc · Mac Thi Diem Ngoc · Natalie Mayers, MPH · Julien Klaudt-Moreau, MPH</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong D. Nguyen &nbsp;·&nbsp; <strong>Đại diện:</strong> Nguyễn Thị Hải Đức · Nguyễn Văn Thực · Mạc Thị Diễm Ngọc · Natalie Mayers, MPH · Julien Klaudt-Moreau, MPH</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -995,13 +1055,13 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">09:30 – 10:30</div>
+        <div class="session-time">09:25 – 10:10</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Orthodontic Preparation for Phase II Intervention: Advanced Planning and Structural Integration</div>
           <div class="session-title vi">Chuẩn bị Chỉnh nha cho Giai đoạn II: Lập kế hoạch nâng cao và Tích hợp cấu trúc</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> John Phillips, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Buddhathida Wangsrimongkol, DDS, MS · Robin Yang, MD, DDS </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. John Phillips &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Buddhathida Wangsrimongkol · PGS.BS. Robin Yang </div>
+          <div class="session-panellists en"><strong>Moderator:</strong> John Phillips, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Bui Dang Quoc Thai, MD · Buddhathida Wangsrimongkol, DDS, DMSc</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.BS. John H. Phillips &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · BSCKII. Bùi Đăng Quốc Thái · PGS.BS. Buddhathida Wangsrimongkol</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -1017,20 +1077,20 @@ body{min-height:0!important}
 
     <div class="session is-break">
       <div class="session-row">
-        <div class="session-time">10:30 – 10:45</div>
+        <div class="session-time">10:10 – 10:25</div>
         <div class="session-main"><span class="session-pill pill-break">☕</span><div class="session-title en">Coffee Break</div><div class="session-title vi">Tea break</div></div>
       </div>
     </div>
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">10:45 – 11:45</div>
+        <div class="session-time">10:25 – 11:25</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Orthognathic Surgery in the Cleft Patient: Digital Workflows and Virtual Planning</div>
           <div class="session-title vi">Phẫu thuật Chỉnh hình Xương hàm ở Bệnh nhân Khe hở: Quy trình số hóa và Lập kế hoạch ảo</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John Phillips</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Christopher Runyan, MD, PhD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · Dong Ngoc Quang, MD, PhD</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> PGS.TS.BS Christopher Runyan &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · TS.BS. Đồng Ngọc Quang</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -1044,22 +1104,15 @@ body{min-height:0!important}
       </div>
     </div>
 
-    <div class="session is-break">
-      <div class="session-row">
-        <div class="session-time">11:45 – 13:00</div>
-        <div class="session-main"><span class="session-pill pill-break">🍽</span><div class="session-title en">Lunch Break</div><div class="session-title vi">Nghỉ trưa</div></div>
-      </div>
-    </div>
-
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">13:00 – 14:30</div>
+        <div class="session-time">11:25 – 12:55</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Advanced Orthognathic Surgery: Operative Execution and Technical Refinements</div>
           <div class="session-title vi">Phẫu thuật Chỉnh hình Xương hàm Nâng cao: Thực hành phẫu thuật và Tối ưu kỹ thuật</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> Phuong Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD · Đỗ Tiến Hải, MD, MSc</div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John Phillips · ThS.BSCKII. Đỗ Tiến Hải</div>
+          <div class="session-panellists en"><strong>Moderator:</strong> Phuong Nguyen, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Robin Yang, MD, DDS · Jong-Woo Choi, MD, PhD · John Phillips, MD · Do Tien Hai, MD, MSc</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. Phuong Nguyen &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> PGS.BS. Robin Yang · GS.TS.BS. Jong-Woo Choi · PGS.BS. John H. Phillips · ThS.BSCKII. Đỗ Tiến Hải</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -1073,15 +1126,22 @@ body{min-height:0!important}
       </div>
     </div>
 
+    <div class="session is-break">
+      <div class="session-row">
+        <div class="session-time">12:55 – 13:55</div>
+        <div class="session-main"><span class="session-pill pill-break">🍽</span><div class="session-title en">Lunch Break</div><div class="session-title vi">Nghỉ trưa</div></div>
+      </div>
+    </div>
+
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">14:30 – 15:30</div>
+        <div class="session-time">13:55 – 15:25</div>
         <div class="session-main">
           <span class="session-pill pill-panel en">Panel Discussion</span><span class="session-pill pill-panel vi">Thảo luận nhóm</span>
           <div class="session-title en">Definitive Cleft Rhinoplasty: Structural Restoration and Longitudinal Outcomes</div>
           <div class="session-title vi">Tạo hình Mũi Khe hở Hoàn thiện: Phục hồi cấu trúc và Kết quả dài hạn</div>
-          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Corstiann Breugem, MD, PhD · Jong-Woo Choi, MD, PhD · Lun-Jou Lo, MD, PhD </div>
-          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Corstiann Breugem · GS.TS.BS. Jong-Woo Choi · GS.TS.BS. Lun-Jou Lo </div>
+          <div class="session-panellists en"><strong>Moderator:</strong> David Chong, MD &nbsp;·&nbsp; <strong>Panellists:</strong> Lun-Jou Lo, MD, PhD · Corstiaan Breugem, MD, PhD · Jong-Woo Choi, MD, PhD</div>
+          <div class="session-panellists vi"><strong>Điều phối:</strong> GS.BS. David Chong &nbsp;·&nbsp; <strong>Thảo luận viên:</strong> GS.TS.BS. Lun-Jou Lo · GS.TS.BS. Corstiaan Breugem · GS.TS.BS. Jong-Woo Choi</div>
         </div>
         <div class="session-chevron"><div class="chevron-icon"><svg viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
       </div>
@@ -1097,9 +1157,9 @@ body{min-height:0!important}
 
     <div class="session" onclick="toggleSession(this)">
       <div class="session-row">
-        <div class="session-time">15:30 – 16:00</div>
+        <div class="session-time">15:25 – 16:10</div>
         <div class="session-main">
-          <span class="session-pill pill-panel en">Planery Keynote</span><span class="session-pill pill-panel vi">Báo cáo toàn thể</span>
+          <span class="session-pill pill-panel en">Plenary Keynote</span><span class="session-pill pill-panel vi">Báo cáo toàn thể</span>
           <div class="session-title en">Lessons Learned from a Career in Cleft Surgery</div>
           <div class="session-title vi">Những bài học kinh nghiệm từ sự nghiệp phẫu thuật khe hở môi - vòm miệng</div>
           <div class="session-panellists en"><strong>Speaker:</strong> David Fisher, MD &nbsp;·&nbsp; </div>
@@ -1121,11 +1181,13 @@ Thông qua các ca lâm sàng, kinh nghiệm thành công và cả những bài 
     <!-- Closing -->
     <div class="session is-ceremony">
       <div class="session-row">
-        <div class="session-time">16:00 – 16:15</div>
+        <div class="session-time">16:10 – 16:25</div>
         <div class="session-main">
           <span class="session-pill pill-ceremony en">Closing</span><span class="session-pill pill-ceremony vi">Bế mạc</span>
           <div class="session-title en">Closing Remarks &amp; Future Directions in Cleft Care</div>
           <div class="session-title vi">Phát biểu Bế mạc và Định hướng Tương lai trong Điều trị Khe hở</div>
+          <div class="session-panellists en"><strong>Speakers:</strong> David Chong, MD · Christopher Runyan, MD, PhD · Phuong D. Nguyen, MD</div>
+          <div class="session-panellists vi"><strong>Diễn giả:</strong> PGS.BS. David Chong · PGS.TS.BS. Christopher Runyan · GS.BS. Phuong D. Nguyen</div>
         </div>
       </div>
     </div>
@@ -1142,8 +1204,8 @@ Thông qua các ca lâm sàng, kinh nghiệm thành công và cả những bài 
     <li class="vi">Tất cả phiên diễn ra bằng tiếng Anh. Phiên dịch đồng thời tiếng Việt được cung cấp xuyên suốt chương trình.</li>
     <li class="en">Registration includes all scientific sessions, summit materials, lunch, and tea breaks on all three days.</li>
     <li class="vi">Phí đăng ký bao gồm toàn bộ phiên khoa học, tài liệu hội nghị, bữa trưa và tea break trong cả ba ngày.</li>
-    <li class="en">Welcome Reception on September 21 (17:00–18:30) included for all registered attendees. Smart casual attire.</li>
-    <li class="vi">Sự kiện Kết nối Đồng nghiệp ngày 21/09 (17:00–18:30) dành cho tất cả người tham dự đã đăng ký. Trang phục lịch sự.</li>
+    <li class="en">Welcome Reception on September 21 (17:30–19:00) included for all registered attendees. Smart casual attire.</li>
+    <li class="vi">Sự kiện Kết nối Đồng nghiệp ngày 21/09 (17:30–19:00) dành cho tất cả người tham dự đã đăng ký. Trang phục lịch sự.</li>
     <li class="en">CME credits available for Vietnamese participant only. Fee and accreditation details to be announced separately.</li>
     <li class="vi">Hội nghị chỉ cấp Chứng chỉ CME cho hội thảo viên Việt Nam. Thông tin về phí và giấy chứng nhận sẽ được thông báo riêng.</li>
     <li class="en">Programme subject to minor changes. Final programme distributed at registration check-in.</li>
