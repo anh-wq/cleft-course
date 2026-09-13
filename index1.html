@@ -451,8 +451,8 @@ nav {
   font-size:12px;color:var(--tx2);
   line-height:1.5;font-weight:300;
 }
-@media(max-width:1024px){.faculty-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:768px){.faculty-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:1024px){.faculty-grid{grid-template-columns:repeat(3,1fr)}.vn-fac-row{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:768px){.faculty-grid{grid-template-columns:repeat(2,1fr)!important}.vn-fac-row{grid-template-columns:repeat(2,1fr)!important}}
 
 /* ═══ SECTION BASE ═══ */
 section{padding:6rem 2.5rem}
@@ -898,6 +898,7 @@ body.is-mobile .day-tabs{top:0!important}
 /* Below-hero embed overrides */
 html,body{margin:0;padding:0;background:var(--dark);}
 body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
+body.is-mobile .vn-fac-row{grid-template-columns:repeat(2,1fr)!important}
 </style>
 </head>
 <body data-lang="en">
@@ -987,7 +988,7 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
 
     <div class="sec-eyebrow en" style="justify-content:center;margin-top:0.5rem">International Faculty</div>
     <div class="sec-eyebrow vi" style="justify-content:center;margin-top:0.5rem">Chuyên gia quốc tế</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1.75rem 1.25rem;margin-bottom:2.5rem;">
+    <div class="vn-fac-row" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem 1.25rem;margin-bottom:1.75rem;">
       <!-- Breugem, Corstiaan -->
       <div class="faculty-card">
         <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/breugem1.png" alt="Corstiaan Breugem">
@@ -1020,6 +1021,9 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
         <div class="faculty-inst en">Chang Gung Memorial Hospital · Taiwan</div>
         <div class="faculty-inst vi">Bệnh viện Tưởng niệm Trường Canh · Đài Loan</div>
       </div>
+    </div>
+
+    <div class="vn-fac-row" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem 1.25rem;margin-bottom:2.5rem;">
       <!-- Oh, Tae-Suk -->
       <div class="faculty-card">
         <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/oh1.png" alt="Tae-Suk Oh">
@@ -1052,19 +1056,12 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
         <div class="faculty-inst en">Khon Kaen University · Thailand</div>
         <div class="faculty-inst vi">Đại học Khon Kaen · Thái Lan</div>
       </div>
-      <!-- Yang, Robin -->
-      <div class="faculty-card">
-        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/yang1.png" alt="Robin Yang">
-        <div class="faculty-name en">Robin Yang, MD, DDS</div>
-        <div class="faculty-name vi">PGS.BS. Robin Yang</div>
-        <div class="faculty-inst en">Johns Hopkins School of Medicine · USA</div>
-        <div class="faculty-inst vi">Trường Y Johns Hopkins · Hoa Kỳ</div>
-      </div>
     </div>
+
 
     <div class="sec-eyebrow en" style="justify-content:center">Vietnam Faculty</div>
     <div class="sec-eyebrow vi" style="justify-content:center">Chuyên gia Việt Nam</div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1.75rem 1.25rem;">
+    <div class="vn-fac-row" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem 1.25rem;margin-bottom:1.75rem;">
       <!-- Dau, Nguyen Van -->
       <div class="faculty-card">
         <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/dau1.png" alt="Nguyen Van Dau">
@@ -1097,6 +1094,9 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
         <div class="faculty-inst en">Hue Odonto-Stomatology Hospital · Viet Nam</div>
         <div class="faculty-inst vi">Bệnh viện Răng Hàm Mặt Huế · Việt Nam</div>
       </div>
+    </div>
+
+    <div class="vn-fac-row" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.75rem 1.25rem;margin-bottom:1.75rem;">
       <!-- Huong, Dang Thi Lien -->
       <div class="faculty-card">
         <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/huong1.png" alt="Dang Thi Lien Huong">
@@ -1121,6 +1121,17 @@ body.is-mobile .faculty-grid{grid-template-columns:repeat(2,1fr)!important}
         <div class="faculty-inst en">Univ. of Medicine and Pharmacy at HCMC · Viet Nam</div>
         <div class="faculty-inst vi">Đại học Y Dược TP.HCM · Việt Nam</div>
       </div>
+      <!-- Phung, Ho Van -->
+      <div class="faculty-card">
+        <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/phung1.png" alt="Ho Van Phung">
+        <div class="faculty-name en">Ho Van Phung, MD</div>
+        <div class="faculty-name vi">BSCKII. Hồ Vân Phụng</div>
+        <div class="faculty-inst en">Deputy Head, Odonto-Stomatology Dept., Children's Hospital 1 · Viet Nam</div>
+        <div class="faculty-inst vi">Phó Khoa điều hành, Khoa Răng Hàm Mặt, Bệnh viện Nhi Đồng 1 · Việt Nam</div>
+      </div>
+    </div>
+
+    <div class="vn-fac-row" style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.75rem 1.25rem;">
       <!-- Phuong, Tran Dinh -->
       <div class="faculty-card">
         <img class="faculty-photo" src="https://anh-wq.github.io/cleft-course/phuong1.png" alt="Tran Dinh Phuong">
